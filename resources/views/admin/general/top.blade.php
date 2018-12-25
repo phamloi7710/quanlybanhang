@@ -7,7 +7,7 @@
                     <ul class="nav navbar-nav flex-row">
                         <li class="nav-item mobile-menu d-md-none mr-auto"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ft-menu font-large-1"></i></a></li>
                         <li class="nav-item">
-                            <a class="navbar-brand" href="index.html">
+                            <a class="navbar-brand" href="{{route('getIndexAdmin')}}">
                                 <img class="brand-logo" alt="modern admin logo" src="{{url('')}}/assets/admin/app-assets/images/logo/logo.png">
                                 <h3 class="brand-text">Modern Admin</h3>
                             </a>
@@ -165,8 +165,8 @@
                         <ul class="nav navbar-nav float-right">
                             <li class="dropdown dropdown-user nav-item">
                                 <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
-                                <span class="mr-1">Hello,
-                                <span class="user-name text-bold-700">John Doe</span>
+                                <span class="mr-1">{{__('general.hello')}},
+                                <span class="user-name text-bold-700">{{Auth::user()->name}}</span>
                                 </span>
                                 <span class="avatar avatar-online">
                                 <img src="{{url('')}}/assets/admin/app-assets/images/portrait/small/avatar-s-19.png" alt="avatar"><i></i></span>
@@ -177,7 +177,7 @@
                                     <a class="dropdown-item" href="#"><i class="ft-check-square"></i> Task</a>
                                     <a class="dropdown-item" href="#"><i class="ft-message-square"></i> Chats</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#"><i class="ft-power"></i> Logout</a>
+                                    <a class="dropdown-item" href="{{route('logout')}}"><i class="ft-power"></i> {{__('general.logOut')}}</a>
                                 </div>
                             </li>
                             <li class="dropdown dropdown-language nav-item">

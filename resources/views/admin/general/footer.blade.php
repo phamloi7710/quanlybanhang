@@ -24,7 +24,8 @@
         <script src="{{url('')}}/assets/admin/app-assets/js/core/app-menu.js" type="text/javascript"></script>
         <script src="{{url('')}}/assets/admin/app-assets/js/core/app.js" type="text/javascript"></script>
         <script src="{{url('')}}/assets/admin/app-assets/js/scripts/customizer.js" type="text/javascript"></script>
-        
+        <script src="{{url('')}}/assets/admin/app-assets/vendors/js/extensions/toastr.min.js" type="text/javascript"></script>
+        @include('admin.general.notify')
         @yield('script')
     </body>
 </html>

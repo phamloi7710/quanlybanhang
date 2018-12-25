@@ -40,6 +40,10 @@
         <!-- END Custom CSS-->
         <link rel="stylesheet" type="text/css" href="{{url('')}}/assets/admin/app-assets/vendors/css/tables/jsgrid/jsgrid-theme.min.css">
         <link rel="stylesheet" type="text/css" href="{{url('')}}/assets/admin/app-assets/vendors/css/tables/jsgrid/jsgrid.min.css">
+        <link rel="stylesheet" type="text/css" href="{{url('')}}/assets/admin/app-assets/vendors/css/extensions/toastr.css">
         <link rel="stylesheet" type="text/css" href="{{url('')}}/assets/admin/app-assets/css/plugins/forms/validation/form-validation.css">
+        <link rel="stylesheet" type="text/css" href="{{url('')}}/assets/admin/app-assets/css/core/menu/menu-types/vertical-content-menu.css">
+        <link rel="stylesheet" type="text/css" href="{{url('')}}/assets/admin/app-assets/css/core/colors/palette-gradient.css">
+        <link rel="stylesheet" type="text/css" href="{{url('')}}/assets/admin/app-assets/css/plugins/extensions/toastr.css">
     </head>
     

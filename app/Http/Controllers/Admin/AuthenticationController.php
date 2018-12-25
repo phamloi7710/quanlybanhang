@@ -12,7 +12,12 @@ use Session;
 class AuthenticationController extends Controller
 {
     public function getLogin(){
-    	return view('admin.pages.authentication.login');
+        if (Auth::check()) {
+            return redirect()->route('getIndexAdmin');
+        }else{
+            return view('admin.pages.authentication.login');
+        }
+    	
     }
     public function postLogin(Request $request){
         $remember = (Input::has('remember')) ? true : false;
@@ -28,11 +33,7 @@ class AuthenticationController extends Controller
     		return redirect()->route('getIndexAdmin')->with($notifySuccess);
     	}
     	else{
-    		$notifyError = array(
-                'message' => 'Đăng Nhập Không Thành Công', 
-                'alert-type' => 'error',
-            );
-    		return redirect()->back()->with($notifyError);;
+    		return redirect()->back()->with('error', __('login.error.loginFail'));
     	}
     }
     public function getLogout() {

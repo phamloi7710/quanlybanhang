@@ -10,4 +10,7 @@ return [
     'remember' => 'Ghi Nhớ Đăng Nhập',
     'forgotPassword' => 'Quên Mật Khẩu',
     'login' => 'Đăng Nhập',
+    'error' => [
+    	'loginFail' => 'Tên đăng nhập hoặc mật khẩu không đúng!'
+    ],
 ];

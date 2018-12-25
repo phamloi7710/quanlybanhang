@@ -12,6 +12,6 @@ class IndexController extends Controller
     }
     public function getFileManagement()
     {
-    	return view('admin.pages.laravel-filemanager.index1');
+    	return view('admin.pages.imageManagement.index-test');
     }
 }

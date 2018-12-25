@@ -3,6 +3,9 @@
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
             <li class=" nav-item">
                 <a href="#"><i class="la la-list"></i><span class="menu-title" data-i18n="nav.footers.main">Thiết Lập Sản Phẩm</span></a>
+            </li>
+            <li class=" nav-item">
+                <a href="#"><i class="la la-list"></i><span class="menu-title" data-i18n="nav.footers.main">Thiết Lập Sản Phẩm</span></a>
                 <ul class="menu-content">
                     <li><a class="menu-item" href="footer-light.html" data-i18n="nav.footers.footer_light">Sản Phẩm</a>
                     </li>

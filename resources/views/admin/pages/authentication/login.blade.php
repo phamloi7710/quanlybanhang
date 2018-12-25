@@ -7,9 +7,7 @@
         <meta name="description" content="Modern admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities with bitcoin dashboard.">
         <meta name="keywords" content="admin template, modern admin template, dashboard template, flat admin template, responsive admin template, web app, crypto dashboard, bitcoin dashboard">
         <meta name="author" content="PIXINVENT">
-        <title>Login with Background Color - Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
-            + Bitcoin Dashboard
-        </title>
+        <title>Đăng Nhập Hệ Thống - Hệ Thống Quản Lý Bán Hàng</title>
         <link rel="apple-touch-icon" href="{{url('')}}/assets/admin/app-assets/images/ico/apple-icon-120.png">
         <link rel="shortcut icon" type="image/x-icon" href="{{url('')}}/assets/admin/app-assets/images/ico/favicon.ico">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Quicksand:300,400,500,700"
@@ -36,7 +34,6 @@
         <link rel="stylesheet" type="text/css" href="{{url('')}}/assets/admin/app-assets/vendors/css/forms/spinner/jquery.bootstrap-touchspin.css">
         <link rel="stylesheet" type="text/css" href="{{url('')}}/assets/admin/app-assets/css/core/colors/palette-callout.css">
         <script src="{{url('')}}/assets/admin/app-assets/vendors/js/vendors.min.js" type="text/javascript"></script>
-
     </head>
     <body class="vertical-layout vertical-content-menu 1-column  bg-cyan bg-lighten-2 menu-expanded blank-page blank-page"
         data-open="click" data-menu="vertical-content-menu" data-col="1-column">
@@ -56,33 +53,33 @@
                                                 <img src="{{url('')}}/assets/admin/app-assets/images/logo/logo-dark.png" alt="branding logo">
                                             </div>
                                         </div>
+                                        @if(Session('error'))
                                         <div class="bs-callout-pink callout-border-left callout-bordered mt-1 p-1">
-                                          <h4 class="pink">Đã xảy ra lỗi!!!</h4>
-                                          <p>Tên đăng nhập hoặc mật khẩu không chính xác!</p>
+                                            <h4 class="pink">Đã xảy ra lỗi!!!</h4>
+                                            <p>{{Session('error')}}!</p>
                                         </div>
+                                        @endif
                                     </div>
-
                                     <div class="card-content">
-                                        
                                         <div class="card-body pt-0">
                                             <form class="form-horizontal" action="{{route('postLoginAdmin')}}" method="POST" novalidate>
                                                 @csrf
                                                 <div class="form-group">
                                                     <h5>{{__('login.username')}}
-                                                      <span class="required">*</span>
+                                                        <span class="required">*</span>
                                                     </h5>
                                                     <div class="controls">
-                                                      <input name="txtUsername" type="text" name="text" class="form-control"placeholder="{{__('login.placeholder.username')}}"     data-validation-required-message="{{__('validation.required', ['attribute'=>__('login.username')])}}" required>
+                                                        <input value="{{old('txtUsername')}}" name="txtUsername" type="text" class="form-control"placeholder="{{__('login.placeholder.username')}}" required data-validation-required-message="{{__('validation.required', ['attribute'=>__('login.username')])}}" maxlength="24" data-validation-maxlength-message="{{__('validation.max.string', ['attribute'=>__('login.username'), 'max'=>'24'])}}" minlength="4" data-validation-minlength-message="{{__('validation.min.string', ['attribute'=>__('login.username'), 'min'=>'4'])}}">
                                                     </div>
-                                                  </div>
-                                                  <div class="form-group">
+                                                </div>
+                                                <div class="form-group">
                                                     <h5>{{__('login.password')}}
-                                                      <span class="required">*</span>
+                                                        <span class="required">*</span>
                                                     </h5>
                                                     <div class="controls">
-                                                      <input name="txtPassword" type="text" name="text" class="form-control" placeholder="{{__('login.placeholder.password')}}" data-validation-required-message="{{__('validation.required', ['attribute'=>__('login.password')])}}" required>
+                                                        <input value="{{old('txtPassword')}}" name="txtPassword" type="password" class="form-control" placeholder="{{__('login.placeholder.password')}}" required data-validation-required-message="{{__('validation.required', ['attribute'=>__('login.password')])}}" maxlength="24" data-validation-maxlength-message="{{__('validation.max.string', ['attribute'=>__('login.password'), 'max'=>'24'])}}" minlength="6" data-validation-minlength-message="{{__('validation.min.string', ['attribute'=>__('login.password'), 'min'=>'6'])}}">
                                                     </div>
-                                                  </div>
+                                                </div>
                                                 <div class="form-group row">
                                                     <div class="col-md-6 col-12 text-center text-sm-left">
                                                         <fieldset>
@@ -94,9 +91,7 @@
                                                 </div>
                                                 <button type="submit" class="btn btn-outline-info btn-block"><i class="ft-unlock"></i> {{__('login.login')}}</button>
                                             </form>
-
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
@@ -108,7 +103,6 @@
         <script src="{{url('')}}/assets/admin/app-assets/vendors/js/forms/spinner/jquery.bootstrap-touchspin.js" type="text/javascript"></script>
         <!-- ////////////////////////////////////////////////////////////////////////////-->
         <!-- BEGIN VENDOR JS-->
-        
         <!-- BEGIN VENDOR JS-->
         <!-- BEGIN PAGE VENDOR JS-->
         <script src="{{url('')}}/assets/admin/app-assets/vendors/js/ui/headroom.min.js" type="text/javascript"></script>
