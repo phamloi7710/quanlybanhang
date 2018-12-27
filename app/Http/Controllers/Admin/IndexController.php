@@ -12,6 +12,6 @@ class IndexController extends Controller
     }
     public function getFileManagement()
     {
-    	return view('admin.pages.imageManagement.index-test');
+    	return view('admin.pages.imageManagement.index');
     }
 }

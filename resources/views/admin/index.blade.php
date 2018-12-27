@@ -1,796 +1,289 @@
 @extends('admin.general.master')
-@section('content')               
-<div class="content-body">
-    <!-- eCommerce statistic -->
-    <div class="row">
-        <div class="col-xl-3 col-lg-6 col-12">
-            <div class="card pull-up">
-                <div class="card-content">
-                    <div class="card-body">
-                        <div class="media d-flex">
-                            <div class="media-body text-left">
-                                <h3 class="info">850</h3>
-                                <h6>Products Sold</h6>
-                            </div>
-                            <div>
-                                <i class="icon-basket-loaded info font-large-2 float-right"></i>
-                            </div>
-                        </div>
-                        <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                            <div class="progress-bar bg-gradient-x-info" role="progressbar" style="width: 80%"
-                                aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
+@section('content') 
+<div class="app-content content">
+    <div class="content-wrapper">
+        <div class="content-header row">
+            <div class="content-header-left col-md-6 col-12 mb-2 breadcrumb-new">
+                <h3 class="content-header-title mb-0 d-inline-block">Bordered Navigation</h3>
+                <div class="row breadcrumbs-top d-inline-block">
+                    <div class="breadcrumb-wrapper col-12">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html">Home</a>
+                            </li>
+                            <li class="breadcrumb-item"><a href="#">Navigation</a>
+                            </li>
+                            <li class="breadcrumb-item active">Bordered Navigation
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div class="content-header-right col-md-6 col-12">
+                <div class="dropdown float-md-right">
+                    <button class="btn btn-danger dropdown-toggle round btn-glow px-2" id="dropdownBreadcrumbButton"
+                        type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownBreadcrumbButton">
+                        <a class="dropdown-item" href="#"><i class="la la-calendar-check-o"></i> Calender</a>
+                        <a class="dropdown-item" href="#"><i class="la la-cart-plus"></i> Cart</a>
+                        <a class="dropdown-item" href="#"><i class="la la-life-ring"></i> Support</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#"><i class="la la-cog"></i> Settings</a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-xl-3 col-lg-6 col-12">
-            <div class="card pull-up">
-                <div class="card-content">
-                    <div class="card-body">
-                        <div class="media d-flex">
-                            <div class="media-body text-left">
-                                <h3 class="warning">$748</h3>
-                                <h6>Net Profit</h6>
-                            </div>
-                            <div>
-                                <i class="icon-pie-chart warning font-large-2 float-right"></i>
-                            </div>
-                        </div>
-                        <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                            <div class="progress-bar bg-gradient-x-warning" role="progressbar" style="width: 65%"
-                                aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-3 col-lg-6 col-12">
-            <div class="card pull-up">
-                <div class="card-content">
-                    <div class="card-body">
-                        <div class="media d-flex">
-                            <div class="media-body text-left">
-                                <h3 class="success">146</h3>
-                                <h6>New Customers</h6>
-                            </div>
-                            <div>
-                                <i class="icon-user-follow success font-large-2 float-right"></i>
-                            </div>
-                        </div>
-                        <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                            <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 75%"
-                                aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-3 col-lg-6 col-12">
-            <div class="card pull-up">
-                <div class="card-content">
-                    <div class="card-body">
-                        <div class="media d-flex">
-                            <div class="media-body text-left">
-                                <h3 class="danger">99.89 %</h3>
-                                <h6>Customer Satisfaction</h6>
-                            </div>
-                            <div>
-                                <i class="icon-heart danger font-large-2 float-right"></i>
-                            </div>
-                        </div>
-                        <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                            <div class="progress-bar bg-gradient-x-danger" role="progressbar" style="width: 85%"
-                                aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--/ eCommerce statistic -->
-    <!-- Products sell and New Orders -->
-    <div class="row match-height">
-        <div class="col-xl-8 col-12" id="ecommerceChartView">
-            <div class="card card-shadow">
-                <div class="card-header card-header-transparent py-20">
-                    <div class="btn-group dropdown">
-                        <a href="#" class="text-body dropdown-toggle blue-grey-700" data-toggle="dropdown">PRODUCTS SALES</a>
-                        <div class="dropdown-menu animate" role="menu">
-                            <a class="dropdown-item" href="#" role="menuitem">Sales</a>
-                            <a class="dropdown-item" href="#" role="menuitem">Total sales</a>
-                            <a class="dropdown-item" href="#" role="menuitem">profit</a>
-                        </div>
-                    </div>
-                    <ul class="nav nav-pills nav-pills-rounded chart-action float-right btn-group" role="group">
-                        <li class="nav-item"><a class="active nav-link" data-toggle="tab" href="#scoreLineToDay">Day</a></li>
-                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#scoreLineToWeek">Week</a></li>
-                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#scoreLineToMonth">Month</a></li>
-                    </ul>
-                </div>
-                <div class="widget-content tab-content bg-white p-20">
-                    <div class="ct-chart tab-pane active scoreLineShadow" id="scoreLineToDay"></div>
-                    <div class="ct-chart tab-pane scoreLineShadow" id="scoreLineToWeek"></div>
-                    <div class="ct-chart tab-pane scoreLineShadow" id="scoreLineToMonth"></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-4 col-lg-12">
-            <div class="card">
+        <div class="content-body">
+            <!-- Description -->
+            <section id="description" class="card">
                 <div class="card-header">
-                    <h4 class="card-title">New Orders</h4>
+                    <h4 class="card-title">Description</h4>
+                </div>
+                <div class="card-content">
+                    <div class="card-body">
+                        <div class="card-text">
+                            <p>Bordered navigation separate first level of main navigation by adding
+                                border. You can check bordered navigation on left side navigation
+                                menu.
+                            </p>
+                        </div>
+                        <div class="alert bg-success alert-icon-left mb-2" role="alert">
+                            <span class="alert-icon"><i class="la la-pencil-square"></i></span>
+                            <strong>Experience it!</strong>
+                            <p>This page contain navigation menu with bordered options example,
+                                check at the left hand side of the page.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--/ Description -->
+            <!-- CSS Classes -->
+            <section id="css-classes" class="card">
+                <div class="card-header">
+                    <h4 class="card-title">CSS Classes</h4>
                     <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                     <div class="heading-elements">
                         <ul class="list-inline mb-0">
+                            <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
                             <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="card-content">
-                    <div id="new-orders" class="media-list position-relative">
-                        <div class="table-responsive">
-                            <table id="new-orders-table" class="table table-hover table-xl mb-0">
-                                <thead>
-                                    <tr>
-                                        <th class="border-top-0">Product</th>
-                                        <th class="border-top-0">Customers</th>
-                                        <th class="border-top-0">Total</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="text-truncate">iPhone X</td>
-                                        <td class="text-truncate p-1">
-                                            <ul class="list-unstyled users-list m-0">
-                                                <li data-toggle="tooltip" data-popup="tooltip-custom" data-original-title="John Doe"
-                                                    class="avatar avatar-sm pull-up">
-                                                    <img class="media-object rounded-circle" src="{{url('')}}/assets/admin/app-assets/images/portrait/small/avatar-s-19.png"
-                                                        alt="Avatar">
-                                                </li>
-                                                <li data-toggle="tooltip" data-popup="tooltip-custom" data-original-title="Katherine Nichols"
-                                                    class="avatar avatar-sm pull-up">
-                                                    <img class="media-object rounded-circle" src="{{url('')}}/assets/admin/app-assets/images/portrait/small/avatar-s-18.png"
-                                                        alt="Avatar">
-                                                </li>
-                                                <li data-toggle="tooltip" data-popup="tooltip-custom" data-original-title="Joseph Weaver"
-                                                    class="avatar avatar-sm pull-up">
-                                                    <img class="media-object rounded-circle" src="{{url('')}}/assets/admin/app-assets/images/portrait/small/avatar-s-17.png"
-                                                        alt="Avatar">
-                                                </li>
-                                                <li class="avatar avatar-sm">
-                                                    <span class="badge badge-info">+4 more</span>
-                                                </li>
-                                            </ul>
-                                        </td>
-                                        <td class="text-truncate">$8999</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-truncate">Pixel 2</td>
-                                        <td class="text-truncate p-1">
-                                            <ul class="list-unstyled users-list m-0">
-                                                <li data-toggle="tooltip" data-popup="tooltip-custom" data-original-title="Alice Scott"
-                                                    class="avatar avatar-sm pull-up">
-                                                    <img class="media-object rounded-circle" src="{{url('')}}/assets/admin/app-assets/images/portrait/small/avatar-s-16.png"
-                                                        alt="Avatar">
-                                                </li>
-                                                <li data-toggle="tooltip" data-popup="tooltip-custom" data-original-title="Charles Miller"
-                                                    class="avatar avatar-sm pull-up">
-                                                    <img class="media-object rounded-circle" src="{{url('')}}/assets/admin/app-assets/images/portrait/small/avatar-s-15.png"
-                                                        alt="Avatar">
-                                                </li>
-                                            </ul>
-                                        </td>
-                                        <td class="text-truncate">$5550</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-truncate">OnePlus</td>
-                                        <td class="text-truncate p-1">
-                                            <ul class="list-unstyled users-list m-0">
-                                                <li data-toggle="tooltip" data-popup="tooltip-custom" data-original-title="Christine Ramos"
-                                                    class="avatar avatar-sm pull-up">
-                                                    <img class="media-object rounded-circle" src="{{url('')}}/assets/admin/app-assets/images/portrait/small/avatar-s-11.png"
-                                                        alt="Avatar">
-                                                </li>
-                                                <li data-toggle="tooltip" data-popup="tooltip-custom" data-original-title="Thomas Brewer"
-                                                    class="avatar avatar-sm pull-up">
-                                                    <img class="media-object rounded-circle" src="{{url('')}}/assets/admin/app-assets/images/portrait/small/avatar-s-10.png"
-                                                        alt="Avatar">
-                                                </li>
-                                                <li data-toggle="tooltip" data-popup="tooltip-custom" data-original-title="Alice Chapman"
-                                                    class="avatar avatar-sm pull-up">
-                                                    <img class="media-object rounded-circle" src="{{url('')}}/assets/admin/app-assets/images/portrait/small/avatar-s-9.png"
-                                                        alt="Avatar">
-                                                </li>
-                                                <li class="avatar avatar-sm">
-                                                    <span class="badge badge-info">+3 more</span>
-                                                </li>
-                                            </ul>
-                                        </td>
-                                        <td class="text-truncate">$9000</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-truncate">Galaxy</td>
-                                        <td class="text-truncate p-1">
-                                            <ul class="list-unstyled users-list m-0">
-                                                <li data-toggle="tooltip" data-popup="tooltip-custom" data-original-title="Ryan Schneider"
-                                                    class="avatar avatar-sm pull-up">
-                                                    <img class="media-object rounded-circle" src="{{url('')}}/assets/admin/app-assets/images/portrait/small/avatar-s-14.png"
-                                                        alt="Avatar">
-                                                </li>
-                                                <li data-toggle="tooltip" data-popup="tooltip-custom" data-original-title="Tiffany Oliver"
-                                                    class="avatar avatar-sm pull-up">
-                                                    <img class="media-object rounded-circle" src="{{url('')}}/assets/admin/app-assets/images/portrait/small/avatar-s-13.png"
-                                                        alt="Avatar">
-                                                </li>
-                                                <li data-toggle="tooltip" data-popup="tooltip-custom" data-original-title="Joan Reid"
-                                                    class="avatar avatar-sm pull-up">
-                                                    <img class="media-object rounded-circle" src="{{url('')}}/assets/admin/app-assets/images/portrait/small/avatar-s-12.png"
-                                                        alt="Avatar">
-                                                </li>
-                                            </ul>
-                                        </td>
-                                        <td class="text-truncate">$7500</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-truncate">Moto Z2</td>
-                                        <td class="text-truncate p-1">
-                                            <ul class="list-unstyled users-list m-0">
-                                                <li data-toggle="tooltip" data-popup="tooltip-custom" data-original-title="Kimberly Simmons"
-                                                    class="avatar avatar-sm pull-up">
-                                                    <img class="media-object rounded-circle" src="{{url('')}}/assets/admin/app-assets/images/portrait/small/avatar-s-8.png"
-                                                        alt="Avatar">
-                                                </li>
-                                                <li data-toggle="tooltip" data-popup="tooltip-custom" data-original-title="Willie Torres"
-                                                    class="avatar avatar-sm pull-up">
-                                                    <img class="media-object rounded-circle" src="{{url('')}}/assets/admin/app-assets/images/portrait/small/avatar-s-7.png"
-                                                        alt="Avatar">
-                                                </li>
-                                                <li data-toggle="tooltip" data-popup="tooltip-custom" data-original-title="Rebecca Jones"
-                                                    class="avatar avatar-sm pull-up">
-                                                    <img class="media-object rounded-circle" src="{{url('')}}/assets/admin/app-assets/images/portrait/small/avatar-s-6.png"
-                                                        alt="Avatar">
-                                                </li>
-                                                <li class="avatar avatar-sm">
-                                                    <span class="badge badge-info">+1 more</span>
-                                                </li>
-                                            </ul>
-                                        </td>
-                                        <td class="text-truncate">$8500</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--/ Products sell and New Orders -->
-    <!-- Recent Transactions -->
-    <div class="row">
-        <div id="recent-transactions" class="col-12">
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">Recent Transactions</h4>
-                    <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
-                    <div class="heading-elements">
-                        <ul class="list-inline mb-0">
-                            <li><a class="btn btn-sm btn-danger box-shadow-2 round btn-min-width pull-right"
-                                href="invoice-summary.html" target="_blank">Invoice Summary</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="card-content">
-                    <div class="table-responsive">
-                        <table id="recent-orders" class="table table-hover table-xl mb-0">
-                            <thead>
-                                <tr>
-                                    <th class="border-top-0">Status</th>
-                                    <th class="border-top-0">Invoice#</th>
-                                    <th class="border-top-0">Customer Name</th>
-                                    <th class="border-top-0">Products</th>
-                                    <th class="border-top-0">Categories</th>
-                                    <th class="border-top-0">Shipping</th>
-                                    <th class="border-top-0">Amount</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="text-truncate"><i class="la la-dot-circle-o success font-medium-1 mr-1"></i>                          Paid</td>
-                                    <td class="text-truncate"><a href="#">INV-001001</a></td>
-                                    <td class="text-truncate">
-                                        <span class="avatar avatar-xs">
-                                        <img class="box-shadow-2" src="{{url('')}}/assets/admin/app-assets/images/portrait/small/avatar-s-4.png"
-                                            alt="avatar">
-                                        </span>
-                                        <span>Elizabeth W.</span>
-                                    </td>
-                                    <td class="text-truncate p-1">
-                                        <ul class="list-unstyled users-list m-0">
-                                            <li data-toggle="tooltip" data-popup="tooltip-custom" data-original-title="Kimberly Simmons"
-                                                class="avatar avatar-sm pull-up">
-                                                <img class="media-object rounded-circle no-border-top-radius no-border-bottom-radius"
-                                                    src="{{url('')}}/assets/admin/app-assets/images/portfolio/portfolio-1.jpg"
-                                                    alt="Avatar">
-                                            </li>
-                                            <li data-toggle="tooltip" data-popup="tooltip-custom" data-original-title="Willie Torres"
-                                                class="avatar avatar-sm pull-up">
-                                                <img class="media-object rounded-circle no-border-top-radius no-border-bottom-radius"
-                                                    src="{{url('')}}/assets/admin/app-assets/images/portfolio/portfolio-2.jpg"
-                                                    alt="Avatar">
-                                            </li>
-                                            <li data-toggle="tooltip" data-popup="tooltip-custom" data-original-title="Rebecca Jones"
-                                                class="avatar avatar-sm pull-up">
-                                                <img class="media-object rounded-circle no-border-top-radius no-border-bottom-radius"
-                                                    src="{{url('')}}/assets/admin/app-assets/images/portfolio/portfolio-4.jpg"
-                                                    alt="Avatar">
-                                            </li>
-                                            <li class="avatar avatar-sm">
-                                                <span class="badge badge-info">+1 more</span>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-outline-danger round">Food</button>
-                                    </td>
-                                    <td>
-                                        <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                                            <div class="progress-bar bg-gradient-x-danger" role="progressbar" style="width: 25%"
-                                                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                    </td>
-                                    <td class="text-truncate">$ 1200.00</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-truncate"><i class="la la-dot-circle-o danger font-medium-1 mr-1"></i>                          Declined</td>
-                                    <td class="text-truncate"><a href="#">INV-001002</a></td>
-                                    <td class="text-truncate">
-                                        <span class="avatar avatar-xs">
-                                        <img class="box-shadow-2" src="{{url('')}}/assets/admin/app-assets/images/portrait/small/avatar-s-5.png"
-                                            alt="avatar">
-                                        </span>
-                                        <span>Doris R.</span>
-                                    </td>
-                                    <td class="text-truncate p-1">
-                                        <ul class="list-unstyled users-list m-0">
-                                            <li data-toggle="tooltip" data-popup="tooltip-custom" data-original-title="Kimberly Simmons"
-                                                class="avatar avatar-sm pull-up">
-                                                <img class="media-object rounded-circle no-border-top-radius no-border-bottom-radius"
-                                                    src="{{url('')}}/assets/admin/app-assets/images/portfolio/portfolio-5.jpg"
-                                                    alt="Avatar">
-                                            </li>
-                                            <li data-toggle="tooltip" data-popup="tooltip-custom" data-original-title="Willie Torres"
-                                                class="avatar avatar-sm pull-up">
-                                                <img class="media-object rounded-circle no-border-top-radius no-border-bottom-radius"
-                                                    src="{{url('')}}/assets/admin/app-assets/images/portfolio/portfolio-6.jpg"
-                                                    alt="Avatar">
-                                            </li>
-                                            <li class="avatar avatar-sm">
-                                                <span class="badge badge-info">+2 more</span>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-outline-warning round">Electronics</button>
-                                    </td>
-                                    <td>
-                                        <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                                            <div class="progress-bar bg-gradient-x-warning" role="progressbar" style="width: 45%"
-                                                aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                    </td>
-                                    <td class="text-truncate">$ 1850.00</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-truncate"><i class="la la-dot-circle-o warning font-medium-1 mr-1"></i>                          Pending</td>
-                                    <td class="text-truncate"><a href="#">INV-001003</a></td>
-                                    <td class="text-truncate">
-                                        <span class="avatar avatar-xs">
-                                        <img class="box-shadow-2" src="{{url('')}}/assets/admin/app-assets/images/portrait/small/avatar-s-6.png"
-                                            alt="avatar">
-                                        </span>
-                                        <span>Megan S.</span>
-                                    </td>
-                                    <td class="text-truncate p-1">
-                                        <ul class="list-unstyled users-list m-0">
-                                            <li data-toggle="tooltip" data-popup="tooltip-custom" data-original-title="Kimberly Simmons"
-                                                class="avatar avatar-sm pull-up">
-                                                <img class="media-object rounded-circle no-border-top-radius no-border-bottom-radius"
-                                                    src="{{url('')}}/assets/admin/app-assets/images/portfolio/portfolio-2.jpg"
-                                                    alt="Avatar">
-                                            </li>
-                                            <li data-toggle="tooltip" data-popup="tooltip-custom" data-original-title="Willie Torres"
-                                                class="avatar avatar-sm pull-up">
-                                                <img class="media-object rounded-circle no-border-top-radius no-border-bottom-radius"
-                                                    src="{{url('')}}/assets/admin/app-assets/images/portfolio/portfolio-5.jpg"
-                                                    alt="Avatar">
-                                            </li>
-                                        </ul>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-outline-success round">Groceries</button>
-                                    </td>
-                                    <td>
-                                        <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                                            <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 75%"
-                                                aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                    </td>
-                                    <td class="text-truncate">$ 3200.00</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-truncate"><i class="la la-dot-circle-o success font-medium-1 mr-1"></i>                          Paid</td>
-                                    <td class="text-truncate"><a href="#">INV-001004</a></td>
-                                    <td class="text-truncate">
-                                        <span class="avatar avatar-xs">
-                                        <img class="box-shadow-2" src="{{url('')}}/assets/admin/app-assets/images/portrait/small/avatar-s-7.png"
-                                            alt="avatar">
-                                        </span>
-                                        <span>Andrew D.</span>
-                                    </td>
-                                    <td class="text-truncate p-1">
-                                        <ul class="list-unstyled users-list m-0">
-                                            <li data-toggle="tooltip" data-popup="tooltip-custom" data-original-title="Kimberly Simmons"
-                                                class="avatar avatar-sm pull-up">
-                                                <img class="media-object rounded-circle no-border-top-radius no-border-bottom-radius"
-                                                    src="{{url('')}}/assets/admin/app-assets/images/portfolio/portfolio-6.jpg"
-                                                    alt="Avatar">
-                                            </li>
-                                            <li data-toggle="tooltip" data-popup="tooltip-custom" data-original-title="Willie Torres"
-                                                class="avatar avatar-sm pull-up">
-                                                <img class="media-object rounded-circle no-border-top-radius no-border-bottom-radius"
-                                                    src="{{url('')}}/assets/admin/app-assets/images/portfolio/portfolio-1.jpg"
-                                                    alt="Avatar">
-                                            </li>
-                                            <li class="avatar avatar-sm">
-                                                <span class="badge badge-info">+1 more</span>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-outline-info round">Apparels</button>
-                                    </td>
-                                    <td>
-                                        <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                                            <div class="progress-bar bg-gradient-x-info" role="progressbar" style="width: 65%"
-                                                aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                    </td>
-                                    <td class="text-truncate">$ 4500.00</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-truncate"><i class="la la-dot-circle-o success font-medium-1 mr-1"></i>                          Paid</td>
-                                    <td class="text-truncate"><a href="#">INV-001005</a></td>
-                                    <td class="text-truncate">
-                                        <span class="avatar avatar-xs">
-                                        <img class="box-shadow-2" src="{{url('')}}/assets/admin/app-assets/images/portrait/small/avatar-s-9.png"
-                                            alt="avatar">
-                                        </span>
-                                        <span>Walter R.</span>
-                                    </td>
-                                    <td class="text-truncate p-1">
-                                        <ul class="list-unstyled users-list m-0">
-                                            <li data-toggle="tooltip" data-popup="tooltip-custom" data-original-title="Kimberly Simmons"
-                                                class="avatar avatar-sm pull-up">
-                                                <img class="media-object rounded-circle no-border-top-radius no-border-bottom-radius"
-                                                    src="{{url('')}}/assets/admin/app-assets/images/portfolio/portfolio-5.jpg"
-                                                    alt="Avatar">
-                                            </li>
-                                            <li data-toggle="tooltip" data-popup="tooltip-custom" data-original-title="Willie Torres"
-                                                class="avatar avatar-sm pull-up">
-                                                <img class="media-object rounded-circle no-border-top-radius no-border-bottom-radius"
-                                                    src="{{url('')}}/assets/admin/app-assets/images/portfolio/portfolio-3.jpg"
-                                                    alt="Avatar">
-                                            </li>
-                                        </ul>
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-outline-danger round">Food</button>
-                                    </td>
-                                    <td>
-                                        <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                                            <div class="progress-bar bg-gradient-x-danger" role="progressbar" style="width: 35%"
-                                                aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                    </td>
-                                    <td class="text-truncate">$ 1500.00</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--/ Recent Transactions -->
-    <!--Recent Orders & Monthly Sales -->
-    <div class="row match-height">
-        <div class="col-xl-8 col-lg-12">
-            <div class="card">
-                <div class="card-content ">
-                    <div id="cost-revenue" class="height-250 position-relative"></div>
-                </div>
-                <div class="card-footer">
-                    <div class="row mt-1">
-                        <div class="col-3 text-center">
-                            <h6 class="text-muted">Total Products</h6>
-                            <h2 class="block font-weight-normal">18.6 k</h2>
-                            <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                                <div class="progress-bar bg-gradient-x-info" role="progressbar" style="width: 70%"
-                                    aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                        <div class="col-3 text-center">
-                            <h6 class="text-muted">Total Sales</h6>
-                            <h2 class="block font-weight-normal">64.54 M</h2>
-                            <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                                <div class="progress-bar bg-gradient-x-warning" role="progressbar" style="width: 60%"
-                                    aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                        <div class="col-3 text-center">
-                            <h6 class="text-muted">Total Cost</h6>
-                            <h2 class="block font-weight-normal">24.38 B</h2>
-                            <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                                <div class="progress-bar bg-gradient-x-danger" role="progressbar" style="width: 40%"
-                                    aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                        <div class="col-3 text-center">
-                            <h6 class="text-muted">Total Revenue</h6>
-                            <h2 class="block font-weight-normal">36.72 M</h2>
-                            <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                                <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 90%"
-                                    aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-4 col-lg-12">
-            <div class="card">
-                <div class="card-content">
-                    <div class="card-body sales-growth-chart">
-                        <div id="monthly-sales" class="height-250"></div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="chart-title mb-1 text-center">
-                        <h6>Total monthly Sales.</h6>
-                    </div>
-                    <div class="chart-stats text-center">
-                        <a href="#" class="btn btn-sm btn-danger box-shadow-2 mr-1">Statistics <i class="ft-bar-chart"></i></a>
-                        <span class="text-muted">for the last year.</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--/Recent Orders & Monthly Sales -->
-    <!-- Basic Horizontal Timeline -->
-    <div class="row match-height">
-        <div class="col-xl-4 col-lg-12">
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">Basic Card</h4>
-                </div>
-                <div class="card-content">
-                    <img class="img-fluid" src="{{url('')}}/assets/admin/app-assets/images/carousel/05.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up
-                            the bulk of the card's content.
-                        </p>
-                        <a href="#" class="card-link">Card link</a>
-                        <a href="#" class="card-link">Another link</a>
-                    </div>
-                </div>
-                <div class="card-footer border-top-blue-grey border-top-lighten-5 text-muted">
-                    <span class="float-left">3 hours ago</span>
-                    <span class="float-right">
-                    <a href="#" class="card-link">Read More <i class="fa fa-angle-right"></i></a>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-8 col-lg-12">
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">Horizontal Timeline</h4>
-                    <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
-                    <div class="heading-elements">
-                        <ul class="list-inline mb-0">
-                            <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                            <li><a data-action="close"><i class="ft-x"></i></a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="card-content">
                     <div class="card-body">
                         <div class="card-text">
-                            <section class="cd-horizontal-timeline">
-                                <div class="timeline">
-                                    <div class="events-wrapper">
-                                        <div class="events">
-                                            <ol>
-                                                <li><a href="#0" data-date="16/01/2015" class="selected">16 Jan</a></li>
-                                                <li><a href="#0" data-date="28/02/2015">28 Feb</a></li>
-                                                <li><a href="#0" data-date="20/04/2015">20 Mar</a></li>
-                                                <li><a href="#0" data-date="20/05/2015">20 May</a></li>
-                                                <li><a href="#0" data-date="09/07/2015">09 Jul</a></li>
-                                                <li><a href="#0" data-date="30/08/2015">30 Aug</a></li>
-                                                <li><a href="#0" data-date="15/09/2015">15 Sep</a></li>
-                                            </ol>
-                                            <span class="filling-line" aria-hidden="true"></span>
-                                        </div>
-                                        <!-- .events -->
-                                    </div>
-                                    <!-- .events-wrapper -->
-                                    <ul class="cd-timeline-navigation">
-                                        <li><a href="#0" class="prev inactive">Prev</a></li>
-                                        <li><a href="#0" class="next">Next</a></li>
-                                    </ul>
-                                    <!-- .cd-timeline-navigation -->
-                                </div>
-                                <!-- .timeline -->
-                                <div class="events-content">
-                                    <ol>
-                                        <li class="selected" data-date="16/01/2015">
-                                            <blockquote class="blockquote border-0">
-                                                <div class="media">
-                                                    <div class="media-left">
-                                                        <img class="media-object img-xl mr-1" src="{{url('')}}/assets/admin/app-assets/images/portrait/small/avatar-s-5.png"
-                                                            alt="Generic placeholder image">
-                                                    </div>
-                                                    <div class="media-body">
-                                                        Sometimes life is going to hit you in the head with a brick. Don't lose faith.
-                                                    </div>
-                                                </div>
-                                                <footer class="blockquote-footer text-right">Steve Jobs
-                                                    <cite title="Source Title">Entrepreneur</cite>
-                                                </footer>
-                                            </blockquote>
-                                            <p class="lead mt-2">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia,
-                                                fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur
-                                                aspernatur at.
-                                            </p>
-                                        </li>
-                                        <li data-date="28/02/2015">
-                                            <blockquote class="blockquote border-0">
-                                                <div class="media">
-                                                    <div class="media-left">
-                                                        <img class="media-object img-xl mr-1" src="{{url('')}}/assets/admin/app-assets/images/portrait/small/avatar-s-6.png"
-                                                            alt="Generic placeholder image">
-                                                    </div>
-                                                    <div class="media-body">
-                                                        Sometimes life is going to hit you in the head with a brick. Don't lose faith.
-                                                    </div>
-                                                </div>
-                                                <footer class="blockquote-footer text-right">Steve Jobs
-                                                    <cite title="Source Title">Entrepreneur</cite>
-                                                </footer>
-                                            </blockquote>
-                                            <p class="lead mt-2">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia,
-                                                fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur
-                                                aspernatur at.
-                                            </p>
-                                        </li>
-                                        <li data-date="20/04/2015">
-                                            <blockquote class="blockquote border-0">
-                                                <div class="media">
-                                                    <div class="media-left">
-                                                        <img class="media-object img-xl mr-1" src="{{url('')}}/assets/admin/app-assets/images/portrait/small/avatar-s-7.png"
-                                                            alt="Generic placeholder image">
-                                                    </div>
-                                                    <div class="media-body">
-                                                        Sometimes life is going to hit you in the head with a brick. Don't lose faith.
-                                                    </div>
-                                                </div>
-                                                <footer class="blockquote-footer text-right">Steve Jobs
-                                                    <cite title="Source Title">Entrepreneur</cite>
-                                                </footer>
-                                            </blockquote>
-                                            <p class="lead mt-2">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia,
-                                                fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur
-                                                aspernatur at.
-                                            </p>
-                                        </li>
-                                        <li data-date="20/05/2015">
-                                            <blockquote class="blockquote border-0">
-                                                <div class="media">
-                                                    <div class="media-left">
-                                                        <img class="media-object img-xl mr-1" src="{{url('')}}/assets/admin/app-assets/images/portrait/small/avatar-s-8.png"
-                                                            alt="Generic placeholder image">
-                                                    </div>
-                                                    <div class="media-body">
-                                                        Sometimes life is going to hit you in the head with a brick. Don't lose faith.
-                                                    </div>
-                                                </div>
-                                                <footer class="blockquote-footer text-right">Steve Jobs
-                                                    <cite title="Source Title">Entrepreneur</cite>
-                                                </footer>
-                                            </blockquote>
-                                            <p class="lead mt-2">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia,
-                                                fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur
-                                                aspernatur at.
-                                            </p>
-                                        </li>
-                                        <li data-date="09/07/2015">
-                                            <blockquote class="blockquote border-0">
-                                                <div class="media">
-                                                    <div class="media-left">
-                                                        <img class="media-object img-xl mr-1" src="{{url('')}}/assets/admin/app-assets/images/portrait/small/avatar-s-9.png"
-                                                            alt="Generic placeholder image">
-                                                    </div>
-                                                    <div class="media-body">
-                                                        Sometimes life is going to hit you in the head with a brick. Don't lose faith.
-                                                    </div>
-                                                </div>
-                                                <footer class="blockquote-footer text-right">Steve Jobs
-                                                    <cite title="Source Title">Entrepreneur</cite>
-                                                </footer>
-                                            </blockquote>
-                                            <p class="lead mt-2">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia,
-                                                fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur
-                                                aspernatur at.
-                                            </p>
-                                        </li>
-                                        <li data-date="30/08/2015">
-                                            <blockquote class="blockquote border-0">
-                                                <div class="media">
-                                                    <div class="media-left">
-                                                        <img class="media-object img-xl mr-1" src="{{url('')}}/assets/admin/app-assets/images/portrait/small/avatar-s-6.png"
-                                                            alt="Generic placeholder image">
-                                                    </div>
-                                                    <div class="media-body">
-                                                        Sometimes life is going to hit you in the head with a brick. Don't lose faith.
-                                                    </div>
-                                                </div>
-                                                <footer class="blockquote-footer text-right">Steve Jobs
-                                                    <cite title="Source Title">Entrepreneur</cite>
-                                                </footer>
-                                            </blockquote>
-                                            <p class="lead mt-2">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia,
-                                                fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur
-                                                aspernatur at.
-                                            </p>
-                                        </li>
-                                        <li data-date="15/09/2015">
-                                            <blockquote class="blockquote border-0">
-                                                <div class="media">
-                                                    <div class="media-left">
-                                                        <img class="media-object img-xl mr-1" src="{{url('')}}/assets/admin/app-assets/images/portrait/small/avatar-s-7.png"
-                                                            alt="Generic placeholder image">
-                                                    </div>
-                                                    <div class="media-body">
-                                                        Sometimes life is going to hit you in the head with a brick. Don't lose faith.
-                                                    </div>
-                                                </div>
-                                                <footer class="blockquote-footer text-right">Steve Jobs
-                                                    <cite title="Source Title">Entrepreneur</cite>
-                                                </footer>
-                                            </blockquote>
-                                            <p class="lead mt-2">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia,
-                                                fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur
-                                                aspernatur at.
-                                            </p>
-                                        </li>
-                                    </ol>
-                                </div>
-                                <!-- .events-content -->
-                            </section>
+                            <p>This table contains all classes related to the vertical bordered
+                                navigation option.
+                            </p>
+                            <p>All these options can be set via following classes:</p>
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Classes</th>
+                                            <th>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row"><code>.menu-bordered</code></th>
+                                            <td>To create vertical bordered navigation, you need to add <code>.menu-bordered</code>                          class in navigation <code>&lt;div&gt;</code> tag. Refer
+                                                HTML markup line no 12.
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
+            <!--/ CSS Classes -->
+            <!-- HTML Markup -->
+            <section id="html-markup" class="card">
+                <div class="card-header">
+                    <h4 class="card-title">HTML Markup</h4>
+                    <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                    <div class="heading-elements">
+                        <ul class="list-inline mb-0">
+                            <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                            <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                            <li><a data-action="close"><i class="ft-x"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-body">
+                        <div class="card-text">
+                            <p>This section contains HTML Markup to create vertical bordered navigation.
+                                It define where to add css classes to make vertical bordered navigation.
+                            </p>
+                            <ul>
+                                <li>
+                                    <span class="text-bold-600">Line no 12:</span> Contain the <code>.menu-bordered</code> class
+                                    to set vertical navigation border.
+                                </li>
+                            </ul>
+                            <pre data-line="12" class="language-markup">
+          <code class="language-markup">
+              &lt;!DOCTYPE html&gt;
+                &lt;html lang="en"&gt;
+                  &lt;head&gt;&lt;/head&gt;
+                  &lt;body data-menu="vertical-menu" class="vertical-layout vertical-menu 2-column menu-expanded"&gt;
+                    &lt;!-- navbar-static-top--&gt;
+                    &lt;nav role="navigation" class="header-navbar navbar-expand-sm navbar navbar-with-menu navbar-static-top navbar-dark navbar-shadow menu-bordered"&gt;
+                        ...
+                    &lt;/nav&gt;
+                    &lt;!-- BEGIN Navigation--&gt;
+                    &lt;div class="main-menu menu-dark menu-bordered menu-shadow"&gt;
+                        ...
+                    &lt;/div&gt;
+                    &lt;!-- END Navigation--&gt;
+                    &lt;!-- BEGIN Content--&gt;
+                    &lt;div class="content app-content"&gt;
+                        &lt;div class="content-wrapper"&gt;
+                            &lt;!-- content header--&gt;
+                            &lt;div class="content-header row"&gt;
+                                ...
+                            &lt;/div&gt;
+                            &lt;!-- content header--&gt;
+                            &lt;!-- content body--&gt;
+                            &lt;div class="content-body"&gt;
+                                ...
+                            &lt;/div&gt;
+                            &lt;!-- content body--&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;!-- END Content--&gt;
+                    &lt;!-- START FOOTER DARK--&gt;
+                    &lt;footer class="footer footer-dark"&gt;
+                        ...
+                    &lt;/footer&gt;
+                    &lt;!-- START FOOTER DARK--&gt;
+                  &lt;/body&gt;
+                &lt;/html&gt;
+          </code>
+        </pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--/ HTML Markup -->
+            <!-- PUG Code -->
+            <section id="pug-code" class="card">
+                <div class="card-header">
+                    <h4 class="card-title">PUG Configuration</h4>
+                    <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                    <div class="heading-elements">
+                        <ul class="list-inline mb-0">
+                            <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                            <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                            <li><a data-action="close"><i class="ft-x"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-body">
+                        <div class="card-text">
+                            <p>Modern Admin use PUG as template engine to generate pages and whole
+                                template quickly using node js, for getting start with PUG usage
+                                & template generating process please refer template documentation.
+                            </p>
+                            <h5 class="card-title mt-2">PUG Variables</h5>
+                            <p>This table contains required PUG variables to generate vertical bordered
+                                navigation.
+                            </p>
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Block</th>
+                                            <th>Variable</th>
+                                            <th>Datatype</th>
+                                            <th>Value</th>
+                                            <th>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row"><code>verticalMenuConfig</code></th>
+                                            <td><code>menuDevider</code></td>
+                                            <td><code>boolean</code></td>
+                                            <td><code>true</code></td>
+                                            <td><code>verticalMenuConfig</code> block has a <code>menuDevider</code>                          variable, it contains navigation border specific settings
+                                                in that you need to add <code>true</code>.
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="alert bg-info alert-icon-left mb-2" role="alert">
+                                <span class="alert-icon"><i class="la la-info"></i></span>
+                                Modern Admin Template <a href="https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/documentation"
+                                    target="_blank" class="white"><u>documentation</u></a> has full
+                                list of all blocks, datatype, variables and their description table.
+                                Please review it for more configuration options.
+                            </div>
+                            <h5 class="card-title mt-2">PUG Code</h5>
+                            <p>Use following PUG code to generate page or template having vertical
+                                bordered navigation.
+                            </p>
+                            <ul>
+                                <li>
+                                    <span class="text-bold-600">Line no 20-21:</span> Set vertical bordered navigation class
+                                    to <code>menuDevider</code> variable value as <code>true</code>                    in <code>verticalMenuConfig</code> block.
+                                </li>
+                                <li>
+                                    <span class="text-bold-600">Line no 27-28:</span> <code>content</code> block has content
+                                    section html file included <code>include ../contents/vertical-bordered-navigation.html</code>,
+                                    which can be customizable on page level.
+                                </li>
+                            </ul>
+                            <p>If you want to use vertical bordered navigation options on page level
+                                you need to define it on page it self. This template has one example
+                                pug file for <code>vertical-bordered-navigation.pug</code>, however
+                                you can use it on template level but it will generate whole template
+                                have vertical bordered navigation.
+                            </p>
+                            <pre data-line="20-21, 27-28" data-line-offset="11" class="language-pug">
+      <code class="language-pug">
+        block pageVars
+            - var pageTitle    = "Bordered Navigation"
+            - var pageSubTitle = "Vertical bordered navigation menu"
+            - var description  = "The bordered navigation add borders to the first level of main navigation."
+            - var activeMenu   = "vertical-nav-bordered"
+        extends template
+        append verticalMenuConfig
+            - var menuDevider = true
+        append breadcrumbs
+            +breadcrumbs([{url:"index.html",name:"Home"},{url:"#",name:"Navigation"}, {name:"Bordered Navigation"}])
+        //- Include page content in page block
+        append content
+            include ../contents/vertical-nav-bordered.html
+        //- Vendor CSS
+        //------------------------------
+        //- Add Vendor specific CSS
+        append vendorcss
+        //- Page CSS
+        //------------------------------
+        //- Add custom page specific CSS
+        append pagecss
+        //- Vendor JS
+        //------------------------------
+        //- Add vendor specific JS
+        append vendorjs
+        //- Page JS
+        //------------------------------
+        //- Add custom page specific JS
+        append pagejs
+      </code>
+      </pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--/ PUG Code -->
         </div>
     </div>
-    <!--/ Basic Horizontal Timeline -->
-</div>      
-@stop
+</div>
