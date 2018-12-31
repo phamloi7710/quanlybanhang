@@ -13,4 +13,8 @@ Route::group(['prefix'=>'admin', 'middleware'=>'checkRoleAdmin'], function(){
 		Route::get('list', 'Admin\ProductController@getListCate');
 		Route::post('list', 'Admin\ProductController@getListCate');
 	});
+	Route::group(['prefix'=>'products'], function(){
+		Route::get('list', 'Admin\ProductController@getList')->name('getListProducts');
+		Route::get('add-new.html', 'Admin\ProductController@getAdd')->name('getAddProduct');
+	});
 });

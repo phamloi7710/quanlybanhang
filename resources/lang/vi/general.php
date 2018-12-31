@@ -6,5 +6,7 @@
 		'uploadImage' => 'Tải Lên Hình Ảnh',
 		'imageManagement' => 'Quản Lý Hình Ảnh',
 		'management' => 'Quản Lý',
+		'save' => 'Lưu Lại',
+		'productName'=>'Tên Sản Phẩm'
 	];
 ?>

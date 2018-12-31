@@ -9,15 +9,17 @@
             <li class=" nav-item">
                 <a href="index.html"><i class="la la-home"></i><span class="menu-title" data-i18n="nav.dash.main">{{__('general.management')}}</span><span class="badge badge badge-info badge-pill float-right mr-2">3</span></a>
                 <ul class="menu-content">
-                    <li><a class="menu-item" href="dashboard-ecommerce.html" data-i18n="nav.dash.ecommerce">Tổng Quan</a>
+                    <li><a class="menu-item" href="dashboard-ecommerce.html">Tổng Quan</a>
                     </li>
-                    <li><a class="menu-item" href="dashboard-crypto.html" data-i18n="nav.dash.crypto">Đơn Hàng</a>
+                    <li><a class="menu-item" href="dashboard-crypto.html">Đơn Hàng</a>
                     </li>
-                    <li><a class="menu-item" href="dashboard-sales.html" data-i18n="nav.dash.sales">Nhập Hàng</a>
+                    <li><a class="menu-item" href="{{route('getListProducts')}}">Hàng Hóa</a>
                     </li>
-                    <li><a class="menu-item" href="dashboard-sales.html" data-i18n="nav.dash.sales">Kho Hàng</a>
+                    <li><a class="menu-item" href="dashboard-sales.html">Nhập Hàng</a>
                     </li>
-                    <li><a class="menu-item" href="dashboard-sales.html" data-i18n="nav.dash.sales">Khuyến Mãi</a>
+                    <li><a class="menu-item" href="dashboard-sales.html">Kho Hàng</a>
+                    </li>
+                    <li><a class="menu-item" href="dashboard-sales.html">Khuyến Mãi</a>
                     </li>
                 </ul>
             </li>   
