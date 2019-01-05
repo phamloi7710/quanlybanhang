@@ -27,4 +27,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    public function language()
+    {
+        return $this->hasMany('App\Model\Language','user_id','id');
+    }
 }

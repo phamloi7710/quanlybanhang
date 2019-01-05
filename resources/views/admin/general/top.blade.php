@@ -169,21 +169,22 @@
                                 <img src="{{url('')}}/assets/admin/app-assets/images/portrait/small/avatar-s-19.png" alt="avatar"><i></i></span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right">
-                                    <a class="dropdown-item" href="#"><i class="ft-user"></i> Edit Profile</a>
-                                    <a class="dropdown-item" href="#"><i class="ft-mail"></i> My Inbox</a>
-                                    <a class="dropdown-item" href="#"><i class="ft-check-square"></i> Task</a>
-                                    <a class="dropdown-item" href="#"><i class="ft-message-square"></i> Chats</a>
+                                    <a class="dropdown-item" href="#"><i class="ft-user"></i> {{__('general.profile')}}</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#"><i class="ft-power"></i> Logout</a>
+                                    <a class="dropdown-item" href="{{route('logout')}}"><i class="ft-power"></i> {{__('general.logOut')}}</a>
                                 </div>
                             </li>
                             <li class="dropdown dropdown-language nav-item">
                                 <a class="dropdown-toggle nav-link" id="dropdown-flag" href="#" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false"><i class="flag-icon flag-icon-gb"></i><span class="selected-language"></span></a>
-                                <div class="dropdown-menu" aria-labelledby="dropdown-flag"><a class="dropdown-item" href="#"><i class="flag-icon flag-icon-gb"></i> English</a>
-                                    <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-fr"></i> French</a>
-                                    <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-cn"></i> Chinese</a>
-                                    <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-de"></i> German</a>
+                                    aria-haspopup="true" aria-expanded="false"><img style="position: relative; display: inline-block; width: 1.33333333em; line-height: 1em;" src="{{url('')}}{{$flag->image}}"><span class="selected-language"></span></a>
+                                <div class="dropdown-menu" aria-labelledby="dropdown-flag">
+                                @if(isset($languages))
+                                @foreach($languages as $lang)
+                                <a class="dropdown-item" href="{{route('setLanguage',[$lang->code])}}"><img width="22" src="{{url('')}}{{$lang->image}}"> {{$lang->name}}</a>
+                                @endforeach
+                                @else
+                                <a href="javascript:;"> {{__("general.noLanguage")}}</a>
+                                @endif
                                 </div>
                             </li>
                             <li class="dropdown dropdown-notification nav-item">

@@ -1,125 +1,138 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="loading" lang="en" data-textdirection="ltr">
     <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <!-- Chrome, Firefox OS and Opera -->
-        <meta name="theme-color" content="#75C7C3">
-        <!-- Windows Phone -->
-        <meta name="msapplication-navbutton-color" content="#75C7C3">
-        <!-- iOS Safari -->
-        <meta name="apple-mobile-web-app-status-bar-style" content="#75C7C3">
-        <title>{{ trans('laravel-filemanager::lfm.title-page') }}</title>
+        <title>Quản Lý Hình Ảnh</title>
+        <link rel="stylesheet" type="text/css" href="{{url('')}}/assets/admin/app-assets/css/core/colors/palette-gradient.css">
+        <link rel="stylesheet" type="text/css" href="{{url('')}}/assets/admin/app-assets/css/pages/gallery.css">
+        <link rel="stylesheet" type="text/css" href="{{url('')}}/assets/admin/app-assets/vendors/js/gallery/photo-swipe/photoswipe.css">
+        <link rel="stylesheet" type="text/css" href="{{url('')}}/assets/admin/app-assets/vendors/js/gallery/photo-swipe/default-skin/default-skin.css">
+        <link rel="apple-touch-icon" href="{{url('')}}/assets/admin/app-assets/images/ico/apple-icon-120.png">
+        <link rel="shortcut icon" type="image/x-icon" href="{{url('')}}/assets/admin/app-assets/images/ico/favicon.ico">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Quicksand:300,400,500,700">
+        <link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="{{url('')}}/assets/admin/app-assets/css/vendors.css">
+        <link rel="stylesheet" type="text/css" href="{{url('')}}/assets/admin/app-assets/vendors/css/ui/prism.min.css">
+        <link rel="stylesheet" type="text/css" href="{{url('')}}/assets/admin/app-assets/css/app.css">
+        <link rel="stylesheet" type="text/css" href="{{url('')}}/assets/admin/app-assets/css/core/menu/menu-types/vertical-menu-modern.css">
+        <link rel="stylesheet" type="text/css" href="{{url('')}}/assets/admin/app-assets/css/core/colors/palette-gradient.css">
+        <link rel="stylesheet" type="text/css" href="{{url('')}}/assets/admin/assets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="{{url('')}}/assets/admin/custom/custom.css">
         <link rel="shortcut icon" type="image/png" href="{{url('')}}/assets/admin/filemanager/img/folder.png">
-        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> -->
-        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="{{url('')}}/assets/admin/filemanager/css/cropper.min.css">
+        <link rel="stylesheet" href="{{url('')}}/assets/admin/filemanager/css/mfb.css">
+        <link rel="stylesheet" href="{{url('')}}/assets/admin/filemanager/css/dropzone.min.css">
+        <link rel="stylesheet" type="text/css" href="{{url('')}}/assets/admin/app-assets/vendors/css/extensions/bootstrap-treeview.min.css">
+        <script src="{{url('')}}/assets/admin/app-assets/js/core/libraries/bootstrap.min.js" type="text/javascript"></script>
+        <script src="{{url('')}}/assets/admin/app-assets/js/core/libraries/jquery.min.js" type="text/javascript"></script>
+        <script src="{{url('')}}/assets/admin/custom/custom.header.js" type="text/javascript"></script>
+        <script src="{{url('')}}/assets/admin/app-assets/vendors/js/ui/headroom.min.js" type="text/javascript"></script>
+        <script src="{{url('')}}/assets/admin/app-assets/vendors/js/gallery/masonry/masonry.pkgd.min.js" type="text/javascript"></script>
+        <script src="{{url('')}}/assets/admin/app-assets/vendors/js/gallery/photo-swipe/photoswipe.min.js" type="text/javascript"></script>
+        <script src="{{url('')}}/assets/admin/app-assets/vendors/js/gallery/photo-swipe/photoswipe-ui-default.min.js" type="text/javascript"></script>
+        <script src="{{url('')}}/assets/admin/app-assets/js/scripts/gallery/photo-swipe/photoswipe-script.js" type="text/javascript"></script>
+        
         <style>{!! \File::get(base_path('assets/admin/filemanager/css/lfm.css')) !!}</style>
         {{-- Use the line below instead of the above if you need to cache the css. --}}
         {{-- 
         <link rel="stylesheet" href="{{url('')}}/assets/admin/filemanager/css/lfm.css">
         --}}
-        <link rel="stylesheet" href="{{url('')}}/assets/admin/filemanager/css/mfb.css">
-        <link rel="stylesheet" href="{{url('')}}/assets/admin/filemanager/css/dropzone.min.css">
-        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.css"> -->
-    </head>
-    <body>
-        <div class="container-fluid" id="wrapper">
-            <div class="panel panel-primary hidden-xs">
-                <div class="panel-heading">
-                    <h1 class="panel-title">{{ trans('laravel-filemanager::lfm.title-panel') }}</h1>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-2 hidden-xs">
-                    <div id="tree"></div>
-                </div>
-                <div class="col-sm-10 col-xs-12" id="main">
-                    <nav class="navbar navbar-default" id="nav">
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-buttons">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            </button>
-                            <a class="navbar-brand clickable hide" id="to-previous">
-                            <i class="fa fa-arrow-left"></i>
-                            <span class="hidden-xs">{{ trans('laravel-filemanager::lfm.nav-back') }}</span>
-                            </a>
-                            <a class="navbar-brand visible-xs" href="#">{{ trans('laravel-filemanager::lfm.title-panel') }}</a>
-                        </div>
-                        <div class="collapse navbar-collapse" id="nav-buttons">
-                            <ul class="nav navbar-nav navbar-right">
-                                <li>
-                                    <a class="clickable" id="thumbnail-display">
-                                    <i class="fa fa-th-large"></i>
-                                    <span>{{ trans('laravel-filemanager::lfm.nav-thumbnails') }}</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="clickable" id="list-display">
-                                    <i class="fa fa-list"></i>
-                                    <span>{{ trans('laravel-filemanager::lfm.nav-list') }}</span>
-                                    </a>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                    {{ trans('laravel-filemanager::lfm.nav-sort') }} <span class="caret"></span>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li>
-                                            <a href="#" id="list-sort-alphabetic">
-                                            <i class="fa fa-sort-alpha-asc"></i> {{ trans('laravel-filemanager::lfm.nav-sort-alphabetic') }}
+        
+        <style type="text/css">
+            .bootbox-body img{
+            width: 100%;
+            }
+        </style>
+        <div class="app-content content">
+            <div class="content-wrapper">
+                <div class="content-detached content-left">
+                    <div class="content-body">
+                        <section class="row">
+                            <div class="col-sm-12">
+                                <!-- Kick start -->
+                                <div id="kick-start" class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">
+                                            <a class="navbar-brand clickable hide" id="to-previous">
+                                            <i class="fa fa-arrow-left"></i>
+                                            <span class="hidden-xs">{{ trans('laravel-filemanager::lfm.nav-back') }}</span>
                                             </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" id="list-sort-time">
-                                            <i class="fa fa-sort-amount-asc"></i> {{ trans('laravel-filemanager::lfm.nav-sort-time') }}
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                    <div class="visible-xs" id="current_dir" style="padding: 5px 15px;background-color: #f8f8f8;color: #5e5e5e;"></div>
-                    <div id="alerts"></div>
-                    <div id="content"></div>
+                                        </h4>
+                                        <div class="heading-elements">
+                                            <div class="btn-group mr-1 mb-1">
+                                                <button type="button" class="btn btn-icon btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="la la-eye"></i></button>
+                                                <div class="dropdown-menu">
+                                                    <a class="dropdown-item" href="#" id="thumbnail-display"><i class="la la-image"></i> {{ trans('laravel-filemanager::lfm.nav-thumbnails') }}</a>
+                                                    <div class="dropdown-divider"></div>
+                                                    <a class="dropdown-item" href="#" id="list-display"><i class="la la-list-alt"></i> {{ trans('laravel-filemanager::lfm.nav-list') }}</a>
+                                                </div>
+                                            </div>
+                                            <div class="btn-group mr-1 mb-1">
+                                                <button type="button" class="btn btn-icon btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="la la-list-ol"></i></button>
+                                                <div class="dropdown-menu">
+                                                    <a class="dropdown-item" href="#" id="list-sort-alphabetic"><i class="la la-sort-alpha-asc"></i> {{ trans('laravel-filemanager::lfm.nav-sort-alphabetic') }}</a>
+                                                    <div class="dropdown-divider"></div>
+                                                    <a class="dropdown-item" href="#" id="list-sort-time"><i class="la la-clock-o"></i> {{ trans('laravel-filemanager::lfm.nav-sort-time') }}</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-content collapse show">
+                                        <div class="card-body">
+                                            <div id="alerts" style="padding-top: 20px;"></div>
+                                            <div class="table-responsive" id="content" style="padding-top: 20px;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
                 </div>
-                <ul id="fab">
-                    <li>
-                        <a href="#"></a>
-                        <ul class="hide">
-                            <li>
-                                <a href="#" id="add-folder" data-mfb-label="{{ trans('laravel-filemanager::lfm.nav-new') }}">
-                                <i class="fa fa-folder"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" id="upload" data-mfb-label="{{ trans('laravel-filemanager::lfm.nav-upload') }}">
-                                <i class="fa fa-upload"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
+                <div class="sidebar-detached sidebar-right sidebar-sticky" ,=",">
+                    <div class="sidebar">
+                        <div class="sidebar-content card d-none d-lg-block">
+                            <div class="card-body">
+                                <div id="tree"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="modal fade" id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
+        <ul id="fab">
+            <li>
+                <a href="#" style="background-color: #2ECC71;"></a>
+                <ul class="hide">
+                    <li>
+                        <a href="#" id="add-folder" data-mfb-label="{{ trans('laravel-filemanager::lfm.nav-new') }}" style="background-color: #2ECC71;">
+                        <i class="fa fa-folder"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-toggle="modal"
+                            data-target="#success" id="upload" data-mfb-label="{{ trans('laravel-filemanager::lfm.nav-upload') }}" style="background-color: #2ECC71;">
+                        <i class="fa fa-upload"></i>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <div class="modal fade text-left" id="success" tabindex="-1" role="dialog" aria-labelledby="myModalLabel9"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aia-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">{{ trans('laravel-filemanager::lfm.title-upload') }}</h4>
+                    <div class="modal-header bg-success white">
+                        <h4 class="modal-title white" id="myModalLabel9"><i class="la la-tree"></i> {{__('general.uploadImage')}}</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
                     <div class="modal-body">
                         <form action="{{ route('unisharp.lfm.upload') }}" role='form' id='uploadForm' name='uploadForm' method='post' enctype='multipart/form-data' class="dropzone">
                             <div class="form-group" id="attachment">
                                 <div class="controls text-center">
                                     <div class="input-group" style="width: 100%">
-                                        <a class="btn btn-primary" id="upload-button">{{ trans('laravel-filemanager::lfm.message-choose') }}</a>
+                                        <a class="btn btn-outline-success block btn-lg" id="upload-button">{{ trans('laravel-filemanager::lfm.message-choose') }}</a>
                                     </div>
                                 </div>
                             </div>
@@ -129,7 +142,7 @@
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">{{ trans('laravel-filemanager::lfm.btn-close') }}</button>
+                        <button type="button" class="btn grey btn-outline-secondary" data-dismiss="modal">{{__('general.close')}}</button>
                     </div>
                 </div>
             </div>
@@ -137,21 +150,35 @@
         <div id="lfm-loader">
             <img src="{{asset('assets/admin/filemanager/img/loader.svg')}}">
         </div>
-        <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> -->
-        <!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> -->
-        <script src="//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
-        <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script> -->
-        <script src="{{ asset('assets/admin/filemanager/js/cropper.min.js') }}"></script>
-        <script src="{{ asset('assets/admin/filemanager/js/jquery.form.min.js') }}"></script>
-        <script src="{{ asset('assets/admin/filemanager/js/dropzone.min.js') }}"></script>
+        @section('script')
+        <script src="{{url('')}}/assets/admin/plugins/bootbox/bootbox.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+        <script src="{{url('')}}/assets/admin/filemanager/js/cropper.min.js"></script>
+        <script src="{{url('')}}/assets/admin/filemanager/js/jquery.form.min.js'"></script>
+        <script src="{{url('')}}/assets/admin/filemanager/js/dropzone.min.js'"></script>
+        <script src="{{url('')}}/assets/admin/app-assets/vendors/js/vendors.min.js" type="text/javascript"></script>
+        <script src="{{url('')}}/assets/admin/app-assets/vendors/js/ui/prism.min.js" type="text/javascript" ></script>
+        <script src="{{url('')}}/assets/admin/app-assets/js/core/app-menu.js" type="text/javascript"></script>
+        <script src="{{url('')}}/assets/admin/app-assets/js/core/app.js" type="text/javascript"></script>
+        <script src="{{url('')}}/assets/admin/app-assets/js/scripts/customizer.js" type="text/javascript"></script>
+        <script src="{{url('')}}/assets/admin/app-assets/vendors/js/ui/popper.min.js" type="text/javascript"></script>
+        <script src="{{url('')}}/assets/admin/app-assets/vendors/js/ui/perfect-scrollbar.jquery.min.js" type="text/javascript"></script>
+        <script src="{{url('')}}/assets/admin/app-assets/vendors/js/ui/unison.min.js" type="text/javascript"></script>
+        <script src="{{url('')}}/assets/admin/app-assets/vendors/js/ui/blockUI.min.js" type="text/javascript"></script>
+        <script src="{{url('')}}/assets/admin/app-assets/vendors/js/ui/jquery-sliding-menu.js" type="text/javascript"></script>
+        <script src="{{url('')}}/assets/admin/app-assets/vendors/js/ui/jquery.sticky.js" type="text/javascript"></script>
+        <script src="{{url('')}}/assets/admin/app-assets/js/scripts/pages/sk-content-sidebar.js" type="text/javascript"></script>
+        <script src="{{url('')}}/assets/admin/filemanager/js/lfm.js" type="text/javascript"></script>
+        <script src="{{url('')}}/assets/admin/app-assets/vendors/js/extensions/bootstrap-treeview.min.js" type="text/javascript"></script>
+        <script src="{{url('')}}/assets/admin/app-assets/js/scripts/extensions/tree-view.js" type="text/javascript"></script>
         <script>
             var route_prefix = "{{ url('/') }}";
             var lfm_route = "{{ url(config('lfm.url_prefix', config('lfm.prefix'))) }}";
             var lang = {!! json_encode(trans('laravel-filemanager::lfm')) !!};
         </script>
         <script>{!! \File::get(base_path('assets/admin/filemanager/js/script.js')) !!}</script>
-        <!-- {{-- Use the line below instead of the above if you need to cache the script. --}}
-        {{-- <script src="{{ asset('assets/admin/filemanager/js/script.js') }}"></script> --}} -->
+        {{-- Use the line below instead of the above if you need to cache the script. --}}
+        {{-- <script src="{{ asset('assets/admin/filemanager/js/script.js') }}"></script> --}}
         <script>
             $.fn.fab = function () {
               var menu = this;
@@ -183,13 +210,13 @@
             });
             
             Dropzone.options.uploadForm = {
-              paramName: "upload[]", // The name that will be used to transfer the file
+              paramName: "upload[]",
               uploadMultiple: false,
               parallelUploads: 5,
               clickable: '#upload-button',
               dictDefaultMessage: 'Or drop files here to upload',
               init: function() {
-                var _this = this; // For the closure
+                var _this = this;
                 this.on('success', function(file, response) {
                   if (response == 'OK') {
                     refreshFoldersAndItems('OK');
@@ -202,5 +229,6 @@
               maxFilesize: ({{ lcfirst(str_singular(request('type') ?: '')) == 'image' ? config('lfm.max_image_size') : config('lfm.max_file_size') }} / 1000)
             }
         </script>
-    </body>
+       
+        </body>
 </html>

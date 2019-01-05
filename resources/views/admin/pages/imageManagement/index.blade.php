@@ -33,50 +33,6 @@ Quản Lý Hình Ảnh
         width: 100%;
     }
 </style>
-@stop
-<!-- <div class="content-detached content-left">
-    <div class="content-body">
-        <section class="row">
-            <div class="col-sm-12">
-                <div id="kick-start" class="card">
-                    <section id="image-gallery" class="card" id="main">
-                        <div class="card-header" id="nav">
-                            <h4 class="card-title">
-                                <a class="navbar-brand clickable hide" id="to-previous">
-                                <i class="fa fa-arrow-left"></i>
-                                <span class="hidden-xs">{{ trans('laravel-filemanager::lfm.nav-back') }}</span>
-                                </a>
-                            </h4>
-                            <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
-                            <div class="heading-elements" id="nav-buttons">
-                                <div class="btn-group mr-1 mb-1">
-                                    <button type="button" class="btn btn-icon btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="la la-eye"></i></button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#" id="thumbnail-display"><i class="la la-image"></i> {{ trans('laravel-filemanager::lfm.nav-thumbnails') }}</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#" id="list-display"><i class="la la-list-alt"></i> {{ trans('laravel-filemanager::lfm.nav-list') }}</a>
-                                    </div>
-                                </div>
-                                <div class="btn-group mr-1 mb-1">
-                                    <button type="button" class="btn btn-icon btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="la la-list-ol"></i></button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#" id="list-sort-alphabetic"><i class="la la-sort-alpha-asc"></i> {{ trans('laravel-filemanager::lfm.nav-sort-alphabetic') }}</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#" id="list-sort-time"><i class="la la-clock-o"></i> {{ trans('laravel-filemanager::lfm.nav-sort-time') }}</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="alerts" style="padding-top: 20px;"></div>
-                            <div id="content" style="padding-top: 20px;"></div>
-                        </div>
-                    </section>
-                </div>
-            </div>
-        </section>
-    </div>
-</div> -->
-
-
 <div class="app-content content">
     <div class="content-wrapper">
         <div class="content-header row">

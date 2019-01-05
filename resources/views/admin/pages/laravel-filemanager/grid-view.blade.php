@@ -26,7 +26,7 @@
                 @elseif($item->is_file) onclick="download('{{ $item_name }}')" @endif >
           {{ $item_name }}
         </button>
-        <button type="button" class="btn btn-default dropdown-toggle btn-xs" data-toggle="dropdown" aria-expanded="false">
+        <button type="button" class="btn btn-default dropdown-toggle btn-xs item_name" data-toggle="dropdown" aria-expanded="false">
           <span class="caret"></span>
           <span class="sr-only">Toggle Dropdown</span>
         </button>
