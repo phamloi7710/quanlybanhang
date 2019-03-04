@@ -30,8 +30,9 @@
         <!-- BEGIN Custom CSS-->
         <link rel="stylesheet" type="text/css" href="{{url('')}}/assets/admin/assets/css/style.css">
         <!-- END Custom CSS-->
-        <script src="{{url('')}}/assets/admin/app-assets/js/core/libraries/bootstrap.min.js" type="text/javascript"></script>
-        <script src="{{url('')}}/assets/admin/app-assets/js/core/libraries/jquery.min.js" type="text/javascript"></script>
+        <link rel="stylesheet" type="text/css" href="{{url('')}}/assets/admin/app-assets/vendors/css/extensions/toastr.css">
+        <link rel="stylesheet" type="text/css" href="{{url('')}}/assets/admin/app-assets/css/plugins/extensions/toastr.css">
+        
    @yield('link')
     </head>
     <body class="vertical-layout vertical-menu-modern 2-columns   menu-expanded fixed-navbar"

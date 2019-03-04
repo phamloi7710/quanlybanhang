@@ -18,22 +18,15 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="content-header-right col-md-6 col-12">
+            <div class="content-header-right col-md-6 col-12">
                 <div class="dropdown float-md-right">
-                    <a href="{{route('getAddProduct')}}" class="btn btn-outline-success btn-min-width btn-glow mr-1 mb-1">Thêm Mới</a>
+                    <a href="{{route('getAddProduct')}}" class="btn btn-outline-success btn-min-width btn-glow mr-1 mb-1">{{__('general.save')}}</a>
                 </div>
-            </div> -->
+            </div>
         </div>
         <div class="content-body">
             <!-- Description -->
             <section id="description" class="card">
-                <div class="card-header">
-                    <div class="content-header-right col-md-6 col-12 pull-right">
-                        <div class="dropdown float-md-right">
-                            <a href="{{route('getAddProduct')}}" class="btn btn-outline-success btn-min-width btn-glow mr-1 mb-1">{{__('general.save')}}</a>
-                        </div>
-                    </div>
-                </div>
                 <div class="card-content">
                     <div class="card-body">
                         <form class="form">
