@@ -12,7 +12,7 @@
         "fideloper/proxy": "^4.0",
         "laravel/framework": "5.7.*",
         "laravel/tinker": "^1.0",
-        "unisharp/laravel-filemanager": "dev-master"
+        "unisharp/laravel-filemanager": "^1.9"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
@@ -39,6 +39,9 @@
         "classmap": [
             "database/seeds",
             "database/factories"
+        ],
+        "files": [
+            "app\\Helpers\\ChangeTitle.php"
         ]
     },
     "autoload-dev": {

@@ -67,7 +67,7 @@
   width: 100%;
   padding-bottom: 100%;
   position: relative;
-  border: 1px solid rgb(221, 221, 221);
+  /*border: 1px solid rgb(221, 221, 221);*/
   border-radius: 3px;
   // max-width: 210px;
   max-height: 210px;
@@ -110,9 +110,9 @@
 .caption > .btn-group > .item_name {
   width: calc(100% - 25px);
 }
-.caption > .btn-group > .dropdown-toggle {
+/*.caption > .btn-group > .dropdown-toggle {
   width: 25px;
-}
+}*/
 
 #lfm-loader{
   display: none;
@@ -147,4 +147,11 @@
 }
 .table-list-view .actions a:hover{
   text-decoration: none;
+}
+/*created by Phạm Lợi*/
+a.dropdown-item {
+  color: #2ECC71;
+}
+a.dropdown-item a:hover {
+  color: #48D7A4;
 }

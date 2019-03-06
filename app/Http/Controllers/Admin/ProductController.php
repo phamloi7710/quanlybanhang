@@ -31,6 +31,7 @@ class ProductController extends Controller
     {
         $category = new Category();
         $category->name = $request->txtName;
+        $category->slug = changeTitle($request->txtName);
         $category->status = $request->status;
         $input['txtName'] = Input::get('txtName');
         $rules = array('txtName' => 'unique:categories,name');
@@ -61,8 +62,9 @@ class ProductController extends Controller
     {
         $category = Category::find($id);
         $category->name = $request->txtName;
+        $category->slug = changeTitle($request->txtName);
         $category->status = $request->status;
-        $input['txtName'] = Input::get('txtName');
+        $input['txtName'] = $request->txtName;
         $rules = array('txtName' => 'unique:categories,name');
         $validator = Validator::make($input, $rules);
         if ($validator->fails()) {

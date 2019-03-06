@@ -7,6 +7,6 @@
 		'error' => [
 			'addNew' => ':attribute Đã Tồn Tại!',
 			'edit' => ':attribute Đã Tồn Tại!',
-		],
+	    ],
 	];
 ?>

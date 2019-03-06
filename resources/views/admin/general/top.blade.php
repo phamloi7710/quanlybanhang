@@ -4,7 +4,7 @@
                     <ul class="nav navbar-nav flex-row">
                         <li class="nav-item mobile-menu d-md-none mr-auto"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ft-menu font-large-1"></i></a></li>
                         <li class="nav-item mr-auto">
-                            <a class="navbar-brand" href="index.html">
+                            <a class="navbar-brand" href="{{route('getIndexAdmin')}}">
                                 <img class="brand-logo" alt="modern admin logo" src="{{url('')}}/assets/admin/app-assets/images/logo/logo.png">
                                 <h3 class="brand-text">Modern Admin</h3>
                             </a>
@@ -162,28 +162,29 @@
                         <ul class="nav navbar-nav float-right">
                             <li class="dropdown dropdown-user nav-item">
                                 <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
-                                <span class="mr-1">Hello,
-                                <span class="user-name text-bold-700">John Doe</span>
+                                <span class="mr-1">{{__('general.hello')}},
+                                <span class="user-name text-bold-700">{{Auth::user()->name}}</span>
                                 </span>
                                 <span class="avatar avatar-online">
                                 <img src="{{url('')}}/assets/admin/app-assets/images/portrait/small/avatar-s-19.png" alt="avatar"><i></i></span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right">
-                                    <a class="dropdown-item" href="#"><i class="ft-user"></i> Edit Profile</a>
-                                    <a class="dropdown-item" href="#"><i class="ft-mail"></i> My Inbox</a>
-                                    <a class="dropdown-item" href="#"><i class="ft-check-square"></i> Task</a>
-                                    <a class="dropdown-item" href="#"><i class="ft-message-square"></i> Chats</a>
+                                    <a class="dropdown-item" href="#"><i class="ft-user"></i> {{__('general.profile')}}</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="{{route('getLogoutAdmin')}}"><i class="ft-power"></i> {{__('general.logOut')}}</a>
                                 </div>
                             </li>
                             <li class="dropdown dropdown-language nav-item">
                                 <a class="dropdown-toggle nav-link" id="dropdown-flag" href="#" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false"><i class="flag-icon flag-icon-gb"></i><span class="selected-language"></span></a>
-                                <div class="dropdown-menu" aria-labelledby="dropdown-flag"><a class="dropdown-item" href="#"><i class="flag-icon flag-icon-gb"></i> English</a>
-                                    <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-fr"></i> French</a>
-                                    <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-cn"></i> Chinese</a>
-                                    <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-de"></i> German</a>
+                                    aria-haspopup="true" aria-expanded="false"><img style="position: relative; display: inline-block; width: 1.33333333em; line-height: 1em;" src="{{url('')}}{{$flag->image}}"><span class="selected-language"></span></a>
+                                <div class="dropdown-menu" aria-labelledby="dropdown-flag">
+                                @if(isset($languages))
+                                @foreach($languages as $lang)
+                                <a class="dropdown-item" href="{{route('setLanguage',[$lang->code])}}"><img width="22" src="{{url('')}}{{$lang->image}}"> {{$lang->name}}</a>
+                                @endforeach
+                                @else
+                                <a href="javascript:;"> {{__("general.noLanguage")}}</a>
+                                @endif
                                 </div>
                             </li>
                             <li class="dropdown dropdown-notification nav-item">
@@ -338,5 +339,4 @@
                     </div>
                 </div>
             </div>
-        </nav>
-    </div>
+</nav>

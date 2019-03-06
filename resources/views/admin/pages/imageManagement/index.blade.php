@@ -1,22 +1,10 @@
-@section('title')
+ @section('title')
 Quản Lý Hình Ảnh
 @stop
 @extends('admin.general.master')
 @section('content')
 @section('link')
-<link rel="stylesheet" type="text/css" href="{{url('')}}/assets/admin/app-assets/css/core/colors/palette-gradient.css">
-<link rel="stylesheet" type="text/css" href="{{url('')}}/assets/admin/app-assets/css/pages/gallery.css">
-<link rel="stylesheet" type="text/css" href="{{url('')}}/assets/admin/app-assets/vendors/js/gallery/photo-swipe/photoswipe.css">
-<link rel="stylesheet" type="text/css" href="{{url('')}}/assets/admin/app-assets/vendors/js/gallery/photo-swipe/default-skin/default-skin.css">
 <script src="{{url('')}}/assets/admin/app-assets/vendors/js/ui/headroom.min.js" type="text/javascript"></script>
-<script src="{{url('')}}/assets/admin/app-assets/vendors/js/gallery/masonry/masonry.pkgd.min.js"
-    type="text/javascript"></script>
-<script src="{{url('')}}/assets/admin/app-assets/vendors/js/gallery/photo-swipe/photoswipe.min.js"
-    type="text/javascript"></script>
-<script src="{{url('')}}/assets/admin/app-assets/vendors/js/gallery/photo-swipe/photoswipe-ui-default.min.js"
-    type="text/javascript"></script>
-<script src="{{url('')}}/assets/admin/app-assets/js/scripts/gallery/photo-swipe/photoswipe-script.js"
-    type="text/javascript"></script>
 <link rel="shortcut icon" type="image/png" href="{{url('')}}/assets/admin/filemanager/img/folder.png">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="{{url('')}}/assets/admin/filemanager/css/cropper.min.css">
@@ -34,65 +22,26 @@ Quản Lý Hình Ảnh
     }
 </style>
 @stop
-<!-- <div class="content-detached content-left">
-    <div class="content-body">
-        <section class="row">
-            <div class="col-sm-12">
-                <div id="kick-start" class="card">
-                    <section id="image-gallery" class="card" id="main">
-                        <div class="card-header" id="nav">
-                            <h4 class="card-title">
-                                <a class="navbar-brand clickable hide" id="to-previous">
-                                <i class="fa fa-arrow-left"></i>
-                                <span class="hidden-xs">{{ trans('laravel-filemanager::lfm.nav-back') }}</span>
-                                </a>
-                            </h4>
-                            <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
-                            <div class="heading-elements" id="nav-buttons">
-                                <div class="btn-group mr-1 mb-1">
-                                    <button type="button" class="btn btn-icon btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="la la-eye"></i></button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#" id="thumbnail-display"><i class="la la-image"></i> {{ trans('laravel-filemanager::lfm.nav-thumbnails') }}</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#" id="list-display"><i class="la la-list-alt"></i> {{ trans('laravel-filemanager::lfm.nav-list') }}</a>
-                                    </div>
-                                </div>
-                                <div class="btn-group mr-1 mb-1">
-                                    <button type="button" class="btn btn-icon btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="la la-list-ol"></i></button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#" id="list-sort-alphabetic"><i class="la la-sort-alpha-asc"></i> {{ trans('laravel-filemanager::lfm.nav-sort-alphabetic') }}</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#" id="list-sort-time"><i class="la la-clock-o"></i> {{ trans('laravel-filemanager::lfm.nav-sort-time') }}</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="alerts" style="padding-top: 20px;"></div>
-                            <div id="content" style="padding-top: 20px;"></div>
-                        </div>
-                    </section>
-                </div>
-            </div>
-        </section>
-    </div>
-</div> -->
-
-
 <div class="app-content content">
     <div class="content-wrapper">
         <div class="content-header row">
-            <div class="content-header-left col-md-6 col-12 mb-2 breadcrumb-new">
-                <h3 class="content-header-title mb-0 d-inline-block">Detached Right Sticky Sidebar</h3>
-                <div class="row breadcrumbs-top d-inline-block">
+            <div class="content-header-left col-md-6 col-12">
+                <div class="row breadcrumbs-top">
                     <div class="breadcrumb-wrapper col-12">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">Home</a>
+                        <h4 class="card-title">{{__('general.imageManagement')}}</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="content-header-right col-md-6 col-12">
+                <div class="dropdown float-md-right">
+                    <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{{route('getIndexAdmin')}}">{{__('general.home')}}</a>
                             </li>
-                            <li class="breadcrumb-item"><a href="#">Starters Kit</a>
+                            <li class="breadcrumb-item"><a href="#">{{__('general.management')}}</a>
                             </li>
-                            <li class="breadcrumb-item active">Content detached right sticky sidebar
+                            <li class="breadcrumb-item active">{{__('general.imageManagement')}}
                             </li>
                         </ol>
-                    </div>
                 </div>
             </div>
         </div>
@@ -168,18 +117,22 @@ Quản Lý Hình Ảnh
         </ul>
     </li>
 </ul>
-<div class="modal fade text-left" id="success" tabindex="-1" role="dialog" aria-labelledby="myModalLabel9"
+
+<div class="modal fade text-left" id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header bg-success white">
-                <h4 class="modal-title white" id="myModalLabel9"><i class="la la-tree"></i> {{__('general.uploadImage')}}</h4>
+                <h4 class="modal-title white" id="myModalLabel"><i class="la la-tree"></i> {{__('general.uploadImage')}}</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{ route('unisharp.lfm.upload') }}" role='form' id='uploadForm' name='uploadForm' method='post' enctype='multipart/form-data' class="dropzone">
+                <form action="{{ route('unisharp.lfm.upload') }}" role="form" id="uploadForm" name="uploadForm" method="post" enctype="multipart/form-data" class="dropzone">
+                    <input type='hidden' name='working_dir' id='working_dir'>
+                    <input type='hidden' name='type' id='type' value='{{ request("type") }}'>
+                    <input type='hidden' name='_token' value='{{csrf_token()}}'>
                     <div class="form-group" id="attachment">
                         <div class="controls text-center">
                             <div class="input-group" style="width: 100%">
@@ -187,9 +140,7 @@ Quản Lý Hình Ảnh
                             </div>
                         </div>
                     </div>
-                    <input type='hidden' name='working_dir' id='working_dir'>
-                    <input type='hidden' name='type' id='type' value='{{ request("type") }}'>
-                    <input type='hidden' name='_token' value='{{csrf_token()}}'>
+                        
                 </form>
             </div>
             <div class="modal-footer">
@@ -203,10 +154,13 @@ Quản Lý Hình Ảnh
 </div>
 @section('script')
 <script src="{{url('')}}/assets/admin/plugins/bootbox/bootbox.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 <script src="{{ asset('assets/admin/filemanager/js/cropper.min.js') }}"></script>
 <script src="{{ asset('assets/admin/filemanager/js/jquery.form.min.js') }}"></script>
 <script src="{{ asset('assets/admin/filemanager/js/dropzone.min.js') }}"></script>
+<script src="{{url('')}}/assets/admin/app-assets/vendors/js/extensions/bootstrap-treeview.min.js"
+  type="text/javascript"></script>
+<script src="{{url('')}}/assets/admin/app-assets/js/scripts/extensions/tree-view.js" type="text/javascript"></script>
 <script>
     var route_prefix = "{{ url('/') }}";
     var lfm_route = "{{ url(config('lfm.url_prefix', config('lfm.prefix'))) }}";
@@ -266,8 +220,6 @@ Quản Lý Hình Ảnh
     }
 </script>
 
-<script src="{{url('')}}/assets/admin/app-assets/vendors/js/extensions/bootstrap-treeview.min.js"
-  type="text/javascript"></script>
-  <script src="{{url('')}}/assets/admin/app-assets/js/scripts/extensions/tree-view.js" type="text/javascript"></script>
+    
 @stop
 @stop
