@@ -1,37 +1,55 @@
 @extends('admin.general.master')
 @section('content') 
+@section('link')
+<link rel="stylesheet" type="text/css" href="{{url('')}}/assets/admin/app-assets/vendors/css/forms/spinner/jquery.bootstrap-touchspin.css">
+  <link rel="stylesheet" type="text/css" href="{{url('')}}/assets/admin/app-assets/vendors/css/forms/icheck/icheck.css">
+  <link rel="stylesheet" type="text/css" href="{{url('')}}/assets/admin/app-assets/vendors/css/forms/toggle/bootstrap-switch.min.css">
+  <link rel="stylesheet" type="text/css" href="{{url('')}}/assets/admin/app-assets/vendors/css/forms/toggle/switchery.min.css">
+  <link rel="stylesheet" type="text/css" href="{{url('')}}/assets/admin/app-assets/css/plugins/forms/validation/form-validation.css">css
+  <link rel="stylesheet" type="text/css" href="{{url('')}}/assets/admin/app-assets/css/pages/login-register.css">
+@stop
+@section('script')
+<script src="{{url('')}}/assets/admin/app-assets/vendors/js/forms/spinner/jquery.bootstrap-touchspin.js"
+  type="text/javascript"></script>
+  <script src="{{url('')}}/assets/admin/app-assets/vendors/js/forms/validation/jqBootstrapValidation.js"
+  type="text/javascript"></script>
+  <script src="{{url('')}}/assets/admin/app-assets/vendors/js/forms/icheck/icheck.min.js" type="text/javascript"></script>
+  <script src="{{url('')}}/assets/admin/app-assets/vendors/js/forms/toggle/bootstrap-switch.min.js"
+  type="text/javascript"></script>
+  <script src="{{url('')}}/assets/admin/app-assets/vendors/js/forms/toggle/switchery.min.js" type="text/javascript"></script>
+  <script src="{{url('')}}/assets/admin/app-assets/js/scripts/forms/validation/form-validation.js"
+  type="text/javascript"></script>
+  <script src="{{url('')}}/assets/admin/app-assets/vendors/js/editors/ckeditor/ckeditor.js" type="text/javascript"></script>
+  
+@stop
 <div class="app-content content">
     <div class="content-wrapper">
-        <div class="content-header row">
-            <div class="content-header-left col-md-6 col-12 mb-2 breadcrumb-new">
-                <h3 class="content-header-title mb-0 d-inline-block">Bordered Navigation</h3>
-                <div class="row breadcrumbs-top d-inline-block">
+        <form class="form" novalidate>
+            <div class="content-header row">
+            <div class="content-header-left col-md-6 col-12">
+                <div class="row breadcrumbs-top">
                     <div class="breadcrumb-wrapper col-12">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">Trang Chủ</a>
-                            </li>
-                            <li class="breadcrumb-item"><a href="#">Hàng Hóa</a>
-                            </li>
-                            <li class="breadcrumb-item active">Thêm Mới Hàng Hóa
-                            </li>
-                        </ol>
+                        <h4 class="card-title">{{__('title.addNewProduct')}}</h4>
                     </div>
                 </div>
             </div>
-<<<<<<< HEAD
             <div class="content-header-right col-md-6 col-12">
                 <div class="dropdown float-md-right">
-                    <a href="{{route('getAddProduct')}}" class="btn btn-outline-success btn-min-width btn-glow mr-1 mb-1">{{__('general.save')}}</a>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{{route('getIndexAdmin')}}">{{__('general.home')}}</a>
+                        </li>
+                        <li class="breadcrumb-item"><a href="#">{{__('general.product')}}</a>
+                        </li>
+                        <li class="breadcrumb-item active">{{__('title.addNewProduct')}}
+                        </li>
+                    </ol>
                 </div>
             </div>
-=======
->>>>>>> 7375e6c284d53a4f8f4596850875c3e39d353dc5
         </div>
-        <div class="content-body">
-            <section id="description" class="card">
-                <div class="card-content">
-                    <div class="card-body">
-                        <form class="form">
+            <div class="content-body">
+                <section id="description" class="card">
+                    <div class="card-content">
+                        <div class="card-body">
                             <div class="row">
                                 <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                     <div class="card border-blue border-lighten-2">
@@ -54,60 +72,84 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="projectinput1">{{__('general.productName')}}</label>
-                                                <input name="txtName" type="text" class="form-control round" placeholder="{{__('placeholder.productName')}}">
+                                                <h5>{{__('general.productName')}}
+                                                    <span class="required red">(*)</span>
+                                                </h5>
+                                                <div class="controls">
+                                                    <input value="{{old('txtName')}}" type="text" id="txtName" class="form-control" placeholder="{{__('placeholder.productName')}}" name="txtName"required data-validation-required-message="{{__('validation.required', ['attribute'=>__('general.categoryName')])}}" maxlength="128" data-validation-maxlength-message="{{__('validation.max.string', ['attribute'=>__('general.categoryName'), 'max'=>'128'])}}" minlength="4" data-validation-minlength-message="{{__('validation.min.string', ['attribute'=>__('general.categoryName'), 'min'=>'4'])}}">
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="projectinput1">{{__('general.productCode')}}</label>
-                                                <input name="txtCode" type="text" class="form-control round" placeholder="{{__('placeholder.productCode')}}">
+                                                <h5>{{__('general.category')}}
+                                                    <span class="required red">(*)</span>
+                                                </h5>
+                                                <div class="controls">
+                                                    <select name="sltCate" class="form-control round">
+                                                        <option><a href="">Thêm Mới Danh Mục</a></option>
+                                                        <option>Quản Lý Danh Mục</option>
+                                                    </select>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-5">
+                                        <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="projectinput1">{{__('general.category')}}</label>
-                                                <select name="sltCate" class="form-control round">
-                                                    <option>100</option>
-                                                    <option>2</option> 
-
-                                                    <option><a href="">Thêm Mới Danh Mục</a></option>
-                                                    <option>Quản Lý Danh Mục</option>
-                                                </select>
+                                                <h5>{{__('general.price')}}
+                                                </h5>
+                                                <div class="controls">
+                                                    <input value="{{old('txtPrice')}}" type="text" id="txtPrice" class="form-control" placeholder="{{__('placeholder.price')}}" name="txtPrice"required data-validation-required-message="{{__('validation.required', ['attribute'=>__('general.categoryName')])}}" maxlength="128" data-validation-maxlength-message="{{__('validation.max.string', ['attribute'=>__('general.categoryName'), 'max'=>'128'])}}" minlength="4" data-validation-minlength-message="{{__('validation.min.string', ['attribute'=>__('general.categoryName'), 'min'=>'4'])}}">
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-1">
-                                            <a href="javascript:;" style="margin-top: 30px;" href="#" class="btn btn-outline-info mb-10 btn-sm">
-                                               <span class="la la-cog font-medium-4"></span>
-                                            </a>
-                                        </div>
-                                        <div class="col-md-5">
+                                        <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="projectinput1">{{__('general.manufacturer')}}</label>
-                                                <select name="sltManufacturer" class="form-control round">
-                                                    <option>100</option>
-                                                    <option>2</option>
-                                                    <option>3</option>
-                                                    <option>4</option>
-                                                </select>
+                                                <h5>{{__('general.salePrice')}}
+                                                </h5>
+                                                <div class="controls">
+                                                    <input value="{{old('txtSalePrice')}}" type="text" id="txtSalePrice" class="form-control" placeholder="{{__('placeholder.salePrice')}}" name="txtSalePrice"required data-validation-required-message="{{__('validation.required', ['attribute'=>__('general.categoryName')])}}" maxlength="128" data-validation-maxlength-message="{{__('validation.max.string', ['attribute'=>__('general.categoryName'), 'max'=>'128'])}}" minlength="4" data-validation-minlength-message="{{__('validation.min.string', ['attribute'=>__('general.categoryName'), 'min'=>'4'])}}">
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-1">
-                                            <a href="javascript:;" style="margin-top: 30px;" href="#" class="btn btn-outline-info mb-10 btn-sm">
-                                               <span class="la la-cog font-medium-4"></span>
-                                            </a>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <h5>{{__('general.contentProduct')}}
+                                                </h5>
+                                                <div class="controls">
+                                                    <textarea id="ckeditor" name="content" class="form-control">{!! old('content') !!}</textarea>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                                
-                        </form>
+                            <div class="form-actions right">
+                                    <button onclick="location.href='{{route('getListProductsAdmin')}}'" type="button" class="btn btn-danger mr-1">
+                                        <i class="ft-x"></i> {{__('general.cancel')}}
+                                    </button>
+                                    <button type="submit" class="btn btn-success">
+                                        <i class="la la-check-square-o"></i> {{__('general.saveChange')}}
+                                    </button>
+                                </div>
+                        </div>
                     </div>
-                </div>
-            </section>
-        </div>
+                </section>
+            </div>
+        </form>
     </div>
 </div>
+<script src="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+<script>
+    var options = {
+    filebrowserImageBrowseUrl: '/admin/uploads?type=images',
+    filebrowserImageUploadUrl: '/admin/uploads/upload?type=Images&_token=',
+    filebrowserBrowseUrl: '/admin/uploads?type=Files',
+    filebrowserUploadUrl: '/admin/uploads/upload?type=Files&_token='
+    };
+</script>
+<script>
+CKEDITOR.replace('ckeditor', options);
+</script>
 @stop

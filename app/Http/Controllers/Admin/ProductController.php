@@ -10,14 +10,7 @@ use Validator;
 use Illuminate\Support\Facades\Input;
 class ProductController extends Controller
 {
-    public function getList()
-    {
-    	return view('admin.pages.product.list');
-    }
-    public function getAdd()
-    {
-    	return view('admin.pages.product.add');
-    }
+    
     public function getListCate()
     {
         $categories = Category::all();
@@ -82,6 +75,26 @@ class ProductController extends Controller
             );
             return redirect()->route('getListCateAdmin')->with($notifySuccess);
         }
+        
+    }
+    public function getList()
+    {
+        return view('admin.pages.product.list');
+    }
+    public function getAdd()
+    {
+        return view('admin.pages.product.add');
+    }
+    public function postAdd(Request $request)
+    {
+        
+    }
+    public function getEdit($id)
+    {
+        
+    }
+    public function postEdit(Request $request, $id)
+    {
         
     }
 }

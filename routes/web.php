@@ -25,10 +25,10 @@ Route::group(['prefix'=>'admin', 'middleware'=>'checkRoleAdmin'], function(){
 		Route::get('edit/{id}.html', 'Admin\ProductController@getEditCate')->name('getEditCateAdmin');
 		Route::post('edit/{id}.html', 'Admin\ProductController@postEditCate')->name('postEditCateAdmin');
 	});
-	Route::group(['prefix'=>'products'], function(){
-		Route::get('list', 'Admin\ProductController@getList')->name('getListProducts');
-		Route::get('add-new.html', 'Admin\ProductController@getAdd')->name('getAddProduct');
-		Route::post('add-new.html', 'Admin\ProductController@postAdd')->name('postAddProduct');
+	Route::group(['prefix'=>'product'], function(){
+		Route::get('list.html', 'Admin\ProductController@getList')->name('getListProductsAdmin');
+		Route::get('add-new.html', 'Admin\ProductController@getAdd')->name('getAddProductAdmin');
+		Route::post('add-new.html', 'Admin\ProductController@postAdd')->name('postAddProductAdmin');
 	});
 	Route::group(['prefix'=>'language'], function(){
 		Route::get('list', 'Admin\LanguageController@getList')->name('getListLanguages');

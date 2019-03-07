@@ -47,6 +47,9 @@
 		'profile'=>'Trang Cá Nhân',
 		'allCategory' => 'Tất Cả Danh Mục',
 		'imageManagement' => 'Quản Lý Hình Ảnh',
-		'option' => 'Tuỳ Chọn'
+		'option' => 'Tuỳ Chọn',
+		'price' => 'Giá Bán',
+		'salePrice' => 'Giá Khuyến Mãi',
+		'contentProduct' => 'Mô Tả Chi Tiết Sản Phẩm',
 	];
 ?>

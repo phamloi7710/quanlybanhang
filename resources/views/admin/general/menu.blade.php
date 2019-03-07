@@ -11,6 +11,8 @@
                 <ul class="menu-content">
                     <li><a class="menu-item" href="{{route('getListCateAdmin')}}">{{__('general.category')}}</a>
                     </li>
+                    <li><a class="menu-item" href="{{route('getListProductsAdmin')}}">{{__('general.product')}}</a>
+                    </li>
                 </ul>
             </li>
             <li class=" nav-item">
