@@ -86,7 +86,7 @@
                                                     <span class="required red">(*)</span>
                                                 </h5>
                                                 <div class="controls">
-                                                    <select name="sltCate" class="form-control round">
+                                                    <select name="sltCate" class="form-control">
                                                         <option><a href="">Thêm Mới Danh Mục</a></option>
                                                         <option>Quản Lý Danh Mục</option>
                                                     </select>
@@ -115,12 +115,53 @@
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <h5>{{__('general.contentProduct')}}
+                                                <h5>{{__('general.imageProduct')}}
                                                 </h5>
                                                 <div class="controls">
-                                                    <textarea id="ckeditor" name="content" class="form-control">{!! old('content') !!}</textarea>
+                                                    <table class="table table-bordered mb-0">
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="text-center" style="width: 80%">{{__('general.imageUrl')}}</th>
+                                                                <th class="text-center" style="width: 20%">
+                                                                    <div class="heading-elements">
+                                                                        <a onclick="addImage();" class="btn btn-primary btn-sm"><i class="ft-plus-circle"></i> {{__('general.addImage')}}</a>
+                                                                    </div>
+                                                                </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody id="contentImage">
+                                                            <!-- <tr>
+                                                                <td>
+                                                                    <div class="row">
+                                                                        <div class="col-md-10">
+                                                                            <input type="text" class="form-control" placeholder="{{__('general.imageUrl')}}" name="txtImageUrl[]">
+                                                                        </div>
+                                                                        <div class="col-md-2">
+                                                                            <div class="heading-elements">
+                                                                                <button class="btn btn-success btn-sm"><i class="ft-plus-circle"></i> {{__('general.chooseImage')}}</button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <div class="heading-elements">
+                                                                        <button class="btn btn-danger btn-sm"><i class="ft-trash-2"></i></button>
+                                                                    </div>
+                                                                </td>
+                                                            </tr> -->
+                                                        </tbody>
+                                                    </table>
                                                 </div>
                                             </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <h5>{{__('general.contentProduct')}}
+                                        </h5>
+                                        <div class="controls">
+                                            <textarea id="ckeditor" name="content" class="form-control">{!! old('content') !!}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -151,5 +192,38 @@
 </script>
 <script>
 CKEDITOR.replace('ckeditor', options);
+</script>
+
+<script type="text/javascript">
+    var row = 0;
+    function addImage(){
+        html = '<tr id="rowImage'+row+'">';
+        html += '<td>';
+        html += '<div class="row">';
+        html += '<div class="col-md-10">';
+        html += '<input id="image'+row+'" type="text" class="form-control" placeholder="{{__("general.imageUrl")}}" name="image[]">';
+        html += '</div>';           
+        html += '<div class="col-md-2">';           
+        html += '<div class="heading-elements">';              
+        html += '<a href="javascript:;" class="selectImage'+row+' btn btn-success btn-sm" data-input="image'+row+'" data-preview="previewImageMore"><i class="ft-plus-circle"></i> {{__("general.chooseImage")}}</a>';                   
+        html += '</div>';               
+        html += '</div>';           
+        html += '</div>';       
+        html += '</td>';   
+        html += '<td class="text-center">';   
+        html += '<div class="heading-elements">';       
+        html += '<a href="javascript:void(0)" onclick="$(\'#rowImage'+row+'\').remove();" class="btn btn-danger btn-sm"><i class="ft-trash-2"></i></a>';           
+        html += '</div>';       
+        html += '</td>';   
+        html +='</tr>';
+        $('#contentImage').append(html);
+        $('.selectImage'+row+'').filemanager('image');
+            var lfm = function(options, cb) {
+            var route_prefix = (options && options.prefix) ? options.prefix : 'uploads';
+            window.open(route_prefix + '?type=' + options.type || 'file', 'FileManager', 'width=1200,height=800');
+            window.SetUrl = cb;
+        };
+        row++;
+    }
 </script>
 @stop

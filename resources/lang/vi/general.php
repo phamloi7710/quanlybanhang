@@ -51,5 +51,10 @@
 		'price' => 'Giá Bán',
 		'salePrice' => 'Giá Khuyến Mãi',
 		'contentProduct' => 'Mô Tả Chi Tiết Sản Phẩm',
+		'imageProduct' => 'Hình Ảnh Sản Phẩm',
+		'imageUrl' => 'Đường Dẫn Hình Ảnh',
+		'addImage' => 'Thêm Hình Ảnh',
+		'deleteImage' => 'Xoá Ảnh',
+		'chooseImage' => 'Chọn'
 	];
 ?>
