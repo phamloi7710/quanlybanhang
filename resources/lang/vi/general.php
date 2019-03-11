@@ -55,6 +55,8 @@
 		'imageUrl' => 'Đường Dẫn Hình Ảnh',
 		'addImage' => 'Thêm Hình Ảnh',
 		'deleteImage' => 'Xoá Ảnh',
-		'chooseImage' => 'Chọn'
+		'chooseImage' => 'Chọn',
+		'qty' => 'Số Lượng',
+		'selectCategory' => 'Chọn Danh Mục',
 	];
 ?>

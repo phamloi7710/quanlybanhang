@@ -36,3 +36,16 @@ Route::group(['prefix'=>'admin', 'middleware'=>'checkRoleAdmin'], function(){
 		Route::post('edit/{id}.html', 'Admin\LanguageController@postEdit')->name('postEditLanguage');
 	});
 });
+
+
+
+
+
+
+// Frontend
+Route::get('/', function (){
+	return view('frontend.v1.index');
+});
+Route::get('detail.html', function (){
+	return view('frontend.v1.detail');
+});

@@ -87,8 +87,7 @@
                                                 </h5>
                                                 <div class="controls">
                                                     <select name="sltCate" class="form-control">
-                                                        <option><a href="">Thêm Mới Danh Mục</a></option>
-                                                        <option>Quản Lý Danh Mục</option>
+                                                        <option>{{__('general.selectCategory')}}</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -113,6 +112,34 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <h5>{{__('general.qty')}}
+                                                </h5>
+                                                <div class="row">
+                                                    <div class="controls col-md-6">
+                                                        <input value="{{old('txtQty')}}" type="text" id="txtQty" class="form-control" placeholder="{{__('placeholder.qty')}}" name="txtQty"required data-validation-required-message="{{__('validation.required', ['attribute'=>__('general.categoryName')])}}" maxlength="128" data-validation-maxlength-message="{{__('validation.max.string', ['attribute'=>__('general.categoryName'), 'max'=>'128'])}}" minlength="4" data-validation-minlength-message="{{__('validation.min.string', ['attribute'=>__('general.categoryName'), 'min'=>'4'])}}">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <h5>{{__('general.status')}}</h5>
+                                                <div class="row skin skin-flat">
+                                                    <div class="col-md-6 col-sm-12">
+                                                        <fieldset>
+                                                            <input value="active" type="radio" name="status" id="input-radio-15" checked>
+                                                            <label for="input-radio-15">{{__('general.active')}}</label>
+                                                        </fieldset>
+                                                        <fieldset>
+                                                            <input value="inActive" type="radio" name="status" id="input-radio-16">
+                                                            <label for="input-radio-16">{{__('general.inActive')}}</label>
+                                                        </fieldset>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <h5>{{__('general.imageProduct')}}
@@ -130,25 +157,6 @@
                                                             </tr>
                                                         </thead>
                                                         <tbody id="contentImage">
-                                                            <!-- <tr>
-                                                                <td>
-                                                                    <div class="row">
-                                                                        <div class="col-md-10">
-                                                                            <input type="text" class="form-control" placeholder="{{__('general.imageUrl')}}" name="txtImageUrl[]">
-                                                                        </div>
-                                                                        <div class="col-md-2">
-                                                                            <div class="heading-elements">
-                                                                                <button class="btn btn-success btn-sm"><i class="ft-plus-circle"></i> {{__('general.chooseImage')}}</button>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </td>
-                                                                <td class="text-center">
-                                                                    <div class="heading-elements">
-                                                                        <button class="btn btn-danger btn-sm"><i class="ft-trash-2"></i></button>
-                                                                    </div>
-                                                                </td>
-                                                            </tr> -->
                                                         </tbody>
                                                     </table>
                                                 </div>
@@ -200,10 +208,10 @@ CKEDITOR.replace('ckeditor', options);
         html = '<tr id="rowImage'+row+'">';
         html += '<td>';
         html += '<div class="row">';
-        html += '<div class="col-md-10">';
+        html += '<div class="col-md-10 col-xs-10">';
         html += '<input id="image'+row+'" type="text" class="form-control" placeholder="{{__("general.imageUrl")}}" name="image[]">';
         html += '</div>';           
-        html += '<div class="col-md-2">';           
+        html += '<div class="col-md-2 col-xs-2">';           
         html += '<div class="heading-elements">';              
         html += '<a href="javascript:;" class="selectImage'+row+' btn btn-success btn-sm" data-input="image'+row+'" data-preview="previewImageMore"><i class="ft-plus-circle"></i> {{__("general.chooseImage")}}</a>';                   
         html += '</div>';               
