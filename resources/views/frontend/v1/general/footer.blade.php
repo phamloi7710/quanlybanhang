@@ -123,32 +123,10 @@
                                     </div>
                                 </div>
                             </div>
+                            <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.2&appId=1965284407097212&autoLogAppEvents=1"></script>
                             <div class="row">
                                 <div class="site-footer">
-                                    <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7 payment_methods">
-                                        <div class="footer-widget">
-                                            <h4 class="footer-title">
-                                                <span>Chấp nhận thanh toán</span>
-                                            </h4>
-                                            <div class="fw">
-                                                <div class="item">
-                                                    <img class="img-responsive" src="{{url('')}}/assets/frontend/v1.0/images/icons/swing.svg"  data-lazyload="{{url('')}}/assets/frontend/v1.0/images/thumb/method_image_1.png" alt="method-title-visa" title="Thanh toán qua VISA" />
-                                                </div>
-                                                <div class="item">
-                                                    <img class="img-responsive" src="{{url('')}}/assets/frontend/v1.0/images/icons/swing.svg"  data-lazyload="{{url('')}}/assets/frontend/v1.0/images/thumb/method_image_2.png" alt="method-title-master-card" title="Thanh toán qua MASTER CARD" />
-                                                </div>
-                                                <div class="item">
-                                                    <img class="img-responsive" src="{{url('')}}/assets/frontend/v1.0/images/icons/swing.svg"  data-lazyload="{{url('')}}/assets/frontend/v1.0/images/thumb/method_image_3.png" alt="method-title-paypal" title="Thanh toán qua PAYPAL" />
-                                                </div>
-                                                <div class="item">
-                                                    <img class="img-responsive" src="{{url('')}}/assets/frontend/v1.0/images/icons/swing.svg"  data-lazyload="{{url('')}}/assets/frontend/v1.0/images/thumb/method_image_4.png" alt="method-title-jcb" title="Thanh toán qua JCB" />
-                                                </div>
-                                                <div class="item">
-                                                    <img class="img-responsive" src="{{url('')}}/assets/frontend/v1.0/images/icons/swing.svg"  data-lazyload="{{url('')}}/assets/frontend/v1.0/images/thumb/method_image_5.png" alt="method-title-bitcoin" title="Thanh toán qua BITCOIN" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                     <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5 customer-care">
                                         <div class="footer-widget">
                                             <h4 class="footer-title">
@@ -163,6 +141,21 @@
                                                 <div class="customer-care-detail">
                                                     <a href="tel:19001009">1900 1009</a>
                                                     <span>(Miễn phí cuộc gọi)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5 customer-care">
+                                        <div class="footer-widget">
+                                            <h4 class="footer-title">
+                                                <span>FANPAGE</span>
+                                            </h4>
+                                            <div class="customer-care-info">
+                                                <div class="fb-page" 
+                                                      data-href="https://www.facebook.com/facebook"
+                                                      data-width="380" 
+                                                      data-hide-cover="false"
+                                                      data-show-facepile="false">
                                                 </div>
                                             </div>
                                         </div>
@@ -292,6 +285,9 @@
             <script src="{{url('')}}/assets/frontend/v1.0/script/smartsearch.js" type="text/javascript"></script>
             <link href="{{url('')}}/assets/frontend/v1.0/css/sidebar_menu.scss.css" rel="stylesheet" type="text/css" />
             <script src="{{url('')}}/assets/frontend/v1.0/script/sidebar_menu.js" type="text/javascript"></script>
+<script src="{{url('')}}/assets/frontend/v1.0/script/product.js" type="text/javascript"></script>
+<script src="{{url('')}}/assets/frontend/v1.0/jquery/jquery.elevatezoom308.min.js" type="text/javascript"></script>
+            
             <!-- Product detail JS,CSS -->
             <!-- Facebook Fanpage -->
             <div id="fb-root"></div>

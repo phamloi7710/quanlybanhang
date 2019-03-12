@@ -9,6 +9,7 @@
         <title>
             Libra Mart - Siêu thị trong tầm tay     
         </title>
+        @csrf
         <!-- ================= Page description ================== -->
         <meta name="description" content="Đến trung tâm mua sắm Libra Mart với hàng nghìn sản phẩm điện lạnh, điện tử, gia dụng, tivi, máy lạnh, máy giặt, điện thoại... với nhiều khuyến mãi hấp dẫn. ✓ cam kết hàng chính hãng 100% ✓ giảm giá sốc ✓ giao hàng tận nơi ✓">
         <!-- ================= Meta ================== -->
@@ -17,6 +18,7 @@
         <meta name='revisit-after' content='1 days' />
         <meta name="robots" content="noodp,index,follow" />
         <!-- Facebook Open Graph meta tags -->
+
         <meta property="og:type" content="website">
         <meta property="og:title" content="Libra Mart - Siêu thị trong tầm tay">
         <meta property="og:image" content="http:{{url('')}}/assets/frontend/v1.0/images/icons/logo.png">
@@ -38,8 +40,10 @@
         <link href="{{url('')}}/assets/frontend/v1.0/jquery/jquery.mmenu.all.css" rel="stylesheet" type="text/css" />
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122223900-1"></script>
+        <script src="{{url('')}}/assets/frontend/v1.0/jquery/jquery-2.2.3.min.js" type="text/javascript"></script> 
         
     </head>
+    <?php $url = route('getIndex');?>
     <body>
         <div class="page-body">
             <div class="hidden-md hidden-lg opacity_menu"></div>
@@ -48,12 +52,12 @@
             <!-- end getting default value -->
             <!-- Main content -->
             <!-- Header JS -->  
-            <script src="{{url('')}}/assets/frontend/v1.0/jquery/jquery-2.2.3.min.js" type="text/javascript"></script> 
+            
             <header class="header">
-                <div class="bannertop hidden-sm hidden-xs">
+                <!-- <div class="bannertop hidden-sm hidden-xs">
                     <img src="{{url('')}}/assets/frontend/v1.0/images/icons/banner_top.png" class="img-responsive" alt="banner-top" />
                     <a href="javascript:;" onClick="$('.bannertop').fadeOut();"><i class="fa fa-times-circle" aria-hidden="true"></i></a>
-                </div>
+                </div> -->
                 <div class="topbar hidden-xs">
                     <div class="container">
                         <div class="row">
@@ -184,7 +188,7 @@
                                     <i class="fa fa-bars" aria-hidden="true"></i>
                                     <span>Danh mục sản phẩm</span>
                                 </div>
-                                <div class="category-nav sidebar-linklists category-nav-index">
+                                <div class="category-nav sidebar-linklists @if($url != url('')) category-nav-index @endif ">
                                     <ul id="nav-cate">
                                         <li class="sidebar-menu-list">
                                             <a class="ajaxLayer" href="/san-pham-khuyen-mai" title="Hot Deal">

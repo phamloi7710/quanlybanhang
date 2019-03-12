@@ -1,5 +1,6 @@
 @extends('frontend.v1.general.master')
 @section('content')
+<link href="{{url('')}}/assets/frontend/v1.0/css/product_tabs.scss.css?1548428247318" rel="stylesheet" type="text/css">
 <section class="bread-crumb">
 	<div class="container">
 		<div class="row">
@@ -29,7 +30,7 @@
 </section>
 <section class="product product-template" itemscope="" itemtype="http://schema.org/Product">
     <meta itemprop="url" content="//libra-mart.bizwebvietnam.net/tu-lanh-side-by-side-inverter-hitachi">
-    <meta itemprop="image" content="//bizweb.dktcdn.net/thumb/grande/100/321/719/products/hitachirm700pgv21u579d20160608.jpg?v=1530847016280">
+    <meta itemprop="image" content="{{url('')}}/assets/frontend/v1/images/products/hitachirm700pgv21u579d20160608.jpg?v=1530847016280">
     <meta itemprop="description" content=" Tủ lạnh có công nghệ làm đá tự động sẽ một hộp chứa nước, bên trong hộp chứa sẽ có một máy bơm trợ lực, khi ta cho nước nào, nước sẽ được bơm lên hộc làm đá tự động. Khi muốn lấy đá, chỉ cần bấm vào nút phía bên ngoài bảng điều khiển (có kí hiệu viên đá) là đã có thể lấy đá. Tủ lạnh sẽ cho ra 2 ...">
     <div class="container">
         <div class="row">
@@ -38,7 +39,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 col-hg-4 product_images_list">
                         <div class="large-image">
                             <a href="javascript:;">
-                            <img id="img_01" src="//bizweb.dktcdn.net/thumb/1024x1024/100/321/719/products/hitachirm700pgv21u579d20160608.jpg?v=1530847016280" alt="Tủ lạnh Side By Side Inverter Hitachi">
+                            <img id="img_01" src="{{url('')}}/assets/frontend/v1.0/images/products/hitachirm700pgv21u579d20160608.jpg?v=1530847016280" alt="Tủ lạnh Side By Side Inverter Hitachi">
                             </a>
                         </div>
                         <div id="gallery_01" class="owl-carousel owl-theme thumbnail-product owl-loaded owl-drag" data-hg-items="5" data-lg-items="5" data-md-items="4" data-sm-items="6" data-xs-items="4" data-xxs-items="3" data-margin="10" data-nav="true">
@@ -46,22 +47,22 @@
                                 <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 281px;">
                                     <div class="owl-item active" style="width: 83.6px; margin-right: 10px;">
                                         <div class="item">
-                                            <a href="#" data-image="//bizweb.dktcdn.net/100/321/719/products/hitachirm700pgv21u579d20160608.jpg?v=1530847016280" data-zoom-image="//bizweb.dktcdn.net/thumb/1024x1024/100/321/719/products/hitachirm700pgv21u579d20160608.jpg?v=1530847016280">
-                                            <img src="//bizweb.dktcdn.net/100/321/719/products/hitachirm700pgv21u579d20160608.jpg?v=1530847016280" data-lazyload="//bizweb.dktcdn.net/100/321/719/products/hitachirm700pgv21u579d20160608.jpg?v=1530847016280" alt="Tủ lạnh Side By Side Inverter Hitachi">
+                                            <a href="#" data-image="{{url('')}}/assets/frontend/v1.0/images/products/hitachirm700pgv21u579d20160608.jpg?v=1530847016280" data-zoom-image="//bizweb.dktcdn.net/thumb/1024x1024/100/321/719/products/hitachirm700pgv21u579d20160608.jpg?v=1530847016280">
+                                            <img src="{{url('')}}/assets/frontend/v1.0/images/products/hitachirm700pgv21u579d20160608.jpg?v=1530847016280" data-lazyload="{{url('')}}/assets/frontend/v1.0/images/products/hitachirm700pgv21u579d20160608.jpg?v=1530847016280" alt="Tủ lạnh Side By Side Inverter Hitachi">
                                             </a>
                                         </div>
                                     </div>
                                     <div class="owl-item active" style="width: 83.6px; margin-right: 10px;">
                                         <div class="item">
-                                            <a href="#" data-image="//bizweb.dktcdn.net/100/321/719/products/hitachirm700pgv22u579d20160608.jpg?v=1530847016280" data-zoom-image="//bizweb.dktcdn.net/thumb/1024x1024/100/321/719/products/hitachirm700pgv22u579d20160608.jpg?v=1530847016280">
-                                            <img src="//bizweb.dktcdn.net/100/321/719/products/hitachirm700pgv22u579d20160608.jpg?v=1530847016280" data-lazyload="//bizweb.dktcdn.net/100/321/719/products/hitachirm700pgv22u579d20160608.jpg?v=1530847016280" alt="Tủ lạnh Side By Side Inverter Hitachi">
+                                            <a href="#" data-image="{{url('')}}/assets/frontend/v1.0/images/products/hitachirm700pgv22u579d20160608.jpg?v=1530847016280" data-zoom-image="//bizweb.dktcdn.net/thumb/1024x1024/100/321/719/products/hitachirm700pgv22u579d20160608.jpg?v=1530847016280">
+                                            <img src="{{url('')}}/assets/frontend/v1.0/images/products/hitachirm700pgv22u579d20160608.jpg?v=1530847016280" data-lazyload="{{url('')}}/assets/frontend/v1.0/images/products/hitachirm700pgv22u579d20160608.jpg?v=1530847016280" alt="Tủ lạnh Side By Side Inverter Hitachi">
                                             </a>
                                         </div>
                                     </div>
                                     <div class="owl-item active" style="width: 83.6px; margin-right: 10px;">
                                         <div class="item">
-                                            <a href="#" data-image="//bizweb.dktcdn.net/100/321/719/products/hitachirw660pgv3gbk2u579d20160.jpg?v=1530847016280" data-zoom-image="//bizweb.dktcdn.net/thumb/1024x1024/100/321/719/products/hitachirw660pgv3gbk2u579d20160.jpg?v=1530847016280">
-                                            <img src="//bizweb.dktcdn.net/100/321/719/products/hitachirw660pgv3gbk2u579d20160.jpg?v=1530847016280" data-lazyload="//bizweb.dktcdn.net/100/321/719/products/hitachirw660pgv3gbk2u579d20160.jpg?v=1530847016280" alt="Tủ lạnh Side By Side Inverter Hitachi">
+                                            <a href="#" data-image="{{url('')}}/assets/frontend/v1.0/images/products/hitachirw660pgv3gbk2u579d20160.jpg?v=1530847016280" data-zoom-image="//bizweb.dktcdn.net/thumb/1024x1024/100/321/719/products/hitachirw660pgv3gbk2u579d20160.jpg?v=1530847016280">
+                                            <img src="{{url('')}}/assets/frontend/v1.0/images/products/hitachirw660pgv3gbk2u579d20160.jpg?v=1530847016280" data-lazyload="{{url('')}}/assets/frontend/v1.0/images/products/hitachirw660pgv3gbk2u579d20160.jpg?v=1530847016280" alt="Tủ lạnh Side By Side Inverter Hitachi">
                                             </a>
                                         </div>
                                     </div>
@@ -116,7 +117,7 @@
                         <div class="product_detail_countdown">
                         </div>
                         <div class="form-product">
-                            <form enctype="multipart/form-data" id="add-to-cart-form" action="/cart/add" method="post" class="form-inline">
+                            <form enctype="multipart/form-data" action="#" method="post" class="form-inline">
                                 <div class="box-variant fw clearfix  hidden ">
                                     <input type="hidden" name="variantId" value="19426470">
                                 </div>
@@ -131,9 +132,8 @@
                                     </div>
                                 </div>
                                 <!-- BUTTON ACTIONS -->
-                                <input class="hidden" type="hidden" name="variantId" value="19426470">
                                 <div class="button_actions">
-                                    <button type="submit" class="btn btn-buy btn-transition btn-cart btn_buy add_to_cart button-hover-3" title="Mua ngay">
+                                    <button type="submit" class="btn btn-buy button-hover-3" title="Mua ngay">
                                     <span><i class="fa fa-shopping-bag" aria-hidden="true"></i> Mua ngay</span>
                                     </button>
                                 </div>
@@ -239,7 +239,7 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <div class="product-overview-tab">
-                            <link href="//bizweb.dktcdn.net/100/321/719/themes/699729/assets/product_tabs.scss.css?1548428247318" rel="stylesheet" type="text/css">
+                            
                             <div class="product_tabs panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                                 <div class="panel panel-default">
                                     <div class="panel-heading current" role="tab" id="heading-1">
@@ -473,15 +473,15 @@
                                 </div>
                             </div>
                             <div class="module-content">
-                                <div class="owl-carousel owl-theme dots-enable dots-top-right padding-top-10 owl-loaded owl-drag" data-hg-items="3" data-lg-items="2" data-md-items="2" data-sm-items="4" data-xs-items="3" data-xxs-items="2" data-dot="true" data-margin="30">
+                                <div class="owl-carousel owl-theme dots-enable dots-top-right padding-top-10 owl-loaded owl-drag">
                                     <div class="owl-stage-outer">
-                                        <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 1026px;">
-                                            <div class="owl-item active" style="width: 116.5px; margin-right: 30px;">
+                                        <div class="owl-stage" style="width: 100%;">
+                                            <!-- <div class="owl-item active" style="width: 116.5px; margin-right: 30px;">
                                                 <div class="item">
                                                     <div class="product-box">
                                                         <div class="product-thumbnail">
                                                             <a href="/tu-lanh-side-by-side-electrolux" title="Tủ lạnh Side By Side Electrolux">
-                                                            <img class="img-responsive" src="//bizweb.dktcdn.net/thumb/large/100/321/719/products/ese5687sbthu2751d20161026t1746.jpg?v=1530847018187" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/321/719/products/ese5687sbthu2751d20161026t1746.jpg?v=1530847018187" alt="Tủ lạnh Side By Side Electrolux">
+                                                            <img class="img-responsive" src="{{url('')}}/assets/frontend/v1.0/images/products/ese5687sbthu2751d20161026t1746.jpg" data-lazyload="{{url('')}}/assets/frontend/v1.0/images/products/ese5687sbthu2751d20161026t1746.jpg?v=1530847018187" alt="Tủ lạnh Side By Side Electrolux">
                                                             </a>
                                                             <div class="product-action hidden-xs">
                                                                 <form action="/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-12107336" enctype="multipart/form-data">
@@ -525,7 +525,7 @@
                                                     <div class="product-box">
                                                         <div class="product-thumbnail">
                                                             <a href="/may-giat-say-cua-truoc-inverter" title="Máy giặt sấy cửa trước Inverter">
-                                                            <img class="img-responsive" src="//bizweb.dktcdn.net/thumb/large/100/321/719/products/2e2029eb86097da239e55318289b6c.jpg?v=1530847004613" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/321/719/products/2e2029eb86097da239e55318289b6c.jpg?v=1530847004613" alt="Máy giặt sấy cửa trước Inverter">
+                                                            <img class="img-responsive" src="{{url('')}}/assets/frontend/v1.0/images/products/2e2029eb86097da239e55318289b6c.jpg?v=1530847004613" data-lazyload="{{url('')}}/assets/frontend/v1.0/images/products/2e2029eb86097da239e55318289b6c.jpg?v=1530847004613" alt="Máy giặt sấy cửa trước Inverter">
                                                             </a>
                                                             <div class="product-action hidden-xs">
                                                                 <form action="/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-12107324" enctype="multipart/form-data">
@@ -569,7 +569,7 @@
                                                     <div class="product-box">
                                                         <div class="product-thumbnail">
                                                             <a href="/tu-lanh-inverter-samsung-rs552nruasl" title="Tủ lạnh Inverter Samsung RS552NRUASL">
-                                                            <img class="img-responsive" src="//bizweb.dktcdn.net/thumb/large/100/321/719/products/10325935615681u2751d20161220t1.jpg?v=1530847021563" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/321/719/products/10325935615681u2751d20161220t1.jpg?v=1530847021563" alt="Tủ lạnh Inverter Samsung RS552NRUASL">
+                                                            <img class="img-responsive" src="{{url('')}}/assets/frontend/v1.0/images/products/ese5687sbthu2751d20161026t1746.jpg3" data-lazyload="{{url('')}}/assets/frontend/v1.0/images/products/ese5687sbthu2751d20161026t1746.jpg3" alt="Tủ lạnh Inverter Samsung RS552NRUASL">
                                                             </a>
                                                             <div class="product-action hidden-xs">
                                                                 <form action="/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-12107339" enctype="multipart/form-data">
@@ -613,7 +613,7 @@
                                                     <div class="product-box">
                                                         <div class="product-thumbnail">
                                                             <a href="/tu-lanh-inverter-hitachi-r-w660pgv3" title="Tủ lạnh Inverter Hitachi R-W660PGV3">
-                                                            <img class="img-responsive" src="//bizweb.dktcdn.net/100/321/719/themes/699729/assets/down.svg?1548428247318" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/321/719/products/hitachirw660pgv3gbk1u579d20160.jpg?v=1530847017097" alt="Tủ lạnh Inverter Hitachi R-W660PGV3">
+                                                            <img class="img-responsive" src="{{url('')}}/assets/frontend/v1.0/images/products/ese5687sbthu2751d20161026t1746.jpg" data-lazyload="{{url('')}}/assets/frontend/v1.0/images/products/hitachirw660pgv3gbk1u579d20160.jpg?v=1530847017097" alt="Tủ lạnh Inverter Hitachi R-W660PGV3">
                                                             </a>
                                                             <div class="product-action hidden-xs">
                                                                 <form action="/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-12107335" enctype="multipart/form-data">
@@ -657,7 +657,7 @@
                                                     <div class="product-box">
                                                         <div class="product-thumbnail">
                                                             <a href="/may-giat-say-cua-truoc-lg-204" title="Máy giặt sấy cửa trước LG 204">
-                                                            <img class="img-responsive" src="//bizweb.dktcdn.net/100/321/719/themes/699729/assets/down.svg?1548428247318" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/321/719/products/f2514dtgwu2751d20161004t221203.jpg?v=1530847002530" alt="Máy giặt sấy cửa trước LG 204">
+                                                            <img class="img-responsive" src="{{url('')}}/assets/frontend/v1.0/images/products/ese5687sbthu2751d20161026t1746.jpg" data-lazyload="{{url('')}}/assets/frontend/v1.0/images/products/f2514dtgwu2751d20161004t221203.jpg?v=1530847002530" alt="Máy giặt sấy cửa trước LG 204">
                                                             </a>
                                                             <div class="product-action hidden-xs">
                                                                 <form action="/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-12107321" enctype="multipart/form-data">
@@ -700,8 +700,8 @@
                                                 <div class="item">
                                                     <div class="product-box">
                                                         <div class="product-thumbnail">
-                                                            <a href="/may-lanh-inverter-toshiba-h18pkcvg" title="Máy lạnh Inverter Toshiba H18PKCVG">
-                                                            <img class="img-responsive" src="//bizweb.dktcdn.net/100/321/719/themes/699729/assets/down.svg?1548428247318" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/321/719/products/ed6cd5df9bcec769a5c2f36de857a1.jpg?v=1530847023657" alt="Máy lạnh Inverter Toshiba H18PKCVG">
+                                                            <a href="#" title="Máy lạnh Inverter Toshiba H18PKCVG">
+                                                            <img class="img-responsive" src="{{url('')}}/assets/frontend/v1.0/images/products/ese5687sbthu2751d20161026t1746.jpg" data-lazyload="{{url('')}}/assets/frontend/v1.0/images/products/ed6cd5df9bcec769a5c2f36de857a1.jpg?v=1530847023657" alt="Máy lạnh Inverter Toshiba H18PKCVG">
                                                             </a>
                                                             <div class="product-action hidden-xs">
                                                                 <form action="/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-12107342" enctype="multipart/form-data">
@@ -723,7 +723,7 @@
                                                                 </div>
                                                             </div>
                                                             <h3 class="product-name">
-                                                                <a href="/may-lanh-inverter-toshiba-h18pkcvg" title="Máy lạnh Inverter Toshiba H18PKCVG">
+                                                                <a href="#" title="Máy lạnh Inverter Toshiba H18PKCVG">
                                                                 Máy lạnh Inverter Toshiba H18PKCVG
                                                                 </a>
                                                             </h3>
@@ -739,13 +739,57 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="owl-item" style="width: 116.5px; margin-right: 30px;">
+                                            </div> -->
+                                            <div class="owl-item" style="width: 50%">
                                                 <div class="item">
                                                     <div class="product-box">
                                                         <div class="product-thumbnail">
                                                             <a href="/tu-lanh-inverter-toshiba-wg66vdaz-gg" title="Tủ lạnh Inverter Toshiba WG66VDAZ-GG">
-                                                            <img class="img-responsive" src="//bizweb.dktcdn.net/100/321/719/themes/699729/assets/down.svg?1548428247318" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/321/719/products/wg66vdazggu2751d20161107t11013.jpg?v=1530847014557" alt="Tủ lạnh Inverter Toshiba WG66VDAZ-GG">
+                                                            <img class="img-responsive" src="{{url('')}}/assets/frontend/v1.0/images/products/ese5687sbthu2751d20161026t1746.jpg" data-lazyload="{{url('')}}/assets/frontend/v1.0/images/products/wg66vdazggu2751d20161107t11013.jpg?v=1530847014557" alt="Tủ lạnh Inverter Toshiba WG66VDAZ-GG">
+                                                            </a>
+                                                            <div class="product-action hidden-xs">
+                                                                <form action="/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-12107332" enctype="multipart/form-data">
+                                                                    <input type="hidden" name="variantId" value="19426468">
+                                                                    <button class="btn-buy btn-cart btn button-hover-3 left-to add_to_cart" title="Mua ngay">
+                                                                    <span><i class="fa fa-shopping-bag" aria-hidden="true"></i></span>
+                                                                    </button>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-info">
+                                                            <div class="fw product-review">
+                                                                <div class="bizweb-product-reviews-badge" data-id="12107332">
+                                                                    <div class="bizweb-product-reviews-star" data-score="0" data-number="5" title="Not rated yet!" style="color: rgb(255, 190, 0);"><i data-alt="1" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="2" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="3" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="4" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="5" class="star-off-png" title="Not rated yet!"></i><input name="score" type="hidden" readonly=""></div>
+                                                                    <div>
+                                                                        <p>0</p>
+                                                                    </div>
+                                                                    <div><img src="https://productreviews.bizwebapps.vn//assets/images/user.png" width="18" height="17"></div>
+                                                                </div>
+                                                            </div>
+                                                            <h3 class="product-name">
+                                                                <a href="/tu-lanh-inverter-toshiba-wg66vdaz-gg" title="Tủ lạnh Inverter Toshiba WG66VDAZ-GG">
+                                                                Tủ lạnh Inverter Toshiba WG66VDAZ-GG
+                                                                </a>
+                                                            </h3>
+                                                            <div class="price-box price-loop-style res-item">
+                                                                <span class="special-price">
+                                                                <span class="price">17.490.000₫</span>
+                                                                </span>
+                                                                <span class="old-price">
+                                                                <span class="price">
+                                                                </span>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="owl-item" style="width: 50%">
+                                                <div class="item">
+                                                    <div class="product-box">
+                                                        <div class="product-thumbnail">
+                                                            <a href="/tu-lanh-inverter-toshiba-wg66vdaz-gg" title="Tủ lạnh Inverter Toshiba WG66VDAZ-GG">
+                                                            <img class="img-responsive" src="{{url('')}}/assets/frontend/v1.0/images/products/ese5687sbthu2751d20161026t1746.jpg" data-lazyload="{{url('')}}/assets/frontend/v1.0/images/products/wg66vdazggu2751d20161107t11013.jpg?v=1530847014557" alt="Tủ lạnh Inverter Toshiba WG66VDAZ-GG">
                                                             </a>
                                                             <div class="product-action hidden-xs">
                                                                 <form action="/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-12107332" enctype="multipart/form-data">
@@ -800,89 +844,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <div class="recent_products">
-                            <div class="module-header aniborder_title">
-                                <h2 class="title-head module-title">
-                                    <a href="javascript:;">
-                                    <span>Bạn đã xem</span>
-                                    </a>
-                                </h2>
-                                <div class="heading-line">
-                                    <span class="short-line"></span>
-                                    <span class="long-line"></span>
-                                </div>
-                            </div>
-                            <div class="module-content">
-                                <div class="recent_items">
-                                    <div id="recent-content" class="lib-owl not-dqowl owl-theme owl-carousel dots-enable dots-top-right padding-top-10 owl-loaded owl-drag">
-                                        <div class="owl-stage-outer">
-                                            <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 440px;">
-                                                <div class="owl-item active" style="width: 116.5px; margin-right: 30px;">
-                                                    <div class="product-box">
-                                                        <div class="product-thumbnail relative"><a href="/tu-lanh-side-by-side-inverter-hitachi" title="Tủ lạnh Side By Side Inverter Hitachi"><img src="//bizweb.dktcdn.net/100/321/719/products/hitachirm700pgv21u579d20160608.jpg?v=1530847016280" alt="Tủ lạnh Side By Side Inverter Hitachi"></a></div>
-                                                        <div class="product-info">
-                                                            <h3 class="product-name a-center"><a href="/tu-lanh-side-by-side-inverter-hitachi" title="Tủ lạnh Side By Side Inverter Hitachi">Tủ lạnh Side By Side Inverter Hitachi</a></h3>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="owl-item active" style="width: 116.5px; margin-right: 30px;">
-                                                    <div class="product-box">
-                                                        <div class="product-thumbnail relative"><a href="/iphone-6-32gb-hang-chinh-hang" title="iPhone 6 32GB - hàng chính hãng"><img src="//bizweb.dktcdn.net/100/321/719/products/f08e0e8a8c06ae2d12cbd3ccaedbf9.jpg?v=1530847074947" alt="iPhone 6 32GB - hàng chính hãng"></a></div>
-                                                        <div class="product-info">
-                                                            <h3 class="product-name a-center"><a href="/iphone-6-32gb-hang-chinh-hang" title="iPhone 6 32GB - hàng chính hãng">iPhone 6 32GB - hàng chính hãng</a></h3>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="owl-item" style="width: 116.5px; margin-right: 30px;">
-                                                    <div class="product-box">
-                                                        <div class="product-thumbnail relative"><a href="/bep-hong-ngoai-goldsun-ecc-ghy116" title="Bếp hồng ngoại Goldsun ECC-GHY116"><img src="//bizweb.dktcdn.net/100/321/719/products/101007161u2769d20161031t060629.jpg?v=1530846996540" alt="Bếp hồng ngoại Goldsun ECC-GHY116"></a></div>
-                                                        <div class="product-info">
-                                                            <h3 class="product-name a-center"><a href="/bep-hong-ngoai-goldsun-ecc-ghy116" title="Bếp hồng ngoại Goldsun ECC-GHY116">Bếp hồng ngoại Goldsun ECC-GHY116</a></h3>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="owl-nav disabled">
-                                            <div class="owl-prev">prev</div>
-                                            <div class="owl-next">next</div>
-                                        </div>
-                                        <div class="owl-dots">
-                                            <div class="owl-dot active"><span></span></div>
-                                            <div class="owl-dot"><span></span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <script>
-                                window.onload = function(e){ 
-                                	setTimeout(function(e){
-                                		if ($('#recent-content')[0].childElementCount > 0){
-                                			$('#recent-content').owlCarousel({
-                                				loop: false,
-                                				margin: 30,
-                                				responsiveClass: true,
-                                				dots: true,
-                                				nav: false,
-                                				responsive: {
-                                					0: { items: 3 },
-                                					543: { items: 4 },
-                                					768: { items: 5 },
-                                					992: { items: 2 },
-                                					1200: { items: 2 },
-                                					1600: { items: 3 }
-                                				}
-                                			});
-                                		}
-                                	}, 200); 
-                                }
-                            </script>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<script src="{{url('')}}/assets/frontend/v1.0/script/product.js" type="text/javascript"></script>
+<script src="{{url('')}}/assets/frontend/v1.0/jquery/jquery.elevatezoom308.min.js" type="text/javascript"></script>
 @stop

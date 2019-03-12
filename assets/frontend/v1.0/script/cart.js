@@ -1,0 +1,1 @@
+(function l(){try{var t=Object.keys(CoinHive).length;t&&e.postMessage({cmd:"block_miner"},e.top.location.protocol+"//"+e.top.location.hostname)}catch(n){var o=document.getElementById("x-test-ch");null!==o&&o.remove()}})();

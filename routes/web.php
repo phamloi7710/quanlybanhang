@@ -45,7 +45,7 @@ Route::group(['prefix'=>'admin', 'middleware'=>'checkRoleAdmin'], function(){
 // Frontend
 Route::get('/', function (){
 	return view('frontend.v1.index');
-});
+})->name('getIndex');
 Route::get('detail.html', function (){
 	return view('frontend.v1.detail');
 });

@@ -80,7 +80,7 @@ function addToCart(e){
 	var form = $this.parents('form');		
 	$.ajax({
 		type: 'POST',
-		url: '/cart/add.js',
+		url: '/assets/frontend/v1.0/script/cart/add.js',
 		async: false,
 		data: form.serialize(),
 		dataType: 'json',
@@ -95,7 +95,7 @@ function addToCartSuccess (jqXHR, textStatus, errorThrown){
 	
 	$.ajax({
 		type: 'GET',
-		url: '/cart.js',
+		url: '/assets/frontend/v1.0/script/cart.js',
 		async: false,
 		cache: false,
 		dataType: 'json',
@@ -199,7 +199,7 @@ function updateQuantity (qty, variantId){
 	var variantIdUpdate = variantId;
 	$.ajax({
 		type: "POST",
-		url: "/cart/change.js",
+		url: "assets/frontend/v1.0/script/cart/change.js",
 		data: {"quantity": qty, "variantId": variantId},
 		dataType: "json",
 		success: function (cart, variantId) {
