@@ -224,160 +224,23 @@
                     </svg>
                 </div>
             </div>
-            <div class="error-popup awe-popup">
-                <div class="overlay no-background"></div>
-                <div class="popup-inner content">
-                    <div class="error-message"></div>
-                </div>
-            </div>
-            <div id="popup-cart" class="modal fade" role="dialog">
-                <div id="popup-cart-desktop" class="clearfix">
-                    <div class="title-popup-cart">
-                        <img src="{{url('')}}/assets/frontend/v1.0/images/icons/add_to_cart.svg" alt="add_to_cart" class="img-responsive">
-                        <div class="cart-popup-info">
-                            <span class="cart-noti-info">Bạn đã thêm [<span class="cart-popup-name"></span>] vào giỏ hàng</span>
-                            <a href="/cart" class="title-quantity-popup">
-                            Giỏ hàng của bạn (<span class="cart-popup-count"></span> sản phẩm) <i class="fa fa-caret-right" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="content-popup-cart">
-                        <div class="thead-popup">
-                            <div style="width: 49%;" class="text-left">Sản phẩm</div>
-                            <div style="width: 16%;" class="text-center">Đơn giá</div>
-                            <div style="width: 14%;" class="text-center">Số lượng</div>
-                            <div style="width: 21%;" class="text-center">Thành tiền</div>
-                        </div>
-                        <div class="tbody-popup">
-                        </div>
-                        <div class="tfoot-popup">
-                            <div class="tfoot-popup-1 clearfix">
-                                <div class="pull-left popup-ship">
-                                    <p>Giao hàng trên toàn quốc</p>
-                                </div>
-                                <div class="pull-right popup-total">
-                                    <p>Thành tiền: <span class="total-price"></span></p>
-                                </div>
-                            </div>
-                            <div class="tfoot-popup-2 clearfix">
-                                <a class="button btn-proceed-checkout button-hover-3" title="Tiến hành đặt hàng" href="/checkout"><span>Tiến hành đặt hàng <i class="fa fa-long-arrow-right" aria-hidden="true"></i></span></a>
-                                <a class="button btn-continue" title="Tiếp tục mua hàng" onclick="$('#popup-cart').modal('hide');">
-                                <span><i class="fa fa-caret-left" aria-hidden="true"></i> Tiếp tục mua hàng</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <a title="Close" class="quickview-close close-window" href="javascript:;" onclick="$('#popup-cart').modal('hide');"><i class="fa  fa-close"></i></a>
-                </div>
-            </div>
-            <div id="myModal" class="modal fade" role="dialog"></div>
-            <!-- Bizweb javascript customer -->
-            <!-- Bizweb javascript -->
             <script src="{{url('')}}/assets/frontend/v1.0/script/option-selectors.js" type="text/javascript"></script>
             <script src="{{url('')}}/assets/frontend/v1.0/jquery/api.jquery.js" type="text/javascript"></script> 
             <!-- Plugin JS -->
             <script src="{{url('')}}/assets/frontend/v1.0/script/plugin.js" type="text/javascript"></script>
             <script src="//cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/7.0.3/jquery.mmenu.all.js" type="text/javascript"></script>
-            <script src="{{url('')}}/assets/frontend/v1.0/script/cs.script.js" type="text/javascript"></script>
+            <!-- <script src="{{url('')}}/assets/frontend/v1.0/script/cs.script.js" type="text/javascript"></script> -->
             <script src="{{url('')}}/assets/frontend/v1.0/jquery/api.jquery.custom.js" type="text/javascript"></script>
             <!-- Main JS -->
             <script src="{{url('')}}/assets/frontend/v1.0/script/main.js" type="text/javascript"></script>
             <script src="{{url('')}}/assets/frontend/v1.0/script/smartsearch.js" type="text/javascript"></script>
             <link href="{{url('')}}/assets/frontend/v1.0/css/sidebar_menu.scss.css" rel="stylesheet" type="text/css" />
             <script src="{{url('')}}/assets/frontend/v1.0/script/sidebar_menu.js" type="text/javascript"></script>
-<script src="{{url('')}}/assets/frontend/v1.0/script/product.js" type="text/javascript"></script>
-<script src="{{url('')}}/assets/frontend/v1.0/jquery/jquery.elevatezoom308.min.js" type="text/javascript"></script>
+            <script src="{{url('')}}/assets/frontend/v1.0/script/product.js" type="text/javascript"></script>
+            <script src="{{url('')}}/assets/frontend/v1.0/jquery/jquery.elevatezoom308.min.js" type="text/javascript"></script>
             
             <!-- Product detail JS,CSS -->
             <!-- Facebook Fanpage -->
             <div id="fb-root"></div>
         </div>
-        <nav id="nav-mobile" class="hidden-lg">
-            <div id="panel-menu">
-                <ul>
-                    <li >
-                        <a href="/gioi-thieu">Về chúng tôi</a>
-                    </li>
-                    <li >
-                        <a href="/collections/all">Dành cho bạn</a>
-                        <ul>
-                            <li >
-                                <a href="/san-pham-moi">Hàng mới về</a>
-                            </li>
-                            <li >
-                                <a href="/san-pham-noi-bat">Top nổi bật</a>
-                            </li>
-                            <li >
-                                <a href="/san-pham-khuyen-mai">Hot Deal</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li >
-                        <a href="/dien-may">Điện máy</a>
-                        <ul>
-                            <li >
-                                <a href="/tivi-tu-lanh">Tivi - Tủ lạnh</a>
-                                <ul>
-                                    <li >
-                                        <a href="/tu-lanh">Tủ lạnh</a>
-                                    </li>
-                                    <li >
-                                        <a href="/tivi">Tivi</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li >
-                                <a href="/tivi">Tivi</a>
-                            </li>
-                            <li >
-                                <a href="/dieu-hoa">Điều hoà</a>
-                            </li>
-                            <li >
-                                <a href="/tu-lanh">Tủ lạnh</a>
-                            </li>
-                            <li >
-                                <a href="/may-giat">Máy giặt</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li >
-                        <a href="/blogs/all">Tin tổng hợp</a>
-                        <ul>
-                            <li >
-                                <a href="/tin-tuc">Tin tức</a>
-                            </li>
-                            <li >
-                                <a href="/tin-cong-nghe-dien-thoai">Tin công nghệ - Điện thoại</a>
-                            </li>
-                            <li >
-                                <a href="/tin-cong-nghe-may-tinh">Tin công nghệ - Máy tính</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li >
-                        <a href="/lien-he">Liên hệ</a>
-                        <ul>
-                            <li >
-                                <a href="/huong-dan-su-dung-libra-mart">Hướng dẫn sử dụng theme Libra Mart</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <div id="panel-account">
-                <ul>
-                    <li class="cp-item">
-                        <a href="/account/login" title="Đăng nhập" class="btn-transition">
-                        <i class="fa fa-sign-in"></i><span>Đăng nhập</span>
-                        </a>
-                    </li>
-                    <li class="cp-item">
-                        <a href="/account/register" title="Đăng ký" class="btn-transition">
-                        <i class="fa fa-edit"></i><span>Đăng ký</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </body>
-</html>
+        

@@ -77,30 +77,20 @@
                     </div>
                     <div class="col-xs-12 col-sm-7 col-md-4 col-lg-4 col-hg-4 details-pro">
                         <h1 class="title-head product-title" itemprop="name">Tủ lạnh Side By Side Inverter Hitachi</h1>
-                        <div class="product-review rated_star">
-                            <div class="bizweb-product-reviews-badge" data-id="12107334">
-                                <div class="bizweb-product-reviews-star" data-score="0" data-number="5" title="Not rated yet!" style="color: rgb(255, 190, 0);"><i data-alt="1" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="2" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="3" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="4" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="5" class="star-off-png" title="Not rated yet!"></i><input name="score" type="hidden" readonly=""></div>
-                                <div>
-                                    <p>0</p>
-                                </div>
-                                <div><img src="https://productreviews.bizwebapps.vn//assets/images/user.png" width="18" height="17"></div>
-                            </div>
-                        </div>
-                        <div class="product_info product_sku">
-                            <label>SKU: </label><em>(Đang cập nhật...)</em>
-                        </div>
+                        
                         <div class="product_info product-type">
-                            <label>Loại: </label><span class="type_item" itemprop="model">Tủ lạnh</span>
+                            <label>Danh Mục: </label><span class="type_item" itemprop="model">Tủ lạnh</span>
                         </div>
-                        <div class="product_info product-vendor" itemprop="brand" itemscope="" itemtype="http://schema.org/Organization">
+                        <!-- <div class="product_info product-vendor" itemprop="brand" itemscope="" itemtype="http://schema.org/Organization">
                             <label>Cung cấp bởi: </label><span class="vendor_item" itemprop="name">Sharp</span>
-                        </div>
+                        </div> -->
                         <div class="product_info product-inventory" itemscope="" itemtype="http://schema.org/ItemAvailability">
                             <label>Tình trạng: </label><span class="quantity_item" itemprop="supersededBy">Còn hàng <em></em></span>
                         </div>
                         <div class="price-box price-box-product" itemscope="" itemtype="http://schema.org/Offer">
                             <span class="special-price">
-                                <span class="price" itemprop="price">38.900.000₫</span>
+                            	<label>Giá Bán: </label>
+                                <span class="price" itemprop="price">38.900.000 (₫)</span>
                                 <meta itemprop="priceCurrency" content="VND">
                             </span>
                             <span class="old-price">
@@ -109,11 +99,11 @@
                                 <meta itemprop="priceCurrency" content="VND">
                             </span>
                         </div>
-                        <div class="vat_enable ">
+                        <!-- <div class="vat_enable ">
                             * <em>
                             Giá sản phẩm chưa bao gồm VAT
                             </em>
-                        </div>
+                        </div> -->
                         <div class="product_detail_countdown">
                         </div>
                         <div class="form-product">
@@ -156,37 +146,30 @@
                                 </div>
                                 <em class="fa fa-eye" aria-hidden="true"></em>
                             </div>
-                            <div class="rte description">
-                                <em>(Đang cập nhật ...)</em>
+                            <br>
+                            <br>
+                            <br>
+                            <div class="description">
+                                <!-- <em>(Đang cập nhật ...)</em> -->
+                                <p>Tủ lạnh có công nghệ làm đá tự động sẽ một hộp chứa nước, bên trong hộp chứa sẽ có một máy bơm trợ lực, khi ta cho nước nào, nước sẽ được bơm lên hộc làm đá tự động. Khi muốn lấy đá, chỉ cần bấm vào nút phía bên ngoài bảng điều khiển (có kí hiệu viên đá) là đã có thể lấy đá. Tủ lạnh sẽ cho ra 2 loại đá viên (kích thước lớn) và đá xay (kích thước nhỏ) tùy thuộc nhu cầu sử dụng mà bạn có thể lựa chọn.</p>
                             </div>
                         </div>
                         <!-- END MÔ TẢ NGẮN -->
-                        <!-- QR CODE -->
-                        <div class="qrcode">
-                            <label>
-                            Mã QR
-                            </label>
-                            <div class="qrcode_image">
-                                <img src="https://chart.googleapis.com/chart?cht=qr&amp;chl=https%3A%2F%2Flibra-mart.bizwebvietnam.net%2Ftu-lanh-side-by-side-inverter-hitachi&amp;chs=100x100&amp;choe=UTF-8" alt="QR code cho sản phẩm Tủ lạnh Side By Side Inverter Hitachi">
-                            </div>
-                        </div>
-                        <!-- TAG SẢN PHẨM -->
-                        <!-- END TAG -->
                         <!-- CHIA SẺ MẠNG XÃ HỘI -->
                         <div class="social-sharing">
-                            <div class="social-media social-icons" data-permalink="https://libra-mart.bizwebvietnam.net/tu-lanh-side-by-side-inverter-hitachi">
+                            <div class="social-media social-icons" data-permalink="{{url('')}}">
                                 <div class="sharing-item">
-                                    <a target="_blank" href="//www.facebook.com/sharer.php?u=https://libra-mart.bizwebvietnam.net/tu-lanh-side-by-side-inverter-hitachi" class="share-facebook txt-facebook hv-bg-facebook hv-bd-facebook" title="Chia sẻ lên Facebook">
+                                    <a target="_blank" href="//www.facebook.com/sharer.php?u={{url('')}}" class="share-facebook txt-facebook hv-bg-facebook hv-bd-facebook" title="Chia sẻ lên Facebook">
                                     <span class="icon icon-facebook" aria-hidden="true">
                                     <i class="fa fa-facebook"></i>
                                     </span>
                                     </a>
-                                    <a target="_blank" href="//twitter.com/share?text=tu-lanh-side-by-side-inverter-hitachi&amp;url=https://libra-mart.bizwebvietnam.net/tu-lanh-side-by-side-inverter-hitachi" class="share-twitter txt-twitter hv-bg-twitter hv-bd-twitter" title="Chia sẻ lên Twitter">
+                                    <a target="_blank" href="//twitter.com/share?text=tu-lanh-side-by-side-inverter-hitachi&amp;url={{url('')}}" class="share-twitter txt-twitter hv-bg-twitter hv-bd-twitter" title="Chia sẻ lên Twitter">
                                     <span class="icon icon-twitter" aria-hidden="true">
                                     <i class="fa fa-twitter"></i>
                                     </span>
                                     </a>
-                                    <a target="_blank" href="//plus.google.com/share?url=https://libra-mart.bizwebvietnam.net/tu-lanh-side-by-side-inverter-hitachi" class="share-google txt-google-plus hv-bg-google-plus hv-bd-google-plus" title="+1 lên Google Plus">
+                                    <a target="_blank" href="//plus.google.com/share?url={{url('')}}" class="share-google txt-google-plus hv-bg-google-plus hv-bd-google-plus" title="+1 lên Google Plus">
                                     <span class="icon icon-google-plus" aria-hidden="true">
                                     <i class="fa fa-google-plus"></i>
                                     </span>
@@ -251,22 +234,7 @@
                                     </div>
                                     <div id="collapse-1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading-1" aria-expanded="true" style="">
                                         <div class="panel-body rte">
-                                            <p>Tủ lạnh&nbsp;có công nghệ làm đá tự động sẽ một hộp chứa nước, bên trong hộp chứa sẽ có một máy bơm trợ lực, khi ta cho nước nào, nước sẽ được bơm lên hộc làm đá tự động. Khi muốn lấy đá, chỉ cần bấm vào nút phía bên ngoài bảng điều khiển (có kí hiệu viên đá) là đã có thể lấy đá. Tủ lạnh sẽ cho ra 2 loại đá viên (kích thước lớn) và đá xay (kích thước nhỏ) tùy thuộc nhu cầu sử dụng mà bạn có thể lựa chọn.</p>
-                                            <h3>Công nghệ Inverter tiết kiệm điện năng</h3>
-                                            <p>Máy sử dụng công nghệ inverter hiện đại, giúp tiết kiệm đến 50% lượng điện tiêu thụ so với tủ lạnh</p>
-                                            <h3>Thiết kế tinh tế, bắt mắt</h3>
-                                            <p>Tủ Lạnh Toshiba&nbsp;Tủ Lạnh Toshiba&nbsp;GR-WG58VDAZ(GG) có thiết kế đẹp mắt với kiểu dang thanh lịch, góp phần mang vẻ đẹp hiện đại, trang nhã vào căn bếp của gia đình bạn.</p>
-                                            <h3>Hệ thống làm lạnh kép</h3>
-                                            <p>Với hệ thống làm lạnh kép, giúp luồng khí lạnh di chuyển bao quát toàn bộ không gian tủ lạnh, làm lạnh đều và hiệu quả các thực phẩm bên trong, giúp bảo quản được lâu dài hơn.</p>
-                                            <p>Được trang bị công nghệ LED Hybrid Bio, Tủ có khả năng kháng khuẩn, ngăn chặn vi khuẩn phát triển, bảo đảm an toàn vệ sinh thực phẩm, đồng thời khử mùi đem lại cảm giác dễ khi mỗi khi sử dụng.</p>
-                                            <h3>Sức mạnh từ tinh thể bạc Ag<sup>+</sup></h3>
-                                            <p>Sức mạnh từ tinh thể bạc Ag<sup>+</sup>&nbsp;giúp ngăn chặn sự phát triển của vi khuẩn, giữ cho rau củ được tươi ngon.</p>
-                                            <h3>Chế độ Eco Mode tiết kiệm năng lượng</h3>
-                                            <p>Điều chỉnh nhiệt độ dễ dàng bằng nút điều khiển cảm ứng bên ngoài tủ lạnh, giúp tiết kiệm năng lượng tối ưu khi không sử dụng trong thời gian dài.</p>
-                                            <h3>Khay kệ di chuyển linh hoạt</h3>
-                                            <p>Tủ có khay kệ dễ dàng di chuyển vị trí nhằm phục vụ theo nhu cầu sử dụng. Người dùng có thể bảo quản nhiều loại hộp đựng thực phẩm với các kích cỡ khác nhau.</p>
-                                            <h3>Dung tích sử dụng lớn</h3>
-                                            <p>Với dung tích 546L, Tủ Lạnh Toshiba GR-WG58VDAZ(GG) cho người dùng một không gian đựng thực phẩm rộng rãi, phục vụ nhu cầu sử dụng tối đa của người dùng. Đồng thời với ngăn đựng rau củ lớn hơn 75% giúp trữ được nhiều thực phẩm hơn.</p>
+                                            Description
                                         </div>
                                     </div>
                                 </div>
@@ -329,95 +297,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="panel panel-default">
-                                    <div class="panel-heading" role="tab" id="heading-4">
-                                        <h4 class="panel-title">
-                                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-4" aria-expanded="true" aria-controls="collapse-4">
-                                            <i class="fa fa-star-half-o" aria-hidden="true"></i> <span>Đánh giá</span>
-                                            </a>
-                                        </h4>
-                                    </div>
-                                    <div id="collapse-4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-4" aria-expanded="false" style="height: 0px;">
-                                        <div class="panel-body rte">
-                                            <div id="bizweb-product-reviews" class="bizweb-product-reviews" data-id="12107334">
-                                                <div>
-                                                    <div class="title-bl">
-                                                        <h4>Đánh giá sản phẩm</h4>
-                                                    </div>
-                                                    <div id="bizweb-product-reviews-sub">
-                                                        <div id="bizweb-product-reviews-summary" class="bizweb-product-reviews-summary">
-                                                            <!--<div itemtype="http://schema.org/Product" itemscope>-->
-                                                            <div>
-                                                                <div itemscope="" itemprop="aggregateRating" itemtype="http://schema.org/AggregateRating" class="bpr-summary">
-                                                                    <meta content="5" itemprop="bestRating">
-                                                                    <meta content="1" itemprop="worstRating">
-                                                                    <span class="bpr-summary-average" itemprop="ratingValue">0</span>
-                                                                    <div data-number="5" data-score="0" class="bizweb-product-reviews-star" id="bizweb-prv-summary-star" title="Not rated yet!" style="color: rgb(255, 190, 0);">
-                                                                        <i data-alt="1" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="2" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="3" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="4" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="5" class="star-off-png" title="Not rated yet!"></i><input name="score" type="hidden" readonly="">
-                                                                    </div>
-                                                                    <div class="bpr-summary-caption">
-                                                                        <div></div>
-                                                                        <div>
-                                                                            <div>
-                                                                                <p itemprop="ratingCount">0</p>
-                                                                            </div>
-                                                                            <div><img height="15" width="16" src="https://productreviews.bizwebapps.vn/assets/images/user.png"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <span class="product-reviews-summary-actions">
-                                                        <input type="button" onclick="BPR.toggleForm(this);return false;" id="btnnewreview" value="Viết đánh giá">
-                                                        </span>
-                                                        <div class="bizweb-product-reviews-form" id="bpr-form_12107334" style="display:none;">
-                                                            <form method="post" action="https://productreviews.bizwebapps.vn/reviews/create" id="bizweb-product-reviews-frm" name="bizweb-product-reviews-frm">
-                                                                <input type="hidden" name="productId" id="review_product_id" value="12107334">
-                                                                <h4>Đánh giá sản phẩm</h4>
-                                                                <fieldset class="bpr-form-rating">
-                                                                    <div id="dvRating"></div>
-                                                                    <input type="hidden" name="rating" id="review_rate" value="0">
-                                                                    <span class="bpr-form-message-error"></span>
-                                                                </fieldset>
-                                                                <fieldset class="bpr-form-contact">
-                                                                    <div class="bpr-form-contact-name require">
-                                                                        <input type="text" maxlength="128" id="review_author" name="author" value="" placeholder="Nhập tên của bạn">
-                                                                        <span class="bpr-form-message-error"></span>
-                                                                    </div>
-                                                                    <div class="bpr-form-contact-email require">
-                                                                        <input type="text" maxlength="128" id="review_email" name="email" value="" placeholder="nguyenvan@gmail.com">
-                                                                        <span class="bpr-form-message-error"></span>
-                                                                    </div>
-                                                                </fieldset>
-                                                                <fieldset class="bpr-form-review">
-                                                                    <div class="bpr-form-review-title">
-                                                                        <input type="text" maxlength="512" id="review_title" name="title" value="" placeholder="Tiêu đề">
-                                                                        <span class="bpr-form-message-error"></span>
-                                                                    </div>
-                                                                    <div class="bpr-form-review-body">
-                                                                        <textarea maxlength="1500" id="review_body" name="body" rows="5" placeholder="Nội dung"></textarea>
-                                                                        <span class="bpr-form-message-error"></span>
-                                                                    </div>
-                                                                </fieldset>
-                                                                <fieldset class="bpr-form-review-error">
-                                                                    <p class="error"></p>
-                                                                </fieldset>
-                                                                <fieldset class="bpr-form-actions">
-                                                                    <input type="button" onclick="BPR.submitForm(); return false;" value="Gửi" class="bpr-button-submit">
-                                                                </fieldset>
-                                                            </form>
-                                                        </div>
-                                                        <div style="display:none;" id="bpr-thanks" class="bizweb-product-reviews-form">
-                                                            <b>Cảm ơn bạn đã đánh giá sản phẩm!</b>
-                                                        </div>
-                                                        <div id="bpr-list" class="bizweb-product-reviews-list"></div>
-                                                        <div id="bpr-more-reviews"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                             <script type="text/javascript">
                                 $(document).ready(function(){
@@ -476,270 +355,7 @@
                                 <div class="owl-carousel owl-theme dots-enable dots-top-right padding-top-10 owl-loaded owl-drag">
                                     <div class="owl-stage-outer">
                                         <div class="owl-stage" style="width: 100%;">
-                                            <!-- <div class="owl-item active" style="width: 116.5px; margin-right: 30px;">
-                                                <div class="item">
-                                                    <div class="product-box">
-                                                        <div class="product-thumbnail">
-                                                            <a href="/tu-lanh-side-by-side-electrolux" title="Tủ lạnh Side By Side Electrolux">
-                                                            <img class="img-responsive" src="{{url('')}}/assets/frontend/v1.0/images/products/ese5687sbthu2751d20161026t1746.jpg" data-lazyload="{{url('')}}/assets/frontend/v1.0/images/products/ese5687sbthu2751d20161026t1746.jpg?v=1530847018187" alt="Tủ lạnh Side By Side Electrolux">
-                                                            </a>
-                                                            <div class="product-action hidden-xs">
-                                                                <form action="/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-12107336" enctype="multipart/form-data">
-                                                                    <input type="hidden" name="variantId" value="19426472">
-                                                                    <button class="btn-buy btn-cart btn button-hover-3 left-to add_to_cart" title="Mua ngay">
-                                                                    <span><i class="fa fa-shopping-bag" aria-hidden="true"></i></span>
-                                                                    </button>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info">
-                                                            <div class="fw product-review">
-                                                                <div class="bizweb-product-reviews-badge" data-id="12107336">
-                                                                    <div class="bizweb-product-reviews-star" data-score="0" data-number="5" title="Not rated yet!" style="color: rgb(255, 190, 0);"><i data-alt="1" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="2" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="3" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="4" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="5" class="star-off-png" title="Not rated yet!"></i><input name="score" type="hidden" readonly=""></div>
-                                                                    <div>
-                                                                        <p>0</p>
-                                                                    </div>
-                                                                    <div><img src="https://productreviews.bizwebapps.vn//assets/images/user.png" width="18" height="17"></div>
-                                                                </div>
-                                                            </div>
-                                                            <h3 class="product-name">
-                                                                <a href="/tu-lanh-side-by-side-electrolux" title="Tủ lạnh Side By Side Electrolux">
-                                                                Tủ lạnh Side By Side Electrolux
-                                                                </a>
-                                                            </h3>
-                                                            <div class="price-box price-loop-style res-item">
-                                                                <span class="special-price">
-                                                                <span class="price">43.990.000₫</span>
-                                                                </span>
-                                                                <span class="old-price">
-                                                                <span class="price">
-                                                                </span>
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="owl-item active" style="width: 116.5px; margin-right: 30px;">
-                                                <div class="item">
-                                                    <div class="product-box">
-                                                        <div class="product-thumbnail">
-                                                            <a href="/may-giat-say-cua-truoc-inverter" title="Máy giặt sấy cửa trước Inverter">
-                                                            <img class="img-responsive" src="{{url('')}}/assets/frontend/v1.0/images/products/2e2029eb86097da239e55318289b6c.jpg?v=1530847004613" data-lazyload="{{url('')}}/assets/frontend/v1.0/images/products/2e2029eb86097da239e55318289b6c.jpg?v=1530847004613" alt="Máy giặt sấy cửa trước Inverter">
-                                                            </a>
-                                                            <div class="product-action hidden-xs">
-                                                                <form action="/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-12107324" enctype="multipart/form-data">
-                                                                    <input type="hidden" name="variantId" value="19426460">
-                                                                    <button class="btn-buy btn-cart btn button-hover-3 left-to add_to_cart" title="Mua ngay">
-                                                                    <span><i class="fa fa-shopping-bag" aria-hidden="true"></i></span>
-                                                                    </button>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info">
-                                                            <div class="fw product-review">
-                                                                <div class="bizweb-product-reviews-badge" data-id="12107324">
-                                                                    <div class="bizweb-product-reviews-star" data-score="0" data-number="5" title="Not rated yet!" style="color: rgb(255, 190, 0);"><i data-alt="1" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="2" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="3" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="4" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="5" class="star-off-png" title="Not rated yet!"></i><input name="score" type="hidden" readonly=""></div>
-                                                                    <div>
-                                                                        <p>0</p>
-                                                                    </div>
-                                                                    <div><img src="https://productreviews.bizwebapps.vn//assets/images/user.png" width="18" height="17"></div>
-                                                                </div>
-                                                            </div>
-                                                            <h3 class="product-name">
-                                                                <a href="/may-giat-say-cua-truoc-inverter" title="Máy giặt sấy cửa trước Inverter">
-                                                                Máy giặt sấy cửa trước Inverter
-                                                                </a>
-                                                            </h3>
-                                                            <div class="price-box price-loop-style res-item">
-                                                                <span class="special-price">
-                                                                <span class="price">42.790.000₫</span>
-                                                                </span>
-                                                                <span class="old-price">
-                                                                <span class="price">
-                                                                </span>
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="owl-item" style="width: 116.5px; margin-right: 30px;">
-                                                <div class="item">
-                                                    <div class="product-box">
-                                                        <div class="product-thumbnail">
-                                                            <a href="/tu-lanh-inverter-samsung-rs552nruasl" title="Tủ lạnh Inverter Samsung RS552NRUASL">
-                                                            <img class="img-responsive" src="{{url('')}}/assets/frontend/v1.0/images/products/ese5687sbthu2751d20161026t1746.jpg3" data-lazyload="{{url('')}}/assets/frontend/v1.0/images/products/ese5687sbthu2751d20161026t1746.jpg3" alt="Tủ lạnh Inverter Samsung RS552NRUASL">
-                                                            </a>
-                                                            <div class="product-action hidden-xs">
-                                                                <form action="/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-12107339" enctype="multipart/form-data">
-                                                                    <input type="hidden" name="variantId" value="19426475">
-                                                                    <button class="btn-buy btn-cart btn button-hover-3 left-to add_to_cart" title="Mua ngay">
-                                                                    <span><i class="fa fa-shopping-bag" aria-hidden="true"></i></span>
-                                                                    </button>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info">
-                                                            <div class="fw product-review">
-                                                                <div class="bizweb-product-reviews-badge" data-id="12107339">
-                                                                    <div class="bizweb-product-reviews-star" data-score="0" data-number="5" title="Not rated yet!" style="color: rgb(255, 190, 0);"><i data-alt="1" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="2" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="3" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="4" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="5" class="star-off-png" title="Not rated yet!"></i><input name="score" type="hidden" readonly=""></div>
-                                                                    <div>
-                                                                        <p>0</p>
-                                                                    </div>
-                                                                    <div><img src="https://productreviews.bizwebapps.vn//assets/images/user.png" width="18" height="17"></div>
-                                                                </div>
-                                                            </div>
-                                                            <h3 class="product-name">
-                                                                <a href="/tu-lanh-inverter-samsung-rs552nruasl" title="Tủ lạnh Inverter Samsung RS552NRUASL">
-                                                                Tủ lạnh Inverter Samsung RS552NRUASL
-                                                                </a>
-                                                            </h3>
-                                                            <div class="price-box price-loop-style res-item">
-                                                                <span class="special-price">
-                                                                <span class="price">27.900.000₫</span>
-                                                                </span>
-                                                                <span class="old-price">
-                                                                <span class="price">
-                                                                </span>
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="owl-item" style="width: 116.5px; margin-right: 30px;">
-                                                <div class="item">
-                                                    <div class="product-box">
-                                                        <div class="product-thumbnail">
-                                                            <a href="/tu-lanh-inverter-hitachi-r-w660pgv3" title="Tủ lạnh Inverter Hitachi R-W660PGV3">
-                                                            <img class="img-responsive" src="{{url('')}}/assets/frontend/v1.0/images/products/ese5687sbthu2751d20161026t1746.jpg" data-lazyload="{{url('')}}/assets/frontend/v1.0/images/products/hitachirw660pgv3gbk1u579d20160.jpg?v=1530847017097" alt="Tủ lạnh Inverter Hitachi R-W660PGV3">
-                                                            </a>
-                                                            <div class="product-action hidden-xs">
-                                                                <form action="/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-12107335" enctype="multipart/form-data">
-                                                                    <input type="hidden" name="variantId" value="19426471">
-                                                                    <button class="btn-buy btn-cart btn button-hover-3 left-to add_to_cart" title="Mua ngay">
-                                                                    <span><i class="fa fa-shopping-bag" aria-hidden="true"></i></span>
-                                                                    </button>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info">
-                                                            <div class="fw product-review">
-                                                                <div class="bizweb-product-reviews-badge" data-id="12107335">
-                                                                    <div class="bizweb-product-reviews-star" data-score="0" data-number="5" title="Not rated yet!" style="color: rgb(255, 190, 0);"><i data-alt="1" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="2" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="3" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="4" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="5" class="star-off-png" title="Not rated yet!"></i><input name="score" type="hidden" readonly=""></div>
-                                                                    <div>
-                                                                        <p>0</p>
-                                                                    </div>
-                                                                    <div><img src="https://productreviews.bizwebapps.vn//assets/images/user.png" width="18" height="17"></div>
-                                                                </div>
-                                                            </div>
-                                                            <h3 class="product-name">
-                                                                <a href="/tu-lanh-inverter-hitachi-r-w660pgv3" title="Tủ lạnh Inverter Hitachi R-W660PGV3">
-                                                                Tủ lạnh Inverter Hitachi R-W660PGV3
-                                                                </a>
-                                                            </h3>
-                                                            <div class="price-box price-loop-style res-item">
-                                                                <span class="special-price">
-                                                                <span class="price">22.990.000₫</span>
-                                                                </span>
-                                                                <span class="old-price">
-                                                                <span class="price">
-                                                                </span>
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="owl-item" style="width: 116.5px; margin-right: 30px;">
-                                                <div class="item">
-                                                    <div class="product-box">
-                                                        <div class="product-thumbnail">
-                                                            <a href="/may-giat-say-cua-truoc-lg-204" title="Máy giặt sấy cửa trước LG 204">
-                                                            <img class="img-responsive" src="{{url('')}}/assets/frontend/v1.0/images/products/ese5687sbthu2751d20161026t1746.jpg" data-lazyload="{{url('')}}/assets/frontend/v1.0/images/products/f2514dtgwu2751d20161004t221203.jpg?v=1530847002530" alt="Máy giặt sấy cửa trước LG 204">
-                                                            </a>
-                                                            <div class="product-action hidden-xs">
-                                                                <form action="/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-12107321" enctype="multipart/form-data">
-                                                                    <input type="hidden" name="variantId" value="19426457">
-                                                                    <button class="btn-buy btn-cart btn button-hover-3 left-to add_to_cart" title="Mua ngay">
-                                                                    <span><i class="fa fa-shopping-bag" aria-hidden="true"></i></span>
-                                                                    </button>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info">
-                                                            <div class="fw product-review">
-                                                                <div class="bizweb-product-reviews-badge" data-id="12107321">
-                                                                    <div class="bizweb-product-reviews-star" data-score="0" data-number="5" title="Not rated yet!" style="color: rgb(255, 190, 0);"><i data-alt="1" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="2" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="3" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="4" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="5" class="star-off-png" title="Not rated yet!"></i><input name="score" type="hidden" readonly=""></div>
-                                                                    <div>
-                                                                        <p>0</p>
-                                                                    </div>
-                                                                    <div><img src="https://productreviews.bizwebapps.vn//assets/images/user.png" width="18" height="17"></div>
-                                                                </div>
-                                                            </div>
-                                                            <h3 class="product-name">
-                                                                <a href="/may-giat-say-cua-truoc-lg-204" title="Máy giặt sấy cửa trước LG 204">
-                                                                Máy giặt sấy cửa trước LG 204
-                                                                </a>
-                                                            </h3>
-                                                            <div class="price-box price-loop-style res-item">
-                                                                <span class="special-price">
-                                                                <span class="price">22.690.000₫</span>
-                                                                </span>
-                                                                <span class="old-price">
-                                                                <span class="price">
-                                                                </span>
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="owl-item" style="width: 116.5px; margin-right: 30px;">
-                                                <div class="item">
-                                                    <div class="product-box">
-                                                        <div class="product-thumbnail">
-                                                            <a href="#" title="Máy lạnh Inverter Toshiba H18PKCVG">
-                                                            <img class="img-responsive" src="{{url('')}}/assets/frontend/v1.0/images/products/ese5687sbthu2751d20161026t1746.jpg" data-lazyload="{{url('')}}/assets/frontend/v1.0/images/products/ed6cd5df9bcec769a5c2f36de857a1.jpg?v=1530847023657" alt="Máy lạnh Inverter Toshiba H18PKCVG">
-                                                            </a>
-                                                            <div class="product-action hidden-xs">
-                                                                <form action="/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-12107342" enctype="multipart/form-data">
-                                                                    <input type="hidden" name="variantId" value="19426478">
-                                                                    <button class="btn-buy btn-cart btn button-hover-3 left-to add_to_cart" title="Mua ngay">
-                                                                    <span><i class="fa fa-shopping-bag" aria-hidden="true"></i></span>
-                                                                    </button>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-info">
-                                                            <div class="fw product-review">
-                                                                <div class="bizweb-product-reviews-badge" data-id="12107342">
-                                                                    <div class="bizweb-product-reviews-star" data-score="0" data-number="5" title="Not rated yet!" style="color: rgb(255, 190, 0);"><i data-alt="1" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="2" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="3" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="4" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="5" class="star-off-png" title="Not rated yet!"></i><input name="score" type="hidden" readonly=""></div>
-                                                                    <div>
-                                                                        <p>0</p>
-                                                                    </div>
-                                                                    <div><img src="https://productreviews.bizwebapps.vn//assets/images/user.png" width="18" height="17"></div>
-                                                                </div>
-                                                            </div>
-                                                            <h3 class="product-name">
-                                                                <a href="#" title="Máy lạnh Inverter Toshiba H18PKCVG">
-                                                                Máy lạnh Inverter Toshiba H18PKCVG
-                                                                </a>
-                                                            </h3>
-                                                            <div class="price-box price-loop-style res-item">
-                                                                <span class="special-price">
-                                                                <span class="price">17.900.000₫</span>
-                                                                </span>
-                                                                <span class="old-price">
-                                                                <span class="price">
-                                                                </span>
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div> -->
+                                            
                                             <div class="owl-item" style="width: 50%">
                                                 <div class="item">
                                                     <div class="product-box">
@@ -833,12 +449,6 @@
                                     <div class="owl-nav disabled">
                                         <div class="owl-prev"><i class="fa fa-angle-left"></i></div>
                                         <div class="owl-next"><i class="fa fa-angle-right"></i></div>
-                                    </div>
-                                    <div class="owl-dots">
-                                        <div class="owl-dot active"><span></span></div>
-                                        <div class="owl-dot"><span></span></div>
-                                        <div class="owl-dot"><span></span></div>
-                                        <div class="owl-dot"><span></span></div>
                                     </div>
                                 </div>
                             </div>

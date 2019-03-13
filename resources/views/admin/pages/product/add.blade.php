@@ -5,7 +5,7 @@
   <link rel="stylesheet" type="text/css" href="{{url('')}}/assets/admin/app-assets/vendors/css/forms/icheck/icheck.css">
   <link rel="stylesheet" type="text/css" href="{{url('')}}/assets/admin/app-assets/vendors/css/forms/toggle/bootstrap-switch.min.css">
   <link rel="stylesheet" type="text/css" href="{{url('')}}/assets/admin/app-assets/vendors/css/forms/toggle/switchery.min.css">
-  <link rel="stylesheet" type="text/css" href="{{url('')}}/assets/admin/app-assets/css/plugins/forms/validation/form-validation.css">css
+  <link rel="stylesheet" type="text/css" href="{{url('')}}/assets/admin/app-assets/css/plugins/forms/validation/form-validation.css">
   <link rel="stylesheet" type="text/css" href="{{url('')}}/assets/admin/app-assets/css/pages/login-register.css">
 @stop
 @section('script')
@@ -24,7 +24,8 @@
 @stop
 <div class="app-content content">
     <div class="content-wrapper">
-        <form class="form" novalidate>
+        <form method="post" action="{{route('postAddProductAdmin')}}" class="form" novalidate>
+            @csrf
             <div class="content-header row">
             <div class="content-header-left col-md-6 col-12">
                 <div class="row breadcrumbs-top">
@@ -65,6 +66,7 @@
                                                 <span class="la la-plus-circle font-medium-4"></span>
                                                 </a>
                                             </div>
+                                            <input type="hidden" id="image" type="text" class="form-control" placeholder="{{__("general.imageUrl")}}" name="avatar">
                                         </div>
                                     </div>
                                 </div>
@@ -86,44 +88,50 @@
                                                     <span class="required red">(*)</span>
                                                 </h5>
                                                 <div class="controls">
-                                                    <select name="sltCate" class="form-control">
-                                                        <option>{{__('general.selectCategory')}}</option>
+                                                    <select name="sltCate" class="form-control" required data-validation-required-message="Vui lòng chọn một danh mục">
+                                                        <option value="">{{__('general.selectCategory')}}</option>
+                                                        @foreach($categories as $cate)
+                                                        <option value="{{$cate->id}}">{{$cate->name}}</option>
+                                                        @endforeach
                                                     </select>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <h5>Giá Nhập Về
+                                                </h5>
+                                                <div class="controls">
+                                                    <input value="{{old('txtNhap')}}" type="number" class="form-control" placeholder="Giá Nhập Về" name="txtNhap" required data-validation-required-message="Giá nhập kho không được để trống" maxlength="11" data-validation-maxlength-message="Giá nhập kho không được lớn hơn 999.999.999.999 (đ)" minlength="4" data-validation-minlength-message="Giá nhập kho không được nhỏ hơn 1.000 (đ)">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <h5>{{__('general.price')}}
                                                 </h5>
                                                 <div class="controls">
-                                                    <input value="{{old('txtPrice')}}" type="text" id="txtPrice" class="form-control" placeholder="{{__('placeholder.price')}}" name="txtPrice"required data-validation-required-message="{{__('validation.required', ['attribute'=>__('general.categoryName')])}}" maxlength="128" data-validation-maxlength-message="{{__('validation.max.string', ['attribute'=>__('general.categoryName'), 'max'=>'128'])}}" minlength="4" data-validation-minlength-message="{{__('validation.min.string', ['attribute'=>__('general.categoryName'), 'min'=>'4'])}}">
+                                                    <input value="{{old('txtPrice')}}" type="number" id="txtPrice" class="form-control" placeholder="{{__('placeholder.price')}}" name="txtPrice" required data-validation-required-message="Giá bán không được để trống" maxlength="11" data-validation-maxlength-message="Giá bán không được lớn hơn 999.999.999.999 (đ)" minlength="4" data-validation-minlength-message="Giá bán không được nhỏ hơn 1.000 (đ)"">
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <h5>{{__('general.salePrice')}}
                                                 </h5>
                                                 <div class="controls">
-                                                    <input value="{{old('txtSalePrice')}}" type="text" id="txtSalePrice" class="form-control" placeholder="{{__('placeholder.salePrice')}}" name="txtSalePrice"required data-validation-required-message="{{__('validation.required', ['attribute'=>__('general.categoryName')])}}" maxlength="128" data-validation-maxlength-message="{{__('validation.max.string', ['attribute'=>__('general.categoryName'), 'max'=>'128'])}}" minlength="4" data-validation-minlength-message="{{__('validation.min.string', ['attribute'=>__('general.categoryName'), 'min'=>'4'])}}">
+                                                    <input value="{{old('txtSalePrice')}}" type="number" id="txtSalePrice" class="form-control" placeholder="{{__('placeholder.salePrice')}}" name="txtSalePrice" maxlength="11" data-validation-maxlength-message="Giá khuyến mãi không được lớn hơn 999.999.999.999 (đ)" minlength="4" data-validation-minlength-message="Giá khuyến mãi không được nhỏ hơn 1.000 (đ)"">
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-2">
                                             <div class="form-group">
                                                 <h5>{{__('general.qty')}}
                                                 </h5>
-                                                <div class="row">
-                                                    <div class="controls col-md-6">
-                                                        <input value="{{old('txtQty')}}" type="text" id="txtQty" class="form-control" placeholder="{{__('placeholder.qty')}}" name="txtQty"required data-validation-required-message="{{__('validation.required', ['attribute'=>__('general.categoryName')])}}" maxlength="128" data-validation-maxlength-message="{{__('validation.max.string', ['attribute'=>__('general.categoryName'), 'max'=>'128'])}}" minlength="4" data-validation-minlength-message="{{__('validation.min.string', ['attribute'=>__('general.categoryName'), 'min'=>'4'])}}">
-                                                    </div>
-                                                </div>
+                                                <input value="{{old('txtQty')}}" type="number" id="txtQty" class="form-control" placeholder="{{__('placeholder.qty')}}" name="txtQty" required required data-validation-required-message="Số lượng không được để trống">
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-5">
                                             <div class="form-group">
                                                 <h5>{{__('general.status')}}</h5>
                                                 <div class="row skin skin-flat">
@@ -138,6 +146,12 @@
                                                         </fieldset>
                                                     </div>
                                                 </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <h5> Giới Thiệu Tóm Tắt</h5>
+                                                <textarea  rows="5" class="form-control" name="description" placeholder="Giới Thiệu Tóm Tắt Cho Sản Phẩm"></textarea>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
@@ -175,13 +189,13 @@
                                 </div>
                             </div>
                             <div class="form-actions right">
-                                    <button onclick="location.href='{{route('getListProductsAdmin')}}'" type="button" class="btn btn-danger mr-1">
-                                        <i class="ft-x"></i> {{__('general.cancel')}}
-                                    </button>
-                                    <button type="submit" class="btn btn-success">
-                                        <i class="la la-check-square-o"></i> {{__('general.saveChange')}}
-                                    </button>
-                                </div>
+                                <button onclick="location.href='{{route('getListProductsAdmin')}}'" type="button" class="btn btn-danger mr-1">
+                                    <i class="ft-x"></i> {{__('general.cancel')}}
+                                </button>
+                                <button type="submit" class="btn btn-success">
+                                    <i class="la la-check-square-o"></i> {{__('general.saveChange')}}
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -209,7 +223,7 @@ CKEDITOR.replace('ckeditor', options);
         html += '<td>';
         html += '<div class="row">';
         html += '<div class="col-md-10 col-xs-10">';
-        html += '<input id="image'+row+'" type="text" class="form-control" placeholder="{{__("general.imageUrl")}}" name="image[]">';
+        html += '<input id="image'+row+'" type="text" class="form-control" placeholder="{{__("general.imageUrl")}}" name="image[]" required data-validation-required-message="Vui lòng chọn ảnh cho sản phẩm">';
         html += '</div>';           
         html += '<div class="col-md-2 col-xs-2">';           
         html += '<div class="heading-elements">';              

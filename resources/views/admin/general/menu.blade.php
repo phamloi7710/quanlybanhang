@@ -21,6 +21,13 @@
                     <li><a class="menu-item" href="{{route('getListLanguages')}}">{{__('general.language')}}</a>
                     </li>
                 </ul>
+            </li> 
+            <li class=" nav-item">
+                <a href="#"><i class="la la-cog"></i><span class="menu-title" data-i18n="nav.dash.main">Cài Đặt Trang</span></a>
+                <ul class="menu-content">
+                    <li><a class="menu-item" href="{{route('getIntroduceAdmin')}}">Trang Giới Thiệu</a>
+                    </li>
+                </ul>
             </li>   
         </ul>
     </div>

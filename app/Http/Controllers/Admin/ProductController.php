@@ -5,9 +5,11 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\Product\Category;
+use App\Model\Product\Product;
 use App\Https\Requests\Admin\Category\AddNewRequest;
 use Validator;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Auth;
 class ProductController extends Controller
 {
     
@@ -79,22 +81,83 @@ class ProductController extends Controller
     }
     public function getList()
     {
-        return view('admin.pages.product.list');
+        $products = Product::all();
+        return view('admin.pages.product.list', ['products'=>$products]);
     }
     public function getAdd()
     {
-        return view('admin.pages.product.add');
+        $categories = Category::all();
+        return view('admin.pages.product.add', ['categories'=>$categories]);
     }
     public function postAdd(Request $request)
     {
-        
+        $product = new Product();
+        $product->name = $request->txtName;
+        $product->slug = changeTitle($request->txtName);
+        $product->cate_id = $request->sltCate;
+        $product->price_import = $request->txtNhap;
+        $product->price = $request->txtPrice;
+        $product->price_sale = $request->txtSalePrice;
+        $product->qty = $request->txtQty;
+        $product->status = $request->status;
+        $product->avatar = $request->avatar;
+        $imageData = array();
+        $urlImage = $request->image;
+        if(is_array($urlImage)) {
+            for($i=0; $i < count($urlImage); $i++) {
+                $imageData[$i] = [
+                    'url_image' => $urlImage[$i],
+                ];
+            }
+        }
+        $product->image_data = serialize($imageData);
+        $product->description = $request->description;
+        $product->content = $request->content;
+        $product->user_id = Auth::user()->id;
+        $product->save();
+        $notifySuccess = array(
+            'message' => 'Thêm Mới Sản Phẩm Thành Công!',  
+            'alert-type' => 'success',
+        );
+        return redirect()->route('getListProductsAdmin')->with($notifySuccess);
     }
     public function getEdit($id)
     {
-        
+        $categories = Category::all();
+        $product = Product::find($id);
+        $imageData = unserialize($product->image_data);
+        return view('admin.pages.product.edit', ['product'=>$product, 'categories'=>$categories, 'imageData'=>$imageData]);
     }
     public function postEdit(Request $request, $id)
     {
-        
+        $product = Product::find($id);
+        $product->name = $request->txtName;
+        $product->slug = changeTitle($request->txtName);
+        $product->cate_id = $request->sltCate;
+        $product->price_import = $request->txtNhap;
+        $product->price = $request->txtPrice;
+        $product->price_sale = $request->txtSalePrice;
+        $product->qty = $request->txtQty;
+        $product->status = $request->status;
+        $product->avatar = $request->avatar;
+        $imageData = array();
+        $urlImage = $request->image;
+        if(is_array($urlImage)) {
+            for($i=0; $i < count($urlImage); $i++) {
+                $imageData[$i] = [
+                    'url_image' => $urlImage[$i],
+                ];
+            }
+        }
+        $product->image_data = serialize($imageData);
+        $product->description = $request->description;
+        $product->content = $request->content;
+        $product->user_id = Auth::user()->id;
+        $product->save();
+        $notifySuccess = array(
+            'message' => 'Chỉnh Sửa Sản Phẩm Thành Công!',  
+            'alert-type' => 'success',
+        );
+        return redirect()->route('getListProductsAdmin')->with($notifySuccess);
     }
 }

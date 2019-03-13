@@ -25,15 +25,22 @@ Route::group(['prefix'=>'admin', 'middleware'=>'checkRoleAdmin'], function(){
 		Route::get('edit/{id}.html', 'Admin\ProductController@getEditCate')->name('getEditCateAdmin');
 		Route::post('edit/{id}.html', 'Admin\ProductController@postEditCate')->name('postEditCateAdmin');
 	});
-	Route::group(['prefix'=>'product'], function(){
-		Route::get('list.html', 'Admin\ProductController@getList')->name('getListProductsAdmin');
-		Route::get('add-new.html', 'Admin\ProductController@getAdd')->name('getAddProductAdmin');
-		Route::post('add-new.html', 'Admin\ProductController@postAdd')->name('postAddProductAdmin');
-	});
+	
 	Route::group(['prefix'=>'language'], function(){
 		Route::get('list', 'Admin\LanguageController@getList')->name('getListLanguages');
 		Route::post('add-new.html', 'Admin\LanguageController@postAdd')->name('postAddLanguage');
 		Route::post('edit/{id}.html', 'Admin\LanguageController@postEdit')->name('postEditLanguage');
+	});
+	Route::group(['prefix'=>'product'], function(){
+		Route::get('list.html', 'Admin\ProductController@getList')->name('getListProductsAdmin');
+		Route::get('add-new.html', 'Admin\ProductController@getAdd')->name('getAddProductAdmin');
+		Route::post('add-new.html', 'Admin\ProductController@postAdd')->name('postAddProductAdmin');
+		Route::get('edit/{id}.html', 'Admin\ProductController@getEdit')->name('getEditProductAdmin');
+		Route::post('edit/{id}.html', 'Admin\ProductController@postEdit')->name('postEditProductAdmin');
+	});
+	Route::group(['prefix'=>'page'], function(){
+		Route::get('introduce.html', 'Admin\AdminController@getIntroduce')->name('getIntroduceAdmin');
+		Route::post('introduce.html', 'Admin\AdminController@postIntroduce')->name('postIntroduceAdmin');
 	});
 });
 
@@ -43,9 +50,7 @@ Route::group(['prefix'=>'admin', 'middleware'=>'checkRoleAdmin'], function(){
 
 
 // Frontend
-Route::get('/', function (){
-	return view('frontend.v1.index');
-})->name('getIndex');
-Route::get('detail.html', function (){
-	return view('frontend.v1.detail');
-});
+Route::get('/', 'Frontend\IndexController@getIndex')->name('getIndex');
+Route::get('{cate_name}/{slug}.html', 'Frontend\ProductController@getDetail')->name('getDetailProduct');
+Route::get('gioi-thieu.html', 'Frontend\FrontendController@getIntroduce')->name('getIntroduceFrontend');
+Route::get('danh-muc/{url}.html', 'Frontend\FrontendController@getIntroduce')->name('getIntroduceFrontend');

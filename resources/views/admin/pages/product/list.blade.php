@@ -34,31 +34,46 @@
                                 </div>
                             </div>
                 <div class="card-content">
-                    <div class="card-body">
+                    <div class="card-body table-responsive">
                         <table class="table table-bordered mb-0">
                             <thead>
                                 <tr>
-                                    <th>Hàng Hóa</th>
-                                    <th>Mã Hàng</th>
+                                    <th>Tên Sản Phẩm</th>
+                                    <th>Ảnh Đại Diện</th>
+                                    <th>Danh Mục</th>
                                     <th>Số Lượng</th>
-                                    <th>Giá Bán</th>
-                                    <th>Nhóm Hàng</th>
-                                    <th>Nhà Sản Suất</th>
-                                    <th>Hình Ảnh</th>
+                                    <th>Giá</th>
+                                    <th>Trạng Thái</th>
                                     <th></th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody class="font-small-3">
+                                @foreach($products as $product)
                                 <tr>
-                                    <td>John</td>
-                                    <td>John</td>
-                                    <td>John</td>
-                                    <td>John</td>
-                                    <td>John</td>
-                                    <td>John</td>
-                                    <td>John</td>
-                                    <td>John</td>
+                                    <td>{{$product->name}}</td>
+                                    <td class="center"><img width="50" src="{{url('')}}{{$product->avatar}}"></td>
+                                    <td>
+                                        <button type="button" class="btn btn-sm btn-outline-success round">{{$product->category->name}}</button>
+                                    </td>
+                                    <td>{{$product->qty}}</td>
+                                    <td class="font-small-3">
+                                        <p><span class="text-bold-700">Giá Nhập:</span> <span class="blue">{{number_format($product->price_import, 0,',','.')}} (đ)</span></p>
+                                        <p><span class="text-bold-700">Giá Bán:</span> <span class="blue">{{number_format($product->price, 0,',','.')}} (đ)</span></p>
+                                        <p><span class="text-bold-700">Giá Khuyến Mãi:</span> <span class="blue">{{number_format($product->price_sale, 0,',','.')}} (đ)</span></p>
+                                    </td>
+                                    <td>{{$product->status}}</td>
+                                    <td>
+                                        <span class="dropdown">
+                                            <button id="btnSearchDrop2" type="button" data-toggle="dropdown" aria-haspopup="true"
+                                          aria-expanded="false" class="btn btn-info btn-sm dropdown-toggle">{{__('general.option')}}</button>
+                                            <span aria-labelledby="btnSearchDrop2" class="dropdown-menu mt-1 dropdown-menu-right">
+                                                <a href="{{route('getEditProductAdmin', ['id'=>$product->id])}}" class="dropdown-item blue"><i class="ft-edit-2"></i> {{__('general.edit')}}</a>
+                                                <a href="#" class="dropdown-item red"><i class="ft-trash"></i> {{__('general.delete')}}</a>
+                                            </span>
+                                        </span>
+                                    </td>
                                 </tr>
+                                @endforeach
                             </tbody>
                           </table>
                     </div>

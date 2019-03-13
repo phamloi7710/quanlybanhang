@@ -15,16 +15,16 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->nulable();
-            $table->string('slug')->nulable();
-            $table->string('code')->nulable();
-            $table->integer('cate_id')->nulable();
-            $table->integer('price')->nulable();
-            $table->integer('price_sale')->nulable();
-            $table->integer('user_id')->nulable();
-            $table->longText('content')->nulable();
+            $table->string('name')->nullable();
+            $table->string('slug')->nullable();
+            $table->string('code')->nullable();
+            $table->integer('cate_id')->nullable();
+            $table->integer('price')->nullable();
+            $table->integer('price_sale')->nullable();
+            $table->integer('user_id')->nullable();
+            $table->longText('content')->nullable();
             $table->enum('status', array('active', 'inActive'))->default('active');
-            $table->text('note')->nulable();
+            $table->text('note')->nullable();
             $table->timestamps();
         });
     }
