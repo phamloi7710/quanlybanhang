@@ -238,7 +238,7 @@
             <script src="{{url('')}}/assets/frontend/v1.0/script/sidebar_menu.js" type="text/javascript"></script>
             <script src="{{url('')}}/assets/frontend/v1.0/script/product.js" type="text/javascript"></script>
             <script src="{{url('')}}/assets/frontend/v1.0/jquery/jquery.elevatezoom308.min.js" type="text/javascript"></script>
-            
+            <script src="{{url('')}}/assets/frontend/v1.0/script/col.js?1548428247318" type="text/javascript"></script>
             <!-- Product detail JS,CSS -->
             <!-- Facebook Fanpage -->
             <div id="fb-root"></div>

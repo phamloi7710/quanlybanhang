@@ -8,11 +8,14 @@
                     <li class="home">
                         <a itemprop="url" href="/"><span itemprop="title">Trang chủ</span></a>
                     </li>
-
-                    
-                        <li>
-                            <strong itemprop="title">{{$page->title}}</strong>
-                        </li>
+                    <li>
+                        <a itemprop="url" href="/dien-may">
+                            <span itemprop="title">Danh Mục</span>
+                        </a>
+                    </li>
+                    <li>
+                        <strong itemprop="title">{{$category->name}}</strong>
+                    </li>
                     
                 </ul>
             </div>
@@ -20,7 +23,7 @@
     </div>
 </section>
 <section class="collection-template">
-    <div class="container">
+    <!-- <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 collection-header">
                 <div class="module-header">
@@ -30,30 +33,27 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <div class="container">
         <div class="row">
             <section class="collection col-lg-9 col-md-9 col-sm-12 col-xs-12  col-lg-push-3 col-md-push-3 col-sm-12 col-xs-12">
                 <div class="main_container">
-                    <!--<h1 class="title-head collection-title">
-                        Sản phẩm khuyến mãi
-                        </h1>-->
-                    <div class="collection_description fw bg-warning padding-15">
-                        <p>Sản phẩm khuyến mãi</p>
-                    </div>
+                    <h1 class="title-head collection-title">
+                        Sản phẩm thuộc danh mục <span style="color: blue;">{{$category->name}}</span>
+                    </h1>
                     <div class="category-products products">
                         <div class="module-header margin-bottom-15">
                             <div class="sortPagiBar">
                                 <div id="sort-by">
                                     <div class="border_sort">
-                                        <select onchange="sortby(this.value)">
-                                            <option class="valued" value="default">Mặc định</option>
-                                            <option value="price-asc">Giá tăng dần</option>
-                                            <option value="price-desc">Giá giảm dần</option>
-                                            <option value="alpha-asc">Từ A-Z</option>
-                                            <option value="alpha-desc">Từ Z-A</option>
-                                            <option value="created-asc">Cũ đến mới</option>
-                                            <option value="created-desc">Mới đến cũ</option>
+                                        <select onchange="window.location=this.value">
+                                            <option value="#">Mặc định</option>
+                                            <option value="#">Giá tăng dần</option>
+                                            <option value="#">Giá giảm dần</option>
+                                            <option value="#">Từ A-Z</option>
+                                            <option value="#">Từ Z-A</option>
+                                            <option value="#">Cũ đến mới</option>
+                                            <option value="#">Mới đến cũ</option>
                                         </select>
                                     </div>
                                 </div>
@@ -62,12 +62,13 @@
                         <div class="module-content">
                             <section class="products-view products-view-grid">
                                 <div class="row">
+                                    @foreach($products as $product)
                                     <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3 col-item">
                                         <div class="product-box">
                                             <div class="product-thumbnail">
                                                 <div class="tag-item tag-sale sale-flash">-9%</div>
-                                                <a href="/internet-tivi-sony-40-inch-kdl" title="Internet Tivi Sony 40 inch KDL">
-                                                <img class="img-responsive" src="//bizweb.dktcdn.net/thumb/large/100/321/719/products/a29b6e93b0b479041f92d0ecd784f2.jpg?v=1530847043140" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/321/719/products/a29b6e93b0b479041f92d0ecd784f2.jpg?v=1530847043140" alt="Internet Tivi Sony 40 inch KDL">
+                                                <a href="{{route('getDetailProduct', ['cate_name'=>$product->category->slug, 'slug'=>$product->slug])}}" title="{{$product->name}}">
+                                                <img class="img-responsive" src="{{url('')}}/{{$product->avatar}}" data-lazyload="{{url('')}}/{{$product->avatar}}" alt="{{$product->name}}">
                                                 </a>
                                                 <div class="product-action hidden-xs">
                                                     <form action="/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-12107375" enctype="multipart/form-data">
@@ -79,698 +80,25 @@
                                                 </div>
                                             </div>
                                             <div class="product-info">
-                                                <div class="fw product-review">
-                                                    <div class="bizweb-product-reviews-badge" data-id="12107375">
-                                                        <div class="bizweb-product-reviews-star" data-score="0" data-number="5" title="Not rated yet!" style="color: rgb(255, 190, 0);"><i data-alt="1" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="2" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="3" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="4" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="5" class="star-off-png" title="Not rated yet!"></i><input name="score" type="hidden" readonly=""></div>
-                                                        <div>
-                                                            <p>0</p>
-                                                        </div>
-                                                        <div><img src="https://productreviews.bizwebapps.vn//assets/images/user.png" width="18" height="17"></div>
-                                                    </div>
-                                                </div>
                                                 <h3 class="product-name">
-                                                    <a href="/internet-tivi-sony-40-inch-kdl" title="Internet Tivi Sony 40 inch KDL">
-                                                    Internet Tivi Sony 40 inch KDL
+                                                    <a href="{{route('getDetailProduct', ['cate_name'=>$product->category->slug, 'slug'=>$product->slug])}}" title="{{$product->name}}">
+                                                    {{$product->name}}
                                                     </a>
                                                 </h3>
                                                 <div class="price-box price-loop-style res-item">
                                                     <span class="special-price">
-                                                    <span class="price">8.900.000₫</span>
+                                                        <span class="price">@if(isset($product->price_sale)) {{number_format($product->price_sale, 0,',','.')}} (₫) @else {{number_format($product->price, 0,',','.')}} (₫) @endif</span>
                                                     </span>
+                                                    @if(isset($product->price_sale))
                                                     <span class="old-price">
-                                                    <span class="price">
-                                                    9.790.000₫
+                                                        <span class="price">{{number_format($product->price, 0,',','.')}} (₫)</span>
                                                     </span>
-                                                    </span>
+                                                    @endif
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3 col-item">
-                                        <div class="product-box">
-                                            <div class="product-thumbnail">
-                                                <div class="tag-item tag-sale sale-flash">-11%</div>
-                                                <a href="/android-tivi-sony-49-inch-4k" title="Android Tivi Sony 49 inch 4K">
-                                                <img class="img-responsive" src="//bizweb.dktcdn.net/thumb/large/100/321/719/products/f3be4635023407ec3031760273170f.jpg?v=1530847039123" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/321/719/products/f3be4635023407ec3031760273170f.jpg?v=1530847039123" alt="Android Tivi Sony 49 inch 4K">
-                                                </a>
-                                                <div class="product-action hidden-xs">
-                                                    <form action="/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-12107368" enctype="multipart/form-data">
-                                                        <input type="hidden" name="variantId" value="19426506">
-                                                        <button class="btn-buy btn-cart btn button-hover-3 left-to add_to_cart" title="Mua ngay">
-                                                        <span><i class="fa fa-shopping-bag" aria-hidden="true"></i></span>
-                                                        </button>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            <div class="product-info">
-                                                <div class="fw product-review">
-                                                    <div class="bizweb-product-reviews-badge" data-id="12107368">
-                                                        <div class="bizweb-product-reviews-star" data-score="0" data-number="5" title="Not rated yet!" style="color: rgb(255, 190, 0);"><i data-alt="1" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="2" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="3" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="4" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="5" class="star-off-png" title="Not rated yet!"></i><input name="score" type="hidden" readonly=""></div>
-                                                        <div>
-                                                            <p>0</p>
-                                                        </div>
-                                                        <div><img src="https://productreviews.bizwebapps.vn//assets/images/user.png" width="18" height="17"></div>
-                                                    </div>
-                                                </div>
-                                                <h3 class="product-name">
-                                                    <a href="/android-tivi-sony-49-inch-4k" title="Android Tivi Sony 49 inch 4K">
-                                                    Android Tivi Sony 49 inch 4K
-                                                    </a>
-                                                </h3>
-                                                <div class="price-box price-loop-style res-item">
-                                                    <span class="special-price">
-                                                    <span class="price">8.000.000₫</span>
-                                                    </span>
-                                                    <span class="old-price">
-                                                    <span class="price">
-                                                    9.000.000₫
-                                                    </span>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3 col-item">
-                                        <div class="product-box">
-                                            <div class="product-thumbnail">
-                                                <div class="tag-item tag-sale sale-flash">-24%</div>
-                                                <a href="/smart-tivi-toshiba-43-inch-4k" title="Smart Tivi Toshiba 43 inch 4K">
-                                                <img class="img-responsive" src="//bizweb.dktcdn.net/thumb/large/100/321/719/products/4121c4d0a678e4ff32ad91c8862b20.jpg?v=1530847048630" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/321/719/products/4121c4d0a678e4ff32ad91c8862b20.jpg?v=1530847048630" alt="Smart Tivi Toshiba 43 inch 4K">
-                                                </a>
-                                                <div class="product-action hidden-xs">
-                                                    <form action="/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-12107380" enctype="multipart/form-data">
-                                                        <input type="hidden" name="variantId" value="19426521">
-                                                        <button class="btn-buy btn-cart btn button-hover-3 left-to add_to_cart" title="Mua ngay">
-                                                        <span><i class="fa fa-shopping-bag" aria-hidden="true"></i></span>
-                                                        </button>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            <div class="product-info">
-                                                <div class="fw product-review">
-                                                    <div class="bizweb-product-reviews-badge" data-id="12107380">
-                                                        <div class="bizweb-product-reviews-star" data-score="0" data-number="5" title="Not rated yet!" style="color: rgb(255, 190, 0);"><i data-alt="1" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="2" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="3" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="4" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="5" class="star-off-png" title="Not rated yet!"></i><input name="score" type="hidden" readonly=""></div>
-                                                        <div>
-                                                            <p>0</p>
-                                                        </div>
-                                                        <div><img src="https://productreviews.bizwebapps.vn//assets/images/user.png" width="18" height="17"></div>
-                                                    </div>
-                                                </div>
-                                                <h3 class="product-name">
-                                                    <a href="/smart-tivi-toshiba-43-inch-4k" title="Smart Tivi Toshiba 43 inch 4K">
-                                                    Smart Tivi Toshiba 43 inch 4K
-                                                    </a>
-                                                </h3>
-                                                <div class="price-box price-loop-style res-item">
-                                                    <span class="special-price">
-                                                    <span class="price">7.290.000₫</span>
-                                                    </span>
-                                                    <span class="old-price">
-                                                    <span class="price">
-                                                    9.590.000₫
-                                                    </span>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3 col-item">
-                                        <div class="product-box">
-                                            <div class="product-thumbnail">
-                                                <div class="tag-item tag-sale sale-flash">-22%</div>
-                                                <a href="/man-hinh-lg-24mp88hv-s-24inch-fullhd" title="Màn hình LG 24MP88HV-S 24inch FullHD">
-                                                <img class="img-responsive" src="//bizweb.dktcdn.net/thumb/large/100/321/719/products/f5f3ac20e04def435321cd85e4e72a.jpg?v=1530847055483" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/321/719/products/f5f3ac20e04def435321cd85e4e72a.jpg?v=1530847055483" alt="Màn hình LG 24MP88HV-S 24inch FullHD">
-                                                </a>
-                                                <div class="product-action hidden-xs">
-                                                    <form action="/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-12107387" enctype="multipart/form-data">
-                                                        <input type="hidden" name="variantId" value="19426528">
-                                                        <button class="btn-buy btn-cart btn button-hover-3 left-to add_to_cart" title="Mua ngay">
-                                                        <span><i class="fa fa-shopping-bag" aria-hidden="true"></i></span>
-                                                        </button>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            <div class="product-info">
-                                                <div class="fw product-review">
-                                                    <div class="bizweb-product-reviews-badge" data-id="12107387">
-                                                        <div class="bizweb-product-reviews-star" data-score="0" data-number="5" title="Not rated yet!" style="color: rgb(255, 190, 0);"><i data-alt="1" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="2" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="3" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="4" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="5" class="star-off-png" title="Not rated yet!"></i><input name="score" type="hidden" readonly=""></div>
-                                                        <div>
-                                                            <p>0</p>
-                                                        </div>
-                                                        <div><img src="https://productreviews.bizwebapps.vn//assets/images/user.png" width="18" height="17"></div>
-                                                    </div>
-                                                </div>
-                                                <h3 class="product-name">
-                                                    <a href="/man-hinh-lg-24mp88hv-s-24inch-fullhd" title="Màn hình LG 24MP88HV-S 24inch FullHD">
-                                                    Màn hình LG 24MP88HV-S 24inch FullHD
-                                                    </a>
-                                                </h3>
-                                                <div class="price-box price-loop-style res-item">
-                                                    <span class="special-price">
-                                                    <span class="price">4.690.000₫</span>
-                                                    </span>
-                                                    <span class="old-price">
-                                                    <span class="price">
-                                                    5.990.000₫
-                                                    </span>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3 col-item">
-                                        <div class="product-box">
-                                            <div class="product-thumbnail">
-                                                <div class="tag-item tag-sale sale-flash">-14%</div>
-                                                <a href="/tivi-led-panasonic-32-inch" title="Tivi LED Panasonic 32 inch">
-                                                <img class="img-responsive" src="//bizweb.dktcdn.net/thumb/large/100/321/719/products/7fb7c7533adc6066d00b43b38abd4f.jpg?v=1530847047583" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/321/719/products/7fb7c7533adc6066d00b43b38abd4f.jpg?v=1530847047583" alt="Tivi LED Panasonic 32 inch">
-                                                </a>
-                                                <div class="product-action hidden-xs">
-                                                    <form action="/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-12107379" enctype="multipart/form-data">
-                                                        <input type="hidden" name="variantId" value="19426520">
-                                                        <button class="btn-buy btn-cart btn button-hover-3 left-to add_to_cart" title="Mua ngay">
-                                                        <span><i class="fa fa-shopping-bag" aria-hidden="true"></i></span>
-                                                        </button>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            <div class="product-info">
-                                                <div class="fw product-review">
-                                                    <div class="bizweb-product-reviews-badge" data-id="12107379">
-                                                        <div class="bizweb-product-reviews-star" data-score="0" data-number="5" title="Not rated yet!" style="color: rgb(255, 190, 0);"><i data-alt="1" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="2" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="3" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="4" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="5" class="star-off-png" title="Not rated yet!"></i><input name="score" type="hidden" readonly=""></div>
-                                                        <div>
-                                                            <p>0</p>
-                                                        </div>
-                                                        <div><img src="https://productreviews.bizwebapps.vn//assets/images/user.png" width="18" height="17"></div>
-                                                    </div>
-                                                </div>
-                                                <h3 class="product-name">
-                                                    <a href="/tivi-led-panasonic-32-inch" title="Tivi LED Panasonic 32 inch">
-                                                    Tivi LED Panasonic 32 inch
-                                                    </a>
-                                                </h3>
-                                                <div class="price-box price-loop-style res-item">
-                                                    <span class="special-price">
-                                                    <span class="price">4.300.000₫</span>
-                                                    </span>
-                                                    <span class="old-price">
-                                                    <span class="price">
-                                                    4.990.000₫
-                                                    </span>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3 col-item">
-                                        <div class="product-box">
-                                            <div class="product-thumbnail">
-                                                <div class="tag-item tag-sale sale-flash">-23%</div>
-                                                <a href="/man-hinh-benq-gw2270-22inch-fullhd" title="Màn hình BenQ GW2270 22inch FullHD">
-                                                <img class="img-responsive" src="//bizweb.dktcdn.net/thumb/large/100/321/719/products/gw22701u579d20161011t162311244.jpg?v=1530847059283" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/321/719/products/gw22701u579d20161011t162311244.jpg?v=1530847059283" alt="Màn hình BenQ GW2270 22inch FullHD">
-                                                </a>
-                                                <div class="product-action hidden-xs">
-                                                    <form action="/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-12107391" enctype="multipart/form-data">
-                                                        <input type="hidden" name="variantId" value="19426532">
-                                                        <button class="btn-buy btn-cart btn button-hover-3 left-to add_to_cart" title="Mua ngay">
-                                                        <span><i class="fa fa-shopping-bag" aria-hidden="true"></i></span>
-                                                        </button>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            <div class="product-info">
-                                                <div class="fw product-review">
-                                                    <div class="bizweb-product-reviews-badge" data-id="12107391">
-                                                        <div class="bizweb-product-reviews-star" data-score="0" data-number="5" title="Not rated yet!" style="color: rgb(255, 190, 0);"><i data-alt="1" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="2" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="3" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="4" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="5" class="star-off-png" title="Not rated yet!"></i><input name="score" type="hidden" readonly=""></div>
-                                                        <div>
-                                                            <p>0</p>
-                                                        </div>
-                                                        <div><img src="https://productreviews.bizwebapps.vn//assets/images/user.png" width="18" height="17"></div>
-                                                    </div>
-                                                </div>
-                                                <h3 class="product-name">
-                                                    <a href="/man-hinh-benq-gw2270-22inch-fullhd" title="Màn hình BenQ GW2270 22inch FullHD">
-                                                    Màn hình BenQ GW2270 22inch FullHD
-                                                    </a>
-                                                </h3>
-                                                <div class="price-box price-loop-style res-item">
-                                                    <span class="special-price">
-                                                    <span class="price">1.990.000₫</span>
-                                                    </span>
-                                                    <span class="old-price">
-                                                    <span class="price">
-                                                    2.590.000₫
-                                                    </span>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3 col-item">
-                                        <div class="product-box">
-                                            <div class="product-thumbnail">
-                                                <div class="tag-item tag-sale sale-flash">-24%</div>
-                                                <a href="/may-giat-cua-ngang-inverter-lg" title="Máy giặt cửa ngang Inverter LG">
-                                                <img class="img-responsive" src="//bizweb.dktcdn.net/thumb/large/100/321/719/products/0u2751d20170616t102747568611.jpg?v=1530847013373" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/321/719/products/0u2751d20170616t102747568611.jpg?v=1530847013373" alt="Máy giặt cửa ngang Inverter LG">
-                                                </a>
-                                                <div class="product-action hidden-xs">
-                                                    <form action="/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-12107331" enctype="multipart/form-data">
-                                                        <input type="hidden" name="variantId" value="19426467">
-                                                        <button class="btn-buy btn-cart btn button-hover-3 left-to add_to_cart" title="Mua ngay">
-                                                        <span><i class="fa fa-shopping-bag" aria-hidden="true"></i></span>
-                                                        </button>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            <div class="product-info">
-                                                <div class="fw product-review">
-                                                    <div class="bizweb-product-reviews-badge" data-id="12107331">
-                                                        <div class="bizweb-product-reviews-star" data-score="0" data-number="5" title="Not rated yet!" style="color: rgb(255, 190, 0);"><i data-alt="1" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="2" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="3" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="4" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="5" class="star-off-png" title="Not rated yet!"></i><input name="score" type="hidden" readonly=""></div>
-                                                        <div>
-                                                            <p>0</p>
-                                                        </div>
-                                                        <div><img src="https://productreviews.bizwebapps.vn//assets/images/user.png" width="18" height="17"></div>
-                                                    </div>
-                                                </div>
-                                                <h3 class="product-name">
-                                                    <a href="/may-giat-cua-ngang-inverter-lg" title="Máy giặt cửa ngang Inverter LG">
-                                                    Máy giặt cửa ngang Inverter LG
-                                                    </a>
-                                                </h3>
-                                                <div class="price-box price-loop-style res-item">
-                                                    <span class="special-price">
-                                                    <span class="price">7.590.000₫</span>
-                                                    </span>
-                                                    <span class="old-price">
-                                                    <span class="price">
-                                                    9.990.000₫
-                                                    </span>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3 col-item">
-                                        <div class="product-box">
-                                            <div class="product-thumbnail">
-                                                <div class="tag-item tag-sale sale-flash">-13%</div>
-                                                <a href="/may-lanh-casper-lc-12tl11" title="Máy lạnh Casper LC-12TL11">
-                                                <img class="img-responsive" src="//bizweb.dktcdn.net/thumb/large/100/321/719/products/lc12tl11u2751d20170116t2350437-d4ece7f7-2e70-46aa-8df3-fa53cffb7b78.jpg?v=1530847028600" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/321/719/products/lc12tl11u2751d20170116t2350437-d4ece7f7-2e70-46aa-8df3-fa53cffb7b78.jpg?v=1530847028600" alt="Máy lạnh Casper LC-12TL11">
-                                                </a>
-                                                <div class="product-action hidden-xs">
-                                                    <form action="/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-12107353" enctype="multipart/form-data">
-                                                        <input type="hidden" name="variantId" value="19426489">
-                                                        <button class="btn-buy btn-cart btn button-hover-3 left-to add_to_cart" title="Mua ngay">
-                                                        <span><i class="fa fa-shopping-bag" aria-hidden="true"></i></span>
-                                                        </button>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            <div class="product-info">
-                                                <div class="fw product-review">
-                                                    <div class="bizweb-product-reviews-badge" data-id="12107353">
-                                                        <div class="bizweb-product-reviews-star" data-score="0" data-number="5" title="Not rated yet!" style="color: rgb(255, 190, 0);"><i data-alt="1" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="2" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="3" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="4" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="5" class="star-off-png" title="Not rated yet!"></i><input name="score" type="hidden" readonly=""></div>
-                                                        <div>
-                                                            <p>0</p>
-                                                        </div>
-                                                        <div><img src="https://productreviews.bizwebapps.vn//assets/images/user.png" width="18" height="17"></div>
-                                                    </div>
-                                                </div>
-                                                <h3 class="product-name">
-                                                    <a href="/may-lanh-casper-lc-12tl11" title="Máy lạnh Casper LC-12TL11">
-                                                    Máy lạnh Casper LC-12TL11
-                                                    </a>
-                                                </h3>
-                                                <div class="price-box price-loop-style res-item">
-                                                    <span class="special-price">
-                                                    <span class="price">7.059.000₫</span>
-                                                    </span>
-                                                    <span class="old-price">
-                                                    <span class="price">
-                                                    8.090.000₫
-                                                    </span>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3 col-item">
-                                        <div class="product-box">
-                                            <div class="product-thumbnail">
-                                                <div class="tag-item tag-sale sale-flash">-18%</div>
-                                                <a href="/may-giat-cua-truoc-lg" title="Máy giặt cửa trước Inverter LG">
-                                                <img class="img-responsive" src="//bizweb.dktcdn.net/thumb/large/100/321/719/products/0u5488d20170918t184107496054.jpg?v=1530847005840" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/321/719/products/0u5488d20170918t184107496054.jpg?v=1530847005840" alt="Máy giặt cửa trước Inverter LG">
-                                                </a>
-                                                <div class="product-action hidden-xs">
-                                                    <form action="/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-12107325" enctype="multipart/form-data">
-                                                        <input type="hidden" name="variantId" value="19426461">
-                                                        <button class="btn-buy btn-cart btn button-hover-3 left-to add_to_cart" title="Mua ngay">
-                                                        <span><i class="fa fa-shopping-bag" aria-hidden="true"></i></span>
-                                                        </button>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            <div class="product-info">
-                                                <div class="fw product-review">
-                                                    <div class="bizweb-product-reviews-badge" data-id="12107325">
-                                                        <div class="bizweb-product-reviews-star" data-score="0" data-number="5" title="Not rated yet!" style="color: rgb(255, 190, 0);"><i data-alt="1" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="2" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="3" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="4" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="5" class="star-off-png" title="Not rated yet!"></i><input name="score" type="hidden" readonly=""></div>
-                                                        <div>
-                                                            <p>0</p>
-                                                        </div>
-                                                        <div><img src="https://productreviews.bizwebapps.vn//assets/images/user.png" width="18" height="17"></div>
-                                                    </div>
-                                                </div>
-                                                <h3 class="product-name">
-                                                    <a href="/may-giat-cua-truoc-lg" title="Máy giặt cửa trước Inverter LG">
-                                                    Máy giặt cửa trước Inverter LG
-                                                    </a>
-                                                </h3>
-                                                <div class="price-box price-loop-style res-item">
-                                                    <span class="special-price">
-                                                    <span class="price">13.790.000₫</span>
-                                                    </span>
-                                                    <span class="old-price">
-                                                    <span class="price">
-                                                    16.900.000₫
-                                                    </span>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3 col-item">
-                                        <div class="product-box">
-                                            <div class="product-thumbnail">
-                                                <div class="tag-item tag-sale sale-flash">-14%</div>
-                                                <a href="/dien-thoai-xiaomi-mi-a1-64gb-4gb" title="Điện thoại Xiaomi Mi A1 64GB/4GB">
-                                                <img class="img-responsive" src="//bizweb.dktcdn.net/thumb/large/100/321/719/products/0u4939d20170926t1409476909912.jpg?v=1530847074027" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/321/719/products/0u4939d20170926t1409476909912.jpg?v=1530847074027" alt="Điện thoại Xiaomi Mi A1 64GB/4GB">
-                                                </a>
-                                                <div class="product-action hidden-xs">
-                                                    <form action="/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-12107400" enctype="multipart/form-data">
-                                                        <input type="hidden" name="variantId" value="19426542">
-                                                        <button class="btn-buy btn-cart btn button-hover-3 left-to add_to_cart" title="Mua ngay">
-                                                        <span><i class="fa fa-shopping-bag" aria-hidden="true"></i></span>
-                                                        </button>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            <div class="product-info">
-                                                <div class="fw product-review">
-                                                    <div class="bizweb-product-reviews-badge" data-id="12107400">
-                                                        <div class="bizweb-product-reviews-star" data-score="0" data-number="5" title="Not rated yet!" style="color: rgb(255, 190, 0);"><i data-alt="1" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="2" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="3" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="4" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="5" class="star-off-png" title="Not rated yet!"></i><input name="score" type="hidden" readonly=""></div>
-                                                        <div>
-                                                            <p>0</p>
-                                                        </div>
-                                                        <div><img src="https://productreviews.bizwebapps.vn//assets/images/user.png" width="18" height="17"></div>
-                                                    </div>
-                                                </div>
-                                                <h3 class="product-name">
-                                                    <a href="/dien-thoai-xiaomi-mi-a1-64gb-4gb" title="Điện thoại Xiaomi Mi A1 64GB/4GB">
-                                                    Điện thoại Xiaomi Mi A1 64GB/4GB
-                                                    </a>
-                                                </h3>
-                                                <div class="price-box price-loop-style res-item">
-                                                    <span class="special-price">
-                                                    <span class="price">4.790.000₫</span>
-                                                    </span>
-                                                    <span class="old-price">
-                                                    <span class="price">
-                                                    5.590.000₫
-                                                    </span>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3 col-item">
-                                        <div class="product-box">
-                                            <div class="product-thumbnail">
-                                                <div class="tag-item tag-sale sale-flash">-21%</div>
-                                                <a href="/dien-thoai-samsung-galaxy-j7-prime" title="Điện thoại Samsung Galaxy J7 Prime">
-                                                <img class="img-responsive" src="//bizweb.dktcdn.net/thumb/large/100/321/719/products/samsunggalaxyj7black1u504d2016.jpg?v=1530847072897" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/321/719/products/samsunggalaxyj7black1u504d2016.jpg?v=1530847072897" alt="Điện thoại Samsung Galaxy J7 Prime">
-                                                </a>
-                                                <div class="product-action hidden-xs">
-                                                    <form action="/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-12107399" enctype="multipart/form-data">
-                                                        <input type="hidden" name="variantId" value="19426541">
-                                                        <button class="btn-buy btn-cart btn button-hover-3 left-to add_to_cart" title="Mua ngay">
-                                                        <span><i class="fa fa-shopping-bag" aria-hidden="true"></i></span>
-                                                        </button>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            <div class="product-info">
-                                                <div class="fw product-review">
-                                                    <div class="bizweb-product-reviews-badge" data-id="12107399">
-                                                        <div class="bizweb-product-reviews-star" data-score="0" data-number="5" title="Not rated yet!" style="color: rgb(255, 190, 0);"><i data-alt="1" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="2" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="3" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="4" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="5" class="star-off-png" title="Not rated yet!"></i><input name="score" type="hidden" readonly=""></div>
-                                                        <div>
-                                                            <p>0</p>
-                                                        </div>
-                                                        <div><img src="https://productreviews.bizwebapps.vn//assets/images/user.png" width="18" height="17"></div>
-                                                    </div>
-                                                </div>
-                                                <h3 class="product-name">
-                                                    <a href="/dien-thoai-samsung-galaxy-j7-prime" title="Điện thoại Samsung Galaxy J7 Prime">
-                                                    Điện thoại Samsung Galaxy J7 Prime
-                                                    </a>
-                                                </h3>
-                                                <div class="price-box price-loop-style res-item">
-                                                    <span class="special-price">
-                                                    <span class="price">4.690.000₫</span>
-                                                    </span>
-                                                    <span class="old-price">
-                                                    <span class="price">
-                                                    5.900.000₫
-                                                    </span>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3 col-item">
-                                        <div class="product-box">
-                                            <div class="product-thumbnail">
-                                                <div class="tag-item tag-sale sale-flash">-25%</div>
-                                                <a href="/noi-com-dien-nap-gai-happycook" title="Nồi cơm điện nắp gài HappyCook">
-                                                <img class="img-responsive" src="//bizweb.dktcdn.net/thumb/large/100/321/719/products/1b1609da004e80bc04eb578cd3c0b0.jpg?v=1530846987127" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/321/719/products/1b1609da004e80bc04eb578cd3c0b0.jpg?v=1530846987127" alt="Nồi cơm điện nắp gài HappyCook">
-                                                </a>
-                                                <div class="product-action hidden-xs">
-                                                    <form action="/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-12107314" enctype="multipart/form-data">
-                                                        <input type="hidden" name="variantId" value="19426450">
-                                                        <button class="btn-buy btn-cart btn button-hover-3 left-to add_to_cart" title="Mua ngay">
-                                                        <span><i class="fa fa-shopping-bag" aria-hidden="true"></i></span>
-                                                        </button>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            <div class="product-info">
-                                                <div class="fw product-review">
-                                                    <div class="bizweb-product-reviews-badge" data-id="12107314">
-                                                        <div class="bizweb-product-reviews-star" data-score="0" data-number="5" title="Not rated yet!" style="color: rgb(255, 190, 0);"><i data-alt="1" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="2" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="3" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="4" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="5" class="star-off-png" title="Not rated yet!"></i><input name="score" type="hidden" readonly=""></div>
-                                                        <div>
-                                                            <p>0</p>
-                                                        </div>
-                                                        <div><img src="https://productreviews.bizwebapps.vn//assets/images/user.png" width="18" height="17"></div>
-                                                    </div>
-                                                </div>
-                                                <h3 class="product-name">
-                                                    <a href="/noi-com-dien-nap-gai-happycook" title="Nồi cơm điện nắp gài HappyCook">
-                                                    Nồi cơm điện nắp gài HappyCook
-                                                    </a>
-                                                </h3>
-                                                <div class="price-box price-loop-style res-item">
-                                                    <span class="special-price">
-                                                    <span class="price">599.000₫</span>
-                                                    </span>
-                                                    <span class="old-price">
-                                                    <span class="price">
-                                                    799.000₫
-                                                    </span>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3 col-item">
-                                        <div class="product-box">
-                                            <div class="product-thumbnail">
-                                                <div class="tag-item tag-sale sale-flash">-8%</div>
-                                                <a href="/combo-trang-diem-mat-moi-nhanh-gon" title="Combo trang điểm mắt môi nhanh gọn">
-                                                <img class="img-responsive" src="//bizweb.dktcdn.net/100/321/719/themes/699729/assets/down.svg?1548428247318" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/321/719/products/3688805519957s01d20170720t1222.jpg?v=1530847080330" alt="Combo trang điểm mắt môi nhanh gọn">
-                                                </a>
-                                                <div class="product-action hidden-xs">
-                                                    <form action="/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-12107408" enctype="multipart/form-data">
-                                                        <input type="hidden" name="variantId" value="19426550">
-                                                        <button class="btn-buy btn-cart btn button-hover-3 left-to add_to_cart" title="Mua ngay">
-                                                        <span><i class="fa fa-shopping-bag" aria-hidden="true"></i></span>
-                                                        </button>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            <div class="product-info">
-                                                <div class="fw product-review">
-                                                    <div class="bizweb-product-reviews-badge" data-id="12107408">
-                                                        <div class="bizweb-product-reviews-star" data-score="0" data-number="5" title="Not rated yet!" style="color: rgb(255, 190, 0);"><i data-alt="1" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="2" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="3" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="4" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="5" class="star-off-png" title="Not rated yet!"></i><input name="score" type="hidden" readonly=""></div>
-                                                        <div>
-                                                            <p>0</p>
-                                                        </div>
-                                                        <div><img src="https://productreviews.bizwebapps.vn//assets/images/user.png" width="18" height="17"></div>
-                                                    </div>
-                                                </div>
-                                                <h3 class="product-name">
-                                                    <a href="/combo-trang-diem-mat-moi-nhanh-gon" title="Combo trang điểm mắt môi nhanh gọn">
-                                                    Combo trang điểm mắt môi nhanh gọn
-                                                    </a>
-                                                </h3>
-                                                <div class="price-box price-loop-style res-item">
-                                                    <span class="special-price">
-                                                    <span class="price">499.000₫</span>
-                                                    </span>
-                                                    <span class="old-price">
-                                                    <span class="price">
-                                                    540.000₫
-                                                    </span>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3 col-item">
-                                        <div class="product-box">
-                                            <div class="product-thumbnail">
-                                                <div class="tag-item tag-sale sale-flash">-19%</div>
-                                                <a href="/balo-ong-va-ng-bouncie-bp" title="Balo ong vàng Bouncie BP">
-                                                <img class="img-responsive" src="//bizweb.dktcdn.net/100/321/719/themes/699729/assets/down.svg?1548428247318" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/321/719/products/99de9735eb8686e548d7efd6c666e5.jpg?v=1530846973493" alt="Balo ong vàng Bouncie BP">
-                                                </a>
-                                                <div class="product-action hidden-xs">
-                                                    <form action="/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-12107303" enctype="multipart/form-data">
-                                                        <input type="hidden" name="variantId" value="19426439">
-                                                        <button class="btn-buy btn-cart btn button-hover-3 left-to add_to_cart" title="Mua ngay">
-                                                        <span><i class="fa fa-shopping-bag" aria-hidden="true"></i></span>
-                                                        </button>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            <div class="product-info">
-                                                <div class="fw product-review">
-                                                    <div class="bizweb-product-reviews-badge" data-id="12107303">
-                                                        <div class="bizweb-product-reviews-star" data-score="0" data-number="5" title="Not rated yet!" style="color: rgb(255, 190, 0);"><i data-alt="1" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="2" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="3" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="4" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="5" class="star-off-png" title="Not rated yet!"></i><input name="score" type="hidden" readonly=""></div>
-                                                        <div>
-                                                            <p>0</p>
-                                                        </div>
-                                                        <div><img src="https://productreviews.bizwebapps.vn//assets/images/user.png" width="18" height="17"></div>
-                                                    </div>
-                                                </div>
-                                                <h3 class="product-name">
-                                                    <a href="/balo-ong-va-ng-bouncie-bp" title="Balo ong vàng Bouncie BP">
-                                                    Balo ong vàng Bouncie BP
-                                                    </a>
-                                                </h3>
-                                                <div class="price-box price-loop-style res-item">
-                                                    <span class="special-price">
-                                                    <span class="price">259.000₫</span>
-                                                    </span>
-                                                    <span class="old-price">
-                                                    <span class="price">
-                                                    320.000₫
-                                                    </span>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3 col-item">
-                                        <div class="product-box">
-                                            <div class="product-thumbnail">
-                                                <div class="tag-item tag-sale sale-flash">-14%</div>
-                                                <a href="/bo-cham-soc-mong-usa-store-salon-shaper-big" title="Dầu dưỡng da Phytoceuticals Argan">
-                                                <img class="img-responsive" src="//bizweb.dktcdn.net/100/321/719/themes/699729/assets/down.svg?1548428247318" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/321/719/products/1.jpg?v=1531122843340" alt="Dầu dưỡng da Phytoceuticals Argan">
-                                                </a>
-                                                <div class="product-action hidden-xs">
-                                                    <form action="/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-12126344" enctype="multipart/form-data">
-                                                        <input type="hidden" name="variantId" value="19477404">
-                                                        <button class="btn-buy btn-cart btn button-hover-3 left-to add_to_cart" title="Mua ngay">
-                                                        <span><i class="fa fa-shopping-bag" aria-hidden="true"></i></span>
-                                                        </button>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            <div class="product-info">
-                                                <div class="fw product-review">
-                                                    <div class="bizweb-product-reviews-badge" data-id="12126344">
-                                                        <div class="bizweb-product-reviews-star" data-score="0" data-number="5" title="Not rated yet!" style="color: rgb(255, 190, 0);"><i data-alt="1" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="2" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="3" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="4" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="5" class="star-off-png" title="Not rated yet!"></i><input name="score" type="hidden" readonly=""></div>
-                                                        <div>
-                                                            <p>0</p>
-                                                        </div>
-                                                        <div><img src="https://productreviews.bizwebapps.vn//assets/images/user.png" width="18" height="17"></div>
-                                                    </div>
-                                                </div>
-                                                <h3 class="product-name">
-                                                    <a href="/bo-cham-soc-mong-usa-store-salon-shaper-big" title="Dầu dưỡng da Phytoceuticals Argan">
-                                                    Dầu dưỡng da Phytoceuticals Argan
-                                                    </a>
-                                                </h3>
-                                                <div class="price-box price-loop-style res-item">
-                                                    <span class="special-price">
-                                                    <span class="price">169.000₫</span>
-                                                    </span>
-                                                    <span class="old-price">
-                                                    <span class="price">
-                                                    196.000₫
-                                                    </span>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3 col-item">
-                                        <div class="product-box">
-                                            <div class="product-thumbnail">
-                                                <div class="tag-item tag-sale sale-flash">-3%</div>
-                                                <a href="/dung-dich-giup-loai-bo-son-mong" title="Dung dịch giúp loại bỏ sơn móng">
-                                                <img class="img-responsive" src="//bizweb.dktcdn.net/100/321/719/themes/699729/assets/down.svg?1548428247318" data-lazyload="//bizweb.dktcdn.net/thumb/large/100/321/719/products/4ef3217c56c404220bdaba5057d92e.jpg?v=1531122849307" alt="Dung dịch giúp loại bỏ sơn móng">
-                                                </a>
-                                                <div class="product-action hidden-xs">
-                                                    <form action="/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-12126376" enctype="multipart/form-data">
-                                                        <input class="hidden" type="hidden" name="variantId" value="19477436">
-                                                        <button class="btn-cart btn button-hover-3 left-to" title="Xem thêm" type="button" onclick="window.location.href='/dung-dich-giup-loai-bo-son-mong'">
-                                                        <span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
-                                                        </button>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            <div class="product-info">
-                                                <div class="fw product-review">
-                                                    <div class="bizweb-product-reviews-badge" data-id="12126376">
-                                                        <div class="bizweb-product-reviews-star" data-score="0" data-number="5" title="Not rated yet!" style="color: rgb(255, 190, 0);"><i data-alt="1" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="2" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="3" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="4" class="star-off-png" title="Not rated yet!"></i>&nbsp;<i data-alt="5" class="star-off-png" title="Not rated yet!"></i><input name="score" type="hidden" readonly=""></div>
-                                                        <div>
-                                                            <p>0</p>
-                                                        </div>
-                                                        <div><img src="https://productreviews.bizwebapps.vn//assets/images/user.png" width="18" height="17"></div>
-                                                    </div>
-                                                </div>
-                                                <h3 class="product-name">
-                                                    <a href="/dung-dich-giup-loai-bo-son-mong" title="Dung dịch giúp loại bỏ sơn móng">
-                                                    Dung dịch giúp loại bỏ sơn móng
-                                                    </a>
-                                                </h3>
-                                                <div class="price-box price-loop-style res-item">
-                                                    <span class="special-price">
-                                                    <span class="price">145.000₫</span>
-                                                    </span>
-                                                    <span class="old-price">
-                                                    <span class="price">
-                                                    150.000₫
-                                                    </span>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="text-xs-right">
-                                    <script>
-                                        var cuPage = 1;
-                                    </script>
+                                    @endforeach
                                 </div>
                             </section>
                         </div>
@@ -1552,4 +880,6 @@
         </div>
     </div>
 </section>
+
+
 @stop

@@ -11,7 +11,7 @@
                     <ul id="nav-cate">
                         @foreach($categories as $cate)
                         <li class="sidebar-menu-list">
-                            <a class="ajaxLayer" href="/san-pham-khuyen-mai" title="Hot Deal">
+                            <a class="ajaxLayer" href="{{route('getProductCateFrontend', ['url'=>$cate->slug])}}" title="Hot Deal">
                             <img src="{{url('')}}/assets/frontend/v1.0/images/icons/swing.svg" data-lazyload="{{url('')}}/assets/frontend/v1.0/images/icons/link_icon_1.png" alt="hot-deal">
                             <span>{{$cate->name}}</span>
                             </a>

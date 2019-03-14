@@ -42,15 +42,37 @@ Route::group(['prefix'=>'admin', 'middleware'=>'checkRoleAdmin'], function(){
 		Route::get('introduce.html', 'Admin\AdminController@getIntroduce')->name('getIntroduceAdmin');
 		Route::post('introduce.html', 'Admin\AdminController@postIntroduce')->name('postIntroduceAdmin');
 	});
+	Route::group(['prefix'=>'contact'], function(){
+		Route::get('list.html', 'Admin\ContactController@getContact')->name('getContactAdmin');
+		Route::post('list/{id}.html', 'Admin\ContactController@postContact')->name('postContactAdmin');
+		Route::get('delete/{id}.html', 'Admin\ContactController@deleteContact')->name('deleteContact');
+	});
 });
-
-
-
-
-
-
 // Frontend
 Route::get('/', 'Frontend\IndexController@getIndex')->name('getIndex');
 Route::get('{cate_name}/{slug}.html', 'Frontend\ProductController@getDetail')->name('getDetailProduct');
 Route::get('gioi-thieu.html', 'Frontend\FrontendController@getIntroduce')->name('getIntroduceFrontend');
-Route::get('danh-muc/{url}.html', 'Frontend\FrontendController@getIntroduce')->name('getIntroduceFrontend');
+Route::get('danh-muc/{url}', 'Frontend\FrontendController@getShowProductCate')->name('getProductCateFrontend');
+Route::get('lien-he.html', 'Frontend\ContactController@getContact')->name('getContactFrontend');
+Route::post('lien-he.html', 'Frontend\ContactController@postContact')->name('postContactFrontend');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

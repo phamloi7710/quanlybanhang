@@ -7,7 +7,7 @@
                 <a href="{{route('getFileManagement')}}?type=image"><i class="la la-image"></i><span class="menu-title" data-i18n="nav.dash.main">{{__('general.imageManagement')}}</span></a>
             </li>  
             <li class=" nav-item">
-                <a href="index.html"><i class="la la-home"></i><span class="menu-title" data-i18n="nav.dash.main">{{__('general.productManagement')}}</span><span class="badge badge badge-info badge-pill float-right mr-2">3</span></a>
+                <a href="index.html"><i class="la la-hand-o-right"></i><span class="menu-title" data-i18n="nav.dash.main">{{__('general.productManagement')}}</span></a>
                 <ul class="menu-content">
                     <li><a class="menu-item" href="{{route('getListCateAdmin')}}">{{__('general.category')}}</a>
                     </li>
@@ -23,12 +23,15 @@
                 </ul>
             </li> 
             <li class=" nav-item">
-                <a href="#"><i class="la la-cog"></i><span class="menu-title" data-i18n="nav.dash.main">Cài Đặt Trang</span></a>
+                <a href="#"><i class="la la-newspaper-o"></i><span class="menu-title" data-i18n="nav.dash.main">Cài Đặt Trang</span></a>
                 <ul class="menu-content">
                     <li><a class="menu-item" href="{{route('getIntroduceAdmin')}}">Trang Giới Thiệu</a>
                     </li>
                 </ul>
-            </li>   
+            </li> 
+            <li class=" nav-item">
+                <a href="{{route('getContactAdmin')}}"><i class="la la-user-plus"></i><span class="menu-title" data-i18n="nav.dash.main">Liên Hệ Mới</span></a>
+            </li>  
         </ul>
     </div>
 </div>

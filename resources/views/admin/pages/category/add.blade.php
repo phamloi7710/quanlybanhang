@@ -49,11 +49,11 @@
                                             <span class="required">*</span>
                                         </h5>
                                         <div class="controls">
-                                            <div class="skin skin-square">
+                                            <div class="skin skin-flat">
                                                 <input type="radio" value="active" name="status" required id="active" checked>
                                                 <label for="active">{{__('general.active')}}</label>
                                             </div>
-                                            <div class="skin skin-square">
+                                            <div class="skin skin-flat">
                                                 <input type="radio" value="inActive" name="status" id="inActive">
                                                 <label for="inActive">{{__('general.inActive')}}</label>
                                             </div>
