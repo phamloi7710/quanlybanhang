@@ -1,5 +1,6 @@
 <script src="{{url('')}}/assets/admin/app-assets/vendors/js/ui/popper.min.js" type="text/javascript"></script>
 <script src="{{url('')}}/assets/admin/app-assets/vendors/js/vendors.min.js" type="text/javascript"></script>
+<script src="{{url('')}}/assets/admin/app-assets/vendors/js/extensions/sweetalert.min.js" type="text/javascript"></script>
 <script src="{{url('')}}/assets/admin/app-assets/vendors/js/ui/perfect-scrollbar.jquery.min.js" type="text/javascript"></script>
 <script src="{{url('')}}/assets/admin/app-assets/vendors/js/forms/validation/jqBootstrapValidation.js" type="text/javascript"></script>
 <script src="{{url('')}}/assets/admin/app-assets/vendors/js/ui/unison.min.js" type="text/javascript"></script>
@@ -22,6 +23,7 @@
 <script src="{{url('')}}/assets/admin/app-assets/js/scripts/extensions/toastr.js" type="text/javascript"></script>
 <script src="{{url('')}}/assets/admin/app-assets/js/scripts/pages/sk-content-sidebar.js" type="text/javascript"></script>
 <script src="{{url('')}}/assets/admin/app-assets/js/scripts/forms/checkbox-radio.js" type="text/javascript"></script>
+
 <script src="{{url('')}}/assets/admin/filemanager/js/lfm.js" type="text/javascript"></script>
 <script src="{{url('')}}/assets/admin/custom/custom.header.js" type="text/javascript"></script>
 <script src="{{url('')}}/assets/admin/custom/custom.footer.js" type="text/javascript"></script>

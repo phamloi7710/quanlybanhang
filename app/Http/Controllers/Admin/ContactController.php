@@ -34,14 +34,12 @@ class ContactController extends Controller
         );
         return redirect()->back()->with($notification);
     }
-    public function deleteContact($id)
+    public function deleteContact(Request $request, $id)
     {
     	$contact = Contact::find($id);
-    	$contact->delete();
-    	$notification = array(
-            'message' => 'Xoá Liên Hệ Thành Công!', 
-            'alert-type' => 'success',
-        );
-        return redirect()->back()->with($notification);
+    	if($contact->delete())	
+    	{
+    		echo "Data Deleted";
+    	}
     }
 }

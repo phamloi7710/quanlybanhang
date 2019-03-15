@@ -47,6 +47,24 @@ Route::group(['prefix'=>'admin', 'middleware'=>'checkRoleAdmin'], function(){
 		Route::post('list/{id}.html', 'Admin\ContactController@postContact')->name('postContactAdmin');
 		Route::get('delete/{id}.html', 'Admin\ContactController@deleteContact')->name('deleteContact');
 	});
+	Route::group(['prefix' => 'settings'], function () {
+		Route::get('website-infomation.html', 'Admin\SettingController@getWebInfo')->name('getWebInfo');
+        Route::post('website-infomation.html', 'Admin\SettingController@postWebInfo')->name('postWebInfo');
+    	Route::get('meta-seo.html', 'Admin\SettingController@getMetaSEO')->name('getMetaSEO');
+        Route::post('meta-seo.html', 'Admin\SettingController@postMetaSEO')->name('postMetaSEO');
+        Route::get('email-config.html', 'Admin\SettingController@getEmailConfig')->name('getEmailConfig');
+        Route::post('email-config.html', 'Admin\SettingController@postEmailConfig')->name('postEmailConfig');
+    });
+
+    Route::group(['prefix'=>'user'], function(){
+		Route::get('list.html', 'Admin\AccountController@getList')->name('getListUsersAdmin');
+		Route::get('add-new.html', 'Admin\AccountController@getAdd')->name('getAddUserAdmin');
+		Route::post('add-new.html', 'Admin\AccountController@postAdd')->name('postAddUserAdmin');
+		Route::get('edit/{id}.html', 'Admin\AccountController@getEdit')->name('getEditUserAdmin');
+		Route::post('edit/{id}.html', 'Admin\AccountController@postEdit')->name('postEditUserAdmin');
+		Route::get('delete/{id}.html', 'Admin\AccountController@getDelete')->name('getDeleteUserAdmin');
+	});
+
 });
 // Frontend
 Route::get('/', 'Frontend\IndexController@getIndex')->name('getIndex');
