@@ -1,5 +1,5 @@
 @section('title')
-Quản Lý Tài Khoản
+Tất Cả Tài Khoản
 @stop
 @extends('admin.general.master')
 @section('content') 
@@ -9,7 +9,7 @@ Quản Lý Tài Khoản
             <div class="content-header-left col-md-6 col-12">
                 <div class="row breadcrumbs-top">
                     <div class="breadcrumb-wrapper col-12">
-                        <h4 class="card-title">Quản Lý Tài Khoản</h4>
+                        <h4 class="card-title">@if(getUrl() == route('getListUsersAdmin')) Tất Cả Tài Khoản @elseif(getUrl() == route('getListUsersAdmin', ['is_admin'=>'true'])) Tài Khoản Quản Trị @elseif(getUrl() == route('getListUsersAdmin', ['is_admin'=>'false'])) Tài Khoản Khách Hàng @endif</h4>
                     </div>
                 </div>
             </div>
@@ -18,162 +18,97 @@ Quản Lý Tài Khoản
                     <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{route('getIndexAdmin')}}">{{__('general.home')}}</a>
                             </li>
-                            <li class="breadcrumb-item"><a href="#">Tài Khoản</a>
+                            <li class="breadcrumb-item"><a href="#">Liên hệ</a>
                             </li>
-                            <li class="breadcrumb-item active">Quản Lý Tài Khoản
+                            <li class="breadcrumb-item active">Tất cả liên hệ
                             </li>
                         </ol>
                 </div>
             </div>
         </div>
-        <div class="content-detached content-right">
+        <div class="content-detached content-left">
             <div class="content-body">
-                <section class="row">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <a class="heading-elements-toggle"><i class="la la-ellipsis-h font-medium-3"></i></a>
-                                <div class="heading-elements">
-                                    <button onclick="location.href='{{route('getAddUserAdmin')}}'" class="btn btn-primary btn-sm"><i class="ft-plus white"></i> Thêm Tài Khoản</button>
-                                    <span class="dropdown">
-                                    <button id="btnSearchDrop1" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" class="btn btn-warning dropdown-toggle dropdown-menu-right btn-sm"><i class="ft-download-cloud white"></i></button>
-                                    <span aria-labelledby="btnSearchDrop1" class="dropdown-menu mt-1 dropdown-menu-right">
-                                    <a href="#" class="dropdown-item"><i class="ft-upload"></i> Import</a>
-                                    <a href="#" class="dropdown-item"><i class="ft-download"></i> Export</a>
-                                    <a href="#" class="dropdown-item"><i class="ft-shuffle"></i> Find Duplicate</a>
-                                    </span>
-                                    </span>
-                                    <button class="btn btn-default btn-sm"><i class="ft-settings white"></i></button>
-                                </div>
-                            </div>
-                            <div class="card-content">
-                                <div class="card-body">
-                                    <div id="users-contacts_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
-                                        <div class="row">
-                                            <div class="col-sm-12 table-responsive">
-                                                <table id="contactData" class="table table-white-space table-bordered row-grouping display no-wrap icheck table-middle">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Họ Tên</th>
-                                                            <th>Email</th>
-                                                            <th>Số Điện Thoại</th>
-                                                            <th>Trạng Thái</th>
-                                                            <th></th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        @foreach($users as $user)
-                                                        <tr id="contactRow-{{$user->id}}">
-                                                            <td class="text-center">
-                                                                {{$user->name}}
-                                                            </td>
-                                                            <td class="text-center">
-                                                                {{$user->email}}
-                                                            </td>
-                                                            <td class="text-center">
-                                                                {{$user->phone}}
-                                                            </td>
-                                                            <td class="text-center">
-                                                                <span class="badge badge-default @if($user->status=='true') badge-success @else badge-danger @endif">@if($user->status=='true') Đã Liên Hệ @else Chưa Liên Hệ @endif</span>
-                                                            </td>
-                                                            <td>
-                                                                <span class="dropdown">
-                                                                <button id="btnSearchDrop2" type="button" data-toggle="dropdown" aria-haspopup="true"
-                                                                    aria-expanded="true" class="btn btn-primary dropdown-toggle dropdown-menu-right"><i class="ft-settings"></i></button>
-                                                                <span aria-labelledby="btnSearchDrop2" class="dropdown-menu mt-1 dropdown-menu-right">
-                                                                <a href="#" class="dropdown-item" data-toggle="modal" data-target=".modalUpdateContact-{{$user->id}}"><i class="ft-edit-2"></i> Xem & Sửa</a>
-                                                                <a href="javascript:;" id="deleteContact-{{$user->id}}" class="dropdown-item red"><i class="ft-trash-2"></i> Xoá</a>
-                                                                </span>
-                                                                </span>
-                                                            </td>
-                                                        </tr>
-                                                        <script>
-                                                            $(document).ready(function(){
-                                                                $('#deleteContact-{{$user->id}}').on('click',function(){
-                                                                    swal({
-                                                                        title: "Bạn có chắc chắn không?",
-                                                                        text: "Thao tác xoá này sẽ không thể hoàn tác!",
-                                                                        icon: "warning",
-                                                                        showCancelButton: true,
-                                                                        showLoaderOnConfirm: true,
-                                                                        buttons: {
-                                                                            cancel: {
-                                                                                text: "Không, dữ nguyên dữ liệu!",
-                                                                                value: null,
-                                                                                visible: true,
-                                                                                className: "btn-warning",
-                                                                                closeModal: false,
-                                                                            },
-                                                                            confirm: {
-                                                                                text: "Đống ý, xoá ngay?",
-                                                                                value: true,
-                                                                                visible: true,
-                                                                                className: "",
-                                                                                closeModal: false
-                                                                            }
-                                                                        }
-                                                                    }).then(isConfirm => {
-                                                                        if (isConfirm) {
-                                                                            var id = {{$user->id}};
-                                                                            $.ajaxSetup({
-                                                                                headers: {
-                                                                                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                                                                                }
-                                                                            });
-                                                                            $.ajax({
-                                                                                url: "/admin/contact/delete/"+id+".html",
-                                                                                method: 'get',
-                                                                                data: {
-                                                                                    "id": id,
-                                                                                },
-                                                                                success: function(resp)
-                                                                                {
-                                                                                    $('#contactRow-{{$user->id}}').remove();
-                                                                                    swal({
-                                                                                            title: "Thành Công",
-                                                                                            text: "Dữ Liệu Của Bạn Đã Được Xoá Thành Công!",
-                                                                                            icon: "success",
-                                                                                    });
-                                                                                }
-                                                                            })
-                                                                            
-                                                                        } else {
-                                                                            swal("Đã Huỷ", "Dữ liệu của bạn được dữ nguyên!", "error");
-                                                                        }
-                                                                    });
-                                                                });
-                                                            });
-                                                            </script>
-                                                        @endforeach
-                                                    </tbody>
-                                                    <tfoot>
-                                                        <tr>
-                                                            <th>Họ Tên</th>
-                                                            <th>Email</th>
-                                                            <th>Số Điện Thoại</th>
-                                                            <th>Trạng Thái</th>
-                                                            <th></th>
-                                                        </tr>
-                                                    </tfoot>
-                                                </table>
-                                                <div class="text-center">
-                                                {{$users->links()}}
-                                            </div>
-                                            </div>
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                <section class="card">
+                    <div class="card-header">
+                    <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                    <div class="heading-elements">
+                        <a href="{{route('getAddUserAdmin')}}" class="btn btn-success round btn-glow">{{__('general.addNew')}}</a>
+                    </div>
+                </div>
+                    <div class="card-content">
+                        <div class="card-body table-responsive">
+                            <table id="users-contacts" class="table table-white-space table-bordered row-grouping display no-wrap icheck table-middle">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">Họ & Tên</th>
+                                        <th class="text-center">Email</th>
+                                        <th class="text-center">Số Điện Thoại</th>
+                                        <th class="text-center">Loại Tài Khoản</th>
+                                        <th class="text-center">Trạng Thái</th>
+                                        <th class="text-center"></th>
+                                    </tr>
+                                </thead>
+                                @if(count($users) > '0')
+                                <tbody>
+                                    @foreach($users as $user)
+                                    <tr>
+                                        <td>
+                                            {{$user->name}}
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="mailto:{{$user->email}}">{{$user->email}}</a>
+                                        </td>
+                                        <td>{{$user->phone}}</td>
+                                        <td class="text-center">
+                                            @if($user->is_admin == 'true')
+                                                <button type="button" class="btn btn-sm btn-outline-success round">Quản Trị Viên</button>
+                                            @elseif($user->is_admin == 'false')
+                                                <button type="button" class="btn btn-sm btn-outline-primary round">Khách Hàng</button>
+                                            @else
+                                                <button type="button" class="btn btn-sm btn-outline-danger round">Không Rõ</button>
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @if($user->status == 'active')
+                                                <span class="badge badge-default badge-success">
+                                                    Đang Hoạt Động
+                                                </span>
+                                            @elseif($user->status == 'inActive')
+                                                <span class="badge badge-default badge-danger">
+                                                    Đã Khoá
+                                                </span>
+                                            @else
+                                                <p>Không Rõ</p>
+                                            @endif
+                                        </td>
+                                        <td>
+                                            <span class="dropdown">
+                                                <button id="btnSearchDrop2" type="button" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="true" class="btn btn-primary dropdown-toggle dropdown-menu-right"><i class="ft-settings"></i></button>
+                                                <span aria-labelledby="btnSearchDrop2" class="dropdown-menu mt-1 dropdown-menu-right">
+                                                <a href="#" class="dropdown-item"><i class="ft-edit-2"></i> Xem & Sửa</a>
+                                                <a href="javascript:;" id="deleteContact-" class="dropdown-item red"><i class="ft-trash-2"></i> Xoá</a>
+                                                </span>
+                                                </span>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                                
+                            </table>
+                            @else
+                            </table>
+                            <b style="text-align: center;">Không Có Tài Khoản Nào Được Tìm Thấy!</b>
+                            @endif
                         </div>
                     </div>
                 </section>
             </div>
         </div>
-        <div class="sidebar-detached sidebar-left" ,=",">
-            <div class="sidebar">
-                <div class="bug-list-sidebar-content">
-                    <div class="card">
+        <div class="sidebar-detached sidebar-right sidebar-sticky" ,=",">
+            
+                <div class="sidebar">
+                    <div class="sidebar-content card d-none d-lg-block">
                         <div class="card-body">
                             <div class="list-group">
                                 <a href="{{route('getListUsersAdmin')}}" class="list-group-item @if(getUrl() == route('getListUsersAdmin')) active @else list-group-item-action @endif">Tất Cả Tài Khoản</a>
@@ -183,7 +118,6 @@ Quản Lý Tài Khoản
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
     </div>
 </div>

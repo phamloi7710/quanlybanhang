@@ -28,11 +28,11 @@
             <!-- Description -->
             <section id="description" class="card">
                 <div class="card-header">
-                                <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
-                                <div class="heading-elements">
-                                    <a href="{{route('getAddProductAdmin')}}" class="btn btn-success round btn-glow">{{__('general.addNew')}}</a>
-                                </div>
-                            </div>
+                    <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                    <div class="heading-elements">
+                        <a href="{{route('getAddProductAdmin')}}" class="btn btn-success round btn-glow">{{__('general.addNew')}}</a>
+                    </div>
+                </div>
                 <div class="card-content">
                     <div class="card-body table-responsive">
                         <table class="table table-bordered mb-0">

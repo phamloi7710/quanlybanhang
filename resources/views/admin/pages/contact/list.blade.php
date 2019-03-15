@@ -27,7 +27,7 @@
                 </div>
             </div>
         </div>
-        <div class="content-detached content-right">
+        <div class="content-detached content-left">
             <div class="content-body">
                 <section class="row">
                     <div class="col-12">
@@ -156,7 +156,7 @@
                 </section>
             </div>
         </div>
-        <div class="sidebar-detached sidebar-left" ,=",">
+        <div class="sidebar-detached sidebar-right" ,=",">
             <div class="sidebar">
                 <div class="bug-list-sidebar-content">
                     <div class="card">

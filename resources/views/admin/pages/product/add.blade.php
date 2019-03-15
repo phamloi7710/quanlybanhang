@@ -27,26 +27,26 @@
         <form method="post" action="{{route('postAddProductAdmin')}}" class="form" novalidate>
             @csrf
             <div class="content-header row">
-            <div class="content-header-left col-md-6 col-12">
-                <div class="row breadcrumbs-top">
-                    <div class="breadcrumb-wrapper col-12">
-                        <h4 class="card-title">{{__('title.addNewProduct')}}</h4>
+                <div class="content-header-left col-md-6 col-12">
+                    <div class="row breadcrumbs-top">
+                        <div class="breadcrumb-wrapper col-12">
+                            <h4 class="card-title">{{__('title.addNewProduct')}}</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-header-right col-md-6 col-12">
+                    <div class="dropdown float-md-right">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{{route('getIndexAdmin')}}">{{__('general.home')}}</a>
+                            </li>
+                            <li class="breadcrumb-item"><a href="#">{{__('general.product')}}</a>
+                            </li>
+                            <li class="breadcrumb-item active">{{__('title.addNewProduct')}}
+                            </li>
+                        </ol>
                     </div>
                 </div>
             </div>
-            <div class="content-header-right col-md-6 col-12">
-                <div class="dropdown float-md-right">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{route('getIndexAdmin')}}">{{__('general.home')}}</a>
-                        </li>
-                        <li class="breadcrumb-item"><a href="#">{{__('general.product')}}</a>
-                        </li>
-                        <li class="breadcrumb-item active">{{__('title.addNewProduct')}}
-                        </li>
-                    </ol>
-                </div>
-            </div>
-        </div>
             <div class="content-body">
                 <section id="description" class="card">
                     <div class="card-content">

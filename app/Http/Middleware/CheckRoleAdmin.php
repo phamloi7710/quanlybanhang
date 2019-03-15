@@ -15,10 +15,11 @@ class CheckRoleAdmin
                 return $next($request);
             }else{
                 $notifyError = array(
-                    'message' => 'Bạn Không Có Quyền Truy Cập Vào Trang Này!', 
+                    'message' => 'Bạn Không Có Quyền Truy Cập Vào Trang Quản Trị! Một Email đã được gửi đi để thông báo với quản trị viên về vụ việc này!', 
                     'alert-type' => 'error',
                 );
-                return redirect()->back()->with($notifyError);
+                Auth::logout();
+                return redirect()->route('getLoginAdmin')->with($notifyError);
             }
         }else{
             return redirect()->route('getLoginAdmin');

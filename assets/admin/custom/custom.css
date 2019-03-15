@@ -14,3 +14,7 @@
 .slider-frontend{
 	position:absolute;top:-50px;left:30px;width:500px;height:40px;font-family:Oswald,sans-serif;font-size:32px;font-weight:200;line-height:1.2;text-align:center;background-color:rgb(174, 177, 177, 0.2); color: #fff;
 }
+.help-block ul {
+    margin: 0 !important;
+    padding: 0 !important;
+}

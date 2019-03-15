@@ -33,6 +33,7 @@
         <link rel="stylesheet" type="text/css" href="{{url('')}}/assets/admin/app-assets/css/plugins/forms/validation/form-validation.css">
         <link rel="stylesheet" type="text/css" href="{{url('')}}/assets/admin/app-assets/vendors/css/forms/spinner/jquery.bootstrap-touchspin.css">
         <link rel="stylesheet" type="text/css" href="{{url('')}}/assets/admin/app-assets/css/core/colors/palette-callout.css">
+        <link rel="stylesheet" type="text/css" href="{{url('')}}/assets/admin/app-assets/vendors/css/extensions/toastr.css">
         <script src="{{url('')}}/assets/admin/app-assets/vendors/js/vendors.min.js" type="text/javascript"></script>
     </head>
     <body class="vertical-layout vertical-content-menu 1-column  bg-cyan bg-lighten-2 menu-expanded blank-page blank-page"
@@ -119,6 +120,19 @@
         <script src="{{url('')}}/assets/admin/app-assets/js/scripts/forms/form-login-register.js" type="text/javascript"></script>
         <!-- END PAGE LEVEL JS-->
         <script src="{{url('')}}/assets/admin/app-assets/vendors/js/forms/validation/jqBootstrapValidation.js" type="text/javascript"></script>
-        <script src="{{url('')}}/assets/admin/app-assets/js/scripts/forms/validation/form-validation.js" type="text/javascript"></script>
+        <script src="{{url('')}}/assets/admin/app-assets/js/scripts/forms/validation/form-validation.js" type="text/javascript"></script>toa
+        <script src="{{url('')}}/assets/admin/app-assets/vendors/js/extensions/toastr.min.js" type="text/javascript"></script>
+        <script>
+          @if(Session::has('message'))
+            var type = "{{Session::get('alert-type', 'success')}}";
+            switch(type){
+                case 'success':
+                    toastr.success('{{Session::get('message')}}', 'Thao Tác Thành Công!', {positionClass: 'toast-bottom-right', containerId: 'toast-bottom-right', "progressBar": true, "showMethod": "fadeIn", "hideMethod": "fadeOut", timeOut: 6000}, toastr.options.closeButton = true);
+                    break;
+                case 'error':
+                    toastr.error('{{Session::get('message')}}', 'Đã Xảy Ra Lỗi!', {positionClass: 'toast-top-full-width', containerId: 'toast-top-full-width', "progressBar": true, "showMethod": "fadeIn", "hideMethod": "fadeOut", timeOut: 6000}, toastr.options.closeButton = true);
+            }
+          @endif
+        </script>
     </body>
 </html>
