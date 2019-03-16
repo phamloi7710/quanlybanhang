@@ -2,8 +2,7 @@
 @section('content') 
 <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<link rel="stylesheet" type="text/css" href="{{url('')}}/assets/admin/app-assets/vendors/css/tables/datatable/datatables.min.css">
-<script src="{{url('')}}/assets/admin/app-assets/vendors/js/tables/datatable/datatables.min.js" type="text/javascript"></script>
+
 <div class="app-content content">
     <div class="content-wrapper">
         <div class="content-header row">

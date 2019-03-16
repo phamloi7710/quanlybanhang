@@ -7,7 +7,12 @@ use App\Http\Controllers\Controller;
 use App\User;
 use App\Http\Requests\User\AddUserRequest;
 use Validator;
+use Hash;
+use Session;
 use Illuminate\Support\Facades\Input;
+use App\Model\EmailTemplate;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ChangePassword;
 class AccountController extends Controller
 {
     public function getList(Request $request)
@@ -30,6 +35,7 @@ class AccountController extends Controller
     {
         $user = new User();
         $user->name = $request->txtName;
+        $user->slug = changeTitle($request->txtName);
         $user->username = $request->txtUsername;
         $user->email = $request->txtEmail;
         $user->phone = $request->txtPhone;
@@ -55,5 +61,29 @@ class AccountController extends Controller
             );
             return redirect()->route('getListUsersAdmin')->with($notification);
         }
+    }
+    public function getChangePassword($id)
+    {
+        $user = User::find($id);
+        return view('admin.pages.account.change_pass', ['user'=>$user]);
+    }
+    public function postChangePassword(Request $request, $id)
+    {
+        $user = User::find($id);
+        $passwordValue = $request->txtReNewPass;
+        $user->password_value = $passwordValue;
+        $user->password = bcrypt($passwordValue);
+        
+        $user->save();
+        $template = EmailTemplate::where('key','changed-password')->first();
+        if(isset($template))
+        {
+            Mail::to($user->email)->send(new ChangePassword($user));
+            Session::flash('success', 'Mật khẩu mới đã được gửi đến Email tài khoản này!');
+        }
+        else{
+            Session::flash('success', 'Khôi phục mật khẩu thành công ! Mật khẩu mới của tài khoả này là:');
+        }        
+        return redirect()->back();
     }
 }

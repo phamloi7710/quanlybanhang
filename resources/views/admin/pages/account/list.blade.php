@@ -18,9 +18,9 @@ Tất Cả Tài Khoản
                     <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{route('getIndexAdmin')}}">{{__('general.home')}}</a>
                             </li>
-                            <li class="breadcrumb-item"><a href="#">Liên hệ</a>
+                            <li class="breadcrumb-item"><a href="{{route('getListUsersAdmin')}}">Tài khoản</a>
                             </li>
-                            <li class="breadcrumb-item active">Tất cả liên hệ
+                            <li class="breadcrumb-item active">@if(getUrl() == route('getListUsersAdmin')) Tất Cả Tài Khoản @elseif(getUrl() == route('getListUsersAdmin', ['is_admin'=>'true'])) Tài Khoản Quản Trị @elseif(getUrl() == route('getListUsersAdmin', ['is_admin'=>'false'])) Tài Khoản Khách Hàng @endif
                             </li>
                         </ol>
                 </div>
@@ -86,7 +86,8 @@ Tất Cả Tài Khoản
                                                 <button id="btnSearchDrop2" type="button" data-toggle="dropdown" aria-haspopup="true"
                                                     aria-expanded="true" class="btn btn-primary dropdown-toggle dropdown-menu-right"><i class="ft-settings"></i></button>
                                                 <span aria-labelledby="btnSearchDrop2" class="dropdown-menu mt-1 dropdown-menu-right">
-                                                <a href="#" class="dropdown-item"><i class="ft-edit-2"></i> Xem & Sửa</a>
+                                                <a href="#" class="dropdown-item"><i class="ft ft-edit-2"></i> Xem & Sửa</a>
+                                                <a href="{{route('getChangePasswordUserAdmin', ['id'=>$user->id, 'slug'=>$user->slug])}}" class="dropdown-item"><i class="ft ft-lock"></i> Đổi mật khẩu</a>
                                                 <a href="javascript:;" id="deleteContact-" class="dropdown-item red"><i class="ft-trash-2"></i> Xoá</a>
                                                 </span>
                                                 </span>

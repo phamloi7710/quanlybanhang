@@ -156,12 +156,18 @@ class SettingController extends Controller
                 $mailserver->save();
 
             }
-            return redirect()->route('getEmailConfig')->with('success', trans('general.updateSuccessfully'));
+            $notification = array(
+	            'message' => 'Cấu hình email server thành công!', 
+	            'alert-type' => 'success',
+	        );
+	        return redirect()->route('getEmailConfig')->with($notification);
 
         } catch (\Exception $e) {
-            //throw $e;
-            $request->session()->flash('error', trans('validation.updateError'));
-            return redirect()->route('getEmailConfig');
+            $notification = array(
+	            'message' => 'Cấu hình email server không thành công!', 
+	            'alert-type' => 'success',
+	        );
+            return redirect()->route('getEmailConfig')->with($notification);
         }
     }
     public function getMetaSEO()
@@ -191,12 +197,22 @@ class SettingController extends Controller
                 $metaConfig->save();
 
             }
-            return redirect()->route('getMetaSEO')->with('success', trans('general.updateSuccessfully'));
+            $notification = array(
+	            'message' => 'Cấu hình SEO thành công!', 
+	            'alert-type' => 'success',
+	        );
+            return redirect()->route('getMetaSEO')->with($notification);
 
         } catch (\Exception $e) {
-            //throw $e;
-            $request->session()->flash('error', trans('validation.updateError'));
-            return redirect()->route('getMetaConfig');
+            $notification = array(
+	            'message' => 'Cấu hình email server không thành công!', 
+	            'alert-type' => 'success',
+	        );
+            $notification = array(
+	            'message' => 'Cấu hình SEO thành công!', 
+	            'alert-type' => 'success',
+	        );
+            return redirect()->route('getMetaConfig')->with($notification);
         }
     }
 }
