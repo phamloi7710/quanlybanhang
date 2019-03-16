@@ -17,15 +17,36 @@ class AccountController extends Controller
 {
     public function getList(Request $request)
     {
-    	if(request()->has('is_admin'))
-    	{
-    		$users = User::where('is_admin', request('is_admin'))->paginate(10)->appends('is_admin', request('is_admin'));
-    	}
-    	else
-    	{
-    		$users = User::paginate(10);
-    	}
-    	return view('admin.pages.account.list', ['users' => $users]);
+    	$users = User::where('id','>',0);
+        $name = $request->name;
+        $email = $request->email;
+        $phone = $request->phone;
+        $type = $request->type;
+        $status = $request->status;
+        if ($name) {
+            $users->where('name', 'LIKE', '%' . $name . '%');
+        }
+        if ($email) {
+            $users->where('email', 'LIKE', '%' . $email . '%');
+        }
+        if ($phone) {
+            $users->where('phone', 'LIKE', '%' . $phone . '%');
+        }
+        if($type){
+            $users->where('is_admin', $type);
+        }
+        if($status){
+            $users->where('status', $status);
+        }
+        $users = $users->paginate(10)->appends($request->all())->setPath('');
+    	return view('admin.pages.account.list', [
+            'users' => $users,
+            'name' => $name,
+            'email' => $email,
+            'phone' => $phone,
+            'type' => $type,
+            'status' => $status
+        ]);
     }
     public function getAdd()
     {
@@ -41,6 +62,7 @@ class AccountController extends Controller
         $user->phone = $request->txtPhone;
         $user->gender = $request->gender;
         $user->password = bcrypt($request->txtPassword);
+        $user->password_value = $request->txtPassword;
         $user->is_admin = $request->is_admin;
         $user->avatar = $request->avatar;
         $user->status = $request->status;
@@ -60,6 +82,36 @@ class AccountController extends Controller
                 'alert-type' => 'success',
             );
             return redirect()->route('getListUsersAdmin')->with($notification);
+        }
+    }
+    public function getEdit($id)
+    {
+        $user = User::find($id);
+        return view('admin.pages.account.edit', ['user'=>$user]);
+    }
+    public function postEdit(Request $request, $id)
+    {
+        $user = User::find($id);
+        $user->name = $request->txtName;
+        $user->slug = changeTitle($request->txtName);
+        $user->phone = $request->txtPhone;
+        $user->gender = $request->gender;
+        $user->is_admin = $request->is_admin;
+        $user->avatar = $request->avatar;
+        $user->status = $request->status;
+        $user->save();
+        $notification = array(
+            'message' => 'Cập nhật tài khoản thành công!', 
+            'alert-type' => 'success',
+        );
+        return redirect()->route('getListUsersAdmin')->with($notification);
+    }
+    public function getDelete(Request $request, $id)
+    {
+        $user = Contact::find($id);
+        if($user->delete())  
+        {
+            echo "Data Deleted";
         }
     }
     public function getChangePassword($id)

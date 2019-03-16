@@ -60,9 +60,9 @@ Route::group(['prefix'=>'admin', 'middleware'=>'checkRoleAdmin'], function(){
 		Route::get('list.html', 'Admin\AccountController@getList')->name('getListUsersAdmin');
 		Route::get('add-new.html', 'Admin\AccountController@getAdd')->name('getAddUserAdmin');
 		Route::post('add-new.html', 'Admin\AccountController@postAdd')->name('postAddUserAdmin');
-		Route::get('edit/{id}/slug.html', 'Admin\AccountController@getEdit')->name('getEditUserAdmin');
-		Route::post('edit/{id}/slug.html', 'Admin\AccountController@postEdit')->name('postEditUserAdmin');
-		Route::get('delete/{id}/slug.html', 'Admin\AccountController@getDelete')->name('getDeleteUserAdmin');
+		Route::get('edit/{id}/{slug}.html', 'Admin\AccountController@getEdit')->name('getEditUserAdmin');
+		Route::post('edit/{id}/{slug}.html', 'Admin\AccountController@postEdit')->name('postEditUserAdmin');
+		Route::get('delete/{id}/{slug}.html', 'Admin\AccountController@getDelete')->name('getDeleteUserAdmin');
 		Route::get('change-password/{id}/{slug}.html', 'Admin\AccountController@getChangePassword')->name('getChangePasswordUserAdmin');
 		Route::post('change-password/{id}/{slug}.html', 'Admin\AccountController@postChangePassword')->name('postChangePasswordUserAdmin');
 	});
