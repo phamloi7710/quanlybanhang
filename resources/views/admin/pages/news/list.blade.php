@@ -1,5 +1,5 @@
 @section('title')
-Danh Sách Danh Mục Tin Tức
+Danh Sách Tin Tức
 @stop
 @extends('admin.general.master')
 @section('content') 
@@ -11,7 +11,7 @@ Danh Sách Danh Mục Tin Tức
             <div class="content-header-left col-md-6 col-12">
                 <div class="row breadcrumbs-top">
                     <div class="breadcrumb-wrapper col-12">
-                        <h4 class="card-title">Danh Sách Danh Mục Tin Tức</h4>
+                        <h4 class="card-title">Danh Sách Tin Tức</h4>
                     </div>
                 </div>
             </div>
@@ -22,7 +22,7 @@ Danh Sách Danh Mục Tin Tức
                             </li>
                             <li class="breadcrumb-item"><a href="#">Tin Tức</a>
                             </li>
-                            <li class="breadcrumb-item active">Danh Sách Danh Mục Tin Tức
+                            <li class="breadcrumb-item active">Danh Sách Tin Tức
                             </li>
                         </ol>
                 </div>
@@ -35,7 +35,7 @@ Danh Sách Danh Mục Tin Tức
                     <div class="card-header">
                         <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                         <div class="heading-elements">
-                            <a href="{{route('getAddNewsCategoryAdmin')}}" class="btn btn-success round btn-glow">{{__('general.addNew')}}</a>
+                            <a href="{{route('getAddNewsAdmin')}}" class="btn btn-success round btn-glow">{{__('general.addNew')}}</a>
                         </div>
                     </div>
                     <div class="card-body">
@@ -44,7 +44,7 @@ Danh Sách Danh Mục Tin Tức
                                 <thead>
                                     <tr>
                                         <th>{{__('general.id')}}</th>
-                                        <th>{{__('general.categoryName')}}</th>
+                                        <th>Tiêu đề</th>
                                         <th>{{__('general.status')}}</th>
                                         <th>{{__('general.createdAt')}}</th>
                                         <th>{{__('general.updateAt')}}</th>
@@ -52,10 +52,10 @@ Danh Sách Danh Mục Tin Tức
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($categories as $value)
+                                    @foreach($news as $value)
                                     <tr id="cateRow-{{$value->id}}">
                                         <td class="text-center">{{$value->id}}</td>
-                                        <td>{{$value->name}}</td>
+                                        <td>{{$value->title}}</td>
                                         <td class="text-center">
                                             @if($value->status=='active')
                                             <span class="badge badge-default badge-success">{{__('general.active')}}</span>

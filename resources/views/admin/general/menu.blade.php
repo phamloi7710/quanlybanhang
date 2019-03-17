@@ -7,7 +7,7 @@
                 <a href="{{route('getFileManagement')}}?type=image"><i class="la la-image"></i><span class="menu-title" data-i18n="nav.dash.main">{{__('general.imageManagement')}}</span></a>
             </li>  
             <li class=" nav-item">
-                <a href="index.html"><i class="la la-hand-o-right"></i><span class="menu-title" data-i18n="nav.dash.main">{{__('general.productManagement')}}</span></a>
+                <a href="javascript:;"><i class="la la-hand-o-right"></i><span class="menu-title" data-i18n="nav.dash.main">{{__('general.productManagement')}}</span></a>
                 <ul class="menu-content">
                     <li class="@if(getUrl() == route('getListCateAdmin')) active @endif"><a class="menu-item" href="{{route('getListCateAdmin')}}">{{__('general.category')}}</a>
                     </li>
@@ -23,7 +23,7 @@
                 </ul>
             </li> 
             <li class=" nav-item">
-                <a href="#"><i class="la la-newspaper-o"></i><span class="menu-title" data-i18n="nav.dash.main">Cài Đặt Trang</span></a>
+                <a href="javascript:;"><i class="la la-newspaper-o"></i><span class="menu-title" data-i18n="nav.dash.main">Cài Đặt Trang</span></a>
                 <ul class="menu-content">
                     <li class="@if(getUrl() == route('getIntroduceAdmin')) active @endif"><a class="menu-item" href="{{route('getIntroduceAdmin')}}">Trang Giới Thiệu</a>
                     </li>
@@ -33,7 +33,7 @@
                 <a href="{{route('getContactAdmin')}}"><i class="la la-user-plus"></i><span class="menu-title" data-i18n="nav.dash.main">Liên Hệ Mới</span></a>
             </li> 
             <li class=" nav-item">
-                <a href="#"><i class="la la-cogs"></i><span class="menu-title" data-i18n="nav.dash.main">Cài Đặt Hệ hống</span></a>
+                <a href="javascript:;"><i class="la la-cogs"></i><span class="menu-title" data-i18n="nav.dash.main">Cài Đặt Hệ hống</span></a>
                 <ul class="menu-content">
                     <li class="@if(getUrl() == route('getWebInfo')) active @endif"><a class="menu-item" href="{{route('getWebInfo')}}">Thông Tin Cơ Bản</a>
                     </li>
@@ -53,20 +53,20 @@
                 <a href="javascript:;"><i class="la la-android"></i><span class="menu-title" data-i18n="nav.menu_levels.main">Tin Tức</span></a>
                 <ul class="menu-content">
                     <li>
-                        <a class="menu-item" href="#" data-i18n="nav.menu_levels.second_level_child.main">Danh Mục Tin Tức</a>
+                        <a class="menu-item" href="javascript:;" data-i18n="nav.menu_levels.second_level_child.main">Danh Mục Tin Tức</a>
                         <ul class="menu-content">
                             <li class="@if(getUrl() == route('getListNewsCategoriesAdmin')) active @endif"><a class="menu-item" href="{{route('getListNewsCategoriesAdmin')}}" data-i18n="nav.menu_levels.second_level_child.third_level">Danh Sách</a>
                             </li>
-                            <li><a class="menu-item" href="#" data-i18n="nav.menu_levels.second_level_child.third_level">Thêm Mới</a>
+                            <li class="@if(getUrl() == route('getAddNewsCategoryAdmin')) active @endif"><a class="menu-item" href="{{route('getAddNewsCategoryAdmin')}}" data-i18n="nav.menu_levels.second_level_child.third_level">Thêm Mới</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a class="menu-item" href="#" data-i18n="nav.menu_levels.second_level_child.main">Tin Tức</a>
+                        <a class="menu-item" href="javascript:;" data-i18n="nav.menu_levels.second_level_child.main">Tin Tức</a>
                         <ul class="menu-content">
-                            <li><a class="menu-item" href="#" data-i18n="nav.menu_levels.second_level_child.third_level">Danh Sách</a>
+                            <li class="@if(getUrl() == route('getListNewsAdmin')) active @endif"><a class="menu-item" href="{{route('getListNewsAdmin')}}" data-i18n="nav.menu_levels.second_level_child.third_level">Danh Sách</a>
                             </li>
-                            <li><a class="menu-item" href="#" data-i18n="nav.menu_levels.second_level_child.third_level">Thêm Mới</a>
+                            <li class="@if(getUrl() == route('getAddNewsAdmin')) active @endif"><a class="menu-item" href="{{route('getAddNewsAdmin')}}" data-i18n="nav.menu_levels.second_level_child.third_level">Thêm Mới</a>
                             </li>
                         </ul>
                     </li>

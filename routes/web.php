@@ -78,6 +78,14 @@ Route::group(['prefix'=>'admin', 'middleware'=>'checkRoleAdmin'], function(){
 			Route::post('edit/{id}', 'Admin\NewsController@postEditCategory')->name('postEditNewsCategoryAdmin');
 			Route::get('delete/{id}', 'Admin\NewsController@getDeleteCategory')->name('getDeleteNewsCategoryAdmin');
 		});
+		Route::group(['prefix'=>'news'], function(){
+			Route::get('list.html', 'Admin\NewsController@getListNews')->name('getListNewsAdmin');
+			Route::get('add.html', 'Admin\NewsController@getAddNews')->name('getAddNewsAdmin');
+			Route::post('add.html', 'Admin\NewsController@postAddNews')->name('postAddNewsAdmin');
+			Route::get('edit/{id}', 'Admin\NewsController@getEditNews')->name('getEditNewsAdmin');
+			Route::post('edit/{id}', 'Admin\NewsController@postEditNews')->name('postEditNewsAdmin');
+			Route::get('delete/{id}', 'Admin\NewsController@getDeleteNews')->name('getDeleteNewsAdmin');
+		});
 	});
 
 });

@@ -1,5 +1,5 @@
 @section('title')
-Thêm Mới Danh Mục Tin Tức
+Chỉnh Sửa Danh Mục Tin Tức
 @stop
 @extends('admin.general.master')
 @section('content')
@@ -27,7 +27,7 @@ Thêm Mới Danh Mục Tin Tức
     <div class="content-wrapper">
         <div class="content-header row">
             <div class="content-header-left col-md-6 col-12 mb-2 breadcrumb-new">
-                <h3 class="content-header-title mb-0 d-inline-block">Thêm Mới Danh Mục Tin Tức</h3>
+                <h3 class="content-header-title mb-0 d-inline-block">Chỉnh Sửa Danh Mục Tin Tức</h3>
             </div>
             <div class="content-header-right col-md-6 col-12">
                 <div class="dropdown float-md-right">
@@ -36,7 +36,7 @@ Thêm Mới Danh Mục Tin Tức
                             </li>
                             <li class="breadcrumb-item"><a href="#">Tin Tức</a>
                             </li>
-                            <li class="breadcrumb-item active">Thêm Mới Danh Mục Tin Tức
+                            <li class="breadcrumb-item active">Chỉnh Sửa Danh Mục Tin Tức
                             </li>
                         </ol>
                 </div>
@@ -47,7 +47,7 @@ Thêm Mới Danh Mục Tin Tức
             <section class="card">
                 <div class="card-content">
                     <div class="card-body">
-                        <form class="form-horizontal" action="{{route('postAddNewsCategoryAdmin')}}" method="post" novalidate>
+                        <form class="form-horizontal" action="{{route('postEditNewsCategoryAdmin', ['id'=>$category->id])}}" method="post" novalidate>
                             @csrf
                             <div class="row justify-content-md-center">
                                 <div class="col-lg-6 col-md-12">
@@ -56,7 +56,7 @@ Thêm Mới Danh Mục Tin Tức
                                             <span class="required red">(*)</span>
                                         </h5>
                                         <div class="controls">
-                                            <input value="{{old('txtName')}}" type="text" id="txtName" class="form-control" placeholder="{{__('general.categoryName')}}" name="txtName"required data-validation-required-message="{{__('validation.required', ['attribute'=>__('general.categoryName')])}}" maxlength="128" data-validation-maxlength-message="{{__('validation.max.string', ['attribute'=>__('general.categoryName'), 'max'=>'128'])}}" minlength="4" data-validation-minlength-message="{{__('validation.min.string', ['attribute'=>__('general.categoryName'), 'min'=>'4'])}}">
+                                            <input value="{{$category->name}}" type="text" id="txtName" class="form-control" placeholder="{{__('general.categoryName')}}" name="txtName"required data-validation-required-message="{{__('validation.required', ['attribute'=>__('general.categoryName')])}}" maxlength="128" data-validation-maxlength-message="{{__('validation.max.string', ['attribute'=>__('general.categoryName'), 'max'=>'128'])}}" minlength="4" data-validation-minlength-message="{{__('validation.min.string', ['attribute'=>__('general.categoryName'), 'min'=>'4'])}}">
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -65,11 +65,11 @@ Thêm Mới Danh Mục Tin Tức
                                         </h5>
                                         <div class="controls">
                                             <div class="skin skin-flat">
-                                                <input type="radio" value="active" name="status" required id="active" checked>
+                                                <input type="radio" value="active" name="status" required id="active" @if($category->status=='active') checked @endif>
                                                 <label for="active">{{__('general.active')}}</label>
                                             </div>
                                             <div class="skin skin-flat">
-                                                <input type="radio" value="inActive" name="status" id="inActive">
+                                                <input type="radio" value="inActive" name="status" id="inActive" @if($category->status=='inActive') checked @endif>
                                                 <label for="inActive">{{__('general.inActive')}}</label>
                                             </div>
                                         </div>
@@ -77,9 +77,9 @@ Thêm Mới Danh Mục Tin Tức
                                 </div>
                             </div>
                             <div class="form-actions right">
-                              <button onclick="location.href='{{route('getListCateAdmin')}}'" type="button" class="btn btn-danger mr-1">
-                                <i class="ft-x"></i> {{__('general.cancel')}}
-                              </button>
+                            <button onclick="location.href='{{route('getListCateAdmin')}}'" type="button" class="btn btn-danger mr-1">
+                              <i class="ft-x"></i> {{__('general.cancel')}}
+                            </button>
                             <button type="submit" class="btn btn-success">
                               <i class="la la-check-square-o"></i> {{__('general.saveChange')}}
                             </button>
