@@ -62,9 +62,22 @@ Route::group(['prefix'=>'admin', 'middleware'=>'checkRoleAdmin'], function(){
 		Route::post('add-new.html', 'Admin\AccountController@postAdd')->name('postAddUserAdmin');
 		Route::get('edit/{id}/{slug}.html', 'Admin\AccountController@getEdit')->name('getEditUserAdmin');
 		Route::post('edit/{id}/{slug}.html', 'Admin\AccountController@postEdit')->name('postEditUserAdmin');
-		Route::get('delete/{id}/{slug}.html', 'Admin\AccountController@getDelete')->name('getDeleteUserAdmin');
+		Route::get('delete/{id}.html', 'Admin\AccountController@getDelete')->name('getDeleteUserAdmin');
 		Route::get('change-password/{id}/{slug}.html', 'Admin\AccountController@getChangePassword')->name('getChangePasswordUserAdmin');
 		Route::post('change-password/{id}/{slug}.html', 'Admin\AccountController@postChangePassword')->name('postChangePasswordUserAdmin');
+	});
+	Route::group(['prefix'=>'profile'], function (){
+		Route::get('{username}', 'Admin\AccountController@getProfile')->name('getProfileAdmin');
+	});
+	Route::group(['prefix'=>'news'], function(){
+		Route::group(['prefix'=>'news-category'], function(){
+			Route::get('list.html', 'Admin\NewsController@getListCategories')->name('getListNewsCategoriesAdmin');
+			Route::get('add.html', 'Admin\NewsController@getAddCategory')->name('getAddNewsCategoryAdmin');
+			Route::post('add.html', 'Admin\NewsController@postAddCategory')->name('postAddNewsCategoryAdmin');
+			Route::get('edit/{id}', 'Admin\NewsController@getEditCategory')->name('getEditNewsCategoryAdmin');
+			Route::post('edit/{id}', 'Admin\NewsController@postEditCategory')->name('postEditNewsCategoryAdmin');
+			Route::get('delete/{id}', 'Admin\NewsController@getDeleteCategory')->name('getDeleteNewsCategoryAdmin');
+		});
 	});
 
 });

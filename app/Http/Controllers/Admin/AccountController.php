@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Input;
 use App\Model\EmailTemplate;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ChangePassword;
+use Illuminate\Support\Facades\Auth;
 class AccountController extends Controller
 {
     public function getList(Request $request)
@@ -108,7 +109,7 @@ class AccountController extends Controller
     }
     public function getDelete(Request $request, $id)
     {
-        $user = Contact::find($id);
+        $user = User::find($id);
         if($user->delete())  
         {
             echo "Data Deleted";
@@ -137,5 +138,10 @@ class AccountController extends Controller
             Session::flash('success', 'Khôi phục mật khẩu thành công ! Mật khẩu mới của tài khoả này là:');
         }        
         return redirect()->back();
+    }
+    public function getProfile($username)
+    {
+        $user = User::where('username', Auth::user()->username)->first();
+        return view('admin.pages.account.profile', ['user'=>$user]);
     }
 }

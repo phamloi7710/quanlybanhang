@@ -48,7 +48,30 @@
             </li> 
             <li class="@if(getUrl() == route('getListUsersAdmin')) active @endif">
                 <a href="{{route('getListUsersAdmin')}}"><i class="la la-user-plus"></i><span class="menu-title" data-i18n="nav.dash.main">Tài Khoản</span></a>
-            </li> 
+            </li>
+            <li class=" nav-item">
+                <a href="javascript:;"><i class="la la-android"></i><span class="menu-title" data-i18n="nav.menu_levels.main">Tin Tức</span></a>
+                <ul class="menu-content">
+                    <li>
+                        <a class="menu-item" href="#" data-i18n="nav.menu_levels.second_level_child.main">Danh Mục Tin Tức</a>
+                        <ul class="menu-content">
+                            <li class="@if(getUrl() == route('getListNewsCategoriesAdmin')) active @endif"><a class="menu-item" href="{{route('getListNewsCategoriesAdmin')}}" data-i18n="nav.menu_levels.second_level_child.third_level">Danh Sách</a>
+                            </li>
+                            <li><a class="menu-item" href="#" data-i18n="nav.menu_levels.second_level_child.third_level">Thêm Mới</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="menu-item" href="#" data-i18n="nav.menu_levels.second_level_child.main">Tin Tức</a>
+                        <ul class="menu-content">
+                            <li><a class="menu-item" href="#" data-i18n="nav.menu_levels.second_level_child.third_level">Danh Sách</a>
+                            </li>
+                            <li><a class="menu-item" href="#" data-i18n="nav.menu_levels.second_level_child.third_level">Thêm Mới</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
         </ul>
     </div>
 </div>

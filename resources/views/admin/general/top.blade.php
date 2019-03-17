@@ -169,7 +169,7 @@
                                 <img src="{{url('')}}/assets/admin/app-assets/images/portrait/small/avatar-s-19.png" alt="avatar"><i></i></span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right">
-                                    <a class="dropdown-item" href="#"><i class="ft-user"></i> {{__('general.profile')}}</a>
+                                    <a class="dropdown-item" href="{{route('getProfileAdmin', ['username'=>Auth::user()->username])}}"><i class="ft-user"></i> {{__('general.profile')}}</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="{{route('getLogoutAdmin')}}"><i class="ft-power"></i> {{__('general.logOut')}}</a>
                                 </div>

@@ -125,72 +125,76 @@ Tất Cả Tài Khoản
                                         <td class="text-center">
                                             <span class="dropdown">
                                                 <button id="btnSearchDrop2" type="button" data-toggle="dropdown" aria-haspopup="true"
-                                                    aria-expanded="true" class="btn btn-primary dropdown-toggle dropdown-menu-right"><i class="ft-settings"></i></button>
+                                                    aria-expanded="true" class="btn btn-primary btn-sm dropdown-toggle dropdown-menu-right"><i class="ft-settings"></i></button>
                                                 <span aria-labelledby="btnSearchDrop2" class="dropdown-menu mt-1 dropdown-menu-right">
-                                                <a href="{{route('getEditUserAdmin', ['id'=>$user->id, 'slug'=>$user->slug])}}" class="dropdown-item"><i class="ft ft-edit-2"></i> Xem & Sửa</a>
-                                                <a href="{{route('getChangePasswordUserAdmin', ['id'=>$user->id, 'slug'=>$user->slug])}}" class="dropdown-item"><i class="ft ft-lock"></i>Mật khẩu</a>
-                                                <a href="javascript:;" id="deleteUser-{{$user->id}}" class="dropdown-item red"><i class="ft-trash-2"></i> Xoá</a>
+                                                
+                                                    <a href="{{route('getEditUserAdmin', ['id'=>$user->id, 'slug'=>$user->slug])}}" class="dropdown-item"><i class="ft ft-edit-2"></i> Xem & Sửa</a>
+                                                
+                                                <a href="{{route('getChangePasswordUserAdmin', ['id'=>$user->id, 'slug'=>$user->slug])}}" class="dropdown-item"><i class="ft ft-lock"></i>Đổi mật khẩu</a>
+                                                @if($user->supper_admin == 'false' && $user->id != Auth::user()->id)
+                                                    <a href="javascript:;" id="deleteUser-{{$user->id}}" class="dropdown-item red"><i class="ft-trash-2"></i> Xoá</a>
+                                                @endif
                                                 </span>
-                                                </span>
+                                            </span>
                                         </td>
                                     </tr>
                                     <script>
-                                                            $(document).ready(function(){
-                                                                $('#deleteUser-{{$user->id}}').on('click',function(){
-                                                                    swal({
-                                                                        title: "Bạn có chắc chắn không?",
-                                                                        text: "Thao tác xoá này sẽ không thể hoàn tác!",
-                                                                        icon: "warning",
-                                                                        showCancelButton: true,
-                                                                        showLoaderOnConfirm: true,
-                                                                        buttons: {
-                                                                            cancel: {
-                                                                                text: "Không, dữ nguyên dữ liệu!",
-                                                                                value: null,
-                                                                                visible: true,
-                                                                                className: "btn-warning",
-                                                                                closeModal: false,
-                                                                            },
-                                                                            confirm: {
-                                                                                text: "Đống ý, xoá ngay?",
-                                                                                value: true,
-                                                                                visible: true,
-                                                                                className: "",
-                                                                                closeModal: false
-                                                                            }
-                                                                        }
-                                                                    }).then(isConfirm => {
-                                                                        if (isConfirm) {
-                                                                            var id = {{$user->id}};
-                                                                            $.ajaxSetup({
-                                                                                headers: {
-                                                                                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                                                                                }
-                                                                            });
-                                                                            $.ajax({
-                                                                                url: "/admin/user/delete/"+id+".html",
-                                                                                method: 'get',
-                                                                                data: {
-                                                                                    "id": id,
-                                                                                },
-                                                                                success: function(resp)
-                                                                                {
-                                                                                    $('#userRow-{{$user->id}}').remove();
-                                                                                    swal({
-                                                                                            title: "Thành Công",
-                                                                                            text: "Dữ Liệu Của Bạn Đã Được Xoá Thành Công!",
-                                                                                            icon: "success",
-                                                                                    });
-                                                                                }
-                                                                            })
-                                                                            
-                                                                        } else {
-                                                                            swal("Đã Huỷ", "Dữ liệu của bạn được dữ nguyên!", "error");
-                                                                        }
-                                                                    });
+                                        $(document).ready(function(){
+                                            $('#deleteUser-{{$user->id}}').on('click',function(){
+                                                swal({
+                                                    title: "Bạn có chắc chắn không?",
+                                                    text: "Thao tác xoá này sẽ không thể hoàn tác!",
+                                                    icon: "warning",
+                                                    showCancelButton: true,
+                                                    showLoaderOnConfirm: true,
+                                                    buttons: {
+                                                        cancel: {
+                                                            text: "Không, dữ nguyên dữ liệu!",
+                                                            value: null,
+                                                            visible: true,
+                                                            className: "btn-warning",
+                                                            closeModal: false,
+                                                        },
+                                                        confirm: {
+                                                            text: "Đống ý, xoá ngay?",
+                                                            value: true,
+                                                            visible: true,
+                                                            className: "",
+                                                            closeModal: false
+                                                        }
+                                                    }
+                                                }).then(isConfirm => {
+                                                    if (isConfirm) {
+                                                        var id = {{$user->id}};
+                                                        $.ajaxSetup({
+                                                            headers: {
+                                                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                                            }
+                                                        });
+                                                        $.ajax({
+                                                            url: "/admin/user/delete/"+id+".html",
+                                                            method: 'get',
+                                                            data: {
+                                                                "id": id,
+                                                            },
+                                                            success: function(resp)
+                                                            {
+                                                                $('#userRow-{{$user->id}}').remove();
+                                                                swal({
+                                                                        title: "Thành Công",
+                                                                        text: "Dữ Liệu Của Bạn Đã Được Xoá Thành Công!",
+                                                                        icon: "success",
                                                                 });
-                                                            });
-                                                            </script>
+                                                            }
+                                                        })
+                                                        
+                                                    } else {
+                                                        swal("Đã Huỷ", "Dữ liệu của bạn được dữ nguyên!", "error");
+                                                    }
+                                                });
+                                            });
+                                        });
+                                        </script>
                                     @endforeach
                                 </tbody>
                                 
