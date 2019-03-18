@@ -79,6 +79,20 @@ class ProductController extends Controller
         }
         
     }
+    public function delete($id)
+    {
+        $products = Product::where('cate_id',$id)->count();
+        if ($products==0) {
+            $category = Category::find($id);
+            if($category->delete()) 
+            {
+                return response(['msg' => 'Xóa thành công!', 'status' => 'success']);
+            }
+        }
+        else{
+            return response(['msg' => 'Không thể xóa!', 'status' => 'failed']);
+        }
+    }
     public function getList()
     {
         $products = Product::all();

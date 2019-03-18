@@ -159,13 +159,13 @@ Thêm Mới Tin Tức
                                 </div>
                             </div>
                             <div class="form-actions right">
-                              <button onclick="location.href='{{route('getListCateAdmin')}}'" type="button" class="btn btn-danger mr-1">
-                                <i class="ft-x"></i> {{__('general.cancel')}}
-                              </button>
-                            <button type="submit" class="btn btn-success">
-                              <i class="la la-check-square-o"></i> {{__('general.saveChange')}}
-                            </button>
-                          </div>
+                                <button onclick="location.href='{{route('getListCateAdmin')}}'" type="button" class="btn btn-danger mr-1">
+                                    <i class="ft-x"></i> {{__('general.cancel')}}
+                                </button>
+                                <button type="submit" class="btn btn-success">
+                                    <i class="la la-check-square-o"></i> {{__('general.saveChange')}}
+                                </button>
+                            </div>
                         </form>
                     </div>
                 </div>

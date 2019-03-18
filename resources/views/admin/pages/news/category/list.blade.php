@@ -77,62 +77,70 @@ Danh Sách Danh Mục Tin Tức
                                         </td>
                                     </tr>
                                     <script>
-                                                            $(document).ready(function(){
-                                                                $('#deleteNewsCate-{{$value->id}}').on('click',function(){
+                                        $(document).ready(function () {
+                                            $('#deleteNewsCate-{{$value->id}}').on('click', function () {
+                                                swal({
+                                                    title: "Bạn có chắc chắn không?",
+                                                    text: "Thao tác xoá này sẽ không thể hoàn tác!",
+                                                    icon: "warning",
+                                                    showCancelButton: true,
+                                                    showLoaderOnConfirm: true,
+                                                    buttons: {
+                                                        cancel: {
+                                                            text: "Không, dữ nguyên dữ liệu!",
+                                                            value: null,
+                                                            visible: true,
+                                                            className: "btn-warning",
+                                                            closeModal: false,
+                                                        },
+                                                        confirm: {
+                                                            text: "Đống ý, xoá ngay?",
+                                                            value: true,
+                                                            visible: true,
+                                                            className: "",
+                                                            closeModal: false
+                                                        }
+                                                    }
+                                                }).then(isConfirm => {
+                                                    if (isConfirm) {
+                                                        var id = {{$value -> id}};
+                                                        $.ajaxSetup({
+                                                            headers: {
+                                                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                                            }
+                                                        });
+                                                        $.ajax({
+                                                            url: "/admin/news/news-category/delete/" + id + "",
+                                                            method: 'get',
+                                                            type: 'delete',
+                                                            data: {
+                                                                "id": id,
+                                                            },
+                                                            success: function (responsive) {
+                                                                if ( responsive.status === 'success' ) {
+                                                                    $('#cateRow-{{$value->id}}').remove();
                                                                     swal({
-                                                                        title: "Bạn có chắc chắn không?",
-                                                                        text: "Thao tác xoá này sẽ không thể hoàn tác!",
-                                                                        icon: "warning",
-                                                                        showCancelButton: true,
-                                                                        showLoaderOnConfirm: true,
-                                                                        buttons: {
-                                                                            cancel: {
-                                                                                text: "Không, dữ nguyên dữ liệu!",
-                                                                                value: null,
-                                                                                visible: true,
-                                                                                className: "btn-warning",
-                                                                                closeModal: false,
-                                                                            },
-                                                                            confirm: {
-                                                                                text: "Đống ý, xoá ngay?",
-                                                                                value: true,
-                                                                                visible: true,
-                                                                                className: "",
-                                                                                closeModal: false
-                                                                            }
-                                                                        }
-                                                                    }).then(isConfirm => {
-                                                                        if (isConfirm) {
-                                                                            var id = {{$value->id}};
-                                                                            $.ajaxSetup({
-                                                                                headers: {
-                                                                                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                                                                                }
-                                                                            });
-                                                                            $.ajax({
-                                                                                url: "/admin/news/news-category/delete/"+id+"",
-                                                                                method: 'get',
-                                                                                data: {
-                                                                                    "id": id,
-                                                                                },
-                                                                                success: function(resp)
-                                                                                {
-                                                                                    $('#cateRow-{{$value->id}}').remove();
-                                                                                    swal({
-                                                                                            title: "Thành Công",
-                                                                                            text: "Dữ Liệu Của Bạn Đã Được Xoá Thành Công!",
-                                                                                            icon: "success",
-                                                                                    });
-                                                                                }
-                                                                            })
-                                                                            
-                                                                        } else {
-                                                                            swal("Đã Huỷ", "Dữ liệu của bạn được dữ nguyên!", "error");
-                                                                        }
+                                                                        title: "Thành Công",
+                                                                        text: "Dữ Liệu Của Bạn Đã Được Xoá Thành Công!",
+                                                                        icon: "success",
                                                                     });
-                                                                });
-                                                            });
-                                                            </script>
+                                                                }
+                                                                else if ( responsive.status === 'failed' ) {
+                                                                    swal({
+                                                                        title: "Đã Xảy Ra Lỗi",
+                                                                        text: "Danh mục này đang chưa tin tức!",
+                                                                        icon: "error",
+                                                                    });
+                                                                }
+                                                            }
+                                                        })
+                                                    } else {
+                                                        swal("Đã Huỷ", "Dữ liệu của bạn được dữ nguyên!", "error");
+                                                    }
+                                                });
+                                            });
+                                        });
+                                        </script>
                                     @endforeach
                                 </tbody>
                                 <tfoot>

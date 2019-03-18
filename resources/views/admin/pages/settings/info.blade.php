@@ -30,7 +30,6 @@ Thiết Lập Thông Tin Chung Cho Wesite
         <div class="content-detached">
             <div class="content-body">
             	<section class="row">
-
                     <div class="col-sm-12">
                         <!-- Kick start -->
                         <div id="kick-start" class="card">
@@ -38,9 +37,34 @@ Thiết Lập Thông Tin Chung Cho Wesite
                             	<div class="card-body">
 								    <form method="POST" action="{{route('postWebInfo',['key'=>'web-info'])}}" class="form-horizontal form-label-left">
 								    	@csrf
-								    	<div class="row justify-content-md-center">
-			                                <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
-			                                    <div class="form-group">
+								    	<div class="row justify-content-center">
+								    		<div class="col-md-12">
+								    			<ul class="nav nav-tabs nav-top-border no-hover-bg">
+												    <li class="nav-item">
+												        <a class="nav-link active" id="base-tab11" data-toggle="tab" aria-controls="tab11"
+												            href="#tab11" aria-expanded="true">Thông tin cơ bản</a>
+												    </li>
+												    <li class="nav-item">
+												        <a class="nav-link" id="base-tab12" data-toggle="tab" aria-controls="tab12" href="#tab12"
+												            aria-expanded="false">Số điện thoại</a>
+												    </li>
+												    <li class="nav-item">
+												        <a class="nav-link" id="base-tab13" data-toggle="tab" aria-controls="tab13" href="#tab13"
+												            aria-expanded="false">Địa chỉ email</a>
+												    </li>
+												    <li class="nav-item">
+												        <a class="nav-link" id="base-tab14" data-toggle="tab" aria-controls="tab14" href="#tab14"
+												            aria-expanded="false">Mạng xã hội</a>
+												    </li>
+												    <li class="nav-item">
+												        <a class="nav-link" id="base-tab15" data-toggle="tab" aria-controls="tab15" href="#tab15"
+												            aria-expanded="false">Thông tin SEO</a>
+												    </li>
+												</ul>
+								    		</div>
+								    		<div class="col-md-8">
+								    			<div class="tab-content px-1 pt-1"><div role="tabpanel" class="tab-pane active align-items-center justify-content-center" id="tab11" aria-expanded="true" aria-labelledby="base-tab11">
+											    <div class="form-group">
 			                                        <h5>Tên Website
 			                                        </h5>
 			                                        <div class="controls">
@@ -48,6 +72,36 @@ Thiết Lập Thông Tin Chung Cho Wesite
 			                                        </div>
 			                                    </div>
 			                                    <div class="form-group">
+			                                        <h5>Địa Chỉ
+			                                        </h5>
+			                                        <div class="controls table-responsive">
+			                                            <table class="table table-bordered mb-0">
+									                      	<thead>
+									                        	<tr>
+								                          			<th class="center" style="width: 30%">Tiêu Đề</th>
+								                          			<th class="center" style="width: 30%">Địa Chỉ</th>
+										                          	<th class="center" style="width: 5%"><a onclick="addAddress();" href="javascript:;" class="btn mr-1 mb-1 btn-primary btn-sm"><i class="la la-plus-square"></i></a></th>
+									                        	</tr>
+									                      	</thead>
+									                      	<tbody id="contentAddress">
+									                      		@if($info)
+								                        		@php $i=0 @endphp
+						                                        @foreach (unserialize($info->address) as $value)
+						                                        <tr id="rowAddress{{$i}}">
+																	<td class="center"> <input value="{{$value['title']}}" name="txtTitleAddress[]" value="" type="text" class="form-control" placeholder="Tiêu Đề"></td>
+																	<td class="center"> <input value="{{$value['address']}}" name="txtAddress[]" value="" type="text" class="form-control" placeholder="Địa Chỉ"></td>
+																	<td class="center"><a href="javascript:void(0)" onclick="$('#rowAddress{{$i}}').remove();" class="btn mr-1 mb-1 btn-danger btn-sm"><i class="la la-trash"></i></a></td>
+																</tr>
+																@php $i++ @endphp
+						                                        @endforeach
+						                                        @endif
+									                      </tbody>
+									                    </table>
+			                                        </div>
+			                                    </div>
+											</div>
+											<div class="tab-pane" id="tab12" aria-labelledby="base-tab12">
+											    <div class="form-group">
 			                                        <h5>Số Điện Thoại
 			                                        </h5>
 			                                        <div class="controls table-responsive">
@@ -77,7 +131,9 @@ Thiết Lập Thông Tin Chung Cho Wesite
 									                    </table>
 			                                        </div>
 			                                    </div>
-			                                    <div class="form-group">
+											</div>
+											<div class="tab-pane" id="tab13" aria-labelledby="base-tab13">
+											    <div class="form-group">
 			                                        <h5>Địa Chỉ Email
 			                                        </h5>
 			                                        <div class="controls table-responsive">
@@ -109,35 +165,9 @@ Thiết Lập Thông Tin Chung Cho Wesite
 									                    </table>
 			                                        </div>
 			                                    </div>
-			                                    <div class="form-group">
-			                                        <h5>Địa Chỉ
-			                                        </h5>
-			                                        <div class="controls table-responsive">
-			                                            <table class="table table-bordered mb-0">
-									                      	<thead>
-									                        	<tr>
-								                          			<th class="center" style="width: 30%">Tiêu Đề</th>
-								                          			<th class="center" style="width: 30%">Địa Chỉ</th>
-										                          	<th class="center" style="width: 5%"><a onclick="addAddress();" href="javascript:;" class="btn mr-1 mb-1 btn-primary btn-sm"><i class="la la-plus-square"></i></a></th>
-									                        	</tr>
-									                      	</thead>
-									                      	<tbody id="contentAddress">
-									                      		@if($info)
-								                        		@php $i=0 @endphp
-						                                        @foreach (unserialize($info->address) as $value)
-						                                        <tr id="rowAddress{{$i}}">
-																	<td class="center"> <input value="{{$value['title']}}" name="txtTitleAddress[]" value="" type="text" class="form-control" placeholder="Tiêu Đề"></td>
-																	<td class="center"> <input value="{{$value['address']}}" name="txtAddress[]" value="" type="text" class="form-control" placeholder="Địa Chỉ"></td>
-																	<td class="center"><a href="javascript:void(0)" onclick="$('#rowAddress{{$i}}').remove();" class="btn mr-1 mb-1 btn-danger btn-sm"><i class="la la-trash"></i></a></td>
-																</tr>
-																@php $i++ @endphp
-						                                        @endforeach
-						                                        @endif
-									                      </tbody>
-									                    </table>
-			                                        </div>
-			                                    </div>
-			                                    <div class="form-group">
+											</div>
+											<div class="tab-pane" id="tab14" aria-labelledby="base-tab12">
+												<div class="form-group">
 			                                        <h5>Link Fanpage
 			                                        </h5>
 			                                        <div class="controls">
@@ -172,7 +202,10 @@ Thiết Lập Thông Tin Chung Cho Wesite
 			                                            <input name="txtInstagram" value="@if($info){{$info->instagram}}@endif" type="text" class="form-control">
 			                                        </div>
 			                                    </div>
-			                                </div>
+											</div>
+											<div class="tab-pane" id="tab15" aria-labelledby="base-tab12">
+												Đây là tab thông tin seo
+											</div>
 			                            </div>
 			                            <div class="form-actions right">
 			                              	<button onclick="location.href='{{route('getIndexAdmin')}}'" type="button" class="btn btn-danger mr-1">
@@ -181,7 +214,7 @@ Thiết Lập Thông Tin Chung Cho Wesite
 				                            <button type="submit" class="btn btn-success">
 			                              		<i class="la la-check-square-o"></i> {{__('general.saveChange')}}
 			                            	</button>
-				                          </div>
+			                          	</div>
 								    </form>
 								</div>
 							</div>

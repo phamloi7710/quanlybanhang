@@ -65,11 +65,17 @@ class NewsController extends Controller
     }
     public function getDeleteCategory($id)
     {
-    	$category = Category::find($id);
-    	if($category->delete())	
-    	{
-    		echo "Data Deleted";
-    	}
+        $news = News::where('cate_id',$id)->count();
+        if ($news==0) {
+            $category = Category::find($id);
+            if($category->delete()) 
+            {
+                return response(['msg' => 'Xóa thành công!', 'status' => 'success']);
+            }
+        }
+        else{
+            return response(['msg' => 'Không thể xóa!', 'status' => 'failed']);
+        }
     }
 
 
@@ -92,7 +98,7 @@ class NewsController extends Controller
 
     public function getListNews()
     {
-    	$news = News::all();
+    	$news = News::where('id', '>', '0')->get();
     	return view('admin.pages.news.list', ['news'=>$news]);
     }
     public function getAddNews()
@@ -127,6 +133,20 @@ class NewsController extends Controller
     public function postEditNews(Request $request, $id)
     {
     	$news = News::find($id);
+        $news->title = $request->txtTitle;
+        $news->slug = changeTitle($request->txtTitle);
+        $news->cate_id = $request->sltCate;
+        $news->image = $request->txtAvatarUrl;
+        $news->description = $request->description;
+        $news->status = $request->status;
+        $news->status_home = $request->status_home;
+        $news->content = $request->content;
+        $news->save();
+        $notifySuccess = array(
+            'message' => 'Chỉnh sửa tin tức thành công!',  
+            'alert-type' => 'success',
+        );
+        return redirect()->route('getListNewsAdmin')->with($notifySuccess);
     }
     public function getDeleteNews($id)
     {
