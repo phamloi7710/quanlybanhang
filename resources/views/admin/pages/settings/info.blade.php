@@ -204,7 +204,27 @@ Thiết Lập Thông Tin Chung Cho Wesite
 			                                    </div>
 											</div>
 											<div class="tab-pane" id="tab15" aria-labelledby="base-tab12">
-												Đây là tab thông tin seo
+												<div class="form-group">
+			                                        <h5>SEO Title
+			                                        </h5>
+			                                        <div class="controls">
+			                                            <input name="txtSeoTitle" value="@if($info){{$info->seo_title}}@endif" type="text"  class="form-control" placeholder="SEO Title">
+			                                        </div>
+			                                    </div>
+			                                    <div class="form-group">
+			                                        <h5>SEO Description
+			                                        </h5>
+			                                        <div class="controls">
+			                                            <input name="txtSeoDescription" value="@if($info){{$info->seo_description}}@endif" type="text"  class="form-control" placeholder="SEO Description">
+			                                        </div>
+			                                    </div>
+			                                    <div class="form-group">
+			                                        <h5>SEO Keywords
+			                                        </h5>
+			                                        <div class="controls">
+			                                            <input name="txtSeoKeywords" value="@if($info){{$info->seo_key_words}}@endif" type="text"  class="form-control" placeholder="SEO Keywords">
+			                                        </div>
+			                                    </div>
 											</div>
 			                            </div>
 			                            <div class="form-actions right">

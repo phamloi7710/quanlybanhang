@@ -90,11 +90,15 @@ Route::group(['prefix'=>'admin', 'middleware'=>'checkRoleAdmin'], function(){
 });
 // Frontend
 Route::get('/', 'Frontend\IndexController@getIndex')->name('getIndex');
-Route::get('{cate_name}/{slug}.html', 'Frontend\ProductController@getDetail')->name('getDetailProduct');
+Route::get('san-pham/{slug}.html', 'Frontend\ProductController@getDetail')->name('getDetailProduct');
 Route::get('gioi-thieu.html', 'Frontend\FrontendController@getIntroduce')->name('getIntroduceFrontend');
 Route::get('danh-muc/{url}', 'Frontend\FrontendController@getShowProductCate')->name('getProductCateFrontend');
 Route::get('lien-he.html', 'Frontend\ContactController@getContact')->name('getContactFrontend');
 Route::post('lien-he.html', 'Frontend\ContactController@postContact')->name('postContactFrontend');
+Route::group(['prefix'=>'tin-tuc'], function(){
+	Route::get('{slug}.html', 'Frontend\NewsController@getDetail')->name('getNewsDetailFrontend');
+	Route::get('{slug}', 'Frontend\NewsController@getNewsCate')->name('getNewsCateFrontend');
+});
 
 
 

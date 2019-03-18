@@ -51,6 +51,7 @@
                 <section id="description" class="card">
                     <div class="card-content">
                         <div class="card-body">
+                            <h4 class="form-section"><i class="ft ft-info"></i> Thông Tin Chi Tiết Của Sản Phẩm</h4>
                             <div class="row">
                                 <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                                     <div class="card border-blue border-lighten-2">
@@ -66,7 +67,7 @@
                                                 <span class="la la-plus-circle font-medium-4"></span>
                                                 </a>
                                             </div>
-                                            <input type="hidden" id="image" type="text" class="form-control" placeholder="{{__("general.imageUrl")}}" name="avatar">
+                                            <input type="hidden" id="image" type="text" class="form-control" placeholder="{{__('general.imageUrl')}}" name="avatar">
                                         </div>
                                     </div>
                                 </div>
@@ -111,7 +112,7 @@
                                                 <h5>{{__('general.price')}}
                                                 </h5>
                                                 <div class="controls">
-                                                    <input value="{{old('txtPrice')}}" type="number" id="txtPrice" class="form-control" placeholder="{{__('placeholder.price')}}" name="txtPrice" required data-validation-required-message="Giá bán không được để trống" maxlength="11" data-validation-maxlength-message="Giá bán không được lớn hơn 999.999.999.999 (đ)" minlength="4" data-validation-minlength-message="Giá bán không được nhỏ hơn 1.000 (đ)"">
+                                                    <input value="{{old('txtPrice')}}" type="number" id="txtPrice" class="form-control" placeholder="{{__('placeholder.price')}}" name="txtPrice" required data-validation-required-message="Giá bán không được để trống" maxlength="11" data-validation-maxlength-message="Giá bán không được lớn hơn 999.999.999.999 (đ)" minlength="4" data-validation-minlength-message="Giá bán không được nhỏ hơn 1.000 (đ)">
                                                 </div>
                                             </div>
                                         </div>
@@ -120,7 +121,7 @@
                                                 <h5>{{__('general.salePrice')}}
                                                 </h5>
                                                 <div class="controls">
-                                                    <input value="{{old('txtSalePrice')}}" type="number" id="txtSalePrice" class="form-control" placeholder="{{__('placeholder.salePrice')}}" name="txtSalePrice" maxlength="11" data-validation-maxlength-message="Giá khuyến mãi không được lớn hơn 999.999.999.999 (đ)" minlength="4" data-validation-minlength-message="Giá khuyến mãi không được nhỏ hơn 1.000 (đ)"">
+                                                    <input value="{{old('txtSalePrice')}}" type="number" id="txtSalePrice" class="form-control" placeholder="{{__('placeholder.salePrice')}}" name="txtSalePrice" maxlength="11" data-validation-maxlength-message="Giá khuyến mãi không được lớn hơn 999.999.999.999 (đ)" minlength="4" data-validation-minlength-message="Giá khuyến mãi không được nhỏ hơn 1.000 (đ)">
                                                 </div>
                                             </div>
                                         </div>
@@ -188,6 +189,43 @@
                                     </div>
                                 </div>
                             </div>
+                            <h4 class="form-section"><i class="ft ft-arrow-down"></i> SEO</h4>
+                            <div class="row justify-content-center">
+                                <div class="col-md-7">
+                                    <div class="form-group">
+                                        <h5>
+                                            SEO Title
+                                        </h5>
+                                        <div class="controls">
+                                            <input value="{{old('txtSeoTitle')}}" type="text" class="form-control" placeholder="SEO Title" name="txtSeoTitle">
+                                            <i>Một tiêu đề tùy chỉnh xuất hiện trong thẻ tiêu đề cho trang này</i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="form-group">
+                                        <h5>
+                                            SEO Description
+                                        </h5>
+                                        <div class="controls">
+                                            <input value="{{old('txtSeoDescription')}}" type="text" class="form-control" placeholder="SEO Description" name="txtSeoDescription">
+                                            
+                                            <i>Mô tả META cho trang này. Điều này sẽ ghi đè bất kỳ mô tả tự phát</i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="form-group">
+                                        <h5>
+                                            SEO Keywords
+                                        </h5>
+                                        <div class="controls">
+                                            <input value="{{old('txtSeoKeywords')}}" type="text" class="form-control" placeholder="SEO Keywords" name="txtSeoKeywords">
+                                            <i>Danh sách các từ khóa quan trọng nhất được phân tách bằng dấu phẩy cho trang này sẽ được viết dưới dạng từ khóa META</i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="form-actions right">
                                 <button onclick="location.href='{{route('getListProductsAdmin')}}'" type="button" class="btn btn-danger mr-1">
                                     <i class="ft-x"></i> {{__('general.cancel')}}
@@ -203,7 +241,7 @@
         </form>
     </div>
 </div>
-<script src="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+<script src="https://cdn.ckeditor.com/4.11.3/full/ckeditor.js"></script>
 <script>
     var options = {
     filebrowserImageBrowseUrl: '/admin/uploads?type=images',

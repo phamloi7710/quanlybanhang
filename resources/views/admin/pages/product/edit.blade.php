@@ -224,6 +224,43 @@
                                     </div>
                                 </div>
                             </div>
+                            <h4 class="form-section"><i class="ft ft-arrow-down"></i> SEO</h4>
+                            <div class="row justify-content-center">
+                                <div class="col-md-7">
+                                    <div class="form-group">
+                                        <h5>
+                                            Title
+                                        </h5>
+                                        <div class="controls">
+                                            <input value="{{$product->seo_title}}" type="text" class="form-control" placeholder="SEO Title" name="txtSeoTitle">
+                                            <i>Một tiêu đề tùy chỉnh xuất hiện trong thẻ tiêu đề cho trang này</i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="form-group">
+                                        <h5>
+                                            Description
+                                        </h5>
+                                        <div class="controls">
+                                            <input value="{{$product->seo_description}}" type="text" class="form-control" placeholder="SEO Description" name="txtSeoDescription">
+                                            
+                                            <i>Mô tả META cho trang này. Điều này sẽ ghi đè bất kỳ mô tả tự phát</i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="form-group">
+                                        <h5>
+                                            Keywords (Comma separated)
+                                        </h5>
+                                        <div class="controls">
+                                            <input value="{{$product->seo_key_words}}" type="text" class="form-control" placeholder="SEO Keywords" name="txtSeoKeywords">
+                                            <i>Danh sách các từ khóa quan trọng nhất được phân tách bằng dấu phẩy cho trang này sẽ được viết dưới dạng từ khóa META</i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="form-actions right">
                                 <button onclick="location.href='{{route('getListProductsAdmin')}}'" type="button" class="btn btn-danger mr-1">
                                     <i class="ft-x"></i> {{__('general.cancel')}}
@@ -239,7 +276,7 @@
         </form>
     </div>
 </div>
-<script src="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+<script src="https://cdn.ckeditor.com/4.11.3/full/ckeditor.js"></script>
 <script>
     var options = {
     filebrowserImageBrowseUrl: '/admin/uploads?type=images',

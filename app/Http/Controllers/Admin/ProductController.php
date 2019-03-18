@@ -128,6 +128,9 @@ class ProductController extends Controller
         $product->description = $request->description;
         $product->content = $request->content;
         $product->user_id = Auth::user()->id;
+        $product->seo_title = $request->txtSeoTitle;
+        $product->seo_description = $request->txtSeoDescription;
+        $product->seo_key_words = $request->txtSeoKeywords;
         $product->save();
         $notifySuccess = array(
             'message' => 'Thêm Mới Sản Phẩm Thành Công!',  
@@ -167,6 +170,9 @@ class ProductController extends Controller
         $product->description = $request->description;
         $product->content = $request->content;
         $product->user_id = Auth::user()->id;
+        $product->seo_title = $request->txtSeoTitle;
+        $product->seo_description = $request->txtSeoDescription;
+        $product->seo_key_words = $request->txtSeoKeywords;
         $product->save();
         $notifySuccess = array(
             'message' => 'Chỉnh Sửa Sản Phẩm Thành Công!',  

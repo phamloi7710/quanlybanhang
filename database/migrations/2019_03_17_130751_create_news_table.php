@@ -24,9 +24,9 @@ class CreateNewsTable extends Migration
             $table->longText('content')->nullable();
             $table->integer('views')->default(0);
             $table->integer('order')->nullable();
-            $table->string('seo_title')->nullable();
-            $table->string('seo_description')->nullable();
-            $table->string('seo_key_words')->nullable();
+            $table->text('seo_title')->nullable();
+            $table->text('seo_description')->nullable();
+            $table->text('seo_key_words')->nullable();
             $table->enum('status', array('active', 'inActive'))->default('active');
             $table->enum('status_home', array('active', 'inActive'))->default('inActive');
             $table->timestamps();

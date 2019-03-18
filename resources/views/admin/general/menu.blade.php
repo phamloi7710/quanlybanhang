@@ -47,10 +47,10 @@
                 </ul>
             </li> 
             <li class="@if(getUrl() == route('getListUsersAdmin')) active @endif">
-                <a href="{{route('getListUsersAdmin')}}"><i class="la la-user-plus"></i><span class="menu-title" data-i18n="nav.dash.main">Tài Khoản</span></a>
+                <a href="{{route('getListUsersAdmin')}}"><i class="la la-users"></i><span class="menu-title" data-i18n="nav.dash.main">Tài Khoản</span></a>
             </li>
             <li class=" nav-item">
-                <a href="javascript:;"><i class="la la-android"></i><span class="menu-title" data-i18n="nav.menu_levels.main">Tin Tức</span></a>
+                <a href="javascript:;"><i class="la la-newspaper-o"></i><span class="menu-title" data-i18n="nav.menu_levels.main">Tin Tức</span></a>
                 <ul class="menu-content">
                     <li>
                         <a class="menu-item" href="javascript:;" data-i18n="nav.menu_levels.second_level_child.main">Danh Mục Tin Tức</a>

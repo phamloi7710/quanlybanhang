@@ -19,11 +19,19 @@
                             </ul>
                         </li>
                         <li class="nav-item ">
-                            <a href="/blogs/all" class="nav-link">Tin tổng hợp <i class="fa fa-angle-down"></i></a>
+                            <a href="#" class="nav-link">Tin tổng hợp <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
+                                @if(count($newsCategories) > 0)
+                                @foreach($newsCategories as $news_cate)
                                 <li class="nav-item-lv2">
-                                    <a class="nav-link" href="/tin-tuc">Tin tức</a>
+                                    <a class="nav-link" href="{{route('getNewsCateFrontend', ['slug'=>$news_cate->slug])}}">{{$news_cate->name}}</a>
                                 </li>
+                                @endforeach
+                                @else
+                                <li class="nav-item-lv2">
+                                    Đang cập nhật
+                                </li>
+                                @endif
                             </ul>
                         </li>
                         <li class="nav-item ">

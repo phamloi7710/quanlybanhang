@@ -1,3 +1,6 @@
+@section('title')Trang Chủ - @stop
+@section('description'){{$seoDescription}}@stop
+@section('keywords'){{$seoKeywords}}@stop
 @extends('frontend.v1.general.master')
 @section('content')
 <!-- <section class="lib-section-0">
@@ -637,7 +640,7 @@
                                 <div class="item">
                                     <div class="product-box">
                                         <div class="product-thumbnail">
-                                            <a href="{{route('getDetailProduct', ['slug'=>$product->slug, 'cate_name'=>$product->category->slug])}}" title="{{$product->name}}">
+                                            <a href="{{route('getDetailProduct', ['slug'=>$product->slug])}}" title="{{$product->name}}">
                                             <img class="img-responsive" src="{{url('')}}/assets/frontend/v1.0/images/icons/down.svg" data-lazyload="{{url('')}}/{{$product->avatar}}" alt="{{$product->name}}">
                                             </a>
                                             <div class="product-action hidden-xs">
@@ -654,7 +657,7 @@
                                                 <div class="bizweb-product-reviews-badge"></div>
                                             </div>
                                             <h3 class="product-name">
-                                                <a href="{{route('getDetailProduct', ['slug'=>$product->slug, 'cate_name'=>$product->category->slug])}}" title="{{$product->name}}">
+                                                <a href="{{route('getDetailProduct', ['slug'=>$product->slug])}}" title="{{$product->name}}">
                                                 {{$product->name}}
                                                 </a>
                                             </h3>
@@ -778,7 +781,7 @@
     </div>
 </section> -->
 <!-- Start Tin Nổi Bật -->
-<!-- <section class="lib-section-15">
+<section class="lib-section-15">
     <div class="section_news">
         <div class="container">
             <div class="row">
@@ -799,100 +802,32 @@
                     </div>
                     <div class="module-content">
                         <div class="owl-theme owl-carousel dots-enable dots-top-right" data-hg-items="4" data-lg-items="3" data-md-items="3" data-sm-items="2" data-xs-items="2" data-xxs-items="1" data-margin="30" data-dot="true">
+                            @foreach($featuredNews as $news)
                             <div class="item article-item">
                                 <div class="fw article-thumbnail">
-                                    <a href="/nokia-5-1-plus-se-ra-mat-vao-11-7-hai-model-khac-voi-chipset-sd710-va-sd845-se-ra-mat-vao-q3" title="Nokia 5.1 Plus sẽ ra mắt vào 11/7, hai model khác với chipset SD710 và SD845 sẽ ra mắt vào Q3">
-                                    <img src="{{url('')}}/assets/frontend/v1.0/images/libra-smart-article.png" data-lazyload="{{url('')}}/assets/frontend/v1.0/images/articles/9-0.jpg?v=1531109494443" class="img-responsive" alt="nokia-5-1-plus-se-ra-mat-vao-11-7-hai-model-khac-voi-chipset-sd710-va-sd845-se-r">
+                                    <a href="{{route('getNewsDetailFrontend', ['slug'=>$news->slug])}}" title="{{$news->title}}">
+                                    <img src="{{url('')}}/{{$news->image}}" data-lazyload="{{url('')}}/{{$news->image}}" class="img-responsive" alt="{{$news->slug}}">
                                     </a>
                                 </div>
                                 <div class="fw article-info">
                                     <h3 class="fw article-title">
-                                        <a href="/nokia-5-1-plus-se-ra-mat-vao-11-7-hai-model-khac-voi-chipset-sd710-va-sd845-se-ra-mat-vao-q3" title="Nokia 5.1 Plus sẽ ra mắt vào 11/7, hai model khác với chipset SD710 và SD845 sẽ ra mắt vào Q3">
-                                        <span>Nokia 5.1 Plus sẽ ra mắt vào 11/7, hai model khác với chipset SD710 và SD845 sẽ ra mắt vào Q3</span>
+                                        <a href="{{route('getNewsDetailFrontend', ['slug'=>$news->slug])}}" title="{{$news->title}}">
+                                        <span>{{$news->title}}</span>
                                         </a>
                                     </h3>
                                     <div class="fw article-summary">
-                                        <i class="fa fa-quote-left" aria-hidden="true"></i> Sau các ảnh render, một số hình ảnh poster của chiếc Nokia 5.1 Plus đã bắt đầu bị rò rỉ, theo đó, thiết bị này sẽ được ra mắt tại Trung Quốc vào ngày 11/7 tới với tên gọi Nokia X5. 
-                                        Một......
+                                        <i class="fa fa-quote-left" aria-hidden="true"></i> {{$news->description}}...
                                     </div>
                                 </div>
                             </div>
-                            <div class="item article-item">
-                                <div class="fw article-thumbnail">
-                                    <a href="/elon-musk-chinh-thuc-cu-ky-su-den-thai-lan-giup-giai-cuu-doi-bong-mac-ket-trong-hang-dong" title="Elon Musk chính thức cử kỹ sư đến Thái Lan giúp giải cứu đội bóng mắc kẹt trong hang động">
-                                    <img src="{{url('')}}/assets/frontend/v1.0/images/libra-smart-article.png" data-lazyload="{{url('')}}/assets/frontend/v1.0/images/articles/8-1.jpg?v=1531108889320" class="img-responsive" alt="elon-musk-chinh-thuc-cu-ky-su-den-thai-lan-giup-giai-cuu-doi-bong-mac-ket-trong-">
-                                    </a>
-                                </div>
-                                <div class="fw article-info">
-                                    <h3 class="fw article-title">
-                                        <a href="/elon-musk-chinh-thuc-cu-ky-su-den-thai-lan-giup-giai-cuu-doi-bong-mac-ket-trong-hang-dong" title="Elon Musk chính thức cử kỹ sư đến Thái Lan giúp giải cứu đội bóng mắc kẹt trong hang động">
-                                        <span>Elon Musk chính thức cử kỹ sư đến Thái Lan giúp giải cứu đội bóng mắc kẹt trong hang động</span>
-                                        </a>
-                                    </h3>
-                                    <div class="fw article-summary">
-                                        <i class="fa fa-quote-left" aria-hidden="true"></i> Những ngày qua, bên cạnh World Cup 2018, việc 12 cậu bé từ độ tuổi 11 đến 16 cùng HLV 25 tuổi bị mắc kẹt trong hang Tham Luang Nang Non, Chiang Rai, Thái Lan do mưa lớn gây ra ngập lụt cũng thu hú......
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item article-item">
-                                <div class="fw article-thumbnail">
-                                    <a href="/ceo-facebook-mark-zuckerberg-vuot-warren-buffett-chinh-thuc-tro-thanh-nguoi-giau-thu-ba-the-gioi" title="CEO Facebook Mark Zuckerberg vượt Warren Buffett, chính thức trở thành người giàu thứ ba thế giới">
-                                    <img src="{{url('')}}/assets/frontend/v1.0/images/libra-smart-article.png" data-lazyload="{{url('')}}/assets/frontend/v1.0/images/articles/7-1.jpg?v=1531108763267" class="img-responsive" alt="ceo-facebook-mark-zuckerberg-vuot-warren-buffett-chinh-thuc-tro-thanh-nguoi-giau">
-                                    </a>
-                                </div>
-                                <div class="fw article-info">
-                                    <h3 class="fw article-title">
-                                        <a href="/ceo-facebook-mark-zuckerberg-vuot-warren-buffett-chinh-thuc-tro-thanh-nguoi-giau-thu-ba-the-gioi" title="CEO Facebook Mark Zuckerberg vượt Warren Buffett, chính thức trở thành người giàu thứ ba thế giới">
-                                        <span>CEO Facebook Mark Zuckerberg vượt Warren Buffett, chính thức trở thành người giàu thứ ba thế giới</span>
-                                        </a>
-                                    </h3>
-                                    <div class="fw article-summary">
-                                        <i class="fa fa-quote-left" aria-hidden="true"></i> Dù gần đây Facebook đang dính phải khá nhiều vụ bê bối dữ liệu, nhưng điều này không ảnh hưởng gì đến khối tài sản của CEO Mark Zuckerberg, thậm chí vừa Zuckerberg đã chính thức vượt qua nhà đầu t......
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item article-item">
-                                <div class="fw article-thumbnail">
-                                    <a href="/nghien-cuu-cho-thay-dung-iphone-chung-to-ban-la-nguoi-co-thu-nhap-cao" title="Nghiên cứu cho thấy: dùng iPhone chứng tỏ bạn là người có thu nhập cao">
-                                    <img src="{{url('')}}/assets/frontend/v1.0/images/libra-smart-article.png" data-lazyload="{{url('')}}/assets/frontend/v1.0/images/articles/6-0.jpg?v=1531108536403" class="img-responsive" alt="nghien-cuu-cho-thay-dung-iphone-chung-to-ban-la-nguoi-co-thu-nhap-cao">
-                                    </a>
-                                </div>
-                                <div class="fw article-info">
-                                    <h3 class="fw article-title">
-                                        <a href="/nghien-cuu-cho-thay-dung-iphone-chung-to-ban-la-nguoi-co-thu-nhap-cao" title="Nghiên cứu cho thấy: dùng iPhone chứng tỏ bạn là người có thu nhập cao">
-                                        <span>Nghiên cứu cho thấy: dùng iPhone chứng tỏ bạn là người có thu nhập cao</span>
-                                        </a>
-                                    </h3>
-                                    <div class="fw article-summary">
-                                        <i class="fa fa-quote-left" aria-hidden="true"></i> Có rất nhiều cách để thể hiện sự giàu có, như đi xe xịn, ở nhà to, mặc đồ hiệu, hay tốt hơn hết là… dùng iPhone. Một nghiên cứu mới công bố của Đại học Chicago và Cục Nghiên cứu Kinh tế Mỹ đã cho ......
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item article-item">
-                                <div class="fw article-thumbnail">
-                                    <a href="/xiaomi-mi-mix-3-se-co-gia-tu-12-trieu-vnd-ra-mat-thang-9-co-ca-ban-cao-cap-ferrari" title="Xiaomi Mi Mix 3 sẽ có giá từ 12 triệu VND, ra mắt tháng 9, có cả bản cao cấp 'Ferrari'">
-                                    <img src="{{url('')}}/assets/frontend/v1.0/images/libra-smart-article.png" data-lazyload="{{url('')}}/assets/frontend/v1.0/images/articles/5-0.jpg?v=1531108094393" class="img-responsive" alt="xiaomi-mi-mix-3-se-co-gia-tu-12-trieu-vnd-ra-mat-thang-9-co-ca-ban-cao-cap-ferra">
-                                    </a>
-                                </div>
-                                <div class="fw article-info">
-                                    <h3 class="fw article-title">
-                                        <a href="/xiaomi-mi-mix-3-se-co-gia-tu-12-trieu-vnd-ra-mat-thang-9-co-ca-ban-cao-cap-ferrari" title="Xiaomi Mi Mix 3 sẽ có giá từ 12 triệu VND, ra mắt tháng 9, có cả bản cao cấp 'Ferrari'">
-                                        <span>Xiaomi Mi Mix 3 sẽ có giá từ 12 triệu VND, ra mắt tháng 9, có cả bản cao cấp 'Ferrari'</span>
-                                        </a>
-                                    </h3>
-                                    <div class="fw article-summary">
-                                        <i class="fa fa-quote-left" aria-hidden="true"></i> Năm nay, Xiaomi dự kiến sẽ tiếp tục đem đến cho người dùng smartphone Mi Mix 3 với rất nhiều nâng cấp khác nhau từ người tiền nhiệm là Mi Mix 2 và Mix 2S. 
-                                        Flagship của Xiaomi theo các nguồn tin......
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</section> -->
+</section>
 <!-- End Tin Nổi Bật -->
 <!-- Start Chính Sách -->
 <!-- <section class="lib-section-16">

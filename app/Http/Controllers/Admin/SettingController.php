@@ -65,6 +65,9 @@ class SettingController extends Controller
 	        $info->google_plus = $request->txtGooglePlus;
 	        $info->youtube_channel = $request->txtYoutubeChannel;
 	        $info->instagram = $request->txtInstagram;
+	        $info->seo_title = $request->txtSeoTitle;
+	        $info->seo_description = $request->txtSeoDescription;
+	        $info->seo_key_words = $request->txtSeoKeywords;
 	        $info->save();
 	        $notification = array(
 	            'message' => 'Cập Nhật Thông Tin Website Thành Công!', 
@@ -117,6 +120,9 @@ class SettingController extends Controller
 	        $info->google_plus = $request->txtGooglePlus;
 	        $info->youtube_channel = $request->txtYoutubeChannel;
 	        $info->instagram = $request->txtInstagram;
+	        $info->seo_title = $request->txtSeoTitle;
+	        $info->seo_description = $request->txtSeoDescription;
+	        $info->seo_key_words = $request->txtSeoKeywords;
 	        $info->save();
 	        $notification = array(
 	            'message' => 'Cập Nhật Thông Tin Website Thành Công!', 

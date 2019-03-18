@@ -23,7 +23,8 @@
 <script src="{{url('')}}/assets/admin/app-assets/js/scripts/extensions/toastr.js" type="text/javascript"></script>
 <script src="{{url('')}}/assets/admin/app-assets/js/scripts/pages/sk-content-sidebar.js" type="text/javascript"></script>
 <script src="{{url('')}}/assets/admin/app-assets/js/scripts/forms/checkbox-radio.js" type="text/javascript"></script>
-
+ <script src="{{url('')}}/assets/admin/app-assets/vendors/js/forms/tags/tagging.min.js" type="text/javascript"></script>
+<script src="{{url('')}}/assets/admin/app-assets/js/scripts/forms/tags/tagging.js" type="text/javascript"></script>
 <script src="{{url('')}}/assets/admin/filemanager/js/lfm.js" type="text/javascript"></script>
 <script src="{{url('')}}/assets/admin/custom/custom.header.js" type="text/javascript"></script>
 <script src="{{url('')}}/assets/admin/custom/custom.footer.js" type="text/javascript"></script>

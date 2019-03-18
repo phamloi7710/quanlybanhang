@@ -1,3 +1,6 @@
+@section('title'){{$product->seo_title}} - @stop
+@section('description'){{$product->seo_description}}@stop
+@section('keywords'){{$product->seo_key_words}}@stop
 @extends('frontend.v1.general.master')
 @section('content')
 <link href="{{url('')}}/assets/frontend/v1.0/css/product_tabs.scss.css?1548428247318" rel="stylesheet" type="text/css">
