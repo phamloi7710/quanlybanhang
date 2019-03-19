@@ -174,7 +174,7 @@
                                     <a class="dropdown-item" href="{{route('getLogoutAdmin')}}"><i class="ft-power"></i> {{__('general.logOut')}}</a>
                                 </div>
                             </li>
-                            <!-- <li class="dropdown dropdown-language nav-item">
+                            <li class="dropdown dropdown-language nav-item">
                                 <a class="dropdown-toggle nav-link" id="dropdown-flag" href="#" data-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="false"><img style="position: relative; display: inline-block; width: 1.33333333em; line-height: 1em;" src="{{url('')}}{{$flag->image}}"><span class="selected-language"></span></a>
                                 <div class="dropdown-menu" aria-labelledby="dropdown-flag">
@@ -186,7 +186,7 @@
                                 <a href="javascript:;"> {{__("general.noLanguage")}}</a>
                                 @endif
                                 </div>
-                            </li> -->
+                            </li>
                             <li class="dropdown dropdown-notification nav-item">
                                 <a class="nav-link nav-link-label" href="#" data-toggle="dropdown"><i class="ficon ft-bell"></i>
                                 <span class="badge badge-pill badge-default badge-danger badge-default badge-up badge-glow">5</span>

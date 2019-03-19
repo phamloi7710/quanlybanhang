@@ -48,6 +48,7 @@
 		'allCategory' => 'Tất Cả Danh Mục',
 		'imageManagement' => 'Quản Lý Hình Ảnh',
 		'option' => 'Tuỳ Chọn',
+		'editCate'=>'Chỉnh Sửa Danh Mục',
 		'price' => 'Giá Bán',
 		'salePrice' => 'Giá Khuyến Mãi',
 		'contentProduct' => 'Mô Tả Chi Tiết Sản Phẩm',
@@ -58,5 +59,82 @@
 		'chooseImage' => 'Chọn',
 		'qty' => 'Số Lượng',
 		'selectCategory' => 'Chọn Danh Mục',
+		'bannerManager' => 'Quản Lý Banner',
+		'newsCategory' => 'Danh Mục Tin Tức',
+		'list' => 'Danh Sách',
+		'news' => 'Tin Tức',
+		'bannerTop' => 'Banner Top',
+		'bannerIndex' => 'Banner Trang Chủ',
+		'newContact' => 'Liên Hệ Mới',
+		'account' => 'Tài Khoản',
+		'systemManagement' => 'Cài Đặt Hệ hống',
+		'basicInformation' => 'Thông Tin Cơ Bản',
+		'emailConfig' => 'Cấu Hình Email',
+		'metaSeo' => 'Meta SEO',
+		'emailTemplate' => 'Giao Diện Gửi Mail',
+		'introducePage' => 'Trang Giới Thiệu',
+		'pageSettings'=> 'Cài Đặt Trang',
+		'addNewAccount'=> 'Thêm Mới Tài Khoản',
+		'avatar'=> 'Ảnh Đại Diện',
+		'fullName' => 'Họ & Tên',
+		'gender' => 'Giới Tính',
+		'selectGender' => 'Chọn Giới Tính',
+		'male' => 'Nam',
+		'famale' => 'Nữ',
+		'other' => 'Khác',
+		'emailAddress' => 'Địa Chỉ Email',
+		'phoneNumber' => 'Số Điện Thoại',
+		'email' => 'Email',
+		'username' => 'Tên Đăng Nhập',
+		'password'=>'Mật Khẩu',
+		'rePassword'=>'Nhập Lại Mật Khẩu',
+		'isAdmin'=>'Cấp Quyền Truy Cập Vào Trang Quản Trị',
+		'allow'=>'Cho Phép',
+		'doNotAllow'=>'Không Cho Phép',
+		'contact'=>'Liên Hệ',
+		'allContact'=>'Tất Cả Liên Hệ',
+		'contacted'=>'Đã Liên Hệ',
+		'notContactedYet'=>'Chưa Liên Hệ',
+		'viewAndEdit'=>'Xem & Sửa',
+		'contactDetail' => 'Thông Tin Chi Tiết Liên Hệ',
+		'addNewNews' => 'Thêm Mới Tin Tức',
+		'title' => 'Tiêu Đề',
+		'selectCategory' => 'Chọn Danh Mục',
+		'cateNews' => 'Danh Mục Tin Tức',
+		'avatarUrl' => 'Đường Dẫn Ảnh Đại Diện',
+		'description' => 'Mô Tả Ngắn',
+		'statusHome' => 'Trạng Thái Hiển Thị Ở Trang Chủ',
+		'displayed' => 'Hiển Thị',
+		'notDisplayed' => 'Không Hiển Thị',
+		'content' => 'Nội Dung',
+		'seoTitle' => 'SEO Title',
+		'seoDescription' => 'SEO Description',
+		'seoKeywords' => 'SEO Keywords',
+		'seoTitleHelp' => 'Một tiêu đề tùy chỉnh xuất hiện trong thẻ tiêu đề cho trang này',
+		'seoDescriptionHelp' => 'Mô tả META cho trang này. Điều này sẽ ghi đè bất kỳ mô tả tự phát',
+		'seoKeywordsHelp' => 'Danh sách các từ khóa quan trọng nhất được phân tách bằng dấu phẩy cho trang này sẽ được viết dưới dạng từ khóa META',
+		'editNews' => 'Chỉnh Sửa Tin Tức',
+		'listNews' => 'Danh Sách Tin Tức',
+		'views' => 'Lượt Xem',
 	];
 ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

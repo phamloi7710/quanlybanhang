@@ -3,7 +3,7 @@
 @section('keywords'){{$seoKeywords}}@stop
 @extends('frontend.v1.general.master')
 @section('content')
-<!-- <section class="lib-section-0">
+<section class="lib-section-0">
     <div class="section_slider">
         <div class="container">
             <div class="row">
@@ -36,9 +36,9 @@
             </div>
         </div>
     </div>
-</section> -->
+</section>
 <!-- Start HOT DEAL -->
-<!-- <section class="lib-section-1">
+<section class="lib-section-1">
     <link href="{{url('')}}/assets/frontend/v1.0/css/dealtime_countdown.scss.css" rel="stylesheet" type="text/css" />
     <script src="{{url('')}}/assets/frontend/v1.0/script/dealtime_countdown.js" type="text/javascript"></script>
     <div class="section_hotdeal">
@@ -551,10 +551,10 @@
             </div>
         </div>
     </div>
-</section> -->
+</section>
 <!-- End HOT DEAL -->
 <!-- Start Banner Top -->
-<!-- <section class="lib-section-2">
+<section class="lib-section-2">
     <div class="section_banners mid_banners">
         <div class="container">
             <div class="row">
@@ -575,9 +575,10 @@
             </div>
         </div>
     </div>
-</section> -->
+</section>
 <!-- End Banner Top -->
 @foreach($category as $cate)
+@if(count($cate->product) != '0')
 <section class="lib-section-13">
     <div class="section_category section_category_8">
         <div class="container">
@@ -679,91 +680,13 @@
                         </div>
                     </div>
                 </div>
-                <!-- <div class="hidden-xs hidden-sm col-md-3 col-lg-3 col-hg-2">
-                    <div class="category_brands">
-                        <div class="module-header index-header aniborder_title">
-                            <h2 class="title-head module-title index-title">
-                                <a href="dien-may">
-                                <span>Thương hiệu</span>
-                                </a>
-                            </h2>
-                            <div class="heading-line">
-                                <span class="short-line"></span>
-                                <span class="long-line"></span>
-                            </div>
-                        </div>
-                        <div class="module-content">
-                            <ul class="category_vendor_list">
-                                <li class="category_vendor_item">
-                                    <a href="/collections/all?q=vendor:(Daikin)" title="Daikin">
-                                        <img src="{{url('')}}/assets/frontend/v1.0/images/icons/swing.svg" data-lazyload="{{url('')}}/assets/frontend/v1.0/images/icons/category_vendor_image_daikin.png" class="category-vendor-image-daikin img-responsive" alt="daikin">
-                                        <script>
-                                            $(".section_category_6 .category-vendor-image-daikin").error(function(){
-                                                $(this).attr("src","{{url('')}}/assets/frontend/v1.0/images/icons/logo.png");
-                                            });
-                                        </script>
-                                    </a>
-                                </li>
-                                <li class="category_vendor_item">
-                                    <a href="/collections/all?q=vendor:(Electrolux)" title="Electrolux">
-                                        <img src="{{url('')}}/assets/frontend/v1.0/images/icons/swing.svg" data-lazyload="{{url('')}}/assets/frontend/v1.0/images/icons/category_vendor_image_electrolux.png" class="category-vendor-image-electrolux img-responsive" alt="electrolux">
-                                        <script>
-                                            $(".section_category_6 .category-vendor-image-electrolux").error(function(){
-                                                $(this).attr("src","{{url('')}}/assets/frontend/v1.0/images/icons/logo.png");
-                                            });
-                                        </script>
-                                    </a>
-                                </li>
-                                <li class="category_vendor_item">
-                                    <a href="/collections/all?q=vendor:(Hitachi)" title="Hitachi">
-                                        <img src="{{url('')}}/assets/frontend/v1.0/images/icons/swing.svg" data-lazyload="{{url('')}}/assets/frontend/v1.0/images/icons/category_vendor_image_hitachi.png" class="category-vendor-image-hitachi img-responsive" alt="hitachi">
-                                        <script>
-                                            $(".section_category_6 .category-vendor-image-hitachi").error(function(){
-                                                $(this).attr("src","{{url('')}}/assets/frontend/v1.0/images/icons/logo.png");
-                                            });
-                                        </script>
-                                    </a>
-                                </li>
-                                <li class="category_vendor_item">
-                                    <a href="/collections/all?q=vendor:(LG)" title="LG">
-                                        <img src="{{url('')}}/assets/frontend/v1.0/images/icons/swing.svg" data-lazyload="{{url('')}}/assets/frontend/v1.0/images/icons/category_vendor_image_lg.png" class="category-vendor-image-lg img-responsive" alt="lg">
-                                        <script>
-                                            $(".section_category_6 .category-vendor-image-lg").error(function(){
-                                                $(this).attr("src","{{url('')}}/assets/frontend/v1.0/images/icons/logo.png");
-                                            });
-                                        </script>
-                                    </a>
-                                </li>
-                                <li class="category_vendor_item">
-                                    <a href="/collections/all?q=vendor:(Midea)" title="Midea">
-                                        <img src="{{url('')}}/assets/frontend/v1.0/images/icons/swing.svg" data-lazyload="{{url('')}}/assets/frontend/v1.0/images/icons/category_vendor_image_midea.png" class="category-vendor-image-midea img-responsive" alt="midea">
-                                        <script>
-                                            $(".section_category_6 .category-vendor-image-midea").error(function(){
-                                                $(this).attr("src","{{url('')}}/assets/frontend/v1.0/images/icons/logo.png");
-                                            });
-                                        </script>
-                                    </a>
-                                </li>
-                                <li class="category_vendor_item">
-                                    <a href="/collections/all?q=vendor:(Panasonic)" title="Panasonic">
-                                        <img src="{{url('')}}/assets/frontend/v1.0/images/icons/swing.svg" data-lazyload="{{url('')}}/assets/frontend/v1.0/images/icons/category_vendor_image_panasonic.png" class="category-vendor-image-panasonic img-responsive" alt="panasonic">
-                                        <script>
-                                            $(".section_category_6 .category-vendor-image-panasonic").error(function(){
-                                                $(this).attr("src","{{url('')}}/assets/frontend/v1.0/images/icons/logo.png");
-                                            });
-                                        </script>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div> -->
             </div>
         </div>
     </div>
 </section>
+@endif
 @endforeach
-<!-- <section class="lib-section-14">
+<section class="lib-section-14">
     <div class="section_banners large_banner">
         <div class="container">
             <div class="row">
@@ -779,7 +702,7 @@
             </div>
         </div>
     </div>
-</section> -->
+</section>
 <!-- Start Tin Nổi Bật -->
 <section class="lib-section-15">
     <div class="section_news">
@@ -830,7 +753,7 @@
 </section>
 <!-- End Tin Nổi Bật -->
 <!-- Start Chính Sách -->
-<!-- <section class="lib-section-16">
+<section class="lib-section-16">
     <div class="section_privacy">
         <div class="container">
             <div class="row">
@@ -893,6 +816,6 @@
             </div>
         </div>
     </div>
-</section>  --> 
+</section>  
 <!-- End Chính Sách -->      
 @stop

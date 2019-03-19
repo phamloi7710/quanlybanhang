@@ -1,5 +1,5 @@
 @section('title')
-Thêm Mới Tài Khoản
+{{__('general.addNewAccount')}}
 @stop
 @extends('admin.general.master')
 @section('content') 
@@ -9,7 +9,7 @@ Thêm Mới Tài Khoản
             <div class="content-header-left col-md-6 col-12">
                 <div class="row breadcrumbs-top">
                     <div class="breadcrumb-wrapper col-12">
-                        <h4 class="card-title">Thêm Mới Tài Khoản</h4>
+                        <h4 class="card-title">{{__('general.addNewAccount')}}</h4>
                     </div>
                 </div>
             </div>
@@ -18,9 +18,9 @@ Thêm Mới Tài Khoản
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{route('getIndexAdmin')}}">{{__('general.home')}}</a>
                         </li>
-                        <li class="breadcrumb-item"><a href="#">Tài Khoản</a>
+                        <li class="breadcrumb-item"><a href="#">{{__('general.account')}}</a>
                         </li>
-                        <li class="breadcrumb-item active">Thêm Mới Tài Khoản
+                        <li class="breadcrumb-item active">{{__('general.addNewAccount')}}
                         </li>
                     </ol>
                 </div>
@@ -34,12 +34,12 @@ Thêm Mới Tài Khoản
                         <div class="card">
 
                             <div class="card-body">
-                                <h3 class="card-title text-center">Ảnh Đại Diện</h3>
+                                <h3 class="card-title text-center">{{__('general.avatar')}}</h3>
                                 <div class="card border-blue border-lighten-2">
                                     <div class="text-center">
 
                                         <div class="card-body">
-                                            <img class="imagePreview" style="width: 100%; height: 100%;" id="previewImage" src="{{url('')}}/assets/admin/images/no-image.jpg" alt="{{__('general.productImage')}}">
+                                            <img class="imagePreview" style="width: 100%; height: 100%;" id="previewImage" src="{{url('')}}/assets/admin/images/no-image.jpg" alt="{{__('general.image')}}">
                                         </div>
                                         <div class="text-center">
                                             <a href="javascript:;" class="btn btn-social-icon btn-outline-danger mr-1 mb-1 deleteImage" data-trigger="hover" data-toggle="tooltip" data-placement="bottom" data-popup="tooltip-custom" data-original-title="{{__('general.deleteImage')}}" data-bg-color="pink">
@@ -72,91 +72,91 @@ Thêm Mới Tài Khoản
                                                         <div class="col-lg-6 col-md-6">
                                                             <div class="form-group">
                                                                 <h5>
-                                                                    Họ và Tên
+                                                                    {{__('general.fullName')}}
                                                                 </h5>
                                                                 <div class="controls">
-                                                                    <input value="{{old('txtName')}}" type="text" id="txtName" class="form-control" placeholder="Họ và tên" name="txtName" maxlength="128" data-validation-maxlength-message="Họ và tên không được vượt quá 128 ký tự" minlength="4" data-validation-minlength-message="Họ và tên phải có ít nhất 4 ký tự">
+                                                                    <input value="{{old('txtName')}}" type="text" id="txtName" class="form-control" placeholder="{{__('general.fullName')}}" name="txtName" maxlength="64" data-validation-maxlength-message="{{__('validation.max.string', ['attribute'=>__('general.fullName'), 'max'=>'64'])}}" minlength="4" data-validation-minlength-message="{{__('validation.min.string', ['attribute'=>__('general.fullName'), 'min'=>'4'])}}">
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6 col-md-6">
                                                             <div class="form-group">
                                                                 <h5>
-                                                                    Giới Tính
+                                                                    {{__('general.gender')}}
                                                                 </h5>
                                                                 <div class="controls">
                                                                     <select name="gender" class="form-control">
-                                                                        <option value="">Chọn giới tính</option>
-                                                                        <option value="male">Nam</option>
-                                                                        <option value="famale">Nữ</option>
-                                                                        <option value="other">Khác</option>
+                                                                        <option value="">{{__('general.selectGender')}}</option>
+                                                                        <option value="male">{{__('general.male')}}</option>
+                                                                        <option value="famale">{{__('general.famale')}}</option>
+                                                                        <option value="other">{{__('general.other')}}</option>
                                                                     </select>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6 col-md-6">
                                                             <div class="form-group">
-                                                                <h5>Địa Chỉ Email
+                                                                <h5>{{__('general.emailAddress')}}
                                                                     <span class="required red">(*)</span>
                                                                 </h5>
                                                                 <div class="controls">
-                                                                    <input value="{{old('txtEmail')}}" type="email" id="txtEmail" class="form-control" placeholder="Địa chỉ email" name="txtEmail" required data-validation-required-message="Địa chỉ email không được bỏ trống" maxlength="128" data-validation-maxlength-message="Địa chỉ email không được vượt quá 128 ký tự" minlength="4" data-validation-minlength-message="Địa chỉ email phải có ít nhất 4 ký tự" data-validation-email-message="Địa chỉ email không đúng định dạng">
+                                                                    <input value="{{old('txtEmail')}}" type="email" id="txtEmail" class="form-control" placeholder="{{__('general.emailAddress')}}" name="txtEmail" required data-validation-required-message="{{__('validation.required', ['attribute'=>__('general.emailAddress')])}}" maxlength="64" data-validation-maxlength-message="{{__('validation.max.string', ['attribute'=>__('general.emailAddress'), 'max'=>'64'])}}" minlength="4" data-validation-minlength-message="{{__('validation.min.string', ['attribute'=>__('general.emailAddress'), 'min'=>'4'])}}" data-validation-email-message="{{__('validation.regex', ['attribute'=>__('general.email')])}}">
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6 col-md-6">
                                                             <div class="form-group">
                                                                 <h5>
-                                                                    Số Điện Thoại Liên Hệ
+                                                                    {{__('general.phoneNumber')}}
                                                                 </h5>
                                                                 <div class="controls">
-                                                                    <input value="{{old('txtPhone')}}" type="text" id="txtPhone" class="form-control" placeholder="Số điện thoại liên lạc" name="txtPhone" maxlength="24" data-validation-maxlength-message="Số điện thoại không được vượt quá 24 ký tự" minlength="10" data-validation-minlength-message="Số điện thoại phải có ít nhất 10 ký tự" data-validation-containsnumber-regex="(\d)+" data-validation-containsnumber-message="Chỉ cho phép nhập số">
+                                                                    <input value="{{old('txtPhone')}}" type="text" id="txtPhone" class="form-control" placeholder="{{__('general.phoneNumber')}}" name="txtPhone" maxlength="24" data-validation-maxlength-message="{{__('validation.max.string', ['attribute'=>__('general.phoneNumber'), 'max'=>'24'])}}" minlength="10" data-validation-minlength-message="{{__('validation.min.string', ['attribute'=>__('general.phoneNumber'), 'min'=>'10'])}}" data-validation-containsnumber-regex="(\d)+" data-validation-containsnumber-message="{{__('validation.numeric', ['attribute'=>__('general.phoneNumber')])}}">
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-4 col-md-4">
                                                             <div class="form-group">
-                                                                <h5>Tên Đăng Nhập
+                                                                <h5>{{__('general.username')}}
                                                                     <span class="required red">(*)</span>
                                                                 </h5>
                                                                 <div class="controls">
-                                                                    <input value="{{old('txtUsername')}}" type="text" id="txtUsername" class="form-control" placeholder="Tên đăng nhập" name="txtUsername" required data-validation-required-message="Tên đăng nhập không được bỏ trống" maxlength="32" data-validation-maxlength-message="Tên đăng nhập không được vượt quá 32 ký tự" minlength="4" data-validation-minlength-message="Tên đăng nhập phải có ít nhất 4 ký tự">
+                                                                    <input value="{{old('txtUsername')}}" type="text" id="txtUsername" class="form-control" placeholder="{{__('general.username')}}" name="txtUsername" required data-validation-required-message="{{__('validation.required', ['attribute'=>__('general.username')])}}" maxlength="32" data-validation-maxlength-message="{{__('validation.max.string', ['attribute'=>__('general.username'), 'max'=>'32'])}}" minlength="4" data-validation-minlength-message="{{__('validation.min.string', ['attribute'=>__('general.username'), 'min'=>'4'])}}">
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-4 col-md-4">
                                                             <div class="form-group">
-                                                                <h5>Mật Khẩu
+                                                                <h5>{{__('general.password')}}
                                                                     <span class="required red">(*)</span>
                                                                 </h5>
                                                                 <div class="controls">
-                                                                    <input value="{{old('txtPassword')}}" type="password" id="txtPassword" class="form-control" placeholder="Mật khẩu" name="txtPassword" required data-validation-required-message="Mật khẩu không được bỏ trống" maxlength="32" data-validation-maxlength-message="Mật khẩu không được vượt quá 32 ký tự" minlength="4" data-validation-minlength-message="Mật khẩu phải có ít nhất 4 ký tự">
+                                                                    <input value="{{old('txtPassword')}}" type="password" id="txtPassword" class="form-control" placeholder="{{__('general.password')}}" name="txtPassword" required data-validation-required-message="{{__('validation.required', ['attribute'=>__('general.rePassword')])}}" maxlength="32" data-validation-maxlength-message="{{__('validation.max.string', ['attribute'=>__('general.password'), 'max'=>'32'])}}" minlength="4" data-validation-minlength-message="{{__('validation.min.string', ['attribute'=>__('general.password'), 'min'=>'4'])}}">
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-4 col-md-4">
                                                             <div class="form-group">
-                                                                <h5>Nhập Lại Mật Khẩu
+                                                                <h5>{{__('general.rePassword')}}
                                                                     <span class="required red">(*)</span>
                                                                 </h5>
                                                                 <div class="controls">
-                                                                    <input value="{{old('txtRePassword')}}" type="password" id="txtRePassword" class="form-control" placeholder="Nhập lại mật khẩu" name="txtRePassword" required data-validation-required-message="Mật khẩu nhập lại không được bỏ trống" maxlength="32" data-validation-maxlength-message="Mật khẩu nhập lại không được vượt quá 32 ký tự" minlength="4" data-validation-minlength-message="Mật khẩu nhập lại phải có ít nhất 4 ký tự" data-validation-match-match="txtPassword" data-validation-match-message="Mật khẩu nhập lại không trùng khớp">
+                                                                    <input value="{{old('txtRePassword')}}" type="password" id="txtRePassword" class="form-control" placeholder="{{__('general.rePassword')}}" name="txtRePassword" required data-validation-required-message="{{__('validation.required', ['attribute'=>__('general.rePassword')])}}" maxlength="32" data-validation-maxlength-message="{{__('validation.max.string', ['attribute'=>__('general.rePassword'), 'max'=>'32'])}}" minlength="4" data-validation-minlength-message="{{__('validation.min.string', ['attribute'=>__('general.rePassword'), 'min'=>'4'])}}" data-validation-match-match="txtPassword" data-validation-match-message="Mật khẩu nhập lại không trùng khớp">
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6 col-md-6">
                                                             <div class="form-group">
                                                                 <h5>
-                                                                    Cấp quyền truy cập trang quản trị
+                                                                    {{__('general.isAdmin')}}
                                                                 </h5>
                                                                 <div class="controls">
                                                                     <div class="skin skin-flat">
                                                                         <input type="radio" value="true" name="is_admin" id="true">
-                                                                        <label for="true">Cho phép</label>
+                                                                        <label for="true">{{__('general.allow')}}</label>
                                                                     </div>
                                                                     <div class="skin skin-flat">
                                                                         <input type="radio" value="false" name="is_admin" id="false" checked>
-                                                                        <label for="false">Không cho phép</label>
+                                                                        <label for="false">{{__('general.doNotAllow')}}</label>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -164,16 +164,16 @@ Thêm Mới Tài Khoản
                                                         <div class="col-lg-6 col-md-6">
                                                             <div class="form-group">
                                                                 <h5>
-                                                                    Trạng Thái
+                                                                    {{__('general.status')}}
                                                                 </h5>
                                                                 <div class="controls">
                                                                     <div class="skin skin-flat">
                                                                         <input type="radio" value="active" name="status" id="active" checked>
-                                                                        <label for="active">Hoạt động</label>
+                                                                        <label for="active">{{__('general.active')}}</label>
                                                                     </div>
                                                                     <div class="skin skin-flat">
                                                                         <input type="radio" value="inActive" name="status" id="inActive">
-                                                                        <label for="inActive">Ngưng hoạt động</label>
+                                                                        <label for="inActive">{{__('general.inActive')}}</label>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -184,7 +184,7 @@ Thêm Mới Tài Khoản
                                                         <i class="ft-x"></i> {{__('general.cancel')}}
                                                       </button>
                                                     <button type="submit" class="btn btn-success">
-                                                      <i class="la la-check-square-o"></i> {{__('general.saveChange')}}
+                                                      <i class="la la-check-square-o"></i> {{__('general.saveChanges')}}
                                                     </button>
                                                   </div>
                                                 </div>                                            

@@ -1,5 +1,5 @@
 @section('title')
-Danh Sách Tin Tức
+{{__('general.listNews')}}
 @stop
 @extends('admin.general.master')
 @section('content') 
@@ -20,9 +20,9 @@ Danh Sách Tin Tức
                     <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{route('getIndexAdmin')}}">{{__('general.home')}}</a>
                             </li>
-                            <li class="breadcrumb-item"><a href="#">Tin Tức</a>
+                            <li class="breadcrumb-item"><a href="#">{{__('general.news')}}</a>
                             </li>
-                            <li class="breadcrumb-item active">Danh Sách Tin Tức
+                            <li class="breadcrumb-item active">{{__('general.listNews')}}
                             </li>
                         </ol>
                 </div>
@@ -43,12 +43,12 @@ Danh Sách Tin Tức
                             <table class="table table-bordered mb-0">
                                 <thead>
                                     <tr>
-                                        <th class="text-center">Tiêu Đề</th>
-                                        <th class="text-center">Ảnh Đại Diện</th>
-                                        <th class="text-center">Danh Mục</th>
-                                        <th class="text-center">Lượt Xem</th>
-                                        <th class="text-center">Trạng Thái</th>
-                                        <th class="text-center">Trang Chủ</th>
+                                        <th class="text-center">{{__('general.title')}}</th>
+                                        <th class="text-center">{{__('general.avatar')}}</th>
+                                        <th class="text-center">{{__('general.cateNews')}}</th>
+                                        <th class="text-center">{{__('general.view')}}</th>
+                                        <th class="text-center">{{__('general.status')}}</th>
+                                        <th class="text-center">{{__('general.home')}}</th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -61,16 +61,16 @@ Danh Sách Tin Tức
                                         <td class="text-center">{{$value->views}}</td>
                                         <td class="text-center">
                                             @if($value->status=='active')
-                                            <span class="badge badge-default badge-success">Đang Hoạt Động</span>
+                                            <span class="badge badge-default badge-success">{{__('general.active')}}</span>
                                             @else
-                                            <span class="badge badge-default badge-danger">Không Hoạt Động</span>
+                                            <span class="badge badge-default badge-danger">{{__('general.inActive')}}</span>
                                             @endif
                                         </td>
                                         <td class="text-center">
                                             @if($value->status_home=='active')
-                                            <span class="badge badge-default badge-success">Đang Hiển Thị</span>
+                                            <span class="badge badge-default badge-success">{{__('general.displayed')}}</span>
                                             @else
-                                            <span class="badge badge-default badge-danger">Không Hiển Thị</span>
+                                            <span class="badge badge-default badge-danger">{{__('general.notDisplayed')}}</span>
                                             @endif
                                         </td>
                                         <td class="text-center">
@@ -78,8 +78,8 @@ Danh Sách Tin Tức
                                                 <button id="btnSearchDrop2" type="button" data-toggle="dropdown" aria-haspopup="true"
                                                     aria-expanded="true" class="btn btn-primary btn-sm dropdown-toggle dropdown-menu-right"><i class="ft-settings"></i></button>
                                                 <span aria-labelledby="btnSearchDrop2" class="dropdown-menu mt-1 dropdown-menu-right">
-                                                    <a href="{{route('getEditNewsAdmin', ['id'=>$value->id])}}" class="dropdown-item"><i class="ft ft-edit-2"></i> Xem & Sửa</a>
-                                                    <a href="javascript:;" id="deleteNews-{{$value->id}}" class="dropdown-item red"><i class="ft-trash-2"></i> Xoá</a>
+                                                    <a href="{{route('getEditNewsAdmin', ['id'=>$value->id])}}" class="dropdown-item"><i class="ft ft-edit-2"></i> {{__('general.viewAndEdit')}}</a>
+                                                    <a href="javascript:;" id="deleteNews-{{$value->id}}" class="dropdown-item red"><i class="ft-trash-2"></i> {{__('general.delete')}}</a>
                                                 </span>
                                             </span>
                                         </td>
@@ -88,21 +88,21 @@ Danh Sách Tin Tức
                                         $(document).ready(function(){
                                             $('#deleteNews-{{$value->id}}').on('click',function(){
                                                 swal({
-                                                    title: "Bạn có chắc chắn không?",
-                                                    text: "Thao tác xoá này sẽ không thể hoàn tác!",
+                                                    title: "{{__('swal.title.titleDelete')}}",
+                                                    text: "{{__('swal.text.textDelete')}}",
                                                     icon: "warning",
                                                     showCancelButton: true,
                                                     showLoaderOnConfirm: true,
                                                     buttons: {
                                                         cancel: {
-                                                            text: "Không, dữ nguyên dữ liệu!",
+                                                            text: "{{__('swal.button.cancel')}}",
                                                             value: null,
                                                             visible: true,
                                                             className: "btn-warning",
                                                             closeModal: false,
                                                         },
                                                         confirm: {
-                                                            text: "Đống ý, xoá ngay?",
+                                                            text: "{{__('swal.button.confirm')}}",
                                                             value: true,
                                                             visible: true,
                                                             className: "",
@@ -127,15 +127,15 @@ Danh Sách Tin Tức
                                                             {
                                                                 $('#cateRow-{{$value->id}}').remove();
                                                                 swal({
-                                                                        title: "Thành Công",
-                                                                        text: "Dữ Liệu Của Bạn Đã Được Xoá Thành Công!",
+                                                                        title: "{{__('swal.title.success')}}",
+                                                                        text: "{{__('swal.text.successDelete')}}",
                                                                         icon: "success",
                                                                 });
                                                             }
                                                         })
                                                         
                                                     } else {
-                                                        swal("Đã Huỷ", "Dữ liệu của bạn được dữ nguyên!", "error");
+                                                        swal("{{__('swal.title.cancel')}}", "{{__('swal.text.errorDelete')}}", "error");
                                                     }
                                                 });
                                             });

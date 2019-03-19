@@ -1,3 +1,6 @@
+@section('title')
+{{__('general.addNewCate')}}
+@stop
 @extends('admin.general.master')
 @section('content')
 @section('link')
@@ -45,8 +48,8 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <h5>{{__('general.status')}}
-                                            <span class="required">*</span>
+                                        <h5>
+                                          {{__('general.status')}}
                                         </h5>
                                         <div class="controls">
                                             <div class="skin skin-flat">
@@ -66,7 +69,7 @@
                                 <i class="ft-x"></i> {{__('general.cancel')}}
                               </button>
                             <button type="submit" class="btn btn-success">
-                              <i class="la la-check-square-o"></i> {{__('general.saveChange')}}
+                              <i class="la la-check-square-o"></i> {{__('general.saveChanges')}}
                             </button>
                           </div>
                         </form>

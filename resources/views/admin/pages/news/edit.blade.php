@@ -1,5 +1,5 @@
 @section('title')
-Chỉnh Sửa Tin Tức
+{{__('general.editNews')}}
 @stop
 @extends('admin.general.master')
 @section('content')
@@ -27,18 +27,18 @@ Chỉnh Sửa Tin Tức
     <div class="content-wrapper">
         <div class="content-header row">
             <div class="content-header-left col-md-6 col-12 mb-2 breadcrumb-new">
-                <h3 class="content-header-title mb-0 d-inline-block">Chỉnh Sửa Tin Tức</h3>
+                <h3 class="content-header-title mb-0 d-inline-block">{{__('general.editNews')}}</h3>
             </div>
             <div class="content-header-right col-md-6 col-12">
                 <div class="dropdown float-md-right">
                     <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{{route('getIndexAdmin')}}">{{__('general.home')}}</a>
-                            </li>
-                            <li class="breadcrumb-item"><a href="#">Tin Tức</a>
-                            </li>
-                            <li class="breadcrumb-item active">Chỉnh Sửa Tin Tức
-                            </li>
-                        </ol>
+                        <li class="breadcrumb-item"><a href="{{route('getIndexAdmin')}}">{{__('general.home')}}</a>
+                        </li>
+                        <li class="breadcrumb-item"><a href="#">{{__('general.news')}}</a>
+                        </li>
+                        <li class="breadcrumb-item active">{{__('general.editNews')}}
+                        </li>
+                    </ol>
                 </div>
             </div>
         </div>
@@ -54,23 +54,23 @@ Chỉnh Sửa Tin Tức
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <h5>
-                                                <b>Tiêu Đề</b>
+                                                <b>{{__('general.title')}}</b>
                                                 <span class="required red">(*)</span>
                                             </h5>
                                             <div class="controls">
-                                                <input value="{{$news->title}}" type="text" id="txtTitle" class="form-control" placeholder="Tiêu đề của tin tức" name="txtTitle"required data-validation-required-message="Tiêu đề không được bỏ trống" maxlength="128" data-validation-maxlength-message="Tiêu đề không được nhiều hơn 128 ký tự" minlength="4" data-validation-minlength-message="Tiêu đề không được ít hơn 4 ký tự">
+                                                <input value="{{$news->title}}" type="text" id="txtTitle" class="form-control" placeholder="{{__('general.title')}}" name="txtTitle"required data-validation-required-message="Tiêu đề không được bỏ trống" maxlength="128" data-validation-maxlength-message="{{__('validation.max.string', ['attribute'=>__('general.title'), 'max'=>'128'])}}" minlength="4" data-validation-minlength-message="{{__('validation.min.string', ['attribute'=>__('general.title'), 'min'=>'4'])}}">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <h5>
-                                                <b>Thuộc Danh Mục</b>
+                                                <b>{{__('general.cateNews')}}</b>
                                                 <span class="required red">(*)</span>
                                             </h5>
                                             <div class="controls">
-                                                <select name="sltCate" class="form-control" required data-validation-required-message="Vui lòng chọn danh mục">
-                                                    <option value="">Chọn Danh Mục</option>
+                                                <select name="sltCate" class="form-control" required data-validation-required-message="{{__('validation.required', ['attribute'=>__('general.cateNews')])}}">
+                                                    <option value="">{{__('general.selectCategory')}}</option>
                                                     @foreach($categories as $category)
                                                     <option value="{{$category->id}}" @if($news->cate_id == $category->id) selected @endif>{{$category->name}}</option>
                                                     @endforeach
@@ -81,17 +81,17 @@ Chỉnh Sửa Tin Tức
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <h5>
-                                                <b>Ảnh Đại Diện</b>
+                                                <b>{{__('general.avatar')}}</b>
                                             </h5>
                                             <div class="row">
                                                 <div class="col-md-9">
                                                     <div class="controls">
-                                                        <input value="{{$news->image}}" name="txtAvatarUrl" id="image" class="form-control" placeholder="Đường Dẫn Ảnh Đại Diện">
+                                                        <input value="{{$news->image}}" name="txtAvatarUrl" id="image" class="form-control" placeholder="{{__('general.avatarUrl')}}">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
-                                                    <a style="color: red;" href="javascript:;" class="deleteImage">Xoá</a>
-                                                    <a data-input="image" data-preview="previewImage" href="javascript:;" class="selectImage">Chọn Ảnh</a>
+                                                    <a style="color: red;" href="javascript:;" class="deleteImage">{{__('general.delete')}}</a>
+                                                    <a data-input="image" data-preview="previewImage" href="javascript:;" class="selectImage">{{__('general.selectImage')}}</a>
                                                 </div>
                                             </div> 
                                         </div>
@@ -99,7 +99,7 @@ Chỉnh Sửa Tin Tức
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <h5>
-                                                <b>Tóm tắt</b>
+                                                <b>{{__('general.description')}}</b>
                                             </h5>
                                             <div class="controls">
                                                 <textarea name="description" rows="4" class="form-control">{{$news->description}}</textarea>
@@ -109,17 +109,17 @@ Chỉnh Sửa Tin Tức
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <h5>
-                                                <b>Trạng Thái Hoạt Động</b>
+                                                <b>{{__('general.status')}}</b>
                                             </h5>
                                             <div class="controls">
                                                 <div class="controls">
                                                     <div class="skin skin-flat">
                                                         <input type="radio" value="active" name="status" required id="active" @if($news->status == 'active') checked @endif>
-                                                        <label for="active">Hoạt động</label>
+                                                        <label for="active">{{__('general.active')}}</label>
                                                     </div>
                                                     <div class="skin skin-flat">
                                                         <input type="radio" value="inActive" name="status" id="inActive" @if($news->status == 'inActive') checked @endif>
-                                                        <label for="inActive">Không hoạt động</label>
+                                                        <label for="inActive">{{__('general.inActive')}}</label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -128,17 +128,17 @@ Chỉnh Sửa Tin Tức
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <h5>
-                                                <b>Trạng Thái Hiển Thị Ở Trang Chủ</b>
+                                                <b>{{__('general.statusHome')}}</b>
                                             </h5>
                                             <div class="controls">
                                                 <div class="controls">
                                                     <div class="skin skin-flat">
                                                         <input type="radio" value="active" name="status_home" required id="active" @if($news->status_home == 'active') checked @endif>
-                                                        <label for="active">Hiển thị</label>
+                                                        <label for="active">{{__('general.displayed')}}</label>
                                                     </div>
                                                     <div class="skin skin-flat">
                                                         <input type="radio" value="inActive" name="status_home" id="inActive" @if($news->status_home == 'inActive') checked @endif>
-                                                        <label for="inActive">Không hiển thị</label>
+                                                        <label for="inActive">{{__('general.notDisplayed')}}</label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -147,7 +147,7 @@ Chỉnh Sửa Tin Tức
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <h5>
-                                                <b>Nội Dung Của Tin Tức</b>
+                                                <b>{{__('general.content')}}</b>
                                             </h5>
                                             <div class="controls">
                                                 <div class="controls">
@@ -163,34 +163,33 @@ Chỉnh Sửa Tin Tức
                                 <div class="col-md-7">
                                     <div class="form-group">
                                         <h5>
-                                            SEO Title
+                                            {{__('general.seoTitle')}}
                                         </h5>
                                         <div class="controls">
                                             <input value="{{$news->seo_title}}" type="text" class="form-control" placeholder="SEO Title" name="txtSeoTitle">
-                                            <i>Một tiêu đề tùy chỉnh xuất hiện trong thẻ tiêu đề cho trang này</i>
+                                            <i>{{__('general.seoTitleHelp')}}</i>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-7">
                                     <div class="form-group">
                                         <h5>
-                                            SEO Description
+                                            {{__('general.seoDescription')}}
                                         </h5>
                                         <div class="controls">
                                             <input value="{{$news->seo_description}}" type="text" class="form-control" placeholder="SEO Description" name="txtSeoDescription">
-                                            
-                                            <i>Mô tả META cho trang này. Điều này sẽ ghi đè bất kỳ mô tả tự phát</i>
+                                            <i>{{__('general.seoDescriptionHelp')}}</i>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-7">
                                     <div class="form-group">
                                         <h5>
-                                            SEO Keywords
+                                            {{__('general.seoKeywords')}}
                                         </h5>
                                         <div class="controls">
                                             <input value="{{$news->seo_key_words}}" type="text" class="form-control" placeholder="SEO Keywords" name="txtSeoKeywords">
-                                            <i>Danh sách các từ khóa quan trọng nhất được phân tách bằng dấu phẩy cho trang này sẽ được viết dưới dạng từ khóa META</i>
+                                            <i>{{__('general.seoKeywordsHelp')}}</i>
                                         </div>
                                     </div>
                                 </div>
@@ -200,7 +199,7 @@ Chỉnh Sửa Tin Tức
                                     <i class="ft-x"></i> {{__('general.cancel')}}
                                 </button>
                                 <button type="submit" class="btn btn-success">
-                                    <i class="la la-check-square-o"></i> {{__('general.saveChange')}}
+                                    <i class="la la-check-square-o"></i> {{__('general.saveChanges')}}
                                 </button>
                             </div>
                         </form>

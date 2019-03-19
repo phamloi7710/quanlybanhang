@@ -1,3 +1,6 @@
+@section('title')
+{{__('general.contact')}}
+@stop
 @extends('admin.general.master')
 @section('content') 
 <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
@@ -9,7 +12,7 @@
             <div class="content-header-left col-md-6 col-12">
                 <div class="row breadcrumbs-top">
                     <div class="breadcrumb-wrapper col-12">
-                        <h4 class="card-title">Tất cả liên hệ</h4>
+                        <h4 class="card-title">{{__('general.allContact')}}</h4>
                     </div>
                 </div>
             </div>
@@ -18,9 +21,9 @@
                     <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{route('getIndexAdmin')}}">{{__('general.home')}}</a>
                             </li>
-                            <li class="breadcrumb-item"><a href="#">Liên hệ</a>
+                            <li class="breadcrumb-item"><a href="#">{{__('general.contact')}}</a>
                             </li>
-                            <li class="breadcrumb-item active">Tất cả liên hệ
+                            <li class="breadcrumb-item active">{{__('general.allContact')}}
                             </li>
                         </ol>
                 </div>
@@ -39,10 +42,10 @@
                                                 <table id="contactData" class="table table-white-space table-bordered row-grouping display no-wrap icheck table-middle">
                                                     <thead>
                                                         <tr>
-                                                            <th>Họ Tên</th>
-                                                            <th>Email</th>
-                                                            <th>Số Điện Thoại</th>
-                                                            <th>Trạng Thái</th>
+                                                            <th>{{__('general.fullName')}}</th>
+                                                            <th>{{__('general.emailAddress')}}</th>
+                                                            <th>{{__('general.phoneNumber')}}</th>
+                                                            <th>{{__('general.status')}}</th>
                                                             <th></th>
                                                         </tr>
                                                     </thead>
@@ -59,15 +62,15 @@
                                                                 {{$contact->phone}}
                                                             </td>
                                                             <td class="text-center">
-                                                                <span class="badge badge-default @if($contact->status=='true') badge-success @else badge-danger @endif">@if($contact->status=='true') Đã Liên Hệ @else Chưa Liên Hệ @endif</span>
+                                                                <span class="badge badge-default @if($contact->status=='true') badge-success @else badge-danger @endif">@if($contact->status=='true') {{__('general.contacted')}} @else {{__('general.notContactedYet')}} @endif</span>
                                                             </td>
                                                             <td>
                                                                 <span class="dropdown">
                                                                 <button id="btnSearchDrop2" type="button" data-toggle="dropdown" aria-haspopup="true"
                                                                     aria-expanded="true" class="btn btn-primary dropdown-toggle dropdown-menu-right"><i class="ft-settings"></i></button>
                                                                 <span aria-labelledby="btnSearchDrop2" class="dropdown-menu mt-1 dropdown-menu-right">
-                                                                <a href="#" class="dropdown-item" data-toggle="modal" data-target=".modalUpdateContact-{{$contact->id}}"><i class="ft-edit-2"></i> Xem & Sửa</a>
-                                                                <a href="javascript:;" id="deleteContact-{{$contact->id}}" class="dropdown-item red"><i class="ft-trash-2"></i> Xoá</a>
+                                                                <a href="#" class="dropdown-item" data-toggle="modal" data-target=".modalUpdateContact-{{$contact->id}}"><i class="ft-edit-2"></i> {{__('general.viewAndEdit')}}</a>
+                                                                <a href="javascript:;" id="deleteContact-{{$contact->id}}" class="dropdown-item red"><i class="ft-trash-2"></i> {{__('general.delete')}}</a>
                                                                 </span>
                                                                 </span>
                                                             </td>
@@ -76,21 +79,21 @@
                                                             $(document).ready(function(){
                                                                 $('#deleteContact-{{$contact->id}}').on('click',function(){
                                                                     swal({
-                                                                        title: "Bạn có chắc chắn không?",
-                                                                        text: "Thao tác xoá này sẽ không thể hoàn tác!",
+                                                                        title: "{{__('swal.title.titleDelete')}}",
+                                                                        text: "{{__('swal.text.textDelete')}}",
                                                                         icon: "warning",
                                                                         showCancelButton: true,
                                                                         showLoaderOnConfirm: true,
                                                                         buttons: {
                                                                             cancel: {
-                                                                                text: "Không, dữ nguyên dữ liệu!",
+                                                                                text: "{{__('swal.button.cancel')}}",
                                                                                 value: null,
                                                                                 visible: true,
                                                                                 className: "btn-warning",
                                                                                 closeModal: false,
                                                                             },
                                                                             confirm: {
-                                                                                text: "Đống ý, xoá ngay?",
+                                                                                text: "{{__('swal.button.confirm')}}",
                                                                                 value: true,
                                                                                 visible: true,
                                                                                 className: "",
@@ -115,15 +118,15 @@
                                                                                 {
                                                                                     $('#contactRow-{{$contact->id}}').remove();
                                                                                     swal({
-                                                                                            title: "Thành Công",
-                                                                                            text: "Dữ Liệu Của Bạn Đã Được Xoá Thành Công!",
+                                                                                            title: "{{__('swal.title.success')}}",
+                                                                                            text: "{{__('swal.text.successDelete')}}",
                                                                                             icon: "success",
                                                                                     });
                                                                                 }
                                                                             })
                                                                             
                                                                         } else {
-                                                                            swal("Đã Huỷ", "Dữ liệu của bạn được dữ nguyên!", "error");
+                                                                            swal("{{__('swal.title.cancel')}}", "{{__('swal.text.errorDelete')}}", "error");
                                                                         }
                                                                     });
                                                                 });
@@ -133,10 +136,10 @@
                                                     </tbody>
                                                     <tfoot>
                                                         <tr>
-                                                            <th>Họ Tên</th>
-                                                            <th>Email</th>
-                                                            <th>Số Điện Thoại</th>
-                                                            <th>Trạng Thái</th>
+                                                            <th>{{__('general.fullName')}}</th>
+                                                            <th>{{__('general.emailAddress')}}</th>
+                                                            <th>{{__('general.phoneNumber')}}</th>
+                                                            <th>{{__('general.status')}}</th>
                                                             <th></th>
                                                         </tr>
                                                     </tfoot>
@@ -161,9 +164,9 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="list-group">
-                                <a href="{{route('getContactAdmin')}}" class="list-group-item @if(getUrl() == route('getContactAdmin')) active @else list-group-item-action @endif">Tất Cả Liên Hệ</a>
-                                <a href="{{route('getContactAdmin', ['status'=>'true'])}}" class="list-group-item @if(getUrl() == route('getContactAdmin', ['status'=>'true'])) active @else list-group-item-action @endif">Đã Liên Hệ</a>
-                                <a href="{{route('getContactAdmin', ['status'=>'false'])}}" class="list-group-item @if(getUrl() == route('getContactAdmin', ['status'=>'false'])) active @else list-group-item-action @endif">Chưa Liên Hệ</a>
+                                <a href="{{route('getContactAdmin')}}" class="list-group-item @if(getUrl() == route('getContactAdmin')) active @else list-group-item-action @endif">{{__('general.allContact')}}</a>
+                                <a href="{{route('getContactAdmin', ['status'=>'true'])}}" class="list-group-item @if(getUrl() == route('getContactAdmin', ['status'=>'true'])) active @else list-group-item-action @endif">{{__('general.contacted')}}</a>
+                                <a href="{{route('getContactAdmin', ['status'=>'false'])}}" class="list-group-item @if(getUrl() == route('getContactAdmin', ['status'=>'false'])) active @else list-group-item-action @endif">{{__('general.notContactedYet')}}</a>
                             </div>
                         </div>
                     </div>
@@ -178,7 +181,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header bg-success">
-                <h3 class="modal-title white"> Thông Tin Chi Tiết Liên Hệ</h3>
+                <h3 class="modal-title white"> {{__('general.contactDetail')}}</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
@@ -187,38 +190,38 @@
                 @csrf
                 <div class="modal-body">
                     <fieldset class="form-group floating-label-form-group">
-                        <label>Họ Và Tên</label>
+                        <label>{{__('general.fullName')}}</label>
                         <input value="{{$contact->name}}" type="text" class="form-control" disabled="">
                     </fieldset>
                     <fieldset class="form-group floating-label-form-group">
-                        <label>Địa Chỉ Email</label>
+                        <label>{{__('general.emailAddress')}}</label>
                         <input value="{{$contact->email}}" type="email" class="form-control" disabled="">
                     </fieldset>
                     <fieldset class="form-group floating-label-form-group">
-                        <label>Số Điện Thoại</label>
+                        <label>{{__('general.phoneNumber')}}</label>
                         <input value="{{$contact->phone}}" type="text" class="form-control" disabled="">
                     </fieldset>
                     <fieldset class="form-group floating-label-form-group">
-                        <label for="title1">Nội Dung</label>
-                        <textarea class="form-control" id="title1" rows="4" placeholder="Nội dung của người muốn liên hệ" disabled="">{{$contact->content}}</textarea>
+                        <label for="title1">{{__('general.content')}}</label>
+                        <textarea class="form-control" id="title1" rows="4" placeholder="{{__('general.content')}}" disabled="">{{$contact->content}}</textarea>
                     </fieldset>
                     <fieldset class="form-group floating-label-form-group">
-                        <label for="title1">Trạng Thái</label>
+                        <label for="title1">{{__('general.status')}}</label>
                         <div class="controls">
                             <div class="skin skin-flat">
                                 <input type="radio" value="true" name="status" id="true" @if($contact->status == 'true') checked @endif>
-                                <label for="true">Đã Liên Hệ</label>
+                                <label for="true">{{__('general.contacted')}}</label>
                             </div>
                             <div class="skin skin-flat">
                                 <input type="radio" value="false" name="status" id="false" @if($contact->status == 'false') checked @endif>
-                                <label for="false">Chưa Liên Hệ</label>
+                                <label for="false">{{__('general.notContactedYet')}}</label>
                             </div>
                         </div>
                     </fieldset>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn grey btn-outline-secondary" data-dismiss="modal">Đóng</button>
-                    <button type="submit" class="btn btn-outline-success">Cập Nhật Thay Đổi</button>
+                    <button type="button" class="btn grey btn-outline-secondary" data-dismiss="modal">{{__('general.close')}}</button>
+                    <button type="submit" class="btn btn-outline-success">{{__('general.saveChanges')}}</button>
                 </div>
             </form>
         </div>

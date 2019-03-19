@@ -1,3 +1,6 @@
+@section('title')
+{{__('general.editCate')}}
+@stop
 @extends('admin.general.master')
 @section('content')
 @section('link')
@@ -24,7 +27,7 @@
     <div class="content-wrapper">
         <div class="content-header row">
             <div class="content-header-left col-md-6 col-12 mb-2 breadcrumb-new">
-                <h3 class="content-header-title mb-0 d-inline-block">{{__('general.addNewCate')}}</h3>
+                <h3 class="content-header-title mb-0 d-inline-block">{{__('general.editCate')}}</h3>
             </div>
         </div>
         <div class="content-body">
@@ -45,8 +48,8 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <h5>{{__('general.status')}}
-                                            <span class="required">*</span>
+                                        <h5>
+                                          {{__('general.status')}}
                                         </h5>
                                         <div class="controls">
                                             <div class="skin skin-square">
@@ -66,7 +69,7 @@
                               <i class="ft-x"></i> {{__('general.cancel')}}
                             </button>
                             <button type="submit" class="btn btn-success">
-                              <i class="la la-check-square-o"></i> {{__('general.saveChange')}}
+                              <i class="la la-check-square-o"></i> {{__('general.saveChanges')}}
                             </button>
                           </div>
                         </form>
