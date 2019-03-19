@@ -1,3 +1,5 @@
+@section('title'){{$news->title}}@stop
+@section('description'){{$news->seo_description}}@stop
 @extends('frontend.v1.general.master')
 @section('content')
 <section class="bread-crumb">
@@ -51,7 +53,8 @@
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                             <div class="fw article-info margin-bottom-30">
                                 <div class="fw article-detail">
-                                    <span>Admin</span><span>{{date_format($news->created_at,"H:i - d/m/Y")}}</span>
+                                    <span>@if($news->user) {{$news->user->name}} @else @endif </span><span>{{date_format($news->created_at,"H:i - d/m/Y")}}</span>
+                                    <span><i class="fa fa-eye"></i>  {{$news->views}} lượt xem</span>
                                 </div>
                                 <div class="article-image margin-top-15">
                                     <img class="img-responsive" src="{{url('')}}/{{$news->image}}" alt="{{$news->slug}}">
@@ -158,119 +161,17 @@
                             <span>Danh mục tin tức</span>
                             </a>
                         </h2>
-                        <div class="heading-line">
-                            <span class="short-line"></span>
-                            <span class="long-line"></span>
-                        </div>
                     </div>
                     <div class="sidebar-menu-content module-content">
                         <div class="sidebar-linklists">
                             <ul>
+                                @foreach($getAllNewsCate as $allCate)
                                 <li class="sidebar-menu-list blog-sidebar-menu">
-                                    <a class="ajaxLayer" href="/gioi-thieu" title="Về chúng tôi">
-                                    <span>Về chúng tôi</span>
+                                    <a class="ajaxLayer" href="{{route('getNewsCateFrontend', ['slug'=>$allCate->slug])}}" title="Về chúng tôi">
+                                        <i class="fa fa-hand-o-right"></i> <span> {{$allCate->name}}</span>
                                     </a>
                                 </li>
-                                <li class="sidebar-menu-list blog-sidebar-menu">
-                                    <a class="ajaxLayer" href="/collections/all" title="Dành cho bạn">
-                                    <span>Dành cho bạn</span>
-                                    </a><em><i class="fa fa-plus" aria-hidden="true"></i></em>
-                                    <ul style="display: none" class="lv2">
-                                        <li>
-                                            <a class="ajaxLayer a_lv2" href="/san-pham-moi" title="Hàng mới về">
-                                            <span>Hàng mới về</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="ajaxLayer a_lv2" href="/san-pham-noi-bat" title="Top nổi bật">
-                                            <span>Top nổi bật</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="ajaxLayer a_lv2" href="/san-pham-khuyen-mai" title="Hot Deal">
-                                            <span>Hot Deal</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="sidebar-menu-list blog-sidebar-menu">
-                                    <a class="ajaxLayer" href="/dien-may" title="Điện máy">
-                                    <span>Điện máy</span>
-                                    </a><em><i class="fa fa-plus" aria-hidden="true"></i></em>
-                                    <ul style="display: none" class="lv2">
-                                        <li>
-                                            <a class="ajaxLayer a_lv2" href="/tivi-tu-lanh" title="Tivi - Tủ lạnh">
-                                            <span>Tivi - Tủ lạnh</span>
-                                            </a><em><i class="fa fa-plus" aria-hidden="true"></i></em>
-                                            <ul style="display: none;" class="lv3">
-                                                <li>
-                                                    <a class="ajaxLayer a_lv3" href="/tu-lanh" title="Tủ lạnh">
-                                                    <span>Tủ lạnh</span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a class="ajaxLayer a_lv3" href="/tivi" title="Tivi">
-                                                    <span>Tivi</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a class="ajaxLayer a_lv2" href="/tivi" title="Tivi">
-                                            <span>Tivi</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="ajaxLayer a_lv2" href="/dieu-hoa" title="Điều hoà">
-                                            <span>Điều hoà</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="ajaxLayer a_lv2" href="/tu-lanh" title="Tủ lạnh">
-                                            <span>Tủ lạnh</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="ajaxLayer a_lv2" href="/may-giat" title="Máy giặt">
-                                            <span>Máy giặt</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="sidebar-menu-list blog-sidebar-menu">
-                                    <a class="ajaxLayer" href="/blogs/all" title="Tin tổng hợp">
-                                    <span>Tin tổng hợp</span>
-                                    </a><em><i class="fa fa-plus" aria-hidden="true"></i></em>
-                                    <ul style="display: none" class="lv2">
-                                        <li>
-                                            <a class="ajaxLayer a_lv2" href="/tin-tuc" title="Tin tức">
-                                            <span>Tin tức</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="ajaxLayer a_lv2" href="/tin-cong-nghe-dien-thoai" title="Tin công nghệ - Điện thoại">
-                                            <span>Tin công nghệ - Điện thoại</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="ajaxLayer a_lv2" href="/tin-cong-nghe-may-tinh" title="Tin công nghệ - Máy tính">
-                                            <span>Tin công nghệ - Máy tính</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="sidebar-menu-list blog-sidebar-menu">
-                                    <a class="ajaxLayer" href="/lien-he" title="Liên hệ">
-                                    <span>Liên hệ</span>
-                                    </a><em><i class="fa fa-plus" aria-hidden="true"></i></em>
-                                    <ul style="display: none" class="lv2">
-                                        <li>
-                                            <a class="ajaxLayer a_lv2" href="/huong-dan-su-dung-libra-mart" title="Hướng dẫn sử dụng theme Libra Mart">
-                                            <span>Hướng dẫn sử dụng theme Libra Mart</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>

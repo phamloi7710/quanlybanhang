@@ -120,6 +120,7 @@ class NewsController extends Controller
         $news->seo_title = $request->txtSeoTitle;
         $news->seo_description = $request->txtSeoDescription;
         $news->seo_key_words = $request->txtSeoKeywords;
+        $news->user_id = Auth::user()->id;
     	$news->save();
     	$notifySuccess = array(
             'message' => 'Thêm mới tin tức thành công!',  
@@ -147,6 +148,7 @@ class NewsController extends Controller
         $news->seo_title = $request->txtSeoTitle;
         $news->seo_description = $request->txtSeoDescription;
         $news->seo_key_words = $request->txtSeoKeywords;
+        $news->user_id = Auth::user()->id;
         $news->save();
         $notifySuccess = array(
             'message' => 'Chỉnh sửa tin tức thành công!',  

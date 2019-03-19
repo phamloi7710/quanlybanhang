@@ -224,21 +224,23 @@
                     </svg>
                 </div>
             </div>
+
             <script src="{{url('')}}/assets/frontend/v1.0/script/option-selectors.js" type="text/javascript"></script>
-            <script src="{{url('')}}/assets/frontend/v1.0/jquery/api.jquery.js" type="text/javascript"></script> 
+            <!-- <script src="{{url('')}}/assets/frontend/v1.0/jquery/api.jquery.js" type="text/javascript"></script>  -->
             <!-- Plugin JS -->
             <script src="{{url('')}}/assets/frontend/v1.0/script/plugin.js" type="text/javascript"></script>
-            <script src="//cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/7.0.3/jquery.mmenu.all.js" type="text/javascript"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/7.0.3/jquery.mmenu.all.js" type="text/javascript"></script>
             <!-- <script src="{{url('')}}/assets/frontend/v1.0/script/cs.script.js" type="text/javascript"></script> -->
-            <script src="{{url('')}}/assets/frontend/v1.0/jquery/api.jquery.custom.js" type="text/javascript"></script>
+            <!-- <script src="{{url('')}}/assets/frontend/v1.0/jquery/api.jquery.custom.js" type="text/javascript"></script> -->
             <!-- Main JS -->
             <script src="{{url('')}}/assets/frontend/v1.0/script/main.js" type="text/javascript"></script>
             <script src="{{url('')}}/assets/frontend/v1.0/script/smartsearch.js" type="text/javascript"></script>
             <link href="{{url('')}}/assets/frontend/v1.0/css/sidebar_menu.scss.css" rel="stylesheet" type="text/css" />
             <script src="{{url('')}}/assets/frontend/v1.0/script/sidebar_menu.js" type="text/javascript"></script>
-            <script src="{{url('')}}/assets/frontend/v1.0/script/product.js" type="text/javascript"></script>
+            <!-- <script src="{{url('')}}/assets/frontend/v1.0/script/product.js" type="text/javascript"></script> -->
             <script src="{{url('')}}/assets/frontend/v1.0/jquery/jquery.elevatezoom308.min.js" type="text/javascript"></script>
-            <script src="{{url('')}}/assets/frontend/v1.0/script/col.js?1548428247318" type="text/javascript"></script>
+            @yield('script')
+            <!-- <script src="{{url('')}}/assets/frontend/v1.0/script/col.js?1548428247318" type="text/javascript"></script> -->
             <!-- Product detail JS,CSS -->
             <!-- Facebook Fanpage -->
             <div id="fb-root"></div>
