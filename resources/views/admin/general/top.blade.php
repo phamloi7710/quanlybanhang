@@ -174,13 +174,14 @@
                                     <a class="dropdown-item" href="{{route('getLogoutAdmin')}}"><i class="ft-power"></i> {{__('general.logOut')}}</a>
                                 </div>
                             </li>
+                            <?php $flag = App\Model\Language::where('code', App::getLocale())->first();?>
                             <li class="dropdown dropdown-language nav-item">
                                 <a class="dropdown-toggle nav-link" id="dropdown-flag" href="#" data-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="false"><img style="position: relative; display: inline-block; width: 1.33333333em; line-height: 1em;" src="{{url('')}}{{$flag->image}}"><span class="selected-language"></span></a>
                                 <div class="dropdown-menu" aria-labelledby="dropdown-flag">
                                 @if(isset($languages))
                                 @foreach($languages as $lang)
-                                <a class="dropdown-item" href="{{route('setLanguage',[$lang->code])}}"><img width="22" src="{{url('')}}{{$lang->image}}"> {{$lang->name}}</a>
+                                <a class="dropdown-item @if($lang->code == App::getLocale()) text-info @endif" href="{{route('setLanguage',[$lang->code])}}"><img width="22" src="{{url('')}}{{$lang->image}}"> {{$lang->name}}</a>
                                 @endforeach
                                 @else
                                 <a href="javascript:;"> {{__("general.noLanguage")}}</a>

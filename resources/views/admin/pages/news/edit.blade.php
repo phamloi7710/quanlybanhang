@@ -166,7 +166,7 @@
                                             {{__('general.seoTitle')}}
                                         </h5>
                                         <div class="controls">
-                                            <input value="{{$news->seo_title}}" type="text" class="form-control" placeholder="SEO Title" name="txtSeoTitle">
+                                            <input value="{{$news->seo_title}}" type="text" class="form-control" placeholder="{{__('general.seoTitle')}}" name="txtSeoTitle">
                                             <i>{{__('general.seoTitleHelp')}}</i>
                                         </div>
                                     </div>
@@ -177,7 +177,7 @@
                                             {{__('general.seoDescription')}}
                                         </h5>
                                         <div class="controls">
-                                            <input value="{{$news->seo_description}}" type="text" class="form-control" placeholder="SEO Description" name="txtSeoDescription">
+                                            <input value="{{$news->seo_description}}" type="text" class="form-control" placeholder="{{__('general.seoDescription')}}" name="txtSeoDescription">
                                             <i>{{__('general.seoDescriptionHelp')}}</i>
                                         </div>
                                     </div>
@@ -188,7 +188,7 @@
                                             {{__('general.seoKeywords')}}
                                         </h5>
                                         <div class="controls">
-                                            <input value="{{$news->seo_key_words}}" type="text" class="form-control" placeholder="SEO Keywords" name="txtSeoKeywords">
+                                            <input value="{{$news->seo_key_words}}" type="text" class="form-control" placeholder="{{__('general.seoKeywords')}}" name="txtSeoKeywords">
                                             <i>{{__('general.seoKeywordsHelp')}}</i>
                                         </div>
                                     </div>

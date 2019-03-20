@@ -11,7 +11,7 @@
             <div class="content-header-left col-md-6 col-12">
                 <div class="row breadcrumbs-top">
                     <div class="breadcrumb-wrapper col-12">
-                        <h4 class="card-title">Danh Sách Tin Tức</h4>
+                        <h4 class="card-title">{{__('general.listNews')}}</h4>
                     </div>
                 </div>
             </div>
@@ -127,9 +127,9 @@
                                                             {
                                                                 $('#cateRow-{{$value->id}}').remove();
                                                                 swal({
-                                                                        title: "{{__('swal.title.success')}}",
-                                                                        text: "{{__('swal.text.successDelete')}}",
-                                                                        icon: "success",
+                                                                    title: "{{__('swal.title.success')}}",
+                                                                    text: "{{__('swal.text.successDelete')}}",
+                                                                    icon: "success",
                                                                 });
                                                             }
                                                         })

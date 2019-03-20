@@ -1,3 +1,6 @@
+@section('title')
+{{__('general.editProduct')}}
+@stop
 @extends('admin.general.master')
 @section('content') 
 @section('link')
@@ -30,7 +33,7 @@
             <div class="content-header-left col-md-6 col-12">
                 <div class="row breadcrumbs-top">
                     <div class="breadcrumb-wrapper col-12">
-                        <h4 class="card-title">{{__('title.addNewProduct')}}</h4>
+                        <h4 class="card-title">{{__('general.editProduct')}}</h4>
                     </div>
                 </div>
             </div>
@@ -41,7 +44,7 @@
                         </li>
                         <li class="breadcrumb-item"><a href="#">{{__('general.product')}}</a>
                         </li>
-                        <li class="breadcrumb-item active">{{__('title.addNewProduct')}}
+                        <li class="breadcrumb-item active">{{__('general.editProduct')}}
                         </li>
                     </ol>
                 </div>
@@ -66,7 +69,7 @@
                                                 <span class="la la-plus-circle font-medium-4"></span>
                                                 </a>
                                             </div>
-                                            <input type="hidden" value="{{$product->avatar}}" id="image" type="text" class="form-control" placeholder="{{__("general.imageUrl")}}" name="avatar">
+                                            <input type="hidden" value="{{$product->avatar}}" id="image" type="text" class="form-control" placeholder="{{__('general.imageUrl')}}" name="avatar">
                                         </div>
                                     </div>
                                 </div>
@@ -99,10 +102,10 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <h5>Giá Nhập Về
+                                                <h5>{{__('general.priceNhap')}}
                                                 </h5>
                                                 <div class="controls">
-                                                    <input value="{{$product->price_import}}" type="number" class="form-control" placeholder="Giá Nhập Về" name="txtNhap" required data-validation-required-message="Giá nhập kho không được để trống" maxlength="11" data-validation-maxlength-message="Giá nhập kho không được lớn hơn 999.999.999.999 (đ)" minlength="4" data-validation-minlength-message="Giá nhập kho không được nhỏ hơn 1.000 (đ)">
+                                                    <input value="{{$product->price_import}}" type="number" class="form-control" placeholder="{{__('general.priceNhap')}}" name="txtNhap" required data-validation-required-message="{{__('validation.required', ['attribute'=>__('general.price')])}}" maxlength="11" data-validation-maxlength-message="{{__('validation.max.string', ['attribute'=>__('general.price'), 'max'=>'999.999.999.999 (đ)'])}}" minlength="4" data-validation-minlength-message="{{__('validation.min.string', ['attribute'=>__('general.price'), 'min'=>'1.000 (đ)'])}}">
                                                 </div>
                                             </div>
                                         </div>
@@ -111,7 +114,7 @@
                                                 <h5>{{__('general.price')}}
                                                 </h5>
                                                 <div class="controls">
-                                                    <input value="{{$product->price}}" type="number" id="txtPrice" class="form-control" placeholder="{{__('placeholder.price')}}" name="txtPrice" required data-validation-required-message="Giá bán không được để trống" maxlength="11" data-validation-maxlength-message="Giá bán không được lớn hơn 999.999.999.999 (đ)" minlength="4" data-validation-minlength-message="Giá bán không được nhỏ hơn 1.000 (đ)"">
+                                                    <input value="{{$product->price}}" type="number" id="txtPrice" class="form-control" placeholder="{{__('placeholder.price')}}" name="txtPrice" required data-validation-required-message="Giá bán không được để trống" maxlength="11" data-validation-maxlength-message="Giá bán không được lớn hơn 999.999.999.999 (đ)" minlength="4" data-validation-minlength-message="Giá bán không được nhỏ hơn 1.000 (đ)">
                                                 </div>
                                             </div>
                                         </div>
@@ -120,7 +123,7 @@
                                                 <h5>{{__('general.salePrice')}}
                                                 </h5>
                                                 <div class="controls">
-                                                    <input value="{{$product->price_sale}}" type="number" id="txtSalePrice" class="form-control" placeholder="{{__('placeholder.salePrice')}}" name="txtSalePrice" maxlength="11" data-validation-maxlength-message="Giá khuyến mãi không được lớn hơn 999.999.999.999 (đ)" minlength="4" data-validation-minlength-message="Giá khuyến mãi không được nhỏ hơn 1.000 (đ)"">
+                                                    <input value="{{$product->price_sale}}" type="number" id="txtSalePrice" class="form-control" placeholder="{{__('placeholder.salePrice')}}" name="txtSalePrice" maxlength="11" data-validation-maxlength-message="{{__('validation.max.string', ['attribute'=>__('general.salePrice'), 'max'=>'999.999.999.999 (đ)'])}}" minlength="4" data-validation-minlength-message="{{__('validation.min.string', ['attribute'=>__('general.salePrice'), 'min'=>'1.000 (đ)'])}}">
                                                 </div>
                                             </div>
                                         </div>
@@ -128,7 +131,7 @@
                                             <div class="form-group">
                                                 <h5>{{__('general.qty')}}
                                                 </h5>
-                                                <input value="{{$product->qty}}" type="number" id="txtQty" class="form-control" placeholder="{{__('placeholder.qty')}}" name="txtQty" required required data-validation-required-message="Số lượng không được để trống">
+                                                <input value="{{$product->qty}}" type="number" id="txtQty" class="form-control" placeholder="{{__('placeholder.qty')}}" name="txtQty" required required data-validation-required-message="{{__('validation.required', ['attribute'=>__('general.qty')])}}">
                                             </div>
                                         </div>
                                         <div class="col-md-5">
@@ -150,8 +153,8 @@
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <h5> Giới Thiệu Tóm Tắt</h5>
-                                                <textarea  rows="5" class="form-control" name="description" placeholder="Giới Thiệu Tóm Tắt Cho Sản Phẩm">{{$product->description}}</textarea>
+                                                <h5> {{__('general.description')}}</h5>
+                                                <textarea  rows="5" class="form-control" name="description" placeholder="{{__('general.description')}}">{{$product->description}}</textarea>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
@@ -177,7 +180,7 @@
                                                                     <td>
                                                                         <div class="row">
                                                                             <div class="col-md-10 col-xs-10">
-                                                                                <input value="{{$dataImage['url_image']}}" id="image{{$i}}" type="text" class="form-control" placeholder="{{__("general.imageUrl")}}" name="image[]" required data-validation-required-message="Vui lòng chọn ảnh cho sản phẩm">
+                                                                                <input value="{{$dataImage['url_image']}}" id="image{{$i}}" type="text" class="form-control" placeholder="{{__('general.imageUrl')}}" name="image[]" required data-validation-required-message="Vui lòng chọn ảnh cho sản phẩm">
                                                                             </div>           
                                                                             <div class="col-md-2 col-xs-2">
                                                                                 <div class="heading-elements">
@@ -229,34 +232,33 @@
                                 <div class="col-md-7">
                                     <div class="form-group">
                                         <h5>
-                                            Title
+                                            {{__('general.seoTitle')}}
                                         </h5>
                                         <div class="controls">
-                                            <input value="{{$product->seo_title}}" type="text" class="form-control" placeholder="SEO Title" name="txtSeoTitle">
-                                            <i>Một tiêu đề tùy chỉnh xuất hiện trong thẻ tiêu đề cho trang này</i>
+                                            <input value="{{$product->seo_title}}" type="text" class="form-control" placeholder="{{__('general.seoTitle')}}" name="txtSeoTitle">
+                                            <i>{{__('general.seoTitleHelp')}}</i>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-7">
                                     <div class="form-group">
                                         <h5>
-                                            Description
+                                            {{__('general.seoDescription')}}
                                         </h5>
                                         <div class="controls">
-                                            <input value="{{$product->seo_description}}" type="text" class="form-control" placeholder="SEO Description" name="txtSeoDescription">
-                                            
-                                            <i>Mô tả META cho trang này. Điều này sẽ ghi đè bất kỳ mô tả tự phát</i>
+                                            <input value="{{$product->seo_description}}" type="text" class="form-control" placeholder="{{__('general.seoDescription')}}" name="txtSeoDescription">
+                                            <i>{{__('general.seoDescriptionHelp')}}</i>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-7">
                                     <div class="form-group">
                                         <h5>
-                                            Keywords (Comma separated)
+                                            {{__('general.seoKeywords')}}
                                         </h5>
                                         <div class="controls">
-                                            <input value="{{$product->seo_key_words}}" type="text" class="form-control" placeholder="SEO Keywords" name="txtSeoKeywords">
-                                            <i>Danh sách các từ khóa quan trọng nhất được phân tách bằng dấu phẩy cho trang này sẽ được viết dưới dạng từ khóa META</i>
+                                            <input value="{{$product->seo_key_words}}" type="text" class="form-control" placeholder="{{__('general.seoKeywords')}}" name="txtSeoKeywords">
+                                            <i>{{__('general.seoKeywordsHelp')}}</i>
                                         </div>
                                     </div>
                                 </div>
@@ -266,7 +268,7 @@
                                     <i class="ft-x"></i> {{__('general.cancel')}}
                                 </button>
                                 <button type="submit" class="btn btn-success">
-                                    <i class="la la-check-square-o"></i> {{__('general.saveChange')}}
+                                    <i class="la la-check-square-o"></i> {{__('general.saveChanges')}}
                                 </button>
                             </div>
                         </div>

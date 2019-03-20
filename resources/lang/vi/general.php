@@ -116,6 +116,19 @@
 		'editNews' => 'Chỉnh Sửa Tin Tức',
 		'listNews' => 'Danh Sách Tin Tức',
 		'views' => 'Lượt Xem',
+
+
+
+
+
+		'listNewsCate' => 'Danh Sách Danh Mục Tin Tức',
+		'addNewNewsCate' => 'Thêm Mới Danh Mục Tin Tức',
+		'editNewsCate' => 'Chỉnh Sửa Danh Mục Tin Tức',
+		'listProductCate' => 'Tất Cả Danh Mục Sản Phẩm',
+		'addNewProduct' => 'Thêm Mới Sản Phẩm',
+		'infoProduct' => 'Thông Tin Chi Tiết Của Sản Phẩm',
+		'priceNhap' => 'Giá Nhập Về',
+		'editProduct' => 'Chỉnh Sửa Sản Phẩm',
 	];
 ?>
 

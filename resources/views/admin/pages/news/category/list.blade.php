@@ -1,5 +1,5 @@
 @section('title')
-Danh Sách Danh Mục Tin Tức
+{{__('general.listNewsCate')}}
 @stop
 @extends('admin.general.master')
 @section('content') 
@@ -11,7 +11,7 @@ Danh Sách Danh Mục Tin Tức
             <div class="content-header-left col-md-6 col-12">
                 <div class="row breadcrumbs-top">
                     <div class="breadcrumb-wrapper col-12">
-                        <h4 class="card-title">Danh Sách Danh Mục Tin Tức</h4>
+                        <h4 class="card-title">{{__('general.listNewsCate')}}</h4>
                     </div>
                 </div>
             </div>
@@ -20,9 +20,9 @@ Danh Sách Danh Mục Tin Tức
                     <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{route('getIndexAdmin')}}">{{__('general.home')}}</a>
                             </li>
-                            <li class="breadcrumb-item"><a href="#">Tin Tức</a>
+                            <li class="breadcrumb-item"><a href="#">{{__('general.news')}}</a>
                             </li>
-                            <li class="breadcrumb-item active">Danh Sách Danh Mục Tin Tức
+                            <li class="breadcrumb-item active">{{__('general.listNewsCate')}}
                             </li>
                         </ol>
                 </div>
@@ -80,21 +80,21 @@ Danh Sách Danh Mục Tin Tức
                                         $(document).ready(function () {
                                             $('#deleteNewsCate-{{$value->id}}').on('click', function () {
                                                 swal({
-                                                    title: "Bạn có chắc chắn không?",
-                                                    text: "Thao tác xoá này sẽ không thể hoàn tác!",
+                                                    title: "{{__('swal.title.titleDelete')}}",
+                                                    text: "{{__('swal.text.textDelete')}}",
                                                     icon: "warning",
                                                     showCancelButton: true,
                                                     showLoaderOnConfirm: true,
                                                     buttons: {
                                                         cancel: {
-                                                            text: "Không, dữ nguyên dữ liệu!",
+                                                            text: "{{__('swal.button.cancel')}}",
                                                             value: null,
                                                             visible: true,
                                                             className: "btn-warning",
                                                             closeModal: false,
                                                         },
                                                         confirm: {
-                                                            text: "Đống ý, xoá ngay?",
+                                                            text: "{{__('swal.button.confirm')}}",
                                                             value: true,
                                                             visible: true,
                                                             className: "",
@@ -120,22 +120,22 @@ Danh Sách Danh Mục Tin Tức
                                                                 if ( responsive.status === 'success' ) {
                                                                     $('#cateRow-{{$value->id}}').remove();
                                                                     swal({
-                                                                        title: "Thành Công",
-                                                                        text: "Dữ Liệu Của Bạn Đã Được Xoá Thành Công!",
-                                                                        icon: "success",
-                                                                    });
+                                                                    title: "{{__('swal.title.success')}}",
+                                                                    text: "{{__('swal.text.successDelete')}}",
+                                                                    icon: "success",
+                                                                });
                                                                 }
                                                                 else if ( responsive.status === 'failed' ) {
                                                                     swal({
-                                                                        title: "Đã Xảy Ra Lỗi",
-                                                                        text: "Danh mục này đang chưa tin tức!",
+                                                                        title: "{{__('swal.title.error')}}",
+                                                                        text: "{{__('swal.text.errorDeleteNewsCate')}}",
                                                                         icon: "error",
                                                                     });
                                                                 }
                                                             }
                                                         })
                                                     } else {
-                                                        swal("Đã Huỷ", "Dữ liệu của bạn được dữ nguyên!", "error");
+                                                        swal("{{__('swal.title.cancel')}}", "{{__('swal.text.errorDelete')}}", "error");
                                                     }
                                                 });
                                             });

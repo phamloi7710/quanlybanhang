@@ -107,6 +107,17 @@
 		'seoTitleHelp' => 'A custom title appears in the title tag for this page',
 		'seoDescriptionHelp' => 'META description for this page. This will override any spontaneous description ',
 		'seoKeywordsHelp' => 'A list of the most important comma-separated keywords for this page will be written as META keyword',
+		'editNews' => 'Edit News',
+		'listNews' => 'List News',
+		'views' => 'Views',
+		'listNewsCate' => 'List News Category',
+		'addNewNewsCate' => 'Add New News Category',
+		'editNewsCate' => 'Edit News Category',
+		'listProductCate' => 'List Product Category',
+		'addNewProduct' => 'Add New Product',
+		'infoProduct' => 'Product Info',
+		'priceNhap' => 'Giá Nhập Về',
+		'editProduct' => 'Edit Product',
 	];
 ?>
 

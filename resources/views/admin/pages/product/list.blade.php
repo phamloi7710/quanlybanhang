@@ -1,3 +1,6 @@
+@section('title')
+{{__('title.listProduct')}}
+@stop
 @extends('admin.general.master')
 @section('content') 
 <div class="app-content content">
@@ -38,12 +41,12 @@
                         <table class="table table-bordered mb-0">
                             <thead>
                                 <tr>
-                                    <th>Tên Sản Phẩm</th>
-                                    <th>Ảnh Đại Diện</th>
-                                    <th>Danh Mục</th>
-                                    <th>Số Lượng</th>
-                                    <th>Giá</th>
-                                    <th>Trạng Thái</th>
+                                    <th>{{__('general.productName')}}</th>
+                                    <th>{{__('general.avatar')}}</th>
+                                    <th>{{__('general.category')}}</th>
+                                    <th>{{__('general.qty')}}</th>
+                                    <th>{{__('general.price')}}</th>
+                                    <th>{{__('general.status')}}</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -57,11 +60,17 @@
                                     </td>
                                     <td>{{$product->qty}}</td>
                                     <td class="font-small-3">
-                                        <p><span class="text-bold-700">Giá Nhập:</span> <span class="blue">{{number_format($product->price_import, 0,',','.')}} (đ)</span></p>
-                                        <p><span class="text-bold-700">Giá Bán:</span> <span class="blue">{{number_format($product->price, 0,',','.')}} (đ)</span></p>
-                                        <p><span class="text-bold-700">Giá Khuyến Mãi:</span> <span class="blue">{{number_format($product->price_sale, 0,',','.')}} (đ)</span></p>
+                                        <p><span class="text-bold-700">{{__('general.priceNhap')}}:</span> <span class="blue">{{number_format($product->price_import, 0,',','.')}} (đ)</span></p>
+                                        <p><span class="text-bold-700">{{__('general.price')}}:</span> <span class="blue">{{number_format($product->price, 0,',','.')}} (đ)</span></p>
+                                        <p><span class="text-bold-700">{{__('general.salePrice')}}:</span> <span class="blue">{{number_format($product->price_sale, 0,',','.')}} (đ)</span></p>
                                     </td>
-                                    <td>{{$product->status}}</td>
+                                    <td class="text-center">
+                                        @if($product->status == 'active')
+                                        <span class="badge badge-default badge-success">{{__('general.active')}}</span>
+                                        @else
+                                        <span class="badge badge-default badge-error">{{__('general.inActive')}}</span>
+                                        @endif
+                                    </td>
                                     <td>
                                         <span class="dropdown">
                                             <button id="btnSearchDrop2" type="button" data-toggle="dropdown" aria-haspopup="true"

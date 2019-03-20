@@ -1,5 +1,5 @@
 @section('title')
-Tất Cả Danh Mục Sản Phẩm
+{{__('general.listProductCate')}}
 @stop
 @extends('admin.general.master')
 @section('content') 
@@ -11,7 +11,7 @@ Tất Cả Danh Mục Sản Phẩm
             <div class="content-header-left col-md-6 col-12">
                 <div class="row breadcrumbs-top">
                     <div class="breadcrumb-wrapper col-12">
-                        <h4 class="card-title">{{__('general.categoryList')}}</h4>
+                        <h4 class="card-title">{{__('general.listProductCate')}}</h4>
                     </div>
                 </div>
             </div>
@@ -22,7 +22,7 @@ Tất Cả Danh Mục Sản Phẩm
                         </li>
                         <li class="breadcrumb-item"><a href="#">{{__('general.product')}}</a>
                         </li>
-                        <li class="breadcrumb-item active">{{__('general.allCategory')}}
+                        <li class="breadcrumb-item active">{{__('general.listProductCate')}}
                         </li>
                     </ol>
                 </div>

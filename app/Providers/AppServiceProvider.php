@@ -18,15 +18,17 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
-     	$getLocale = App::getLocale();
-        $flag = Language::where('code', $getLocale)->first();
+     	
         
 
 
         if(Schema::hasTable('languages')) {
+            $getLocale = App::getLocale();
+            // print_r($getLocale);exit();
+            
             $languages = Language::where('status', 'active')->orderBy('order')->get();
-            View::composer('admin.general.top', function ($view) use ($languages,$getLocale,$flag) {
-                $view->with(['languages'=>$languages,'getLocale'=>$getLocale,'flag'=>$flag]);
+            View::composer('admin.general.top', function ($view) use ($languages,$getLocale) {
+                $view->with(['languages'=>$languages,'getLocale'=>$getLocale]);
             });
         }
         if(Schema::hasTable('categories')) {

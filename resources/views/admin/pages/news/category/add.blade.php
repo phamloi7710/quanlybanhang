@@ -1,5 +1,5 @@
 @section('title')
-Thêm Mới Danh Mục Tin Tức
+{{__('general.addNewNewsCate')}}
 @stop
 @extends('admin.general.master')
 @section('content')
@@ -27,16 +27,16 @@ Thêm Mới Danh Mục Tin Tức
     <div class="content-wrapper">
         <div class="content-header row">
             <div class="content-header-left col-md-6 col-12 mb-2 breadcrumb-new">
-                <h3 class="content-header-title mb-0 d-inline-block">Thêm Mới Danh Mục Tin Tức</h3>
+                <h3 class="content-header-title mb-0 d-inline-block">{{__('general.addNewNewsCate')}}</h3>
             </div>
             <div class="content-header-right col-md-6 col-12">
                 <div class="dropdown float-md-right">
                     <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{route('getIndexAdmin')}}">{{__('general.home')}}</a>
                             </li>
-                            <li class="breadcrumb-item"><a href="#">Tin Tức</a>
+                            <li class="breadcrumb-item"><a href="#">{{__('general.news')}}</a>
                             </li>
-                            <li class="breadcrumb-item active">Thêm Mới Danh Mục Tin Tức
+                            <li class="breadcrumb-item active">{{__('general.addNewNewsCate')}}
                             </li>
                         </ol>
                 </div>
@@ -81,7 +81,7 @@ Thêm Mới Danh Mục Tin Tức
                                 <i class="ft-x"></i> {{__('general.cancel')}}
                               </button>
                             <button type="submit" class="btn btn-success">
-                              <i class="la la-check-square-o"></i> {{__('general.saveChange')}}
+                              <i class="la la-check-square-o"></i> {{__('general.saveChanges')}}
                             </button>
                           </div>
                         </form>
