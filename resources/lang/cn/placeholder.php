@@ -1,0 +1,11 @@
+<?php
+	return[
+		'productName'=>'输入产品名称',
+		'productCode'=>'输入产品代码',
+		'languageName'=>'输入语言名称',
+		'languageCode'=>'输入语言代码',
+		'price'=>'价格',
+		'salePrice'=>'促销价',
+		'qty'=>'数量',
+	]
+?>

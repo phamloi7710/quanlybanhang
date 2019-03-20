@@ -1,0 +1,153 @@
+<?php
+	return [
+		'logOut' => 'ログアウト',
+		'hello' => 'こんにちは',
+		'close' => 'Close',
+		'uploadImage' => '画像のアップロード',
+		'imageManagement' => '画像管理',
+		'productManagement' => '商品管理',
+		'save' => 'Save',
+		'product' => 'Product',
+		'productName' => '製品名',
+		'category' => 'Category',
+		'id' => 'ID',
+		'categoryName' => 'カテゴリ名',
+		'status' => 'Status',
+		'createdAt' => '作成日',
+		'updateAt' => '日付の編集',
+		'action' => 'Action',
+		'addNew' => '新規追加',
+		'saveChange' => '保存',
+		'cancel' => 'Cancel',
+		'addNewCate' => '新製品カタログの追加',
+		'active' => '表示',
+		'inActive' => '表示なし',
+		'編集' => '編集',
+		'delete' => '削除',
+		'categoryList' => '全ての商品カテゴリー',
+		'productCode' => '製品コード',
+		'category' => '商品カテゴリ',
+		'製造元' => '製造元',
+		'productImage' => '商品アバター',
+		'selectImage' => '写真の選択',
+		'deleteImage' => '画像の削除',
+		'systemManagement' => 'システム管理',
+		'言語' => '言語',
+		'home' => 'Home',
+		'管理' => '管理',
+		'languageName' => '言語名',
+		'image' => 'Image',
+		'flag' => '国旗',
+		'userAdd' => '追加のユーザー',
+		'addNewLanguage' => '新しい言語を追加',
+		'close' => 'Close',
+		'save' => 'Save',
+		'saveChanges' => '変更を保存',
+		'languageCode' => '言語コード',
+		'profile' => '個人用ページ',
+		'allCategory' => '全てのカテゴリ',
+		'imageManagement' => '画像管理',
+		'option' => 'オプション',
+		'editCate' => '編集の編集',
+		'price' => 'Price',
+		'salePrice' => 'プロモーション価格',
+		'contentProduct' => '商品詳細説明',
+		'imageProduct' => '商品画像',
+		'imageUrl' => '画像パス',
+		'addImage' => '画像を追加',
+		'deleteImage' => '写真の削除',
+		'chooseImage' => '選択',
+		'数量' => '数量',
+		'selectCategory' => 'カテゴリーの選択',
+		'bannerManager' => 'バナー管理',
+		'newsCategory' => 'ニュースカタログ',
+		'list' => 'List',
+		'news' => 'ニュース',
+		'bannerTop' => 'バナートップ',
+		'bannerIndex' => 'ホームバナー',
+		'newContact' => '新規連絡先',
+		'アカウント' => 'アカウント',
+		'systemManagement' => 'システム設定',
+		'basicInformation' => '基本情報',
+		'emailConfig' => 'Eメール設定',
+		'metaSeo' => 'メタSEO',
+		'emailTemplate' => 'メーリングインターフェース',
+		'IntroductionPage' => '紹介ページ',
+		'pageSettings' => 'ページ設定',
+		'addNewAccount' => '新しいアカウントを追加',
+		'アバター' => 'アバター',
+		'fullName' => 'ラストネーム＆ラストネーム',
+		'性別' => 'セックス',
+		'selectGender' => 'Select Gender',
+		'male' => '男性',
+		'famale' => '女性',
+		'other' => 'その他',
+		'emailAddress' => 'Eメールアドレス',
+		'phoneNumber' => '電話番号',
+		'email' => 'Email',
+		'username' => 'ユーザー名',
+		'password' => 'パスワード',
+		'rePassword' => 'パスワード再入力',
+		'isAdmin' => '管理者アクセス権の付与',
+		'許可' => '許可',
+		'doNotAllow' => '許可しない',
+		'contact' => 'Contact',
+		'allContact' => '全ての連絡先',
+		'コンタクト' => 'コンタクト',
+		'notContactedYet' => '接触していません',
+		'viewAndEdit' => '閲覧と編集',
+		'contactDetail' => '連絡先の詳細',
+		'addNewNews' => '新しいニュースを追加',
+		'title' => 'Title',
+		'selectCategory' => 'カテゴリーの選択',
+		'cateNews' => 'ニュースカテゴリ',
+		'avatarUrl' => 'アバター画像のパス',
+		'description' => '簡単な説明',
+		'statusHome' => 'ホームに表示されているステータス',
+		'表示' => '表示',
+		'notDisplayed' => '表示されていません',
+		'content' => 'Content',
+		'seoTitle' => 'SEOタイトル',
+		'seoDescription' => 'SEOの説明',
+		'seoKeywords' => 'SEOキーワード',
+		'seoTitleHelp' => 'このページのtitleタグにカスタムタイトルが表示されます',
+		'seoDescriptionHelp' => 'このページのメタの説明。これは自発的な記述を上書きします。',
+		'seoKeywordsHelp' => 'このページで最も重要なカンマ区切りキーワードのリストはMETAキーワードとして書き込まれます',
+		'editNews' => 'ニュースの編集',
+		'listNews' => 'ニュースリスト',
+		'views' => 'Views',
+
+
+
+
+
+		'listNewsCate' => 'ニュースカタログリスト',
+		'addNewNewsCate' => '新しいニュースカテゴリを追加',
+		'editNewsCate' => 'ニュースカテゴリの編集',
+		'listProductCate' => '全ての製品カテゴリ',
+		'addNewProduct' => '新製品の追加',
+		'infoProduct' => '商品の詳細',
+		'priceNhap' => 'エントリー価格',
+		'editProduct' => '商品の編集',
+	];
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

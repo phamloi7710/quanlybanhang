@@ -8,7 +8,7 @@
                             </div>
                             <div class="col-xs-6 col-xs-offset-3 col-sm-offset-0 col-sm-12 col-md-3 col-md-offset-0 col-lg-3 col-lg-offset-0 col-hg-3 logo">
                                 <a title="Libra Mart" href="/">
-                                <img class="img-responsive" src="{{url('')}}/assets/frontend/v1.0/images/icons/logo.png" alt="Logo Libra Mart">                    
+                                <img class="img-responsive" src="{{url('')}}@if($logo){{$logo}}@endif" alt="@if($siteName){{$siteName}}@endif">                    
                                 </a> 
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-hg-6 searchbar">

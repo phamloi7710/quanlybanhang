@@ -176,8 +176,12 @@
                             </li>
                             <?php $flag = App\Model\Language::where('code', App::getLocale())->first();?>
                             <li class="dropdown dropdown-language nav-item">
-                                <a class="dropdown-toggle nav-link" id="dropdown-flag" href="#" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false"><img style="position: relative; display: inline-block; width: 1.33333333em; line-height: 1em;" src="{{url('')}}{{$flag->image}}"><span class="selected-language"></span></a>
+                                <a class="dropdown-toggle nav-link" id="dropdown-flag" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    @if($flag)
+                                    <img style="position: relative; display: inline-block; width: 1.33333333em; line-height: 1em;" src="{{url('')}}{{$flag->image}}">
+                                    @endif
+                                    <span class="selected-language"></span>
+                                </a>
                                 <div class="dropdown-menu" aria-labelledby="dropdown-flag">
                                 @if(isset($languages))
                                 @foreach($languages as $lang)

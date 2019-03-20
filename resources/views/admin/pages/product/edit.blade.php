@@ -91,7 +91,7 @@
                                                     <span class="required red">(*)</span>
                                                 </h5>
                                                 <div class="controls">
-                                                    <select name="sltCate" class="form-control" required data-validation-required-message="Vui lòng chọn một danh mục">
+                                                    <select name="sltCate" class="form-control" required data-validation-required-message="{{__('validation.required', ['attribute'=>__('general.category')])}}">
                                                         <option value="">{{__('general.selectCategory')}}</option>
                                                         @foreach($categories as $cate)
                                                         <option value="{{$cate->id}}" @if($cate->id == $product->category->id) selected @endif>{{$cate->name}}</option>

@@ -18,14 +18,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
-     	
-        
-
-
         if(Schema::hasTable('languages')) {
             $getLocale = App::getLocale();
-            // print_r($getLocale);exit();
-            
             $languages = Language::where('status', 'active')->orderBy('order')->get();
             View::composer('admin.general.top', function ($view) use ($languages,$getLocale) {
                 $view->with(['languages'=>$languages,'getLocale'=>$getLocale]);
@@ -39,16 +33,39 @@ class AppServiceProvider extends ServiceProvider
         }
         if(Schema::hasTable('web_infomations')) {
             $webInfo = WebInfomation::where('key', 'web-info')->first();
-            $siteName = $webInfo->site_name;
-            $fanpage = $webInfo->fanpage;
-            $twitter = $webInfo->twitter;
-            $googlePlus = $webInfo->google_plus;
-            $youtubeChannel = $webInfo->youtube_channel;
-            $instagram = $webInfo->instagram;
-            $seoTitle = $webInfo->seo_title;
-            $seoDescription = $webInfo->seo_description;
-            $seoKeywords = $webInfo->seo_key_words;
-            View::composer('frontend.v1.general.header', function ($view) use ($siteName, $fanpage, $twitter, $googlePlus, $youtubeChannel, $instagram, $seoTitle, $seoDescription, $seoKeywords) {
+            if(!$webInfo){
+                $info = new WebInfomation();
+                $siteName = '';
+                $info->key = 'web-info';
+                $info->phone = 'a:0:{}';
+                $info->email = 'a:0:{}';
+                $info->address = 'a:0:{}';
+                $info->save();
+                $fanpage = '';
+                $twitter = '';
+                $googlePlus = '';
+                $youtubeChannel = '';
+                $instagram = '';
+                $seoTitle = '';
+                $seoDescription = '';
+                $seoKeywords = '';
+                $logo = '';
+                $favicon = '';
+            }else{
+                $siteName = $webInfo->site_name;
+                $fanpage = $webInfo->fanpage;
+                $twitter = $webInfo->twitter;
+                $googlePlus = $webInfo->google_plus;
+                $youtubeChannel = $webInfo->youtube_channel;
+                $instagram = $webInfo->instagram;
+                $seoTitle = $webInfo->seo_title;
+                $seoDescription = $webInfo->seo_description;
+                $seoKeywords = $webInfo->seo_key_words;
+                $logo = $webInfo->logo_url;
+                $favicon = $webInfo->favicon_url;
+            }
+            
+            View::composer('frontend.v1.general.header', function ($view) use ($siteName, $fanpage, $twitter, $googlePlus, $youtubeChannel, $instagram, $seoTitle, $seoDescription, $seoKeywords, $logo, $favicon) {
                 $view->with([
                     'siteName'=>$siteName,
                     'fanpage'=>$fanpage,
@@ -58,7 +75,15 @@ class AppServiceProvider extends ServiceProvider
                     'instagram'=>$instagram,
                     'seoTitle'=>$seoTitle,
                     'seoDescription'=>$seoDescription,
-                    'seoKeywords'=>$seoKeywords
+                    'seoKeywords'=>$seoKeywords,
+                    'logo'=>$logo,
+                    'favicon'=>$favicon,
+                ]);
+            });
+            View::composer('frontend.v1.general.top', function ($view) use ($siteName, $logo) {
+                $view->with([
+                    'siteName'=>$siteName,
+                    'logo'=>$logo,
                 ]);
             });
             View::composer('frontend.v1.index', function ($view) use ($siteName, $fanpage, $twitter, $googlePlus, $youtubeChannel, $instagram, $seoTitle, $seoDescription, $seoKeywords) {

@@ -1,0 +1,153 @@
+<?php
+	return [
+		'logOut'=>'退出',
+		'hello'=>'你好',
+		'close'=>'关闭',
+		'uploadImage'=>'上传图片',
+		'imageManagement'=>'图像管理',
+		'productManagement'=>'商品管理',
+		'save'=>'保存',
+		'product'=>'产品',
+		'productName'=>'产品名称',
+		'category'=>'类别',
+		'id'=>'ID',
+		'categoryName'=>'类别名称',
+		'status'=>'状态',
+		'createdAt'=>'创建日期',
+		'updateAt'=>'编辑日期',
+		'action'=>'动作',
+		'addNew'=>'添加新',
+		'saveChange'=>'保存',
+		'cancel'=>'取消',
+		'addNewCate'=>'添加新产品目录',
+		'active'=>'显示',
+		'inActive'=>'无显示',
+		'edit'=>'编辑',
+		'delete'=>'删除',
+		'categoryList'=>'所有产品类别',
+		'productCode'=>'产品代码',
+		'category'=>'产品类别',
+		'manufacturer'=>'制造商',
+		'productImage'=>'产品头像',
+		'selectImage'=>'选择照片',
+		'deleteImage'=>'删除图片',
+		'systemManagement'=>'系统管理',
+		'language'=>'语言',
+		'home'=>'家',
+		'management'=>'管理',
+		'languageName'=>'语言名称',
+		'image'=>'图片',
+		'flag'=>'国旗',
+		'userAdd'=>'额外用户',
+		'addNewLanguage'=>'添加新语言',
+		'close'=>'关闭',
+		'save'=>'保存',
+		'saveChanges'=>'保存更改',
+		'languageCode'=>'语言代码',
+		'profile'=>'个人页面',
+		'allCategory'=>'所有类别',
+		'imageManagement'=>'图像管理',
+		'option'=>'选项',
+		'editCate'=>'编辑修改',
+		'price'=>'价格',
+		'salePrice'=>'促销价',
+		'contentProduct'=>'产品详情说明',
+		'imageProduct'=>'产品图片',
+		'imageUrl'=>'图片路径',
+		'addImage'=>'添加图片',
+		'deleteImage'=>'删除照片',
+		'chooseImage'=>'选择',
+		'qty'=>'数量',
+		'selectCategory'=>'选择类别',
+		'bannerManager'=>'横幅广告管理',
+		'newsCategory'=>'新闻目录',
+		'list'=>'列表',
+		'news'=>'新闻',
+		'bannerTop'=>'横幅顶部',
+		'bannerIndex'=>'主页横幅',
+		'newContact'=>'新联系',
+		'account'=>'帐户',
+		'systemManagement'=>'系统设置',
+		'basicInformation'=>'基本信息',
+		'emailConfig'=>'电子邮件配置',
+		'metaSeo'=>'Meta SEO',
+		'emailTemplate'=>'邮件界面',
+		'introductionPage'=>'简介页',
+		'pageSettings'=>'页面设置',
+		'addNewAccount'=>'添加新帐户',
+		'avatar'=>'阿凡达',
+		'fullName'=>'姓氏和姓氏',
+		'gender'=>'性',
+		'selectGender'=>'选择性别',
+		'男'=>'男',
+		'famale'=>'女',
+		'other'=>'其他',
+		'emailAddress'=>'电子邮件地址',
+		'phoneNumber'=>'电话号码',
+		'email'=>'电子邮件',
+		'username'=>'用户名',
+		'password'=>'密码',
+		'rePassword'=>'重新输入密码',
+		'isAdmin'=>'授予管理员访问权限',
+		'allow'=>'允许',
+		'doNotAllow'=>'不允许',
+		'contact'=>'联系',
+		'allContact'=>'所有联系人',
+		'contact'=>'联系',
+		'notContactedYet'=>'未联系',
+		'viewAndEdit'=>'查看和编辑',
+		'contactDetail'=>'联系方式',
+		'addNewNews'=>'添加新消息',
+		'title'=>'标题',
+		'selectCategory'=>'选择类别',
+		'cateNews'=>'新闻类别',
+		'avatarUrl'=>'头像图片路径',
+		'description'=>'简短描述',
+		'statusHome'=>'在家中显示的状态',
+		'displayed'=>'显示',
+		'notDisplayed'=>'未显示',
+		'content'=>'内容',
+		'seoTitle'=>'SEO Title',
+		'seoDescription'=>'搜索引擎优化描述',
+		'seoKeywords'=>'SEO关键字',
+		'seoTitleHelp'=>'自定义标题出现在此页面的标题标签中',
+		'seoDescriptionHelp'=>'此页面的META说明。这将覆盖任何自发描述',
+		'seoKeywordsHelp'=>'此页面最重要的逗号分隔关键字列表将被写为META关键字',
+		'editNews'=>'编辑新闻',
+		'listNews'=>'新闻列表',
+		'views'=>'观看',
+
+
+
+
+
+		'listNewsCate'=>'新闻目录列表',
+		'addNewNewsCate'=>'添加新的新闻类别',
+		'editNewsCate'=>'编辑新闻类别',
+		'listProductCate'=>'所有产品类别',
+		'addNewProduct'=>'添加新产品',
+		'infoProduct'=>'产品详情',
+		'priceNhap'=>'入场价',
+		'editProduct'=>'编辑产品',
+	];
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

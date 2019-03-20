@@ -2,7 +2,7 @@
 <html lang="vi">
     <head>
         <!-- ================= Favicon ================== -->
-        <link rel="icon" href="{{url('')}}/assets/frontend/v1.0/images/icons/favicon.png" type="image/x-icon" />
+        <link rel="icon" href="{{url('')}}@if($favicon){{$favicon}}@endif" type="image/x-icon" />
         <meta http-equiv="content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <meta name="format-detection" content="telephone=no">

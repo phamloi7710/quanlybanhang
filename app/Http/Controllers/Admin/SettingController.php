@@ -68,6 +68,8 @@ class SettingController extends Controller
 	        $info->seo_title = $request->txtSeoTitle;
 	        $info->seo_description = $request->txtSeoDescription;
 	        $info->seo_key_words = $request->txtSeoKeywords;
+	        $info->logo_url = $request->logoUrl;
+	        $info->favicon_url = $request->faviconUrl;
 	        $info->save();
 	        $notification = array(
 	            'message' => 'Cập Nhật Thông Tin Website Thành Công!', 
@@ -123,6 +125,8 @@ class SettingController extends Controller
 	        $info->seo_title = $request->txtSeoTitle;
 	        $info->seo_description = $request->txtSeoDescription;
 	        $info->seo_key_words = $request->txtSeoKeywords;
+	        $info->logo_url = $request->logoUrl;
+	        $info->favicon_url = $request->faviconUrl;
 	        $info->save();
 	        $notification = array(
 	            'message' => 'Cập Nhật Thông Tin Website Thành Công!', 
