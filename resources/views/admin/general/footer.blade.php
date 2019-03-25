@@ -11,5 +11,5 @@
         @yield('script')
     </body>
 </html>
-<!-- <script src="{{url('')}}/assets/admin/app-assets/js/core/libraries/jquery.min.js" type="text/javascript"></script>
-<script src="{{url('')}}/assets/admin/app-assets/js/core/libraries/bootstrap.min.js" type="text/javascript"></script> -->
+<!-- <script src="{{url('')}}/assets/admin/app-assets/js/core/libraries/jquery.min.js" type="text/javascript"></script> -->
+<!-- <script src="{{url('')}}/assets/admin/app-assets/js/core/libraries/bootstrap.min.js" type="text/javascript"></script> -->

@@ -13,6 +13,8 @@
                     </li>
                     <li class="@if(getUrl() == route('getListProductsAdmin')) active @endif"><a class="menu-item" href="{{route('getListProductsAdmin')}}">{{__('general.product')}}</a>
                     </li>
+                    <li class="@if(getUrl() == route('getHotDealAdmin')) active @endif"><a class="menu-item" href="{{route('getHotDealAdmin')}}">{{__('general.hotDeal')}}</a>
+                    </li>
                 </ul>
             </li>
             <li class=" nav-item">

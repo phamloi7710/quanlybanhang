@@ -27,6 +27,7 @@
         <link href="{{url('')}}/assets/frontend/v1.0/css/responsive.scss.css" rel="stylesheet" type="text/css" />
         <link href="{{url('')}}/assets/frontend/v1.0/css/stylesheet.scss.css" rel="stylesheet" type="text/css" />
         <link href="{{url('')}}/assets/frontend/v1.0/jquery/jquery.mmenu.all.css" rel="stylesheet" type="text/css" />
+        <link href="{{url('')}}/assets/frontend/v1.0/css/custom.css" rel="stylesheet" type="text/css">
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122223900-1"></script>
         <script src="{{url('')}}/assets/frontend/v1.0/jquery/jquery-2.2.3.min.js" type="text/javascript"></script>
     </head>

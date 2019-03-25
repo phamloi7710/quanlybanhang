@@ -7,13 +7,14 @@ use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use App\Model\Language;
+use Spatie\Activitylog\Models\Activity;
 class LanguageController extends Controller
 {
 
     public function getList()
     {
-    	$languages = Language::all();
-    	return view('admin.pages.language.list', ['languages'=>$languages]);
+    	$languages = Language::where('id', '>', '0')->get();
+    	return view('admin.pages.language.list', compact('languages'));
     }
     public function postAdd(Request $request)
     {
@@ -24,6 +25,10 @@ class LanguageController extends Controller
     	$language->status = $request->status;
     	$language->user_id = Auth::user()->id;
     	$language->save();
+        activity()->causedBy($userId)->performedOn($language)->log('Thêm Mới Ngôn Ngữ');
+        $lastActivity = Activity::all()->last();
+        $lastActivity->subject;
+        $lastActivity->causer;
     	$notification = array(
             'message' => __('notify.success.addNew', ['attribute'=>__('general.language')]), 
             'alert-type' => 'success',
@@ -37,13 +42,27 @@ class LanguageController extends Controller
     	$language->code = $request->txtLanguageCode;
     	$language->image = $request->image;
     	$language->status = $request->status;
-    	$language->user_id = Auth::user()->id;
+        $userId = Auth::user()->id;
+    	$language->user_id = $userId;
     	$language->save();
+        activity()->causedBy($userId)->performedOn($language)->log('Chỉnh Sửa Ngôn Ngữ');
+        $lastActivity = Activity::all()->last();
+        $lastActivity->subject;
+        $lastActivity->causer;
     	$notification = array(
             'message' => __('notify.success.update', ['attribute'=>__('general.language')]), 
             'alert-type' => 'success',
         );
         return redirect()->back()->with($notification);
+    }
+    public function deleteLanguage($id)
+    {
+        // Language::destroy($id);
+        $language = Language::find($id);
+        if($language->delete()) 
+        {
+            return response(['msg' => 'Xóa thành công!', 'status' => 'success']);
+        }
     }
     public function index()
     {

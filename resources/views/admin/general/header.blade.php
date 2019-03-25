@@ -13,6 +13,7 @@
       
         <link rel="stylesheet" type="text/css" href="{{url('')}}/assets/admin/style.css">
         @yield('link')
+        <script src="https://vuejs.org/js/vue.js" type="text/javascript"></script>
     </head>
     <body class="vertical-layout vertical-menu-modern 2-columns   menu-expanded fixed-navbar"
         data-open="click" data-menu="vertical-menu-modern" data-col="2-columns">

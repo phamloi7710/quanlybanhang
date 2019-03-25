@@ -13,6 +13,19 @@ Route::get('admin/login.html', 'Admin\AuthenticationController@getLogin')->name(
 Route::post('admin/login.html', 'Admin\AuthenticationController@postLogin')->name('postLoginAdmin');
 Route::get('admin/logout','Admin\AuthenticationController@getLogout')->name('getLogoutAdmin');
 Route::group(['prefix'=>'admin', 'middleware'=>'checkRoleAdmin'], function(){
+
+
+
+
+	Route::resource('activitylogs', 'Admin\ActivityLogsController')->only([
+	    'index', 'show', 'destroy'
+	]);
+	Route::get('generator', ['uses' => '\Appzcoder\LaravelAdmin\Controllers\ProcessController@getGenerator']);
+	Route::post('generator', ['uses' => '\Appzcoder\LaravelAdmin\Controllers\ProcessController@postGenerator']);
+
+
+
+
 	Route::get('uploads', '\UniSharp\LaravelFilemanager\Controllers\LfmController@show');
     Route::post('uploads', '\UniSharp\LaravelFilemanager\Controllers\UploadController@upload');
     Route::get('image-management.html', 'Admin\IndexController@getFileManagement')->name('getFileManagement');
@@ -31,6 +44,7 @@ Route::group(['prefix'=>'admin', 'middleware'=>'checkRoleAdmin'], function(){
 		Route::get('list', 'Admin\LanguageController@getList')->name('getListLanguages');
 		Route::post('add-new.html', 'Admin\LanguageController@postAdd')->name('postAddLanguage');
 		Route::post('edit/{id}.html', 'Admin\LanguageController@postEdit')->name('postEditLanguage');
+		Route::get('delete/{id}', 'Admin\LanguageController@deleteLanguage')->name('deleteLanguage');
 	});
 	Route::group(['prefix'=>'product'], function(){
 		Route::get('list.html', 'Admin\ProductController@getList')->name('getListProductsAdmin');
@@ -38,6 +52,10 @@ Route::group(['prefix'=>'admin', 'middleware'=>'checkRoleAdmin'], function(){
 		Route::post('add-new.html', 'Admin\ProductController@postAdd')->name('postAddProductAdmin');
 		Route::get('edit/{id}.html', 'Admin\ProductController@getEdit')->name('getEditProductAdmin');
 		Route::post('edit/{id}.html', 'Admin\ProductController@postEdit')->name('postEditProductAdmin');
+		Route::group(['prefix'=>'hot-deal'], function(){
+			Route::get('list.html', 'Admin\ProductController@getHotDeal')->name('getHotDealAdmin');
+			Route::post('list.html', 'Admin\ProductController@postHotDeal')->name('postHotDealAdmin');
+		});
 	});
 	Route::group(['prefix'=>'page'], function(){
 		Route::get('introduce.html', 'Admin\AdminController@getIntroduce')->name('getIntroduceAdmin');
@@ -61,8 +79,8 @@ Route::group(['prefix'=>'admin', 'middleware'=>'checkRoleAdmin'], function(){
 		Route::get('list.html', 'Admin\AccountController@getList')->name('getListUsersAdmin');
 		Route::get('add-new.html', 'Admin\AccountController@getAdd')->name('getAddUserAdmin');
 		Route::post('add-new.html', 'Admin\AccountController@postAdd')->name('postAddUserAdmin');
-		Route::get('edit/{id}/{slug}.html', 'Admin\AccountController@getEdit')->name('getEditUserAdmin');
-		Route::post('edit/{id}/{slug}.html', 'Admin\AccountController@postEdit')->name('postEditUserAdmin');
+		Route::get('edit/{id}', 'Admin\AccountController@getEdit')->name('getEditUserAdmin');
+		Route::post('edit/{id}', 'Admin\AccountController@postEdit')->name('postEditUserAdmin');
 		Route::get('delete/{id}.html', 'Admin\AccountController@getDelete')->name('getDeleteUserAdmin');
 		Route::get('change-password/{id}/{slug}.html', 'Admin\AccountController@getChangePassword')->name('getChangePasswordUserAdmin');
 		Route::post('change-password/{id}/{slug}.html', 'Admin\AccountController@postChangePassword')->name('postChangePasswordUserAdmin');
@@ -120,3 +138,7 @@ Route::group(['prefix'=>'tin-tuc'], function(){
 
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

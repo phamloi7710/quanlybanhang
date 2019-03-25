@@ -3,6 +3,8 @@
 @stop
 @extends('admin.general.master')
 @section('content')
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <div class="app-content content">
     <div class="content-wrapper">
         <div class="content-header row">
@@ -55,7 +57,7 @@
 								        </thead>
 								        <tbody>
 								        	@foreach($languages as $lang)
-								            <tr>
+								            <tr id="langRow_{{$lang->id}}">
 								                <td>{{$lang->name}}</td>
 								                <td class="text-center">{{$lang->code}}</td>
 								                <td class="text-center">
@@ -91,11 +93,76 @@
 		                                              aria-expanded="false" class="btn btn-info btn-sm dropdown-toggle">{{__('general.option')}}</button>
 		                                                <span aria-labelledby="btnSearchDrop2" class="dropdown-menu mt-1 dropdown-menu-right">
 		                                                    <button type="button" data-toggle="modal" data-target="#language_{{$lang->id}}" class="dropdown-item blue"><i class="ft-edit-2"></i> {{__('general.edit')}}</button>
-		                                                    <button type="button" class="dropdown-item red"><i class="ft-trash"></i> {{__('general.delete')}}</button>
+		                                                    <button id="lang_{{$lang->id}}" type="button" class="dropdown-item red"><i class="ft-trash"></i> {{__('general.delete')}}</button>
 		                                                </span>
 		                                            </span>
 		                                        </td>
 								            </tr>
+								            <script>
+                                        $(document).ready(function () {
+                                            $('#lang_{{$lang->id}}').on('click', function () {
+                                                swal({
+                                                    title: "Bạn có chắc chắn không?",
+                                                    text: "Thao tác xoá này sẽ không thể hoàn tác!",
+                                                    icon: "warning",
+                                                    showCancelButton: true,
+                                                    showLoaderOnConfirm: true,
+                                                    buttons: {
+                                                        cancel: {
+                                                            text: "Không, dữ nguyên dữ liệu!",
+                                                            value: null,
+                                                            visible: true,
+                                                            className: "btn-warning",
+                                                            closeModal: false,
+                                                        },
+                                                        confirm: {
+                                                            text: "Đống ý, xoá ngay?",
+                                                            value: true,
+                                                            visible: true,
+                                                            className: "",
+                                                            closeModal: false
+                                                        }
+                                                    }
+                                                }).then(isConfirm => {
+                                                    if (isConfirm) {
+                                                        var id = {{$lang->id}};
+                                                        $.ajaxSetup({
+                                                            headers: {
+                                                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                                            }
+                                                        });
+                                                        $.ajax({
+                                                            url: "/admin/language/delete/"+id+"",
+                                                            method: 'get',
+                                                            type: 'delete',
+                                                            data: {
+                                                                "id": id,
+                                                            },
+                                                            success: function (responsive) {
+                                                                if ( responsive.status === 'success' ) {
+                                                                    $('#langRow_{{$lang->id}}').remove();
+                                                                    swal({
+                                                                        title: "Thành Công",
+                                                                        text: "Dữ Liệu Của Bạn Đã Được Xoá Thành Công!",
+                                                                        icon: "success",
+                                                                    });
+                                                                }
+                                                                else if ( responsive.status === 'failed' ) {
+                                                                    swal({
+                                                                        title: "Đã Xảy Ra Lỗi",
+                                                                        text: "Danh mục này đang chưa tin tức!",
+                                                                        icon: "error",
+                                                                    });
+                                                                }
+                                                            }
+                                                        })
+                                                    } else {
+                                                        swal("Đã Huỷ", "Dữ liệu của bạn được dữ nguyên!", "error");
+                                                    }
+                                                });
+                                            });
+                                        });
+                                        </script>
 								            @endforeach
 								        </tbody>
 								        <tfoot>

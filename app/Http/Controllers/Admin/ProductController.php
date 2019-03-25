@@ -180,4 +180,14 @@ class ProductController extends Controller
         );
         return redirect()->route('getListProductsAdmin')->with($notifySuccess);
     }
+    public function getHotDeal()
+    {
+        $products = Product::where('status', 'active')->get();
+        return view('admin.pages.product.hot-deal.list', ['products'=>$products]);
+    }
+    public function postHotDeal(Request $request)
+    {
+        print_r(strtotime($request->startDate));
+        print_r(strtotime($request->endDate));
+    }
 }

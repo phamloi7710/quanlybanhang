@@ -139,11 +139,16 @@
 		'logoAndShortcutIcon' => 'Logo & Favicon',
 		'favicon' => 'Favicon',
 		'logo' => 'Logo',
-		'systemSetting' => 'Cài',
-		'systemSetting' => 'Cài',
-		'systemSetting' => 'Cài',
-		'systemSetting' => 'Cài',
-		'systemSetting' => 'Cài',
+
+
+
+
+
+		'hotDeal' => 'Hot Deal',
+		'startDate' => 'Ngày Bắt Đầu',
+		'endDate' => 'Ngày Kết Thúc',
+		'priceHotDeal' => 'Giá Hot Deal',
+		'startDateEndDate' => 'Thời Gian Khuyến Mãi',
 		'systemSetting' => 'Cài',
 		'systemSetting' => 'Cài',
 		'systemSetting' => 'Cài',

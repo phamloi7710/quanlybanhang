@@ -93,6 +93,7 @@
                                 <div class="product-box">
                                     <div class="product-thumbnail">
                                         <div class="tag-item tag-sale sale-flash">-9%</div>
+                                        
                                         <a href="/internet-tivi-sony-40-inch-kdl" title="Internet Tivi Sony 40 inch KDL">
                                         <img class="img-responsive" src="{{url('')}}/assets/frontend/v1.0/images/icons/down.svg" data-lazyload="{{url('')}}/assets/frontend/v1.0/images/products/a29b6e93b0b479041f92d0ecd784f2.jpg?v=1530847043140" alt="Internet Tivi Sony 40 inch KDL">
                                         </a>
@@ -108,6 +109,28 @@
                                     <div class="product-info">
                                         <div class="fw product-review">
                                             <div class="bizweb-product-reviews-badge" data-id="12107375"></div>
+                                            <div class="countdown" id="js-countdown">
+                                        <div class="countdown__item">
+                                            <div class="countdown__timer js-countdown-days" aria-labelledby="day-countdown">
+                                            </div>
+                                            <div class="countdown__label" id="day-countdown">Ngày</div>
+                                        </div>
+                                        <div class="countdown__item">
+                                            <div class="countdown__timer js-countdown-hours" aria-labelledby="hour-countdown">
+                                            </div>
+                                            <div class="countdown__label" id="hour-countdown">Giờ</div>
+                                        </div>
+                                        <div class="countdown__item">
+                                            <div class="countdown__timer js-countdown-minutes" aria-labelledby="minute-countdown">
+                                            </div>
+                                            <div class="countdown__label" id="minute-countdown">Phút</div>
+                                        </div>
+                                        <div class="countdown__item">
+                                            <div class="countdown__timer js-countdown-seconds" aria-labelledby="second-countdown">
+                                            </div>
+                                            <div class="countdown__label" id="second-countdown">Giây</div>
+                                        </div>
+                                    </div>
                                         </div>
                                         <h3 class="product-name">
                                             <a href="/internet-tivi-sony-40-inch-kdl" title="Internet Tivi Sony 40 inch KDL">
@@ -116,430 +139,10 @@
                                         </h3>
                                         <div class="price-box price-loop-style res-item">
                                             <span class="special-price">
-                                            <span class="price">8.900.000₫</span>
+                                                <span class="price">8.900.000₫</span>
                                             </span>
                                             <span class="old-price">
-                                            <span class="price">
-                                            9.790.000₫
-                                            </span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="product-box">
-                                    <div class="product-thumbnail">
-                                        <div class="tag-item tag-sale sale-flash">-11%</div>
-                                        <a href="/android-tivi-sony-49-inch-4k" title="Android Tivi Sony 49 inch 4K">
-                                        <img class="img-responsive" src="{{url('')}}/assets/frontend/v1.0/images/icons/down.svg" data-lazyload="{{url('')}}/assets/frontend/v1.0/images/products/f3be4635023407ec3031760273170f.jpg?v=1530847039123" alt="Android Tivi Sony 49 inch 4K">
-                                        </a>
-                                        <div class="product-action hidden-xs">
-                                            <form action="/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-12107368" enctype="multipart/form-data">
-                                                <input type="hidden" name="variantId" value="19426506" />
-                                                <button class="btn-buy btn-cart btn button-hover-3 left-to add_to_cart" title="Mua ngay">
-                                                <span><i class="fa fa-shopping-bag" aria-hidden="true"></i></span>
-                                                </button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div class="product-info">
-                                        <div class="fw product-review">
-                                            <div class="bizweb-product-reviews-badge" data-id="12107368"></div>
-                                        </div>
-                                        <h3 class="product-name">
-                                            <a href="/android-tivi-sony-49-inch-4k" title="Android Tivi Sony 49 inch 4K">
-                                            Android Tivi Sony 49 inch 4K
-                                            </a>
-                                        </h3>
-                                        <div class="price-box price-loop-style res-item">
-                                            <span class="special-price">
-                                            <span class="price">8.000.000₫</span>
-                                            </span>
-                                            <span class="old-price">
-                                            <span class="price">
-                                            9.000.000₫
-                                            </span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="product-box">
-                                    <div class="product-thumbnail">
-                                        <div class="tag-item tag-sale sale-flash">-24%</div>
-                                        <a href="/smart-tivi-toshiba-43-inch-4k" title="Smart Tivi Toshiba 43 inch 4K">
-                                        <img class="img-responsive" src="{{url('')}}/assets/frontend/v1.0/images/icons/down.svg" data-lazyload="{{url('')}}/assets/frontend/v1.0/images/products/4121c4d0a678e4ff32ad91c8862b20.jpg?v=1530847048630" alt="Smart Tivi Toshiba 43 inch 4K">
-                                        </a>
-                                        <div class="product-action hidden-xs">
-                                            <form action="/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-12107380" enctype="multipart/form-data">
-                                                <input type="hidden" name="variantId" value="19426521" />
-                                                <button class="btn-buy btn-cart btn button-hover-3 left-to add_to_cart" title="Mua ngay">
-                                                <span><i class="fa fa-shopping-bag" aria-hidden="true"></i></span>
-                                                </button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div class="product-info">
-                                        <div class="fw product-review">
-                                            <div class="bizweb-product-reviews-badge" data-id="12107380"></div>
-                                        </div>
-                                        <h3 class="product-name">
-                                            <a href="/smart-tivi-toshiba-43-inch-4k" title="Smart Tivi Toshiba 43 inch 4K">
-                                            Smart Tivi Toshiba 43 inch 4K
-                                            </a>
-                                        </h3>
-                                        <div class="price-box price-loop-style res-item">
-                                            <span class="special-price">
-                                            <span class="price">7.290.000₫</span>
-                                            </span>
-                                            <span class="old-price">
-                                            <span class="price">
-                                            9.590.000₫
-                                            </span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="product-box">
-                                    <div class="product-thumbnail">
-                                        <div class="tag-item tag-sale sale-flash">-22%</div>
-                                        <a href="/man-hinh-lg-24mp88hv-s-24inch-fullhd" title="Màn hình LG 24MP88HV-S 24inch FullHD">
-                                        <img class="img-responsive" src="{{url('')}}/assets/frontend/v1.0/images/icons/down.svg" data-lazyload="{{url('')}}/assets/frontend/v1.0/images/products/f5f3ac20e04def435321cd85e4e72a.jpg?v=1530847055483" alt="Màn hình LG 24MP88HV-S 24inch FullHD">
-                                        </a>
-                                        <div class="product-action hidden-xs">
-                                            <form action="/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-12107387" enctype="multipart/form-data">
-                                                <input type="hidden" name="variantId" value="19426528" />
-                                                <button class="btn-buy btn-cart btn button-hover-3 left-to add_to_cart" title="Mua ngay">
-                                                <span><i class="fa fa-shopping-bag" aria-hidden="true"></i></span>
-                                                </button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div class="product-info">
-                                        <div class="fw product-review">
-                                            <div class="bizweb-product-reviews-badge" data-id="12107387"></div>
-                                        </div>
-                                        <h3 class="product-name">
-                                            <a href="/man-hinh-lg-24mp88hv-s-24inch-fullhd" title="Màn hình LG 24MP88HV-S 24inch FullHD">
-                                            Màn hình LG 24MP88HV-S 24inch FullHD
-                                            </a>
-                                        </h3>
-                                        <div class="price-box price-loop-style res-item">
-                                            <span class="special-price">
-                                            <span class="price">4.690.000₫</span>
-                                            </span>
-                                            <span class="old-price">
-                                            <span class="price">
-                                            5.990.000₫
-                                            </span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="product-box">
-                                    <div class="product-thumbnail">
-                                        <div class="tag-item tag-sale sale-flash">-14%</div>
-                                        <a href="/tivi-led-panasonic-32-inch" title="Tivi LED Panasonic 32 inch">
-                                        <img class="img-responsive" src="{{url('')}}/assets/frontend/v1.0/images/icons/down.svg" data-lazyload="{{url('')}}/assets/frontend/v1.0/images/products/7fb7c7533adc6066d00b43b38abd4f.jpg?v=1530847047583" alt="Tivi LED Panasonic 32 inch">
-                                        </a>
-                                        <div class="product-action hidden-xs">
-                                            <form action="/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-12107379" enctype="multipart/form-data">
-                                                <input type="hidden" name="variantId" value="19426520" />
-                                                <button class="btn-buy btn-cart btn button-hover-3 left-to add_to_cart" title="Mua ngay">
-                                                <span><i class="fa fa-shopping-bag" aria-hidden="true"></i></span>
-                                                </button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div class="product-info">
-                                        <div class="fw product-review">
-                                            <div class="bizweb-product-reviews-badge" data-id="12107379"></div>
-                                        </div>
-                                        <h3 class="product-name">
-                                            <a href="/tivi-led-panasonic-32-inch" title="Tivi LED Panasonic 32 inch">
-                                            Tivi LED Panasonic 32 inch
-                                            </a>
-                                        </h3>
-                                        <div class="price-box price-loop-style res-item">
-                                            <span class="special-price">
-                                            <span class="price">4.300.000₫</span>
-                                            </span>
-                                            <span class="old-price">
-                                            <span class="price">
-                                            4.990.000₫
-                                            </span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="product-box">
-                                    <div class="product-thumbnail">
-                                        <div class="tag-item tag-sale sale-flash">-23%</div>
-                                        <a href="/man-hinh-benq-gw2270-22inch-fullhd" title="Màn hình BenQ GW2270 22inch FullHD">
-                                        <img class="img-responsive" src="{{url('')}}/assets/frontend/v1.0/images/icons/down.svg" data-lazyload="{{url('')}}/assets/frontend/v1.0/images/products/gw22701u579d20161011t162311244.jpg?v=1530847059283" alt="Màn hình BenQ GW2270 22inch FullHD">
-                                        </a>
-                                        <div class="product-action hidden-xs">
-                                            <form action="/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-12107391" enctype="multipart/form-data">
-                                                <input type="hidden" name="variantId" value="19426532" />
-                                                <button class="btn-buy btn-cart btn button-hover-3 left-to add_to_cart" title="Mua ngay">
-                                                <span><i class="fa fa-shopping-bag" aria-hidden="true"></i></span>
-                                                </button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div class="product-info">
-                                        <div class="fw product-review">
-                                            <div class="bizweb-product-reviews-badge" data-id="12107391"></div>
-                                        </div>
-                                        <h3 class="product-name">
-                                            <a href="/man-hinh-benq-gw2270-22inch-fullhd" title="Màn hình BenQ GW2270 22inch FullHD">
-                                            Màn hình BenQ GW2270 22inch FullHD
-                                            </a>
-                                        </h3>
-                                        <div class="price-box price-loop-style res-item">
-                                            <span class="special-price">
-                                            <span class="price">1.990.000₫</span>
-                                            </span>
-                                            <span class="old-price">
-                                            <span class="price">
-                                            2.590.000₫
-                                            </span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="product-box">
-                                    <div class="product-thumbnail">
-                                        <div class="tag-item tag-sale sale-flash">-24%</div>
-                                        <a href="/may-giat-cua-ngang-inverter-lg" title="Máy giặt cửa ngang Inverter LG">
-                                        <img class="img-responsive" src="{{url('')}}/assets/frontend/v1.0/images/icons/down.svg" data-lazyload="{{url('')}}/assets/frontend/v1.0/images/products/0u2751d20170616t102747568611.jpg?v=1530847013373" alt="Máy giặt cửa ngang Inverter LG">
-                                        </a>
-                                        <div class="product-action hidden-xs">
-                                            <form action="/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-12107331" enctype="multipart/form-data">
-                                                <input type="hidden" name="variantId" value="19426467" />
-                                                <button class="btn-buy btn-cart btn button-hover-3 left-to add_to_cart" title="Mua ngay">
-                                                <span><i class="fa fa-shopping-bag" aria-hidden="true"></i></span>
-                                                </button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div class="product-info">
-                                        <div class="fw product-review">
-                                            <div class="bizweb-product-reviews-badge" data-id="12107331"></div>
-                                        </div>
-                                        <h3 class="product-name">
-                                            <a href="/may-giat-cua-ngang-inverter-lg" title="Máy giặt cửa ngang Inverter LG">
-                                            Máy giặt cửa ngang Inverter LG
-                                            </a>
-                                        </h3>
-                                        <div class="price-box price-loop-style res-item">
-                                            <span class="special-price">
-                                            <span class="price">7.590.000₫</span>
-                                            </span>
-                                            <span class="old-price">
-                                            <span class="price">
-                                            9.990.000₫
-                                            </span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="product-box">
-                                    <div class="product-thumbnail">
-                                        <div class="tag-item tag-sale sale-flash">-13%</div>
-                                        <a href="/may-lanh-casper-lc-12tl11" title="Máy lạnh Casper LC-12TL11">
-                                        <img class="img-responsive" src="{{url('')}}/assets/frontend/v1.0/images/icons/down.svg" data-lazyload="{{url('')}}/assets/frontend/v1.0/images/products/lc12tl11u2751d20170116t2350437-d4ece7f7-2e70-46aa-8df3-fa53cffb7b78.jpg?v=1530847028600" alt="Máy lạnh Casper LC-12TL11">
-                                        </a>
-                                        <div class="product-action hidden-xs">
-                                            <form action="/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-12107353" enctype="multipart/form-data">
-                                                <input type="hidden" name="variantId" value="19426489" />
-                                                <button class="btn-buy btn-cart btn button-hover-3 left-to add_to_cart" title="Mua ngay">
-                                                <span><i class="fa fa-shopping-bag" aria-hidden="true"></i></span>
-                                                </button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div class="product-info">
-                                        <div class="fw product-review">
-                                            <div class="bizweb-product-reviews-badge" data-id="12107353"></div>
-                                        </div>
-                                        <h3 class="product-name">
-                                            <a href="/may-lanh-casper-lc-12tl11" title="Máy lạnh Casper LC-12TL11">
-                                            Máy lạnh Casper LC-12TL11
-                                            </a>
-                                        </h3>
-                                        <div class="price-box price-loop-style res-item">
-                                            <span class="special-price">
-                                            <span class="price">7.059.000₫</span>
-                                            </span>
-                                            <span class="old-price">
-                                            <span class="price">
-                                            8.090.000₫
-                                            </span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="product-box">
-                                    <div class="product-thumbnail">
-                                        <div class="tag-item tag-sale sale-flash">-18%</div>
-                                        <a href="/may-giat-cua-truoc-lg" title="Máy giặt cửa trước Inverter LG">
-                                        <img class="img-responsive" src="{{url('')}}/assets/frontend/v1.0/images/icons/down.svg" data-lazyload="{{url('')}}/assets/frontend/v1.0/images/products/0u5488d20170918t184107496054.jpg?v=1530847005840" alt="Máy giặt cửa trước Inverter LG">
-                                        </a>
-                                        <div class="product-action hidden-xs">
-                                            <form action="/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-12107325" enctype="multipart/form-data">
-                                                <input type="hidden" name="variantId" value="19426461" />
-                                                <button class="btn-buy btn-cart btn button-hover-3 left-to add_to_cart" title="Mua ngay">
-                                                <span><i class="fa fa-shopping-bag" aria-hidden="true"></i></span>
-                                                </button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div class="product-info">
-                                        <div class="fw product-review">
-                                            <div class="bizweb-product-reviews-badge" data-id="12107325"></div>
-                                        </div>
-                                        <h3 class="product-name">
-                                            <a href="/may-giat-cua-truoc-lg" title="Máy giặt cửa trước Inverter LG">
-                                            Máy giặt cửa trước Inverter LG
-                                            </a>
-                                        </h3>
-                                        <div class="price-box price-loop-style res-item">
-                                            <span class="special-price">
-                                            <span class="price">13.790.000₫</span>
-                                            </span>
-                                            <span class="old-price">
-                                            <span class="price">
-                                            16.900.000₫
-                                            </span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="product-box">
-                                    <div class="product-thumbnail">
-                                        <div class="tag-item tag-sale sale-flash">-14%</div>
-                                        <a href="/dien-thoai-xiaomi-mi-a1-64gb-4gb" title="Điện thoại Xiaomi Mi A1 64GB/4GB">
-                                        <img class="img-responsive" src="{{url('')}}/assets/frontend/v1.0/images/icons/down.svg" data-lazyload="{{url('')}}/assets/frontend/v1.0/images/products/0u4939d20170926t1409476909912.jpg?v=1530847074027" alt="Điện thoại Xiaomi Mi A1 64GB/4GB">
-                                        </a>
-                                        <div class="product-action hidden-xs">
-                                            <form action="/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-12107400" enctype="multipart/form-data">
-                                                <input type="hidden" name="variantId" value="19426542" />
-                                                <button class="btn-buy btn-cart btn button-hover-3 left-to add_to_cart" title="Mua ngay">
-                                                <span><i class="fa fa-shopping-bag" aria-hidden="true"></i></span>
-                                                </button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div class="product-info">
-                                        <div class="fw product-review">
-                                            <div class="bizweb-product-reviews-badge" data-id="12107400"></div>
-                                        </div>
-                                        <h3 class="product-name">
-                                            <a href="/dien-thoai-xiaomi-mi-a1-64gb-4gb" title="Điện thoại Xiaomi Mi A1 64GB/4GB">
-                                            Điện thoại Xiaomi Mi A1 64GB/4GB
-                                            </a>
-                                        </h3>
-                                        <div class="price-box price-loop-style res-item">
-                                            <span class="special-price">
-                                            <span class="price">4.790.000₫</span>
-                                            </span>
-                                            <span class="old-price">
-                                            <span class="price">
-                                            5.590.000₫
-                                            </span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="product-box">
-                                    <div class="product-thumbnail">
-                                        <div class="tag-item tag-sale sale-flash">-21%</div>
-                                        <a href="/dien-thoai-samsung-galaxy-j7-prime" title="Điện thoại Samsung Galaxy J7 Prime">
-                                        <img class="img-responsive" src="{{url('')}}/assets/frontend/v1.0/images/icons/down.svg" data-lazyload="{{url('')}}/assets/frontend/v1.0/images/products/samsunggalaxyj7black1u504d2016.jpg?v=1530847072897" alt="Điện thoại Samsung Galaxy J7 Prime">
-                                        </a>
-                                        <div class="product-action hidden-xs">
-                                            <form action="/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-12107399" enctype="multipart/form-data">
-                                                <input type="hidden" name="variantId" value="19426541" />
-                                                <button class="btn-buy btn-cart btn button-hover-3 left-to add_to_cart" title="Mua ngay">
-                                                <span><i class="fa fa-shopping-bag" aria-hidden="true"></i></span>
-                                                </button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div class="product-info">
-                                        <div class="fw product-review">
-                                            <div class="bizweb-product-reviews-badge" data-id="12107399"></div>
-                                        </div>
-                                        <h3 class="product-name">
-                                            <a href="/dien-thoai-samsung-galaxy-j7-prime" title="Điện thoại Samsung Galaxy J7 Prime">
-                                            Điện thoại Samsung Galaxy J7 Prime
-                                            </a>
-                                        </h3>
-                                        <div class="price-box price-loop-style res-item">
-                                            <span class="special-price">
-                                            <span class="price">4.690.000₫</span>
-                                            </span>
-                                            <span class="old-price">
-                                            <span class="price">
-                                            5.900.000₫
-                                            </span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="product-box">
-                                    <div class="product-thumbnail">
-                                        <div class="tag-item tag-sale sale-flash">-25%</div>
-                                        <a href="/noi-com-dien-nap-gai-happycook" title="Nồi cơm điện nắp gài HappyCook">
-                                        <img class="img-responsive" src="{{url('')}}/assets/frontend/v1.0/images/icons/down.svg" data-lazyload="{{url('')}}/assets/frontend/v1.0/images/products/1b1609da004e80bc04eb578cd3c0b0.jpg?v=1530846987127" alt="Nồi cơm điện nắp gài HappyCook">
-                                        </a>
-                                        <div class="product-action hidden-xs">
-                                            <form action="/cart/add" method="post" class="variants form-nut-grid" data-id="product-actions-12107314" enctype="multipart/form-data">
-                                                <input type="hidden" name="variantId" value="19426450" />
-                                                <button class="btn-buy btn-cart btn button-hover-3 left-to add_to_cart" title="Mua ngay">
-                                                <span><i class="fa fa-shopping-bag" aria-hidden="true"></i></span>
-                                                </button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div class="product-info">
-                                        <div class="fw product-review">
-                                            <div class="bizweb-product-reviews-badge" data-id="12107314"></div>
-                                        </div>
-                                        <h3 class="product-name">
-                                            <a href="/noi-com-dien-nap-gai-happycook" title="Nồi cơm điện nắp gài HappyCook">
-                                            Nồi cơm điện nắp gài HappyCook
-                                            </a>
-                                        </h3>
-                                        <div class="price-box price-loop-style res-item">
-                                            <span class="special-price">
-                                            <span class="price">599.000₫</span>
-                                            </span>
-                                            <span class="old-price">
-                                            <span class="price">
-                                            799.000₫
-                                            </span>
+                                                <span class="price">9.790.000₫</span>
                                             </span>
                                         </div>
                                     </div>

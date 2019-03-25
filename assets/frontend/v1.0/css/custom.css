@@ -1,0 +1,46 @@
+.countdown {
+  display: flex;
+  /*flex-wrap: wrap;*/
+  justify-content: space-between;
+  width: 100%;
+  /*max-width: 20rem;*/
+  /*margin: 0 auto;*/
+  padding-top: 12px;
+  text-align: center;
+}
+
+.countdown__item {
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 auto;
+  min-width: 25%;
+  margin-bottom: 1rem;
+
+// Instead of a modifier one could use a pseudo-class:
+//   &:first-child {
+//     width: 100%;
+//   }
+  
+//   &:not(:first-child) {
+//     flex: 1;
+//   }
+}
+
+
+
+.countdown__timer {
+  /*padding: .25em;*/
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 3px;
+  font-weight: bold;
+  font-size: 1.2em;
+  color: red;
+  margin-left: 1px;
+}
+
+.countdown__label {
+  font-size: 0.7em;
+  padding-top: .40em;
+  
+}

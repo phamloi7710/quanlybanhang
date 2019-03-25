@@ -33,7 +33,18 @@
             </div>
         </div>
         <div class="content-body">
-            
+            <div id="example">
+    <p>Giá trị ban đầu: "@{{ message }}"</p>
+    <p>Giá trị sau khi chuyển đổi: "@{{ message.split('').reverse().join('') }}"</p>
+</div>
+<script language="javascript">
+    var vm = new Vue({
+        el: '#example',
+        data: {
+            message: 'Chào mừng đến với freetuts.net'
+        }
+    });
+</script>
         </div>
     </div>
 </div>
