@@ -23,9 +23,11 @@ class LanguageController extends Controller
     	$language->code = $request->txtLanguageCode;
     	$language->image = $request->image;
     	$language->status = $request->status;
-    	$language->user_id = Auth::user()->id;
+        $userId = Auth::user()->id;
+        $language->user_id = $userId;
     	$language->save();
-        activity()->causedBy($userId)->performedOn($language)->log('Thêm Mới Ngôn Ngữ');
+        activity()->causedBy($userId)->performedOn($language)->log('Ngôn Ngữ '.$language->name.' Đã Được Thêm Mới');
+
         $lastActivity = Activity::all()->last();
         $lastActivity->subject;
         $lastActivity->causer;
@@ -37,6 +39,7 @@ class LanguageController extends Controller
     }
     public function postEdit(Request $request, $id)
     {
+        $oldData = Language::find($id);
     	$language = Language::find($id);
     	$language->name = $request->txtLanguageName;
     	$language->code = $request->txtLanguageCode;
@@ -45,7 +48,14 @@ class LanguageController extends Controller
         $userId = Auth::user()->id;
     	$language->user_id = $userId;
     	$language->save();
-        activity()->causedBy($userId)->performedOn($language)->log('Chỉnh Sửa Ngôn Ngữ');
+        activity()->causedBy($userId)->performedOn($language)
+            ->withProperties(
+                    [
+                        'name' => 'Tên Ngôn Ngữ: '.$oldData->name.' ---> '.$language->name.'',
+                        'code' => 'Mã Ngôn Ngữ: '.$oldData->code.' ---> '.$language->code.'',
+                        'image' => 'Hình Ảnh: '.$oldData->image.' ---> '.$language->image.'',
+                        'status' => 'Trạng Thái: '.$oldData->status.' ---> '.$language->status.'',
+                    ])->log('Ngôn Ngữ "'.$language->name.'" Đã Được Chỉnh Sửa');
         $lastActivity = Activity::all()->last();
         $lastActivity->subject;
         $lastActivity->causer;

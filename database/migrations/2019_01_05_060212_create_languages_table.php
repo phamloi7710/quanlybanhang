@@ -21,6 +21,7 @@ class CreateLanguagesTable extends Migration
             $table->enum('status', array('active', 'inActive'))->default('active');
             $table->integer('order')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

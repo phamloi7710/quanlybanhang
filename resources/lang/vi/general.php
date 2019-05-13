@@ -149,7 +149,7 @@
 		'endDate' => 'Ngày Kết Thúc',
 		'priceHotDeal' => 'Giá Hot Deal',
 		'startDateEndDate' => 'Thời Gian Khuyến Mãi',
-		'systemSetting' => 'Cài',
+		'activityHistory' => 'Lịch Sử Hoạt Động',
 		'systemSetting' => 'Cài',
 		'systemSetting' => 'Cài',
 		'systemSetting' => 'Cài',

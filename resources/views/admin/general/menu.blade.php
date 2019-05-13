@@ -1,4 +1,3 @@
-
 <div class="main-menu menu-fixed menu-light menu-accordion menu-bordered menu-shadow"
             data-scroll-to-active="true">
     <div class="main-menu-content">
@@ -18,9 +17,20 @@
                 </ul>
             </li>
             <li class=" nav-item">
-                <a href="javascript:;"><i class="la la-cog"></i><span class="menu-title" data-i18n="nav.dash.main">{{__('general.systemManagement')}}</span></a>
+                <a href="javascript:;"><i class="la la-cogs"></i><span class="menu-title" data-i18n="nav.dash.main">{{__('general.systemManagement')}}</span></a>
                 <ul class="menu-content">
+                    <li class=""><a href="{{route('getActivityLogs')}}"><span class="menu-title" data-i18n="nav.menu_levels.main">{{__('general.activityHistory')}}</span></a>
+                    </li>
                     <li class="@if(getUrl() == route('getListLanguages')) active @endif"><a class="menu-item" href="{{route('getListLanguages')}}">{{__('general.language')}}</a>
+                    </li>
+                    <li class="@if(getUrl() == route('getWebInfo')) active @endif"><a class="menu-item" href="{{route('getWebInfo')}}">{{__('general.basicInformation')}}</a>
+                    </li>
+                    <li class="@if(getUrl() == route('getEmailConfig')) active @endif"><a class="menu-item" href="{{route('getEmailConfig')}}">{{__('general.emailConfig')}}</a>
+                    </li>
+                    <li class="@if(getUrl() == route('getMetaSEO')) active @endif"><a class="menu-item" href="{{route('getMetaSEO')}}">{{__('general.metaSeo')}}</a>
+                    </li>
+                    
+                    <li><a class="menu-item" href="#">{{__('general.emailTemplate')}}</a>
                     </li>
                 </ul>
             </li> 
@@ -33,20 +43,6 @@
             </li> 
             <li class="@if(getUrl() == route('getContactAdmin')) active @endif">
                 <a href="{{route('getContactAdmin')}}"><i class="la la-user-plus"></i><span class="menu-title" data-i18n="nav.dash.main">{{__('general.newContact')}}</span></a>
-            </li> 
-            <li class=" nav-item">
-                <a href="javascript:;"><i class="la la-cogs"></i><span class="menu-title" data-i18n="nav.dash.main">{{__('general.systemManagement')}}</span></a>
-                <ul class="menu-content">
-                    <li class="@if(getUrl() == route('getWebInfo')) active @endif"><a class="menu-item" href="{{route('getWebInfo')}}">{{__('general.basicInformation')}}</a>
-                    </li>
-                    <li class="@if(getUrl() == route('getEmailConfig')) active @endif"><a class="menu-item" href="{{route('getEmailConfig')}}">{{__('general.emailConfig')}}</a>
-                    </li>
-                    <li class="@if(getUrl() == route('getMetaSEO')) active @endif"><a class="menu-item" href="{{route('getMetaSEO')}}">{{__('general.metaSeo')}}</a>
-                    </li>
-                    
-                    <li><a class="menu-item" href="#">{{__('general.emailTemplate')}}</a>
-                    </li>
-                </ul>
             </li> 
             <li class="@if(getUrl() == route('getListUsersAdmin')) active @endif">
                 <a href="{{route('getListUsersAdmin')}}"><i class="la la-users"></i><span class="menu-title" data-i18n="nav.dash.main">{{__('general.account')}}</span></a>

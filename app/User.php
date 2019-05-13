@@ -38,4 +38,8 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Model\News', 'user_id', 'id');
     }
+    public function activity()
+    {
+        return $this->hasMany('\Spatie\Activitylog\Models\Activity', 'causer_id', 'id');
+    }
 }

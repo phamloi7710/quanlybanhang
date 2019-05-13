@@ -74,6 +74,9 @@ Route::group(['prefix'=>'admin', 'middleware'=>'checkRoleAdmin'], function(){
         Route::get('email-config.html', 'Admin\SettingController@getEmailConfig')->name('getEmailConfig');
         Route::post('email-config.html', 'Admin\SettingController@postEmailConfig')->name('postEmailConfig');
     });
+    Route::group(['prefix' => 'activity-history'], function () {
+		Route::get('', 'Admin\SystemController@getActivityLogs')->name('getActivityLogs');
+    });
 
     Route::group(['prefix'=>'user'], function(){
 		Route::get('list.html', 'Admin\AccountController@getList')->name('getListUsersAdmin');
